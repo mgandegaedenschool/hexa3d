@@ -87,9 +87,12 @@ input, select, textarea{
 .upper-image-container{
     max-width: 200px;
 }
-
+.upper-title{
+    max-width: 35%;
+    font-size: 1.2rem;
+}
 .img-text-nav{
-    padding: 25px 0;
+    /* padding: 10px 0; */
     align-items:flex-start!important;
 }
 .img-text-nav h6{
@@ -103,7 +106,7 @@ input, select, textarea{
 .form-group > input, .form-group > select{
     padding: 1.5rem 2rem !important;
     height: auto;
-    border-radius: 2.5rem;
+    border-radius: 1.7rem;
 }
 .step{
     font-size: 2.2rem;
@@ -115,10 +118,13 @@ a.step:active{
 }
 
 #InputId, #InputPassword1{
+    /*
     font-size: 1.4rem!important;
+    */
     color: gainsboro;
-    opacity: 0.6;
+    opacity: 0.7;
     border: 3px solid gainsboro;
+    font-size: 2rem!important;
 }
 
 #InputId:focus, #InputPassword1:focus{
@@ -132,14 +138,12 @@ a.step:active{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin-top: 100px;
+    margin-top: 50px;
 }
 .connexion-btn{
     background-color:var(--purple);
     color:#ffffff;
-    border-radius: 15px;
-    padding: 7px 25px;
-
+    border-radius: 1.2rem;
 }
 
 .connexion-btn:hover{
@@ -163,12 +167,11 @@ a.step:active{
 }
 
 .form-connexion{
-    width: 75%;
+    width: 100%;
 }
 
 .form-connexion label{
     font-weight: bold;
-    font-size: 1.3rem;
 }
 .forgot-password{
     font-size: 1.3rem;
@@ -180,6 +183,10 @@ a.step:active{
     font-weight: bold;
     width: 100%;
 }
+
+.reset-password:hover{
+    color:var(--purple);
+}
 .fa-user{
     width: 130px;
     height: 130px;
@@ -188,17 +195,21 @@ a.step:active{
 
 /* media queries */
 @media (min-width: 576px) {
+    .upper-title{
+        font-size: 1.6rem;
+    }
     .connexion-btn{
-        padding: 18px 70px;
-        border-radius: 25px;
+        /* padding: 18px 70px; */
+        border-radius: 1.7rem;
         font-size: 2rem!important;
     }
     #InputPassword1, #InputId{
-        font-size: 2.5rem !important;
+        /*font-size: 2.5rem !important;*/
     }
     .form-connexion label{
         padding-left: 2rem!important;
-        font-size: 1.6rem;
+        /*font-size: 1.6rem;*/
+        width: 55%;
     }
     .forgot-password{
         font-size: 1.6rem!important;
@@ -214,7 +225,7 @@ a.step:active{
 
 @media (min-width: 992px) {
     .form-connexion{
-        width: 45%;
+        width: 40%;
     }
 }
 

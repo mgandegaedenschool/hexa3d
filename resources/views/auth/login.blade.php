@@ -3,11 +3,11 @@
 @section('content')
     <header class="upper-container">
         <div class="container header-contain">
-            <div class="row d-flex align-items-center img-text-nav">
+            <div class="row d-flex align-items-center img-text-nav py-3">
                 <div class="col-4 upper-image-container">
                     <img src="http://via.placeholder.com/640x360" alt="spirale grise et blanche" class="img-fluid">
                 </div>
-                <h6 class="text-uppercase col-2 upper-title my-2">questionnaires d'intérêts professionnels</h6>
+                <h6 class="text-uppercase col-8 col-md-2 upper-title my-2">questionnaires d'intérêts professionnels</h6>
             </div>
         </div>
     </header>
@@ -20,7 +20,7 @@
 
             </div>
             <form class="mb-5 form-connexion">
-                <div class="form-row mb-5">
+                <div class="form-row mb-4">
                     <div class="form-group col-12">
                         <label for="InputId">Votre identifiant ou mail</label>
                         <input type="text" class="form-control" id="InputId" placeholder="Votre identifiant ou mail">
@@ -34,7 +34,7 @@
                 </div>
 
                 <div class="text-center">
-                    <input type="submit" value="Connexion" class="btn connexion-btn">
+                    <input type="submit" value="Connexion" class="btn connexion-btn py-2 px-5">
 
                     <p class="mt-5 forgot-password">Mot de passe oublié? <a class="reset-password" href="">Réinitialisez-le</a></p>
                 </div>
