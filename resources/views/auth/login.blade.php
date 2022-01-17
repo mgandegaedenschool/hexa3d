@@ -34,7 +34,7 @@
                 </div>
 
                 <div class="text-center">
-                    <input type="submit" value="Connexion" class="btn connexion-btn py-2 px-5">
+                    <input type="submit" value="Connexion" class="btn purple-btn py-2 px-5">
 
                     <p class="mt-5 forgot-password">Mot de passe oublié? <a class="reset-password" href="">Réinitialisez-le</a></p>
                 </div>

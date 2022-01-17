@@ -21,6 +21,10 @@ Route::get('/login', function(){
     return view('auth.login');
 });
 
+Route::get('admin/user_index', function(){
+    return view('admin.user_index');
+});
+
 Route::get('/', function (){
     return 'Bienvenue tout le monde';
 });

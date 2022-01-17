@@ -12,6 +12,10 @@
     <link rel="stylesheet" href="/css/lib/fontawesome.min.css">
     <link rel="stylesheet" href="/css/style.min.css">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/admin_index.css">
+    <link rel="stylesheet" href="/css/login.css">
+
+
 </head>
 <body>
     @yield('content')

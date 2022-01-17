@@ -1,0 +1,94 @@
+/*********** ADMIN **********/
+
+.index-user-main{
+    display:flex;
+    flex-wrap: wrap;
+    background-color: #23282D;
+}
+.top-content{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color:#9EA3A8;
+}
+.top-content a{
+    color:#9EA3A8;
+}
+.top-content a:hover{
+
+}
+aside{
+    width:10%;
+    background-color: #23282D;
+    height: 78vh;
+}
+.div-users{
+    width: 90%;
+    background-color: #ffffff;
+}
+
+.div-users a{
+    color:var(--purple);
+}
+
+.table-users{
+    background-color:#ffffff;
+}
+.div-users-title{
+
+}
+.list-group-item{
+    background-color: #23282D;
+    color:#9EA3A8;
+    border: none;
+    border-radius: 0rem!important;
+}
+.list-group-item:hover{
+    background-color: #ffffff;
+    font-weight: bold;
+}
+.show-users-select select{
+    padding: 5px 10px;
+    background-color: #ffffff;
+    border:1px solid var(--black);
+    border-radius: 0.3rem;
+}
+.search-users{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.search-users form{
+}
+.search-users input{
+    padding: 5px 10px;
+    background-color: #ffffff;
+    border:1px solid var(--black);
+    border-radius: 0.3rem;
+}
+.user-tab-icon{
+    padding: 0 4px;
+}
+
+.previous-and-next{
+    display: flex;
+    flex-wrap: wrap;
+    width: 15%;
+    align-items: center;
+}
+
+.page-number{
+    border:1px solid black;
+    padding: 5px 15px;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+}
+.show-entries p{
+    font-size: 1.4rem;
+}
+.show-entries-form{
+    width: 20%;
+    margin:0 ;
+    padding: 0;
+}
