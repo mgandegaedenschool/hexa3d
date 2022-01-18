@@ -17,12 +17,17 @@ use App\Http\Controllers\ParticipationController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/register', function(){
+    return view('auth.register');
+});
+
 Route::get('/login', function(){
     return view('auth.login');
 });
 
-Route::get('/register', function(){
-    return view('auth.register');
+Route::get('/forgot-password', function(){
+    return view('auth.forgot-password');
 });
 
 Route::get('admin/user_index', function(){
