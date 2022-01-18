@@ -92,10 +92,6 @@ a.step:active{
 
 /* media queries */
 @media (min-width: 576px) {
-    .upper-title{
-        font-size: 1.6rem;
-        max-width: 50%;
-    }
     .purple-btn{
         /* padding: 18px 70px; */
         border-radius: 1.7rem;
@@ -119,10 +115,6 @@ a.step:active{
     .form-connexion{
         width: 55%;
     }
-
-    .upper-title{
-        max-width: 30%;
-    }
 }
 
 @media (min-width: 992px) {
@@ -136,11 +128,5 @@ a.step:active{
 }
 
 @media (min-width: 1400px) {
-    .header-contain{
-        max-width: 90%;
-    }
-
-    .upper-title{
-        max-width: 15%;
-    }
+    
 }
