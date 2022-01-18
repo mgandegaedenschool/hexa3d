@@ -1,0 +1,23 @@
+/* upper part */
+.upper-container{
+    box-shadow: 3px 2px 3px lightgrey;
+    margin-bottom: 2em;
+}
+.upper-image-container{
+    max-width: 200px;
+}
+.upper-title{
+    max-width: 35%;
+    font-size: 1.2rem;
+}
+.img-text-nav{
+    /* padding: 10px 0; */
+    align-items:flex-start!important;
+}
+.img-text-nav h6{
+    margin-top: 0!important;
+}
+
+.header-contain{
+
+}

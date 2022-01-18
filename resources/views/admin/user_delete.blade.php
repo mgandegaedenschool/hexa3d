@@ -31,7 +31,9 @@
                 <a href="#" class="list-group-item list-group-item-action">Post</a>
             </div>
         </aside>
+
         <div class="content-container p-5">
+
 
         </div>
     </main>

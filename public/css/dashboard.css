@@ -1,11 +1,12 @@
 /*********** ADMIN **********/
 
-.index-user-main{
+.dashboard-layout{
     display:flex;
     flex-wrap: wrap;
     background-color: #23282D;
 }
 .top-content{
+    /*height: 7.5vh;*/
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -14,29 +15,25 @@
 .top-content a{
     color:#9EA3A8;
 }
-.top-content a:hover{
 
-}
 aside{
     width:10%;
+    height: 80vh;
     background-color: #23282D;
-    height: 78vh;
 }
-.div-users{
+.content-container{
     width: 90%;
     background-color: #ffffff;
 }
 
-.div-users a{
+.content-container a{
     color:var(--purple);
 }
 
 .table-users{
     background-color:#ffffff;
 }
-.div-users-title{
 
-}
 .list-group-item{
     background-color: #23282D;
     color:#9EA3A8;
@@ -91,4 +88,35 @@ aside{
     width: 20%;
     margin:0 ;
     padding: 0;
+}
+
+/* X-Small devices (portrait phones, less than 576px)
+ No media query for `xs` since this is the default in Bootstrap */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    aside{
+        width:10%;
+        background-color: #23282D;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+
 }

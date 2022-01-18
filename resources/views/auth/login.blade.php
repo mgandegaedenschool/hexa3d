@@ -1,11 +1,11 @@
 @extends('app')
 
 @section('content')
-    <header class="upper-container">
+    <header class="upper-container d-flex">
         <div class="container header-contain">
             <div class="row d-flex align-items-center img-text-nav py-3">
                 <div class="col-4 upper-image-container">
-                    <img src="http://via.placeholder.com/640x360" alt="spirale grise et blanche" class="img-fluid">
+                    <img src="https://via.placeholder.com/640x360" alt="spirale grise et blanche" class="img-fluid">
                 </div>
                 <h6 class="text-uppercase col-8 col-md-2 upper-title my-2">questionnaires d'intérêts professionnels</h6>
             </div>
@@ -23,13 +23,13 @@
                 <div class="form-row mb-4">
                     <div class="form-group col-12">
                         <label for="InputId">Votre identifiant ou mail</label>
-                        <input type="text" class="form-control" id="InputId" placeholder="Votre identifiant ou mail">
+                        <input type="text" class="form-control" id="InputIdLogin" placeholder="Votre identifiant ou mail">
                     </div>
                 </div>
                 <div class="form-row mb-5">
                     <div class="form-group col-12">
                         <label for="InputPassword1">Votre mot de passe</label>
-                        <input type="password" class="form-control" id="InputPassword1" placeholder="Votre mot de passe">
+                        <input type="password" class="form-control" id="InputPassword1Login" placeholder="Votre mot de passe">
                     </div>
                 </div>
 

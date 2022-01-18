@@ -3,7 +3,7 @@
     --purple: #3F028E;
     --black: #000000ff;
 }
-/* global */
+/* global
 html {
     font-size: 62.5%;
 }
@@ -79,7 +79,7 @@ h6 {
 input, select, textarea{
     font-size: 1.4rem !important;
 }
-/* upper part */
+
 .upper-container{
     box-shadow: 3px 2px 3px lightgrey;
     margin-bottom: 2em;
@@ -92,7 +92,7 @@ input, select, textarea{
     font-size: 1.2rem;
 }
 .img-text-nav{
-    /* padding: 10px 0; */
+    /* padding: 10px 0;
     align-items:flex-start!important;
 }
 .img-text-nav h6{
@@ -103,3 +103,4 @@ input, select, textarea{
 
 }
 
+*/

@@ -12,9 +12,9 @@
         </div>
     </header>
 
-    <div class="col-12 index-user-main">
+    <main class="dashboard-layout">
 
-        <div class="top-content py-4">
+        <div class="top-content p-4">
             <div class="options">
                 <a href="#"><i class="fas fa-plus"></i> New</a>
             </div>
@@ -32,24 +32,25 @@
             </div>
         </aside>
 
-        <div class="div-users p-5">
+        <div class="content-container p-5">
 
             <h2 class="div-users-title my-5">Table des membres</h2>
 
             <div class="d-flex justify-content-between mb-4">
                 <div class="show-users-select">
                     <!-- si vous avez besoin d'un formulaire pour le nombre de membres à afficher -->
-                    <form action="" method=""></form>
+                    <form action="" method="">
                     Show <select name="" id="">
                         <option value="10">10</option>
                         <option value="20">20</option>
                         <option value="30">30</option>
                     </select> entries
+                    </form>
                 </div>
                 <div class="search-users">
                     Search :
                     <!-- si vous avez besoin d'un formulaire pour les recherches -->
-                    <form action="" method="" class="ml-2"></form>
+                    <form action="" method="" class="ml-2">
                         <input type="text" name="">
                     </form>
                 </div>
@@ -98,7 +99,8 @@
                     <td>
                         <a href=""><i class="far fa-eye user-tab-icon"></i></a>
                         <a href=""><i class="fas fa-pen user-tab-icon"></i></a>
-                        <a href="" <?php 'OnClick=return(confirm(\"Etes vous certain de vouloir supprimer les donnees?\"))' ?>><i class="far fa-trash-alt user-tab-icon"></i></a>
+                        <a href=""><i class="far fa-trash-alt user-tab-icon"  onclick="return(confirm('Voulez-vous vraiment supprimer les données?'))"></i></a>
+                    </td>
                 </tr>
                 </tbody>
             </table>
@@ -114,6 +116,6 @@
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 
 @endsection

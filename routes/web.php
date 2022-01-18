@@ -21,8 +21,20 @@ Route::get('/login', function(){
     return view('auth.login');
 });
 
+Route::get('/register', function(){
+    return view('auth.register');
+});
+
 Route::get('admin/user_index', function(){
     return view('admin.user_index');
+});
+
+Route::get('admin/user_create', function(){
+    return view('admin.user_create');
+});
+
+Route::get('admin/user_delete', function(){
+    return view('admin.user_delete');
 });
 
 Route::get('/', function (){

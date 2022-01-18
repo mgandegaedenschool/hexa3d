@@ -15,7 +15,7 @@ a.step:active{
     font-weight: bold;
 }
 
-#InputId, #InputPassword1{
+#InputIdLogin, #InputPassword1Login{
     /*
     font-size: 1.4rem!important;
     */
@@ -25,7 +25,7 @@ a.step:active{
     font-size: 2rem!important;
 }
 
-#InputId:focus, #InputPassword1:focus{
+#InputIdLogin:focus, #InputPassword1Login:focus{
     border-color: var(--purple);
 }
 .main-div
@@ -94,13 +94,14 @@ a.step:active{
 @media (min-width: 576px) {
     .upper-title{
         font-size: 1.6rem;
+        max-width: 50%;
     }
     .purple-btn{
         /* padding: 18px 70px; */
         border-radius: 1.7rem;
         font-size: 2rem!important;
     }
-    #InputPassword1, #InputId{
+    #InputPassword1Login, #InputIdLogin{
         /*font-size: 2.5rem !important;*/
     }
     .form-connexion label{
@@ -118,6 +119,10 @@ a.step:active{
     .form-connexion{
         width: 55%;
     }
+
+    .upper-title{
+        max-width: 30%;
+    }
 }
 
 @media (min-width: 992px) {
@@ -132,6 +137,10 @@ a.step:active{
 
 @media (min-width: 1400px) {
     .header-contain{
-        max-width: 1600px;
+        max-width: 90%;
+    }
+
+    .upper-title{
+        max-width: 15%;
     }
 }
