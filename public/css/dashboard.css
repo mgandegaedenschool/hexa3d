@@ -17,8 +17,8 @@
 }
 
 aside{
-    width:10%;
-    height: 80vh;
+    width:100%;
+
     background-color: #23282D;
 }
 .content-container{
@@ -103,6 +103,7 @@ aside{
     aside{
         width:10%;
         background-color: #23282D;
+        height: 80vh;
     }
 }
 
