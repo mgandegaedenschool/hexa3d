@@ -42,6 +42,10 @@ Route::get('admin/user_delete', function(){
     return view('admin.user_delete');
 });
 
+Route::get('/espace_membre', function(){
+    return view('espace_membre.espace_membre');
+});
+
 Route::get('/', function (){
     return 'Bienvenue tout le monde';
 });

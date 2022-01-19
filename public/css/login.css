@@ -129,7 +129,8 @@ a.step:active{
     }
     .send-password-link-btn{
         max-width: 100%;
-        font-size: 1.6rem!important;
+        font-size: 1.7rem!important;
+        padding: 5px 30px!important;
     }
 }
 

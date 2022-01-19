@@ -2,6 +2,7 @@
 .upper-container{
     box-shadow: 3px 2px 3px lightgrey;
     margin-bottom: 2em;
+    background-color: #ffffff;
 }
 .upper-image-container{
     max-width: 200px;

@@ -2,6 +2,10 @@
 :root {
     --purple: #3F028E;
     --black: #000000ff;
+    --green:#75C472;
+    --orange:#F8B044;
+    --gray:#BBBBBB;
+
 }
 /* global */
 html {

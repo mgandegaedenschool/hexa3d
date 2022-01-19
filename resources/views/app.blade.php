@@ -15,13 +15,14 @@
     <link rel="stylesheet" href="/css/login.css">
     <link rel="stylesheet" href="/css/register.css">
     <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="stylesheet" href="/css/espace_membre.css">
     <link rel="stylesheet" href="/css/style.css">
 
 
 </head>
 <body>
     @yield('content')
-
+    <script src="/js/formEnable.js"></script>
     <script src="/js/lib/jquery-3.3.1.min.js"></script>
     <script src="/js/lib/popper.min.js"></script>
     <script src="/js/lib/bootstrap.min.js"></script>

@@ -27,14 +27,14 @@
                 </h1>
             </div>
 
-            <div class="form-row mb-3 reset-form-body">
+            <div class="form-row mb-3 reset-form-body d-flex justify-content-center">
                 <div class="form-group col-12 reset-form-input">
-                    <label for="InputId">Entrez l'adresse mail que vous avez utilisé pour créer votre compte et nous vous enverrons un lien pour la réinitialisation de votre mot de passe.</label>
+                    <label for="InputId">Entrez l'adresse mail que vous avez utilisée pour créer votre compte et nous vous enverrons un lien pour la réinitialisation de votre mot de passe.</label>
                     <input type="text" class="form-control" id="InputMailForgotMail" placeholder="Votre adresse mail">
                 </div>
 
 
-                <input type="submit" value="Envoyer un lien de réinitialisation de mot de passe" class="btn purple-btn btn-block send-password-link-btn py-2 px-4">
+                <input type="submit" value="Envoyer un lien" class="btn purple-btn send-password-link-btn py-2 px-4">
 
             </div>
         </form>
