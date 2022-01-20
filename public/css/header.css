@@ -1,4 +1,5 @@
 /* upper part */
+
 .upper-container{
     box-shadow: 3px 2px 3px lightgrey;
     margin-bottom: 2em;
@@ -14,6 +15,10 @@
 .img-text-nav{
     /* padding: 10px 0; */
     align-items:flex-start!important;
+}
+/* */
+.two-img-nav{
+    justify-content: space-between;
 }
 .img-text-nav h6{
     margin-top: 0!important;

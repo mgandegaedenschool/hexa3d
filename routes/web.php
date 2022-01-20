@@ -30,6 +30,10 @@ Route::get('/forgot-password', function(){
     return view('auth.forgot-password');
 });
 
+Route::get('/reset-password', function(){
+    return view('auth.reset-password');
+});
+
 Route::get('admin/user_index', function(){
     return view('admin.user_index');
 });

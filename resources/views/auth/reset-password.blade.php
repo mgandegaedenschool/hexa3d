@@ -29,12 +29,19 @@
 
             <div class="form-row mb-3 password-form-body d-flex justify-content-center">
                 <div class="form-group col-12 password-form-input">
-                    <label for="InputId">Entrez l'adresse mail que vous avez utilisée pour créer votre compte et nous vous enverrons un lien pour la réinitialisation de votre mot de passe.</label>
+                    <label for="InputId">Votre adresse mail</label>
                     <input type="email" class="form-control" id="InputMailForgotMail" placeholder="Votre adresse mail">
                 </div>
+                <div class="form-group col-12 password-form-input">
+                    <label for="InputId">Votre nouveau mot de passe</label>
+                    <input type="password" class="form-control" id="InputMailForgotMail" placeholder="Votre nouveau mot de passe">
+                </div>
+                <div class="form-group col-12 password-form-input">
+                    <label for="InputId">Confirmez votre mot de passe...</label>
+                    <input type="password" class="form-control" id="InputMailForgotMail" placeholder="Confirmez votre mot de passe">
+                </div>
 
-
-                <input type="submit" value="Envoyer un lien" class="btn purple-btn send-password-link-btn py-2 px-4">
+                <input type="submit" value="Réinitialiser le mot de passe" class="btn purple-btn send-password-link-btn py-2 px-4">
 
             </div>
         </form>

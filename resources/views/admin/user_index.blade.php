@@ -3,11 +3,13 @@
 @section('content')
     <header class="upper-container">
         <div class="container header-contain">
-            <div class="row d-flex align-items-center img-text-nav py-3">
+            <div class="row d-flex align-items-center img-text-nav two-img-nav py-3">
                 <div class="col-4 upper-image-container">
                     <img src="https://via.placeholder.com/640x360" alt="spirale grise et blanche" class="img-fluid">
                 </div>
-                <h6 class="text-uppercase col-8 col-md-2 upper-title my-2">questionnaires d'intérêts professionnels</h6>
+                <div class="col-4 upper-image-container">
+                    <img src="https://via.placeholder.com/640x360" alt="spirale grise et blanche" class="img-fluid">
+                </div>
             </div>
         </div>
     </header>

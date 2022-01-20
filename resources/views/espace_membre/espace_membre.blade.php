@@ -21,7 +21,7 @@
                     </div>
                 </div>
                 <div class="dropped-information disabled-element-eye height-none">
-                    <div class="personal-infos">
+                    <div class="personal-infos infos-div">
                         <div class="user-informations"><p>Identifiant (ou mail) :</p><span>AT</span></div>
                         <div class="user-informations"><p>Mot de passe :</p><span>*****</span></div>
                         <div class="user-informations"><p>Nom :</p><span>Toujours</span></div>
@@ -29,20 +29,21 @@
                         <div class="user-informations"><p>Age :</p><span>24 ans</span></div>
                         <div class="user-informations"><p>Sexe :</p><span>Homme</span></div>
                     </div>
-                    <div class="school-infos">
+                    <div class="school-infos infos-div">
                         <div class="user-informations"><p>Niveau d'études :</p><span>Bac +2</span></div>
                         <div class="user-informations"><p>Scolarisé(e) :</p><span>Oui</span></div>
                         <div class="user-informations"><p>Classe :</p><span>BTS Hôtellerie</span></div>
                         <div class="user-informations"><p>Etablissement :</p><span>Lycée Saint Vincent de Paul</span></div>
                         <div class="user-informations"><p>Section :</p><span>Hôtellerie</span></div>
                     </div>
-                    <div class="job-infos">
+                    <div class="job-infos infos-div">
                         <div class="user-informations"><p>Salarié :</p><span>Oui</span></div>
                         <div class="user-informations"><p>Etat :</p><span>Alternant</span></div>
                         <div class="user-informations"><p>Emploi actuel :</p><span>Assistant accueil</span></div>
                         <div class="user-informations"><p>Emploi envisagé :</p><span>Restaurateur</span></div>
                         <div class="user-informations"><p>Spécialité :</p><span>Accueil client</span></div>
                     </div>
+                    <input type="submit" value="Modifier" class="btn purple-btn send-password-link-btn py-2 px-4">
                 </div>
             </div>
             <div class="container-fluid my-tests">
