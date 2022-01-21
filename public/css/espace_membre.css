@@ -4,6 +4,7 @@ body{
 .global-container{
     background-color: #F8F8F8;
     padding-bottom: 3rem;
+    margin-top: 50px;
 }
 .my-infos, .my-tests{
     border-radius: 2rem;
@@ -49,7 +50,7 @@ body{
     font-size: 1.6rem;
 }
 
-.fa-eye, .fa-times{
+.icon-eye-view, .fa-times{
     cursor: pointer;
     height: 30px;
     width:30px;

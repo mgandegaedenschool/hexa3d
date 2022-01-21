@@ -1,9 +1,12 @@
 /*********** ADMIN **********/
 
+
+/* Change styles for cancel button and signup button on extra small screens */
+
+
 .dashboard-layout{
     display:flex;
     flex-wrap: wrap;
-    background-color: #23282D;
 }
 .top-content{
     /*height: 7.5vh;*/
@@ -11,15 +14,21 @@
     display: flex;
     justify-content: space-between;
     color:#9EA3A8;
+    background-color: #23282D;
 }
 .top-content a{
     color:#9EA3A8;
 }
 
 aside{
-    width:10%;
-    height: 80vh;
+    width:100%;
     background-color: #23282D;
+}
+.nav-link{
+    color: #9EA3A8;
+}
+.nav-link:hover{
+    background-color: #ffffff;
 }
 .content-container{
     width: 90%;
@@ -34,16 +43,6 @@ aside{
     background-color:#ffffff;
 }
 
-.list-group-item{
-    background-color: #23282D;
-    color:#9EA3A8;
-    border: none;
-    border-radius: 0rem!important;
-}
-.list-group-item:hover{
-    background-color: #ffffff;
-    font-weight: bold;
-}
 .show-users-select select{
     padding: 5px 10px;
     background-color: #ffffff;
@@ -55,16 +54,17 @@ aside{
     flex-wrap: wrap;
     align-items: center;
 }
-.search-users form{
-}
+
 .search-users input{
-    padding: 5px 10px;
     background-color: #ffffff;
     border:1px solid var(--black);
     border-radius: 0.3rem;
 }
 .user-tab-icon{
     padding: 0 4px;
+}
+table tr td:last-of-type{
+    min-width: 105px;
 }
 
 .previous-and-next{
@@ -89,11 +89,48 @@ aside{
     margin:0 ;
     padding: 0;
 }
+.start-form{
+    border-top: 2px solid var(--purple);
+}
+.form-title{
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+.modal-footer{
+    border-top: 2px solid var(--purple);
+}
+.modal-header{
+    border-bottom: 2px solid var(--purple);
+}
 
+.no-defil{
+    min-width: 105px;
+    border: 1px solid #dee2e6;
+}
+.no-defil > p{
+    padding: .75rem;
+    margin: 0;
+    text-align: center;
+    font-weight: bold;
+    border-bottom:  1px solid #dee2e6;
+}
+.no-defil > div{
+    padding: .75rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
 /* X-Small devices (portrait phones, less than 576px)
  No media query for `xs` since this is the default in Bootstrap */
 
 /* Small devices (landscape phones, 576px and up) */
+@media screen and (min-width: 300px) {
+    .cancelbtn, .signupbtn {
+        float: left;
+        width: 50%;
+    }
+}
+
 @media (min-width: 576px) {
 
 }
@@ -103,6 +140,10 @@ aside{
     aside{
         width:10%;
         background-color: #23282D;
+
+    }
+    .content-container{
+        height: 81.5vh;
     }
 }
 

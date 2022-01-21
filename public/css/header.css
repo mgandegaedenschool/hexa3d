@@ -2,7 +2,6 @@
 
 .upper-container{
     box-shadow: 3px 2px 3px lightgrey;
-    margin-bottom: 2em;
     background-color: #ffffff;
 }
 .upper-image-container{
@@ -16,7 +15,7 @@
     /* padding: 10px 0; */
     align-items:flex-start!important;
 }
-/* */
+/* ADMIN PART HEADER */
 .two-img-nav{
     justify-content: space-between;
 }

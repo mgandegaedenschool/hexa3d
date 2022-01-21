@@ -17,7 +17,7 @@
                 <div class="information-drop">
                     <h2>Mes informations</h2>
                     <div class="information-drop-icon">
-                        <i class="far fa-eye"></i>
+                        <i class="far fa-eye icon-eye-view"></i>
                     </div>
                 </div>
                 <div class="dropped-information disabled-element-eye height-none">
