@@ -29,6 +29,7 @@ aside{
 }
 .nav-link:hover{
     background-color: #ffffff;
+    color:black;
 }
 .content-container{
     width: 90%;

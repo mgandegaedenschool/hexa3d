@@ -72,13 +72,13 @@ a.step:active{
     display: flex;
     flex-direction: column;
 }
-.password{
+.reset-password-link{
     color: var(--black);
     font-weight: bold;
     width: 100%;
 }
 
-.password:hover{
+.reset-password-link:hover{
     color:var(--purple);
 }
 .fa-user{
@@ -88,7 +88,7 @@ a.step:active{
 }
 .password-form{
     max-width: 100%;
-    box-shadow: 2px 2px 2px gray;
+    box-shadow: 0px 0px 5px gray;
     background-color: white;
     border-radius: 1.6rem;
 }

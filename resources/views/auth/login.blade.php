@@ -36,7 +36,7 @@
                 <div class="text-center">
                     <input type="submit" value="Connexion" class="btn purple-btn py-2 px-5">
 
-                    <p class="mt-5 forgot-password">Mot de passe oublié? <a class="reset-password" href="forgot-password">Réinitialisez-le</a></p>
+                    <p class="mt-5 forgot-password">Mot de passe oublié? <a class="reset-password-link" href="forgot-password">Réinitialisez-le</a></p>
                 </div>
 
             </form>

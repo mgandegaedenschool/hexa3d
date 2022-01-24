@@ -34,6 +34,10 @@ Route::get('/reset-password', function(){
     return view('auth.reset-password');
 });
 
+Route::get('admin/admin', function(){
+    return view('admin.admin');
+});
+
 Route::get('admin/user_index', function(){
     return view('admin.user_index');
 });
