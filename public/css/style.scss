@@ -1,0 +1,245 @@
+/*
+    Import file utils here
+*/
+//Variables
+@import "utils/variables";
+@import "utils/fonts";
+@import "utils/card";
+@import "utils/modal";
+@import "utils/navbar";
+html {
+    font-size: 62.5%;
+    background-color: $white;
+}
+
+body {
+    font-size: 16px;
+    font-family: 'Montserrat';
+    font-weight: 400;
+    line-height: 1.7;
+    vertical-align: baseline;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    color: $text;
+    background-color: $white;
+    min-height: 100vh;
+}
+
+p {
+    margin: 0 0 20px 0;
+    color: $text;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: $text;
+}
+
+h1,
+h2 {
+    line-height: 1.2;
+}
+
+h3,
+h4,
+h5,
+h6 {
+    line-height: 1.4;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+h2 {
+    font-size: 25px;
+}
+
+h3 {
+    font-size: 22px;
+}
+
+@media only screen and (max-width: 991px) {
+    h3 {
+        font-size: 20px;
+    }
+}
+
+h4 {
+    font-size: 20px;
+}
+
+h5 {
+    font-size: 18px;
+}
+
+h6 {
+    font-size: 16px;
+}
+
+
+
+
+
+
+.pagination {
+    li {
+        margin-right: 15px;
+        font-size: 17px;
+
+        a {
+            color: $text;
+            text-decoration: none;
+
+            &:hover {
+                color: $pink_light;
+            }
+        }
+
+        &.active {
+            color: $pink_light;
+        }
+
+        &.prev,
+        &.next {
+            font-size: 17px;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+
+.btn-main {
+    font-size: 14px;
+    line-height: 20px;
+    background-color: $pink_light;
+    border: none;
+    border-radius: 28px;
+    padding: 10px 30px;
+    color: $white;
+    outline: none;
+    text-decoration: none;
+    transition: all linear .2s;
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, .16);
+
+    i {
+        margin: 0 5px;
+    }
+
+    &:hover {
+        text-decoration: none;
+        background-color: #202125;
+        color: $white;
+    }
+
+    &:disabled {
+        background-color: $text;
+        cursor: not-allowed;
+
+        &:hover {
+            background-color: $text;
+        }
+    }
+    &:focus{
+        border: none;
+        outline: none;
+    }
+
+    &--white {
+        color: $pink_light;
+        background-color: white;
+
+        &:hover {
+            background-color: $pink_light;
+            color: $white;
+        }
+    }
+
+    &--white-dark {
+        color: $text;
+        background-color: white;
+
+        &:hover {
+            background-color: white;
+            color: $text;
+        }
+    }
+
+    &--text {
+        color: $pink_light;
+        box-shadow: none;
+        background-color: transparent;
+
+        &:hover {
+            background-color: transparent;
+            color: $pink_dark;
+        }
+    }
+
+    &--text-dark {
+        color: $text;
+        box-shadow: none;
+        background-color: transparent;
+
+        &:hover {
+            background-color: transparent;
+            color: $text;
+        }
+    }
+
+    &--cancel{
+        background-color: transparent;
+        color: $text;
+        box-shadow: none;
+        &:hover{
+            background-color: transparent ;
+            color: $text ;
+        }
+    }
+}
+
+
+.btn-back {
+    color: $text;
+
+    &:hover {
+        text-decoration: none;
+        color: $text;
+    }
+}
+
+.form-message-error {
+    color: red;
+}
+
+.tooltip {
+    font-size: 14px;
+}
+
+.dashboard {
+    padding-top: 75px;
+    padding-bottom: 75px;
+}
+
+
+@import "app/test/question";
+@import "app/test/retry";
+@import "app/test/start";
+@import 'app/dashboard/psy';
+@import "app/dashboard/patient";
+@import 'app/dashboard/psy_patient';
+@import "app/pdf/pdf";
+@import "app/test/setting";
+
