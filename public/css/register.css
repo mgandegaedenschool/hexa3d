@@ -1,0 +1,183 @@
+/* variables */
+:root {
+    --purple: #3F028E;
+    --black: #000000ff;
+    --green:#75C472;
+    --orange:#F8B044;
+    --gray:#BBBBBB;
+
+}
+/* global */
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    vertical-align: baseline;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    color: var(--black);
+    min-height: 100vh;
+}
+
+p {
+    margin: 0 0 20px 0;
+    color: var(--black);
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--black);
+}
+
+h1,
+h2 {
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 3.6rem;
+    font-weight: 900;
+}
+
+h2 {
+    font-size: 2.2rem;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+h4 {
+    font-size: 1.7rem;
+}
+input, select, textarea{
+    font-size: 1.4rem !important;
+}
+
+/* form */
+.form-group > input, .form-group > select{
+    padding: 1rem 2rem !important;
+    height: auto;
+    border-radius: 1.7rem;
+    border: 2px solid gainsboro;
+    font-size: 1.6rem;
+}
+
+
+.form-group > input:focus, .form-group > select:focus{
+    border-color: var(--purple);
+    outline: none;
+    box-shadow: none;
+}
+.step{
+    font-size: 1.6rem;
+    color: var(--black);
+    opacity: 0.4;
+}
+.active-step{
+    color: var(--purple);
+    font-weight: bold;
+    opacity: 1;
+}
+i.fa-chevron-right{
+    color: var(--black);
+    opacity: 0.4;
+}
+i.fa-chevron-right.active-chevron{
+    opacity: 1;
+}
+.next-btn{
+    color: var(--black);
+}
+.next-btn .fa-chevron-right{
+    margin-left: 10px;
+}
+.next-btn:hover{
+    color: var(--purple);
+}
+.next-btn:hover i.fa-chevron-right{
+    color: var(--purple);
+}
+.hidden-field{
+    border: lightgrey 2px solid;
+    border-radius: 1.2rem;
+}
+.purple-btn{
+    background-color:var(--purple);
+    border: var(--purple) 2px solid;
+    color:#ffffff;
+    border-radius: 1.2rem;
+}
+.purple-btn:hover{
+    color: var(--purple);
+    background-color: #fff;
+}
+.hidden{
+    display: none;
+}
+
+/* X-Small devices (portrait phones, less than 576px)
+ No media query for `xs` since this is the default in Bootstrap */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+    .step{
+        font-size: 1.6rem;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .step{
+        font-size: 1.8rem;
+    }
+    .submit-form{
+        width: 50% !important;
+        margin: 0 auto;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .step{
+        font-size: 1.8rem;
+    }
+    .submit-form{
+        width: 50% !important;
+        margin: 0 auto;
+    }
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .step{
+        font-size: 2rem;
+    }
+    .submit-form{
+        width: 50% !important;
+        margin: 0 auto;
+    }
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+    .submit-btn{
+        width: 50% !important;
+        margin: 0 auto;
+    }
+}

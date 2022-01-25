@@ -1,0 +1,22 @@
+.setting{
+    .body{
+        text-align: center;
+        h1{
+            color: $pink_light;
+            margin-bottom: 100px;
+        }
+        p{
+            font-size: 18px;
+        }
+        .theme-switch-wrapper{
+            display: flex;
+            justify-content: center;
+        }
+        .bold-text{
+            font-weight: 800;
+        }
+    }
+    p{
+        text-align: center;
+    }
+}
