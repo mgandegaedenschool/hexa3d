@@ -13,10 +13,11 @@
         </div>
     </header>
     <main class="dashboard-layout">
-        <div class="top-content p-4">
+        <div class="top-content p-4 align-items-center">
             <div class="options">
                 <a href="#"><i class="fas fa-plus"></i> New</a>
             </div>
+            <h1 class="text-center accueil-bo-title">Accueil du Back Office</h1>
             <div class="admin-account">
                 <a href="#">Bonjour, Admin</a>
             </div>
@@ -28,8 +29,8 @@
                 </li>
             </ul>
         </aside>
-        <div class="content-container container-fluid d-flex justify-content-center pt-5">
-            <h1 class="w-100 text-center">Accueil du Back Office</h1>
+        <div class="content-container container-fluid d-flex justify-content-center accueil-bg-img">
+
 
         </div>
     </main>

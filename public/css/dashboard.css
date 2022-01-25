@@ -19,7 +19,12 @@
 .top-content a{
     color:#9EA3A8;
 }
-
+.admin-account:hover a, .options:hover a{
+    color:white;
+}
+.admin-account a, .options a{
+    font-size: 1.2rem;
+}
 aside{
     width:100%;
     background-color: #23282D;
@@ -30,6 +35,10 @@ aside{
 .nav-link:hover{
     background-color: #ffffff;
     color:black;
+}
+
+.accueil-bg-img{
+    height: 79.2vh!important;
 }
 .content-container{
     width: 90%;
@@ -121,6 +130,11 @@ table tr td:last-of-type{
     align-items: center;
     justify-content: space-evenly;
 }
+
+.accueil-bo-title{
+    color:white;
+    font-size: 1.4rem;
+}
 /* X-Small devices (portrait phones, less than 576px)
  No media query for `xs` since this is the default in Bootstrap */
 
@@ -130,10 +144,14 @@ table tr td:last-of-type{
         float: left;
         width: 50%;
     }
+
 }
 
 @media (min-width: 576px) {
-
+    .admin-account a, .options a{
+        color:white;
+        font-size: 1.6rem;
+    }
 }
 
 /* Medium devices (tablets, 768px and up) */
@@ -145,6 +163,11 @@ table tr td:last-of-type{
     }
     .content-container{
         height: 81.5vh;
+    }
+
+    .accueil-bo-title{
+        color:white;
+        font-size: 3.6rem;
     }
 }
 
