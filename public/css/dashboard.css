@@ -38,6 +38,8 @@ aside{
 }
 
 .accueil-bg-img{
+    background: url("../../img/BO_bg.jpg") center no-repeat;
+    background-size: cover;
     height: 79.2vh!important;
 }
 .content-container{
@@ -169,6 +171,7 @@ table tr td:last-of-type{
         color:white;
         font-size: 3.6rem;
     }
+
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -178,7 +181,9 @@ table tr td:last-of-type{
 
 /* X-Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-
+    .accueil-bg-img{
+        background-position-x: -30vh;
+    }
 }
 
 /* XX-Large devices (larger desktops, 1400px and up) */
