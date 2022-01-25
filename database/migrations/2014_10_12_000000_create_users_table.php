@@ -11,16 +11,38 @@ class CreateUsersTable extends Migration
      *
      * @return void
      */
+    // public function up()
+    // {
+    //     Schema::create('users', function (Blueprint $table) {
+    //         $table->id();
+    //         $table->string('username');
+    //         $table->string('email')->unique();
+    //         $table->string('password');
+    //     });
+    // }
+
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
+            // $table->bigIncrements('id_user');
             $table->id();
-            $table->string('name');
+            $table->string('firstname');
+            $table->string('lastname');
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->rememberToken();
-            $table->timestamps();
+            $table->string('username')->unique();
+            $table->string('niv_etude');
+            $table->string('classe');
+            $table->string('section');
+            $table->string('sexe');
+            $table->integer('age');
+            $table->tinyInteger('scolarise');
+            $table->string('etablissement');
+            $table->tinyInteger('salarie');
+            $table->string('emploi_actuel');
+            $table->string('specialite');
+            $table->string('etat');
+            $table->string('emploi_envisage');
         });
     }
 
