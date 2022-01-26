@@ -11,6 +11,7 @@
                 <div class="container-fluid">
                     <form action="" method="post">
                         {{-- first part of the form --}}
+             
 
                         <h6 class="text-center form-title">Identité</h6>
                         <div class="form-row d-flex justify-content-between">
@@ -19,6 +20,7 @@
                                 <input type="text" class="form-control" id="InputId" placeholder="identifiant ou adresse mail">
                             </div>
                         </div>
+
                         <div class="form-row d-flex justify-content-between">
                             <div class="form-group col-12 col-md-5 col-lg-5">
                                 <label for="inputName">Nom</label>

@@ -1,0 +1,61 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateResponseIrmr3sTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('response_irmr3s', function (Blueprint $table) {
+            $table->engine = "InnoDB";
+            $table->uuid('id')->primary();
+            $table->foreignUuid('member_id')->index();
+            $table->foreign('member_id')
+                ->references('id')->on('members')
+                ->onDelete('cascade')->onUpdate('cascade');
+            $table->string('response');
+
+            $table->foreignUuid('type_id')->index();
+            $table->foreign('type_id')
+                ->references('id')->on('types')
+                ->onDelete('cascade')->onUpdate('cascade');
+
+
+            $table->foreignUuid('question_id')->index();
+            $table->foreign('question_id')
+                ->references('id')->on('question_a_s')
+                ->onDelete('cascade')->onUpdate('cascade');
+
+            $table->foreignUuid('date_participation_id')->index();
+            $table->foreign('date_participation_id')
+                ->references('id')->on('date_participations')
+                ->onDelete('cascade')->onUpdate('cascade');
+
+
+            // $table->foreignUuid('irmr3_id')->index();
+            // $table->foreign('irmr3_id')
+            //     ->references('id')->on('irmr3s')
+            //     ->onDelete('cascade')->onUpdate('cascade');
+            $table->string('followedBy');
+            $table->float('score', 3, 2);
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('response_irmr3s');
+    }
+}

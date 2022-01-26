@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Validation\Rules;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
@@ -119,12 +120,14 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit($user)
     {
+        $user = DB::table('users')->where('id', $user)->first();
         // if (!Gate::allows('edit-user', $user)) {
         //     abort(403);
         // }
         // $categories = ::all();
+        // $user = ['prenom' => 'jean'];
         return view('admin.user_edit', compact('user'));
     }
 

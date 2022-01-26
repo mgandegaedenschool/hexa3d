@@ -43,15 +43,15 @@ Route::get('/admin/admin', function () {
     return view('admin.admin');
 });
 
-Route::get('admin/user_index', 'App\Http\Controllers\UserController@index')->name('admin.index');
-Route::get('admin/user_create', 'App\Http\Controllers\UserController@create')->name('admin.create');
-Route::post('admin/user_store', 'App\Http\Controllers\UserController@store')->name('admin.store');
+Route::get('/admin/user_index', 'App\Http\Controllers\UserController@index')->name('admin.index');
+Route::get('/admin/user_create', 'App\Http\Controllers\UserController@create')->name('admin.create');
+Route::post('/admin/user_store', 'App\Http\Controllers\UserController@store')->name('admin.store');
 
-Route::get('admin/user_edit', 'App\Http\Controllers\UserController@edit')->name('admin.edit');
-Route::post('admin/user_update', 'App\Http\Controllers\UserController@update')->name('admin.update');
+Route::get('/admin/user_edit/{id}', 'App\Http\Controllers\UserController@edit')->name('admin.edit');
+Route::post('/admin/user_update/{id}', 'App\Http\Controllers\UserController@update')->name('admin.update');
 
-Route::get('admin/user_show', 'App\Http\Controllers\UserController@show')->name('admin.show');
-Route::post('admin/user_delete', 'App\Http\Controllers\UserController@destroy')->name('admin.delete');
+Route::get('/admin/user_show/{id}', 'App\Http\Controllers\UserController@show')->name('admin.show');
+Route::post('/admin/user_delete/{id}', 'App\Http\Controllers\UserController@destroy')->name('admin.delete');
 
 
 
@@ -88,6 +88,4 @@ Route::post('/{token_participation}/test', [TestController::class, 'update'])->n
 // Route::resource('admin', UserController::class);
 
 // Route::post('/{id_patient}/', [ParticipationController::class, 'store'])->name('participation.store');
-require __DIR__ . '/auth.php';
-
 require __DIR__ . '/auth.php';
