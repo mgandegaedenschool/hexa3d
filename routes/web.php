@@ -36,4 +36,58 @@ Route::get('test', 'TestHexa3dController@index')->name('test.index');
 Route::get('register/create-step-three', 'App\Http\Controllers\RegisteredUserController@createStepThree')->name('register.create.step.three');
 Route::post('register/create-step-three', 'App\Http\Controllers\RegisteredUserController@postCreateStepThree')->name('register.create.step.three.post');
 
+
+
+
+Route::get('/admin/admin', function () {
+    return view('admin.admin');
+});
+
+Route::get('admin/user_index', 'App\Http\Controllers\UserController@index')->name('admin.index');
+Route::get('admin/user_create', 'App\Http\Controllers\UserController@create')->name('admin.create');
+Route::post('admin/user_store', 'App\Http\Controllers\UserController@store')->name('admin.store');
+
+Route::get('admin/user_edit', 'App\Http\Controllers\UserController@edit')->name('admin.edit');
+Route::post('admin/user_update', 'App\Http\Controllers\UserController@update')->name('admin.update');
+
+Route::get('admin/user_show', 'App\Http\Controllers\UserController@show')->name('admin.show');
+Route::post('admin/user_delete', 'App\Http\Controllers\UserController@destroy')->name('admin.delete');
+
+
+
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/pdf', [PDFController::class, 'showPDF'])->name('pdf.index');
+Route::get('/pdf/create', [PDFController::class, 'createPDF'])->name('pdf.create');
+
+
+Route::get('/dashboard/create', [PatientController::class, 'create'])->name('patient.create');
+Route::post('/dashboard/create', [PatientController::class, 'store'])->name('patient.store');
+
+Route::get('/dashboard/{id_patient?}', [DashboardController::class, 'index'])->name('dashboard.index');
+Route::post('/dashboard/{id_patient?}/update', [PatientController::class, 'update'])->name('patient.update');
+
+
+// Route::get('/{token_participation}', [ParticipationController::class, 'index'])->name('participation');
+// Route::get('/{token_participation}', '\App\Http\Controllers\ParticipationController@index');
+Route::post('/{token_participation}/update/', [ParticipationController::class, 'update'])->name('participation.update');
+Route::post('/{id_participation}/delete/', [ParticipationController::class, 'delete'])->name('participation.delete');
+Route::post('/{id_participation}/reset/', [ParticipationController::class, 'reset'])->name('participation.reset');
+
+Route::get('/{token_participation}/example', [ExampleController::class, 'index'])->name('participation.example');
+Route::post('/{token_participation}/example', [ExampleController::class, 'store'])->name('participation.example.store');
+
+Route::get('/{token_participation}/test', [TestController::class, 'show'])->name('participation.test');
+Route::post('/{token_participation}/test', [TestController::class, 'update'])->name('participation.test.update');
+
+
+// Route::middleware(['admin'])->group(function () {
+//     Route::get('admin', UserController::class);
+// });
+// Route::resource('admin', UserController::class);
+
+// Route::post('/{id_patient}/', [ParticipationController::class, 'store'])->name('participation.store');
+require __DIR__ . '/auth.php';
+
 require __DIR__ . '/auth.php';
