@@ -62,12 +62,12 @@
 
         <div class="content-container container-fluid">
             <div class="d-flex align-items-center justify-content-between flex-column flex-md-row flex-lg-row">
-                <h2 class="div-users-title my-5 d-inline-block">Table des types</h2>
-
+                <h2 class="div-title my-5 d-inline-block">Table des tests</h2>
+                @include('admin.test_create_inc')
             </div>
 
             <div class="d-flex justify-content-between flex-wrap mb-4">
-                <div class="show-users-select mr-md-4 pt-4">
+                <div class="show-select mr-md-4 pt-4">
                     <!-- si vous avez besoin d'un formulaire pour le nombre de membres à afficher -->
                     <form action="">
                         Show <select name="" id="">
@@ -77,7 +77,7 @@
                         </select> entries
                     </form>
                 </div>
-                <div class="search-users pt-4">
+                <div class="search-container pt-4">
                     Search :
                     <!-- si vous avez besoin d'un formulaire pour les recherches -->
                     <form action="" method="" class="ml-2">
@@ -85,59 +85,29 @@
                     </form>
                 </div>
             </div>
-            <div class="users-container d-flex">
+            <div class="d-flex w-100 justify-content-center">
                 <table class="table table-hover w-auto table-bordered table-users table-responsive mb-0">
                     <thead>
                     <tr>
-                        <th scope="col">id_user</th>
-                        <th scope="col">name_user</th>
-                        <th scope="col">email</th>
-                        <th scope="col">username</th>
-                        <th scope="col">niv_etude</th>
-                        <th scope="col">classe</th>
-                        <th scope="col">section</th>
-                        <th scope="col">sexe</th>
-                        <th scope="col">age</th>
-                        <th scope="col">scolarisé</th>
-                        <th scope="col">établissement</th>
-                        <th scope="col">salarié</th>
-                        <th scope="col">emploi_actuel</th>
-                        <th scope="col">spécialité</th>
-                        <th scope="col">état</th>
-                        <th scope="col">emploi_envisagé</th>
-
+                        <th scope="col">actions</th>
+                        <th scope="col">id_test</th>
+                        <th scope="col">libelle_test</th>
+                        <th scope="col">id_type</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
+                        <td class="no-defil">
+                            <a href="{{route('admin.test_show')}}"><i class="far fa-eye user-tab-icon"></i></a>
+                            <a href="{{route('admin.test_edit')}}"><i class="fas fa-pen user-tab-icon"></i></a>
+                            <a href=""><i class="far fa-trash-alt user-tab-icon"  onclick="return(confirm('Voulez-vous vraiment supprimer les données?'))"></i></a>
+                        </td>
                         <td>1</td>
                         <td>Mark</td>
                         <td>Mark@gmail.com</td>
-                        <td>Mark123</td>
-                        <td>lycée</td>
-                        <td>seconde</td>
-                        <td>?</td>
-                        <td>homme</td>
-                        <td>15</td>
-                        <td>oui</td>
-                        <td>Lycée Henri IV</td>
-                        <td>non</td>
-                        <td>?</td>
-                        <td>anglais</td>
-                        <td>célibataire</td>
-                        <td>boucher</td>
-
                     </tr>
                     </tbody>
                 </table>
-                <div class="no-defil">
-                    <p>actions</p>
-                    <div>
-                        <a href=""><i class="far fa-eye user-tab-icon"></i></a>
-                        <a href="" data-toggle="modal" data-target="#userEdit"><i class="fas fa-pen user-tab-icon"></i></a>
-                        <a href=""><i class="far fa-trash-alt user-tab-icon"  onclick="return(confirm('Voulez-vous vraiment supprimer les données?'))"></i></a>
-                    </div>
-                </div>
             </div>
 
 

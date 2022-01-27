@@ -1,5 +1,7 @@
 @extends('app')
+
 @section('content')
+
     <header class="upper-container">
         <div class="container header-contain">
             <div class="row d-flex align-items-center img-text-nav two-img-nav py-3">
@@ -13,14 +15,17 @@
         </div>
     </header>
     <main class="dashboard-layout">
+
         <div class="top-content p-4 align-items-center">
             <div class="options">
                 <a href="#"><i class="fas fa-plus"></i> New</a>
             </div>
+            <h1 class="text-center bo-title">Modifier la partie</h1>
             <div class="admin-account">
                 <a href="#">Bonjour, Admin</a>
             </div>
         </div>
+
         <aside class="pb-4">
             <ul class="nav flex-column">
                 <li class="nav-item">
@@ -55,9 +60,34 @@
                 </li>
             </ul>
         </aside>
-        <div class="content-container container-fluid d-flex justify-content-center">
 
+        <div class="content-container container-fluid">
+            <div class="d-flex align-items-center justify-content-between flex-column">
+                <h2 class="div-users-title my-5 d-inline-block">Editer une partie</h2>
 
+                <div class="container-fluid py-4">
+                    <form action="" method="post" class="px-md-4 px-lg-4">
+                        {{-- first part of the form --}}
+
+                        <div class="form-row d-flex justify-content-between">
+                            <div class="form-group col-12 col-md-5 col-lg-5">
+                                <label for="num_partie">Num partie</label>
+                                <input type="text" class="form-control" id="num_partie" placeholder="num_partie">
+                            </div>
+                            <div class="form-group col-12 col-md-5 col-lg-5">
+                                <label for="libelle_partie">Libellé partie</label>
+                                <input type="text" class="form-control" id="libelle_partie" placeholder="libelle_partie">
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-end">
+                            <input type="submit" class="btn btn-secondary btn-lg mx-2" value="Annuler">
+                            <input type="submit" class="btn btn-primary btn-lg mx-2" value="Modifier le membre">
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </main>
+
 @endsection

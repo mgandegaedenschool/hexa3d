@@ -96,7 +96,6 @@
 .test-ongoing{
     color:var(--orange);
 }
-
 .test-to-begin{
     color:var(--gray);
 }
@@ -106,6 +105,14 @@
 .fa-spinner{
     margin-right: 5px;
 }
+
+.info-block:not(.personal-infos){
+    border-top: 2px solid var(--purple);
+}
+.edit-btn{
+    color: white;
+}
+
 /* media queries */
 @media (min-width: 576px) {
     .dropped-information{
@@ -116,7 +123,7 @@
         flex-wrap: wrap;
         margin-bottom: 2rem;
     }
-    .user-informations{
+    .user-informations:not(.user-show-info){
         width: 50%;
     }
     .user-informations p {
@@ -133,7 +140,10 @@
 }
 
 @media (min-width: 992px) {
-
+    .info-block:not(.personal-infos){
+        border-top: none;
+        border-left: 2px solid var(--purple);
+    }
 }
 
 @media (min-width: 1200px) {

@@ -42,10 +42,6 @@ Route::get('admin/user_index', function(){
     return view('admin.user_index');
 })->name('admin.user_index');
 
-Route::get('admin/user_create', function(){
-    return view('admin.user_create');
-})->name('admin.user_create');
-
 Route::post('admin/user_delete', function(){
     return view('admin.user_delete');
 })->name('admin.user_delete');
@@ -62,7 +58,7 @@ Route::get('admin/user_edit', function(){
     return view('admin.user_edit');
 })->name('admin.user_edit');
 
-Route::get('admin/user_show', function(){
+Route::get('admin/user_show/{id}', function(){
     return view('admin.user_show');
 })->name('admin.user_show');
 
@@ -73,10 +69,6 @@ Route::get('admin/domaine_index', function(){
 Route::get('admin/domaine_edit', function(){
     return view('admin.domaine_edit');
 })->name('admin.domaine_edit');
-
-Route::get('admin/domaine_create', function(){
-    return view('admin.domaine_create');
-})->name('admin.domaine_create');
 
 Route::get('admin/domaine_show', function(){
     return view('admin.domaine_show');
@@ -103,10 +95,6 @@ Route::get('admin/etalonnage_edit', function(){
     return view('admin.etalonnage_edit');
 })->name('admin.etalonnage_edit');
 
-Route::get('admin/etalonnage_create', function(){
-    return view('admin.etalonnage_create');
-})->name('admin.etalonnage_create');
-
 Route::get('admin/etalonnage_show', function(){
     return view('admin.etalonnage_show');
 })->name('admin.etalonnage_show');
@@ -131,10 +119,6 @@ Route::get('admin/participation_index', function(){
 Route::get('admin/participation_edit', function(){
     return view('admin.participation_edit');
 })->name('admin.participation_edit');
-
-Route::get('admin/participation_create', function(){
-    return view('admin.participation_create');
-})->name('admin.participation_create');
 
 Route::get('admin/participation_show', function(){
     return view('admin.participation_show');
@@ -161,10 +145,6 @@ Route::get('admin/partie_edit', function(){
     return view('admin.partie_edit');
 })->name('admin.partie_edit');
 
-Route::get('admin/partie_create', function(){
-    return view('admin.partie_create');
-})->name('admin.partie_create');
-
 Route::get('admin/partie_show', function(){
     return view('admin.partie_show');
 })->name('admin.partie_show');
@@ -189,10 +169,6 @@ Route::get('admin/question_index', function(){
 Route::get('admin/question_edit', function(){
     return view('admin.question_edit');
 })->name('admin.question_edit');
-
-Route::get('admin/question_create', function(){
-    return view('admin.question_create');
-})->name('admin.question_create');
 
 Route::get('admin/question_show', function(){
     return view('admin.question_show');
@@ -219,10 +195,6 @@ Route::get('admin/reponse_edit', function(){
     return view('admin.reponse_edit');
 })->name('admin.reponse_edit');
 
-Route::get('admin/reponse_create', function(){
-    return view('admin.reponse_create');
-})->name('admin.reponse_create');
-
 Route::get('admin/reponse_show', function(){
     return view('admin.reponse_show');
 })->name('admin.reponse_show');
@@ -248,10 +220,6 @@ Route::get('admin/test_edit', function(){
     return view('admin.test_edit');
 })->name('admin.test_edit');
 
-Route::get('admin/test_create', function(){
-    return view('admin.test_create');
-})->name('admin.test_create');
-
 Route::get('admin/test_show', function(){
     return view('admin.test_show');
 })->name('admin.test_show');
@@ -276,10 +244,6 @@ Route::get('admin/type_index', function(){
 Route::get('admin/type_edit', function(){
     return view('admin.type_edit');
 })->name('admin.type_edit');
-
-Route::get('admin/type_create', function(){
-    return view('admin.type_create');
-})->name('admin.type_create');
 
 Route::get('admin/type_show', function(){
     return view('admin.type_show');

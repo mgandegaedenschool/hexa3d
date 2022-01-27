@@ -54,19 +54,19 @@ aside{
     background-color:#ffffff;
 }
 
-.show-users-select select{
+.show-select select{
     padding: 5px 10px;
     background-color: #ffffff;
     border:1px solid var(--black);
     border-radius: 0.3rem;
 }
-.search-users{
+.search-container{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
 }
 
-.search-users input{
+.search-container input{
     background-color: #ffffff;
     border:1px solid var(--black);
     border-radius: 0.3rem;
