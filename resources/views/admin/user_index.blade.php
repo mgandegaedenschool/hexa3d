@@ -1,6 +1,7 @@
 @extends('app')
 
 @section('content')
+
     <header class="upper-container">
         <div class="container header-contain">
             <div class="row d-flex align-items-center img-text-nav two-img-nav py-3">
@@ -91,7 +92,8 @@
                     <tr>
                         <th scope="col">actions</th>
                         <th scope="col">id_user</th>
-                        <th scope="col">name_user</th>
+                        <th scope="col">first name</th>
+                        <th scope="col">last name</th>
                         <th scope="col">email</th>
                         <th scope="col">username</th>
                         <th scope="col">niv_etude</th>
@@ -110,30 +112,34 @@
                     </tr>
                     </thead>
                     <tbody>
+                    @foreach($users as $user)
+
                     <tr>
                         <td class="no-defil">
                             <a href="{{route('admin.user_show',1)}}"><i class="far fa-eye user-tab-icon"></i></a>
-                            <a href="{{route('admin.user_edit')}}"><i class="fas fa-pen user-tab-icon"></i></a>
+                            <a href="{{route('admin.user_edit',1)}}"><i class="fas fa-pen user-tab-icon"></i></a>
                             <a href=""><i class="far fa-trash-alt user-tab-icon"  onclick="return(confirm('Voulez-vous vraiment supprimer les données?'))"></i></a>
                         </td>
-                        <td>1</td>
-                        <td>Mark</td>
-                        <td>Mark@gmail.com</td>
-                        <td>Mark123</td>
-                        <td>lycée</td>
-                        <td>seconde</td>
-                        <td>?</td>
-                        <td>homme</td>
-                        <td>15</td>
-                        <td>oui</td>
-                        <td>Lycée Henri IV</td>
-                        <td>non</td>
-                        <td>?</td>
-                        <td>anglais</td>
-                        <td>célibataire</td>
-                        <td>boucher</td>
-
+                        <td>{{$user->id}}</td>
+                        <td>{{$user->firstname}}</td>
+                        <td>{{$user->lastname}}</td>
+                        <td>{{$user->email}}</td>
+                        <td>{{$user->username}}</td>
+                        <td>{{$user->niv_etude}}</td>
+                        <td>{{$user->classe}}</td>
+                        <td>{{$user->section}}</td>
+                        <td>{{$user->sexe}}</td>
+                        <td>{{$user->age}}</td>
+                        <td>{{$user->scolarise}}</td>
+                        <td>{{$user->etablissement}}</td>
+                        <td>{{$user->salarie}}</td>
+                        <td>{{$user->emploi_actuel}}</td>
+                        <td>{{$user->specialite}}</td>
+                        <td>{{$user->etat}}</td>
+                        <td>{{$user->emploi_envisage}}</td>
                     </tr>
+
+                    @endforeach
                     </tbody>
                 </table>
             </div>

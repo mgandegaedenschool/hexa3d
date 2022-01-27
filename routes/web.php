@@ -38,228 +38,99 @@ Route::get('admin/admin', function(){
     return view('admin.admin');
 })->name('admin.admin');
 
-Route::get('admin/user_index', function(){
-    return view('admin.user_index');
-})->name('admin.user_index');
+Route::get('/admin/user_index', 'App\Http\Controllers\UserController@index')->name('admin.user_index');
+Route::get('/admin/user_create', 'App\Http\Controllers\UserController@create')->name('admin.user_create');
+Route::post('/admin/user_store', 'App\Http\Controllers\UserController@store')->name('admin.user_store');
 
-Route::post('admin/user_delete', function(){
-    return view('admin.user_delete');
-})->name('admin.user_delete');
+Route::get('/admin/user_edit/{id}', 'App\Http\Controllers\UserController@edit')->name('admin.user_edit');
+Route::post('/admin/user_update/{id}', 'App\Http\Controllers\UserController@update')->name('admin.user_update');
 
-Route::post('admin/user_store', function(){
-    return view('admin.user_store');
-})->name('admin.user_store');
+Route::get('/admin/user_show/{id}', 'App\Http\Controllers\UserController@show')->name('admin.user_show');
+Route::post('/admin/user_delete/{id}', 'App\Http\Controllers\UserController@destroy')->name('admin.user_delete');
 
-Route::post('admin/user_update', function(){
-    return view('admin.user_update');
-})->name('admin.user_update');
+/***** DOMAINE ROUTES *****/
+Route::get('/admin/domaine_index', 'App\Http\Controllers\UserController@index')->name('admin.domaine_index');
+Route::get('/admin/domaine_create', 'App\Http\Controllers\UserController@create')->name('admin.domaine_create');
+Route::post('/admin/domaine_store', 'App\Http\Controllers\UserController@store')->name('admin.domaine_store');
 
-Route::get('admin/user_edit', function(){
-    return view('admin.user_edit');
-})->name('admin.user_edit');
+Route::get('/admin/domaine_edit/{id}', 'App\Http\Controllers\UserController@edit')->name('admin.domaine_edit');
+Route::post('/admin/domaine_update/{id}', 'App\Http\Controllers\UserController@update')->name('admin.domaine_update');
 
-Route::get('admin/user_show/{id}', function(){
-    return view('admin.user_show');
-})->name('admin.user_show');
+Route::get('/admin/domaine_show/{id}', 'App\Http\Controllers\UserController@show')->name('admin.domaine_show');
+Route::post('/admin/domaine_delete/{id}', 'App\Http\Controllers\UserController@destroy')->name('admin.domaine_delete');
 
-Route::get('admin/domaine_index', function(){
-    return view('admin.domaine_index');
-})->name('admin.domaine_index');
+/* Etalonnage route */
+Route::get('/admin/etalonnage_index', 'App\Http\Controllers\UserController@index')->name('admin.etalonnage_index');
+Route::get('/admin/etalonnage_create', 'App\Http\Controllers\UserController@create')->name('admin.etalonnage_create');
+Route::post('/admin/etalonnage_store', 'App\Http\Controllers\UserController@store')->name('admin.etalonnage_store');
 
-Route::get('admin/domaine_edit', function(){
-    return view('admin.domaine_edit');
-})->name('admin.domaine_edit');
+Route::get('/admin/etalonnage_edit/{id}', 'App\Http\Controllers\UserController@edit')->name('admin.etalonnage_edit');
+Route::get('/admin/etalonnage_show/{id}', 'App\Http\Controllers\UserController@show')->name('admin.etalonnage_show');
+Route::post('/admin/etalonnage_update/{id}', 'App\Http\Controllers\UserController@update')->name('admin.etalonnage_update');
+Route::post('/admin/etalonnage_delete/{id}', 'App\Http\Controllers\UserController@destroy')->name('admin.etalonnage_delete');
 
-Route::get('admin/domaine_show', function(){
-    return view('admin.domaine_show');
-})->name('admin.domaine_show');
+/* Participation route */
+Route::get('/admin/participation_index', 'App\Http\Controllers\UserController@index')->name('admin.participation_index');
+Route::get('/admin/participation_create', 'App\Http\Controllers\UserController@create')->name('admin.participation_create');
+Route::post('/admin/participation_store', 'App\Http\Controllers\UserController@store')->name('admin.participation_store');
 
-Route::post('admin/domaine_update', function(){
-    return view('admin.domaine_update');
-})->name('admin.domaine_update');
+Route::get('/admin/participation_edit/{id}', 'App\Http\Controllers\UserController@edit')->name('admin.participation_edit');
+Route::get('/admin/participation_show/{id}', 'App\Http\Controllers\UserController@show')->name('admin.participation_show');
+Route::post('/admin/participation_update/{id}', 'App\Http\Controllers\UserController@update')->name('admin.participation_update');
+Route::post('/admin/participation_delete/{id}', 'App\Http\Controllers\UserController@destroy')->name('admin.participation_delete');
 
-Route::post('admin/domaine_delete', function(){
-    return view('admin.domaine_delete');
-})->name('admin.domaine_delete');
+/* Partie route */
+Route::get('/admin/partie_index', 'App\Http\Controllers\UserController@index')->name('admin.partie_index');
+Route::get('/admin/partie_create', 'App\Http\Controllers\UserController@create')->name('admin.partie_create');
+Route::post('/admin/partie_store', 'App\Http\Controllers\UserController@store')->name('admin.partie_store');
 
-Route::post('admin/domaine_store', function(){
-    return view('admin.domaine_store');
-})->name('admin.domaine_store');
+Route::get('/admin/partie_edit/{id}', 'App\Http\Controllers\UserController@edit')->name('admin.partie_edit');
+Route::get('/admin/partie_show/{id}', 'App\Http\Controllers\UserController@show')->name('admin.partie_show');
+Route::post('/admin/partie_update/{id}', 'App\Http\Controllers\UserController@update')->name('admin.partie_update');
+Route::post('/admin/partie_delete/{id}', 'App\Http\Controllers\UserController@destroy')->name('admin.partie_delete');
 
+/* Question route */
+Route::get('/admin/question_index', 'App\Http\Controllers\UserController@index')->name('admin.question_index');
+Route::get('/admin/question_create', 'App\Http\Controllers\UserController@create')->name('admin.question_create');
+Route::post('/admin/question_store', 'App\Http\Controllers\UserController@store')->name('admin.question_store');
 
-Route::get('admin/etalonnage_index', function(){
-    return view('admin.etalonnage_index');
-})->name('admin.etalonnage_index');
+Route::get('/admin/question_edit/{id}', 'App\Http\Controllers\UserController@edit')->name('admin.question_edit');
+Route::get('/admin/question_show/{id}', 'App\Http\Controllers\UserController@show')->name('admin.question_show');
+Route::post('/admin/question_update/{id}', 'App\Http\Controllers\UserController@update')->name('admin.question_update');
+Route::post('/admin/question_delete/{id}', 'App\Http\Controllers\UserController@destroy')->name('admin.question_delete');
 
-Route::get('admin/etalonnage_edit', function(){
-    return view('admin.etalonnage_edit');
-})->name('admin.etalonnage_edit');
+/***** REPONSE ROUTES *****/
+Route::get('/admin/reponse_index', 'App\Http\Controllers\UserController@index')->name('admin.reponse_index');
+Route::get('/admin/reponse_create', 'App\Http\Controllers\UserController@create')->name('admin.reponse_create');
+Route::post('/admin/reponse_store', 'App\Http\Controllers\UserController@store')->name('admin.reponse_store');
 
-Route::get('admin/etalonnage_show', function(){
-    return view('admin.etalonnage_show');
-})->name('admin.etalonnage_show');
+Route::get('/admin/reponse_edit/{id}', 'App\Http\Controllers\UserController@edit')->name('admin.reponse_edit');
+Route::post('/admin/reponse_update/{id}', 'App\Http\Controllers\UserController@update')->name('admin.reponse_update');
 
-Route::post('admin/etalonnage_update', function(){
-    return view('admin.etalonnage_update');
-})->name('admin.etalonnage_update');
+Route::get('/admin/reponse_show/{id}', 'App\Http\Controllers\UserController@show')->name('admin.reponse_show');
+Route::post('/admin/reponse_delete/{id}', 'App\Http\Controllers\UserController@destroy')->name('admin.reponse_delete');
 
-Route::post('admin/etalonnage_delete', function(){
-    return view('admin.etalonnage_delete');
-})->name('admin.etalonnage_delete');
+/***** TEST ROUTES *****/
+Route::get('/admin/test_index', 'App\Http\Controllers\UserController@index')->name('admin.test_index');
+Route::get('/admin/test_create', 'App\Http\Controllers\UserController@create')->name('admin.test_create');
+Route::post('/admin/test_store', 'App\Http\Controllers\UserController@store')->name('admin.test_store');
 
-Route::post('admin/etalonnage_store', function(){
-    return view('admin.etalonnage_store');
-})->name('admin.etalonnage_store');
+Route::get('/admin/test_edit/{id}', 'App\Http\Controllers\UserController@edit')->name('admin.test_edit');
+Route::post('/admin/test_update/{id}', 'App\Http\Controllers\UserController@update')->name('admin.test_update');
 
+Route::get('/admin/test_show/{id}', 'App\Http\Controllers\UserController@show')->name('admin.test_show');
+Route::post('/admin/test_delete/{id}', 'App\Http\Controllers\UserController@destroy')->name('admin.test_delete');
 
-Route::get('admin/participation_index', function(){
-    return view('admin.participation_index');
-})->name('admin.participation_index');
+/***** TYPE ROUTES *****/
+Route::get('/admin/type_index', 'App\Http\Controllers\UserController@index')->name('admin.type_index');
+Route::get('/admin/type_create', 'App\Http\Controllers\UserController@create')->name('admin.type_create');
+Route::post('/admin/type_store', 'App\Http\Controllers\UserController@store')->name('admin.type_store');
 
-Route::get('admin/participation_edit', function(){
-    return view('admin.participation_edit');
-})->name('admin.participation_edit');
+Route::get('/admin/type_edit/{id}', 'App\Http\Controllers\UserController@edit')->name('admin.type_edit');
+Route::post('/admin/type_update/{id}', 'App\Http\Controllers\UserController@update')->name('admin.type_update');
 
-Route::get('admin/participation_show', function(){
-    return view('admin.participation_show');
-})->name('admin.participation_show');
-
-Route::post('admin/participation_update', function(){
-    return view('admin.participation_update');
-})->name('admin.participation_update');
-
-Route::post('admin/participation_delete', function(){
-    return view('admin.participation_delete');
-})->name('admin.participation_delete');
-
-Route::post('admin/participation_store', function(){
-    return view('admin.participation_store');
-})->name('admin.participation_store');
-
-
-Route::get('admin/partie_index', function(){
-    return view('admin.partie_index');
-})->name('admin.partie_index');
-
-Route::get('admin/partie_edit', function(){
-    return view('admin.partie_edit');
-})->name('admin.partie_edit');
-
-Route::get('admin/partie_show', function(){
-    return view('admin.partie_show');
-})->name('admin.partie_show');
-
-Route::post('admin/partie_update', function(){
-    return view('admin.partie_update');
-})->name('admin.partie_update');
-
-Route::post('admin/partie_delete', function(){
-    return view('admin.partie_delete');
-})->name('admin.partie_delete');
-
-Route::post('admin/partie_store', function(){
-    return view('admin.partie_store');
-})->name('admin.partie_store');
-
-
-Route::get('admin/question_index', function(){
-    return view('admin.question_index');
-})->name('admin.question_index');
-
-Route::get('admin/question_edit', function(){
-    return view('admin.question_edit');
-})->name('admin.question_edit');
-
-Route::get('admin/question_show', function(){
-    return view('admin.question_show');
-})->name('admin.question_show');
-
-Route::post('admin/question_update', function(){
-    return view('admin.question_update');
-})->name('admin.question_update');
-
-Route::post('admin/question_delete', function(){
-    return view('admin.question_delete');
-})->name('admin.question_delete');
-
-Route::post('admin/question_store', function(){
-    return view('admin.question_store');
-})->name('admin.question_store');
-
-
-Route::get('admin/reponse_index', function(){
-    return view('admin.reponse_index');
-})->name('admin.reponse_index');
-
-Route::get('admin/reponse_edit', function(){
-    return view('admin.reponse_edit');
-})->name('admin.reponse_edit');
-
-Route::get('admin/reponse_show', function(){
-    return view('admin.reponse_show');
-})->name('admin.reponse_show');
-
-Route::post('admin/reponse_update', function(){
-    return view('admin.reponse_update');
-})->name('admin.reponse_update');
-
-Route::post('admin/reponse_delete', function(){
-    return view('admin.reponse_delete');
-})->name('admin.reponse_delete');
-
-Route::post('admin/reponse_store', function(){
-    return view('admin.reponse_store');
-})->name('admin.reponse_store');
-
-
-Route::get('admin/test_index', function(){
-    return view('admin.test_index');
-})->name('admin.test_index');
-
-Route::get('admin/test_edit', function(){
-    return view('admin.test_edit');
-})->name('admin.test_edit');
-
-Route::get('admin/test_show', function(){
-    return view('admin.test_show');
-})->name('admin.test_show');
-
-Route::post('admin/test_update', function(){
-    return view('admin.test_update');
-})->name('admin.test_update');
-
-Route::post('admin/test_delete', function(){
-    return view('admin.test_delete');
-})->name('admin.test_delete');
-
-Route::post('admin/test_store', function(){
-    return view('admin.test_store');
-})->name('admin.test_store');
-
-
-Route::get('admin/type_index', function(){
-    return view('admin.type_index');
-})->name('admin.type_index');
-
-Route::get('admin/type_edit', function(){
-    return view('admin.type_edit');
-})->name('admin.type_edit');
-
-Route::get('admin/type_show', function(){
-    return view('admin.type_show');
-})->name('admin.type_show');
-
-Route::post('admin/type_update', function(){
-    return view('admin.type_update');
-})->name('admin.type_update');
-
-Route::post('admin/type_delete', function(){
-    return view('admin.type_delete');
-})->name('admin.type_delete');
-
-Route::post('admin/type_store', function(){
-    return view('admin.type_store');
-})->name('admin.type_store');
+Route::get('/admin/type_show/{id}', 'App\Http\Controllers\UserController@show')->name('admin.type_show');
+Route::post('/admin/type_delete/{id}', 'App\Http\Controllers\UserController@destroy')->name('admin.type_delete');
 
 Route::get('/espace_membre', function(){
     return view('espace_membre.espace_membre');
