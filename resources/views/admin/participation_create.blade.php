@@ -17,7 +17,6 @@
             <div class="options">
                 <a href="#"><i class="fas fa-plus"></i> New</a>
             </div>
-            <h1 class="text-center bo-title">Accueil du Back Office</h1>
             <div class="admin-account">
                 <a href="#">Bonjour, Admin</a>
             </div>
@@ -56,7 +55,7 @@
                 </li>
             </ul>
         </aside>
-        <div class="content-container container-fluid d-flex justify-content-center accueil-bg-img">
+        <div class="content-container container-fluid d-flex justify-content-center">
 
 
         </div>

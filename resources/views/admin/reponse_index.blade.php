@@ -19,7 +19,7 @@
             <div class="options">
                 <a href="#"><i class="fas fa-plus"></i> New</a>
             </div>
-            <h1 class="text-center bo-title">Accueil des membres</h1>
+            <h1 class="text-center bo-title">Accueil des réponses</h1>
             <div class="admin-account">
                 <a href="#">Bonjour, Admin</a>
             </div>
@@ -62,7 +62,7 @@
 
         <div class="content-container container-fluid">
             <div class="d-flex align-items-center justify-content-between flex-column flex-md-row flex-lg-row">
-                <h2 class="div-users-title my-5 d-inline-block">Table des membres</h2>
+                <h2 class="div-users-title my-5 d-inline-block">Table des réponses</h2>
                 @include('admin.user_create_inc')
             </div>
 
@@ -133,8 +133,8 @@
                 <div class="no-defil">
                     <p>actions</p>
                     <div>
-                        <a href="{{route('admin.user_show')}}"><i class="far fa-eye user-tab-icon"></i></a>
-                        <a href="{{route('admin.user_edit')}}"><i class="fas fa-pen user-tab-icon"></i></a>
+                        <a href=""><i class="far fa-eye user-tab-icon"></i></a>
+                        <a href="" data-toggle="modal" data-target="#userEdit"><i class="fas fa-pen user-tab-icon"></i></a>
                         <a href=""><i class="far fa-trash-alt user-tab-icon"  onclick="return(confirm('Voulez-vous vraiment supprimer les données?'))"></i></a>
                     </div>
                 </div>
