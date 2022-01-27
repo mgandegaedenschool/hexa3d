@@ -16,7 +16,7 @@
             <div class="modal-body">
                 <div class="container-fluid">
                     <form action="" method="post">
-{{-- first part of the form --}}
+                        {{-- first part of the form --}}
 
                         <h6 class="text-center form-title">Identité</h6>
                         <div class="form-row d-flex justify-content-between">
@@ -56,7 +56,7 @@
                             </div>
                         </div>
 
-{{-- second part of the form --}}
+                        {{-- second part of the form --}}
 
                         <h6 class="text-center form-title mt-4 pt-3 start-form">Scolarité</h6>
                         <div class="form-row">
@@ -105,7 +105,7 @@
                             </div>
                         </div>
 
-{{-- third part of the form --}}
+                        {{-- third part of the form --}}
 
                         <h6 class="text-center form-title mt-4 pt-3 start-form">Professionel</h6>
                         <div class="form-row d-flex justify-content-between">

@@ -1,0 +1,121 @@
+// dashboard psy
+
+.dashboard--psy {
+
+    &.alert {
+        background-color: $pink_light;
+        margin-bottom: 35px;
+
+        .container {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        p {
+            margin: 0;
+            color: $white;
+        }
+
+        button {
+            color: $white;
+            padding: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            font-size: 25px;
+            opacity: 1;
+        }
+    }
+
+    .header {
+        margin-bottom: 35px;
+
+        h1 {
+            color: $text;
+        }
+    }
+
+    .body {
+        .card {
+            margin-bottom: 50px;
+            padding: 20px 30px;
+            border: none;
+            box-shadow: 0px 0px 15px 0px rgba(0,0,0, 0.16);
+
+            .card-header {
+                background-color: $white;
+                border: none;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                h2 {
+                    color: $pink_light;
+                    font-size: 25px;
+                    margin: 0;
+                    vertical-align: middle;
+                }
+
+                button {
+                    width: 50px;
+                    height: 50px;
+                    background-color: $pink_light;
+                    color: $white;
+                    border-radius: 100%;
+                    transition: transform ease .5s;
+
+                    &.collapsed {
+                        transform: rotate(-90deg);
+                    }
+                }
+            }
+
+            .card-body {
+                h3 {
+                    color: $text;
+                }
+
+                .line-head {
+                    margin-bottom: 25px;
+
+                    p {
+                        margin: 0;
+                        color: $text;
+                    }
+                }
+
+                .line-patient {
+                    margin-bottom: 25px;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+
+                    p {
+                        margin: 0;
+                        color: rgba(112, 112, 112, .6);
+                    }
+
+                    &:hover {
+                        cursor: pointer;
+                        
+                        p {
+                            color: $pink_light;
+                        }
+                    }
+                }
+            }
+
+            .card-footer {
+                background-color: $white;
+                border: none;
+
+                .message-alert {
+                    margin: 0;
+                    color: $pink_light;
+                }
+            }
+        }
+    }
+}

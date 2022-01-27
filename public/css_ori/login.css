@@ -1,0 +1,164 @@
+/*********** LOGIN **********/
+
+/* form */
+.form-group > input, .form-group > select{
+    padding: 1.5rem 2rem !important;
+    height: auto;
+    border-radius: 1.7rem;
+}
+.step{
+    font-size: 2.2rem;
+    color: var(--black);
+}
+a.step:active{
+    color: var(--purple);
+    font-weight: bold;
+}
+
+#InputIdLogin, #InputPassword1Login{
+    color: gainsboro;
+    opacity: 0.7;
+    border: 3px solid gainsboro;
+    font-size: 2rem!important;
+}
+
+#InputIdLogin:focus, #InputPassword1Login:focus, #InputMailForgotMail:focus{
+    border-color: var(--purple);
+}
+.main-div
+{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+.purple-btn{
+    background-color:var(--purple);
+    border: var(--purple) 2px solid;
+    color:#ffffff;
+    border-radius: 1.2rem;
+}
+
+.purple-btn:hover{
+    color: var(--purple);
+    background-color: #fff;
+}
+.icon-container-size{
+    display: flex;
+    justify-content: center;
+}
+.icon-container{
+    width: 100%;
+    margin-bottom: 45px;
+}
+.icon-container i{
+    background-color:var(--purple);
+    color:#ffffff;
+    border-radius: 50%;
+    font-size: 7rem;
+    padding: 30px;
+
+}
+
+.form-connexion{
+    width: 100%;
+}
+
+.form-connexion label{
+    font-weight: bold;
+}
+.forgot-password{
+    font-size: 1.3rem;
+    display: flex;
+    flex-direction: column;
+}
+.reset-password-link{
+    color: var(--black);
+    font-weight: bold;
+    width: 100%;
+}
+
+.reset-password-link:hover{
+    color:var(--purple);
+}
+.fa-user{
+    width: 130px;
+    height: 130px;
+    text-align: center;
+}
+.password-form{
+    max-width: 100%;
+    box-shadow: 0px 0px 5px gray;
+    background-color: white;
+    border-radius: 1.6rem;
+}
+.password-form-header {
+    margin-bottom: 20px;
+}
+.password-form-header h1{
+    font-size: 2.4rem;
+    font-weight: normal;
+    text-align: center;
+}
+.password-form-body{
+
+}
+.password-form-input{
+    margin-bottom: 30px;
+    padding: 0;
+}
+.send-password-link-btn{
+}
+/* media queries */
+@media (min-width: 576px) {
+    .purple-btn{
+        /* padding: 18px 70px; */
+        border-radius: 1.7rem;
+        font-size: 2rem!important;
+    }
+    #InputPassword1Login, #InputIdLogin{
+        /*font-size: 2.5rem !important;*/
+    }
+    .form-connexion label{
+        padding-left: 2rem!important;
+        /*font-size: 1.6rem;*/
+        width: 55%;
+    }
+    .forgot-password{
+        font-size: 1.6rem!important;
+        display: block;
+    }
+    .send-password-link-btn{
+        max-width: 100%;
+        font-size: 1.7rem!important;
+        padding: 5px 30px!important;
+    }
+}
+
+@media (min-width: 768px) {
+    .form-connexion{
+        width: 55%;
+    }
+    .password-form{
+        width: 80%;
+    }
+}
+
+@media (min-width: 992px) {
+    .form-connexion{
+        width: 40%;
+    }
+    .password-form{
+        width: 60%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .password-form{
+        width: 50%;
+    }
+}
+
+@media (min-width: 1400px) {
+
+}

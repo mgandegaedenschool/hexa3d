@@ -22,16 +22,16 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->string('username')->unique();
             $table->string('niv_etude');
-            $table->string('classe');
-            $table->string('section');
+            $table->string('classe')->nullable();
+            $table->string('section')->nullable();
             $table->string('sexe');
             $table->integer('age');
             $table->tinyInteger('scolarise');
-            $table->string('etablissement');
+            $table->string('etablissement')->nullable();
             $table->tinyInteger('salarie');
             $table->string('emploi_actuel');
             $table->string('specialite');
-            $table->string('etat');
+            $table->string('etat')->nullable();
             $table->string('emploi_envisage');
         });
     }

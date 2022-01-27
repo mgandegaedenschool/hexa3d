@@ -112,6 +112,8 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
+        $user = $affected = DB::table('users')
+        ->where('id', 1)->first();
         return view('admin.user_show', compact('user'));
     }
 
@@ -137,15 +139,31 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, $id)
     {
         // if (!Gate::allows('update-post', $user)) {
         //     abort(403);
         // }
         $arrayUpdate = [
-            'status' => $request->status,
-            'state' => $request->state
+            'firstname' => $request->firstname,
+            'lastname' =>  $request->lastname,
+            'email' =>  $request->email,
+            'username' =>  $request->username,
+            'niv_etude' =>  $request->niv_etude,
+            'classe' =>  $request->classe,
+            'section' =>  $request->section,
+            'sexe' =>  $request->sexe,
+            'age' =>  $request->age,
+            'scolarise' =>  $request->scolarise,
+            'etablissement' =>  $request->etablissement,
+            'salarie' =>  $request->salarie,
+            'emploi_actuel' =>  $request->emploi_actuel,
+            'specialite' =>  $request->specialite,
+            'etat' =>  $request->etat,
+            'emploi_envisage' =>  $request->emploi_envisage
         ];
+        // $user = DB::table('users')->where('id', $user)->first();
+        $user = DB::table('users')->where('id', $id);
 
         $user->update($arrayUpdate);
         return redirect()->route('dashboard')->with('success', 'votre post a été modifié');
@@ -157,12 +175,13 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user)
+    public function destroy($id)
     {
         // if (!Gate::allows('delete-user', $user)) {
         //     abort(403);
         // }
+        $user = DB::table('users')->where('id', $id);
         $user->delete();
-        return redirect()->route('dashboard')->with('success', 'votre post a été supprimé avec succès');
+        return redirect()->route('admin.user_index')->with('success', 'votre post a été supprimé avec succès');
     }
 }

@@ -38,14 +38,15 @@ aside{
 }
 
 .accueil-bg-img{
-    height: 79.2vh!important;
+    background: url("../../img/BO_bg.jpg") center no-repeat;
+    background-size: cover;
 }
 .content-container{
     width: 90%;
     background-color: #ffffff;
 }
 
-.content-container a{
+.content-container a:not(.edit-btn){
     color:var(--purple);
 }
 
@@ -53,19 +54,19 @@ aside{
     background-color:#ffffff;
 }
 
-.show-users-select select{
+.show-select select{
     padding: 5px 10px;
     background-color: #ffffff;
     border:1px solid var(--black);
     border-radius: 0.3rem;
 }
-.search-users{
+.search-container{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
 }
 
-.search-users input{
+.search-container input{
     background-color: #ffffff;
     border:1px solid var(--black);
     border-radius: 0.3rem;
@@ -131,7 +132,7 @@ table tr td:last-of-type{
     justify-content: space-evenly;
 }
 
-.accueil-bo-title{
+.bo-title{
     color:white;
     font-size: 1.4rem;
 }
@@ -159,16 +160,17 @@ table tr td:last-of-type{
     aside{
         width:10%;
         background-color: #23282D;
-
+        min-height: 80vh;
     }
-    .content-container{
-        height: 81.5vh;
+    .previous-and-next{
+        width: 50%;
     }
 
-    .accueil-bo-title{
+    .bo-title{
         color:white;
         font-size: 3.6rem;
     }
+
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -178,7 +180,9 @@ table tr td:last-of-type{
 
 /* X-Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-
+    .accueil-bg-img{
+        background-position-x: -30vh;
+    }
 }
 
 /* XX-Large devices (larger desktops, 1400px and up) */

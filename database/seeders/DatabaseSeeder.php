@@ -11,27 +11,33 @@ class DatabaseSeeder extends Seeder
      *
      * @return void
      */
+    // public function run()
+    // {
+    //     $this->call(ColorSeeder::class);
+    //     $this->call(NumberSeeder::class);
+
+    //     $this->call(TestSeeder::class);
+
+    //     $this->call(CalibrationTypeSeeder::class);
+    //     $this->call(LevelSeeder::class);
+    //     $this->call(CalibrationGroupSeeder::class);
+    //     $this->call(CalibrationSeeder::class);
+
+    //     $this->call(QuestionTypeSeeder::class);
+    //     $this->call(QuestionSeeder::class);
+
+    //     // $this->call(ClueSeeder::class);
+
+    //     $this->call(StatusSeeder::class);
+
+    //     $this->call(ParticipationTestTypeSeeder::class);
+
+    //     $this->call(PatientSeeder::class);
+    // }
     public function run()
     {
-        $this->call(ColorSeeder::class);
-        $this->call(NumberSeeder::class);
-
-        $this->call(TestSeeder::class);
-
-        $this->call(CalibrationTypeSeeder::class);
-        $this->call(LevelSeeder::class);
-        $this->call(CalibrationGroupSeeder::class);
-        $this->call(CalibrationSeeder::class);
-
-        $this->call(QuestionTypeSeeder::class);
-        $this->call(QuestionSeeder::class);
-
-        // $this->call(ClueSeeder::class);
-
-        $this->call(StatusSeeder::class);
-
-        $this->call(ParticipationTestTypeSeeder::class);
-
-        $this->call(PatientSeeder::class);
+        \App\Models\User::Factory(30)->create();
+        // \App\Models\Partie::Factory()->create();
+        //  \App\Models\Domaine::Factory(20)->create();
     }
 }

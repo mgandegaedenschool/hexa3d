@@ -1,0 +1,85 @@
+<?php
+
+use App\Models\User;
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateResponseASTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('response_a_s', function (Blueprint $table) {
+            $table->id();
+
+            // $table->foreignIdFor(User::class);
+            // $table->foreignId('user_id')->constrained;
+            // $table->foreignId('user_id')->constrained;
+            // $table->foreignId('user_id')->constrained('users');
+            // $table->unsignedBigInteger('user_id');
+            // $table->foreign('user_id')->references('id')->on('users');
+            $table->foreignId('user_id')
+                ->constrained()
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+            $table->json('response');
+            // $table->foreignUuid('type_id')->index();
+            // $table->foreign('type_id')
+            //     ->references('id')->on('types')
+            //     ->onDelete('cascade')->onUpdate('cascade');
+
+            // // $table->jsonb('activity_id');
+            // $table->foreign('activity_id')->json('activity_id')
+            //     ->references('id')->on('activities')
+            //     ->onDelete('cascade')->onUpdate('cascade');
+
+            // $table->foreignUuid('quality_id')->index();
+            // $table->foreign('quality_id')
+            //     ->references('id')->on('qualities')
+            //     ->onDelete('cascade')->onUpdate('cascade');
+
+            // $table->foreignUuid('profession_id')->index();
+            // $table->foreign('profession_id')
+            //     ->references('id')->on('professions')
+            //     ->onDelete('cascade')->onUpdate('cascade');
+
+            // $table->foreignUuid('bonuses_id')->index();
+            // $table->foreign('bonuses_id')
+            //     ->references('id')->on('bonuses')
+            //     ->onDelete('cascade')->onUpdate('cascade');
+
+
+            // $table->foreignUuid('irmr3_id')->index();
+            // $table->foreign('irmr3_id')
+            //     ->references('id')->on('irmr3s')
+            //     ->onDelete('cascade')->onUpdate('cascade');
+            $table->json('activity')->nullable();
+            $table->json('profession')->nullable();
+            $table->json('quality')->nullable();
+            $table->json('bonus')->nullable();
+            $table->json('job')->nullable();
+            $table->string('testName');
+            $table->string('followedBy');
+            $table->float('score')->nullable();
+            $table->foreignId('archive_id')
+                ->constrained()
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('response_a_s');
+    }
+}
