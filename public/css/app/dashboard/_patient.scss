@@ -1,0 +1,72 @@
+// dashboard patient
+
+.dashboard--patient {
+
+    .header {
+        margin-bottom: 35px;
+
+        h1 {
+            color: $text;
+        }
+    }
+
+    .body {
+        .card {
+            margin-bottom: 50px;
+            padding: 20px 30px;
+            border: none;
+            box-shadow: 0px 0px 15px 0px rgba(0,0,0, 0.16);
+
+            .card-header {
+                background-color: $white;
+                border: none;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                h2 {
+                    color: $pink_light;
+                    font-size: 25px;
+                    margin: 0;
+                    vertical-align: middle;
+                }
+
+                button {
+                    width: 50px;
+                    height: 50px;
+                    background-color: $pink_light;
+                    color: $white;
+                    border-radius: 100%;
+                    transition: transform ease .5s;
+                    transform: rotate(90deg);
+                    font-size: 22px;
+
+                    &.collapsed {
+                        transform: rotate(0deg);
+                    }
+                }
+            }
+
+            .card-body {
+                h3 {
+                    color: $text;
+                }
+
+                .progress {
+                    height: 22px;
+                    border: 1px solid $text;
+                    border-radius: 7px;
+                    background-color: $white;
+
+                    .progress-bar {
+                        background-color: $pink_light;
+
+                        span {
+                            font-size: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

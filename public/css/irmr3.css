@@ -1,0 +1,134 @@
+:root{
+    --yellow: #EFDB00;
+    --kaki: #655F00;
+    --lightkaki: #B3A400;
+    --lightgrey: #E1E1E1;
+    --grey: #7A7A7A;
+}
+
+body{
+    background-color:  var(--lightgrey);
+}
+/* header and progress bar */
+.irmr3-header{
+    box-shadow: none;
+    background-color: #ffffff;
+}
+.irmr3-upper-img-contain{
+    position: relative;
+    top: 15px;
+    background-color: white;
+    max-width: 250px;
+}
+.irmr3-nav{
+    justify-content: center;
+}
+.irmr3-progress-bar-content{
+    display: flex;
+
+    text-align: center;
+}
+.irmr3-progress-bar-content p{
+    width: 25%;
+    font-size: 1rem;
+}
+.irmr3-header-progress-bar{
+    border: 1px solid var(--yellow);
+    background-color:#ffffff ;
+    border-radius: 2rem;
+}
+.irmr3-progressing-bar{
+    background-color: var(--yellow);
+}
+.irmr3-progress-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+.irmr3-progress-div{
+    width: 90%;
+}
+
+/* step 3 (test) */
+.part-title{
+    color: var(--lightkaki);
+}
+.irmr3-test-container{
+    text-align: center;
+    font-weight: bold;
+}
+.irmr3-form-row{
+    background-color: white;
+    border-radius: 1.4rem;
+    min-height: 150px;
+}
+
+.job{
+    color: white;
+    background-color: var(--lightkaki);
+    padding: 10px 0;
+    position: relative;
+    border-radius: 1.4rem;
+    margin: 0;
+}
+.hidden-definition{
+    display: none;
+    position: absolute;
+    border-radius: 1.4rem;
+    top: 35px;
+    left: 0;
+    right: 0;
+    margin: 0 15px;
+    background-color: var(--grey);
+    justify-content: center;
+    align-items: center;
+    min-height: 90px;
+    z-index: 1;
+    align-items: center;
+    justify-content: center;
+}
+.job:hover .hidden-definition{
+    display: flex;
+}
+
+
+
+/* X-Small devices (portrait phones, less than 576px)
+ No media query for `xs` since this is the default in Bootstrap */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+    .irmr3-progress-bar-content p{
+        font-size: 1.2rem;
+    }
+    .irmr3-progress-div{
+        width: 60%;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .irmr3-progress-bar-content p{
+        font-size: 1.3rem;
+    }
+    .irmr3-form-row{
+        min-height: auto;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .irmr3-progress-bar-content p{
+        font-size: 1.4rem;
+    }
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+
+}

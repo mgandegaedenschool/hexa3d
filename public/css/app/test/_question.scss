@@ -1,0 +1,266 @@
+.question{
+
+    &.theme-light {
+        .bc-question {
+            background-color: $white;
+        }
+        .bc-response {
+            background-color: $gray_light;
+        }
+    }
+
+    &.theme-dark {
+        .bc-question {
+            background-color: $dark !important;
+        }
+        .bc-response {
+            background-color: $white;
+        }
+    }
+
+    .bc-question {
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 100vh;
+
+        @media screen and (max-width: 992px) {
+            height: 75vh;
+        }
+    }
+    .bc-response {
+        padding: 35px 40px 40px 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .theme-switch-wrapper {
+        display: flex;
+        align-items: center;
+
+        .theme-switch {
+            display: inline-block;
+            height: 34px;
+            position: relative;
+            width: 60px;
+
+            input {
+                display:none;
+            }
+
+            .slider {
+                background-color: #ccc;
+                bottom: 0;
+                cursor: pointer;
+                left: 0;
+                position: absolute;
+                right: 0;
+                top: 0;
+                transition: .4s;
+
+                &:before {
+                    background-color: #fff;
+                    bottom: 4px;
+                    content: "";
+                    height: 26px;
+                    left: 4px;
+                    position: absolute;
+                    transition: .4s;
+                    width: 26px;
+                }
+
+                &.round {
+                    border-radius: 34px;
+
+                    &:before {
+                        border-radius: 50%;
+                    }
+                }
+            }
+
+            input:checked + .slider {
+                background-color: $dark;
+            }
+
+            input:checked + .slider:before {
+                transform: translateX(26px);
+            }
+        }
+    }
+
+    .header{
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .body {
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        p.title{
+            font-family: 'Montserrat-SemiBold';
+            font-size: 18px;
+        }
+
+        .number-row,
+        .color-row {
+            display: flex;
+            flex-wrap: wrap;
+            
+            div{
+                margin: 10px 0;
+                width: calc(100% / 10);
+                min-width: 55px;
+
+                @media screen and (max-width: 1200px) {
+                    width: calc(100% / 5);
+                }
+            }
+        }
+
+        &>div {
+            margin-top: 50px;
+
+            &:first-child {
+                margin-top: 0;
+            }
+
+            p.info{
+                font-family: 'Montserrat';
+                font-size: 16px;
+            }
+
+            .btn-choice {
+                width: 50px;
+                height: 50px;
+                margin-right: 10px;
+                margin-bottom: 10px;
+                border-radius: 100%;
+                background-color: $white;
+                border: none;
+                box-shadow: 0 0 10px rgba(0, 0, 0, .10);
+                transition: all .3s ease;
+                outline: none !important;
+                font-size: 25px;
+
+                &.btn-choice-color {
+                    color: $pink_light;
+
+                    &.color-icon-spade,
+                    &.color-icon-club {
+                        color: $black;
+                    }
+                }
+
+                &:hover,
+                &.active {
+                    color: $white !important;
+                    background-color: rgb(90, 90, 235);
+                }
+
+                &:disabled {
+                    &,
+                    &:hover {
+                        border-color: transparent !important;
+                        color: #00000061 !important;
+                        background-color: rgba(239, 239, 239, 0.3) !important;
+                    }
+
+                    &.active {
+                        color: $white !important;
+                        background-color: rgb(90, 90, 235) !important;
+                    }
+                }
+            }
+        }
+    }
+
+    .footer {
+        margin-top: 50px;
+
+        a,
+        button {
+            &.btn-next,
+            &.btn-prev {
+                border: none;
+                background-color: transparent;
+                outline: none;
+                color: $pink_light;
+                text-decoration: none;
+                transition: 0.5s;
+    
+                &:hover{
+                    transition: 0.5s;
+                    cursor: pointer;
+                    color: $pink_dark;
+                }
+            }
+    
+            &.btn-prev i {
+                margin-right: 5px;
+            }
+    
+            &.btn-next i {
+                margin-left: 5px;
+            }
+        }
+
+
+        .btn-fullscreen {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 100%;
+            background-color: $white;
+            color: $pink_light;
+            border: 1px solid transparent;
+            border: none;
+            box-shadow: 0 0 10px rgba(0, 0, 0, .10);
+            transition: all .3s ease;
+            outline: none;
+            font-size: 16px;
+    
+            &:hover {
+                background-color: $pink_light;
+                color: $white;
+            }
+        }
+    }
+}
+
+
+// .modal-clue{
+
+//     .modal-bg{
+//         background-color: $text;
+//         opacity: 0.7;
+//         position: absolute;
+//         width: 100vw;
+//         height: 100vh;
+//         top: 0;
+//         left: 0;
+//     }
+//     .modal-card{
+//         position: absolute;
+//         right: 200px;
+//         background-color: $white;
+//         top: 45vh;
+//         width: 30vw;
+//         .modal-head{
+//             padding: 2rem;
+//             display: flex;
+//             justify-content: space-between;
+//             i{
+//                 font-size: 20px;
+//             }
+//         }
+//         .modal-body{
+//             padding: 2rem;
+//         }
+//     }
+// }
