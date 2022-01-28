@@ -1,0 +1,228 @@
+:root{
+    --yellow: #EFDB00;
+    --kaki: #655F00;
+    --lightkaki: #B3A400;
+    --lightgrey: #E1E1E1;
+    --grey: #7A7A7A;
+}
+
+/* header and progress bar */
+.irmr3-header{
+    box-shadow: none;
+    background-color: #ffffff;
+}
+.irmr3-upper-img-contain{
+    position: relative;
+    top: 15px;
+    background-color: white;
+    max-width: 250px;
+}
+.irmr3-nav{
+    justify-content: center;
+}
+.irmr3-progress-bar-content{
+    display: flex;
+
+    text-align: center;
+}
+.irmr3-progress-bar-content p{
+    width: 25%;
+    font-size: 1rem;
+}
+.irmr3-header-progress-bar{
+    border: 1px solid var(--yellow);
+    background-color:#ffffff ;
+    border-radius: 2rem;
+}
+.irmr3-progressing-bar{
+    background-color: var(--yellow);
+}
+.irmr3-progress-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+.irmr3-progress-div{
+    width: 90%;
+}
+.icon-container-size-irmr3{
+    display: flex;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: var(--yellow);
+    align-items: center;
+}
+.icon-container-irmr3{
+    width: 100%;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+}
+.icon-container-irmr3 i{
+    color:var(--black);
+    font-size: 3rem;
+}
+.fa-cog{
+}
+.irmr3-start-test-main{
+    margin-top: 0!important;
+}
+.irmr3-title-start{
+    width: 100%;
+    color:var(--lightkaki);
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+ }
+.form-start-irmr3-test{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+.form-start-irmr3-test p{
+    width: 100%;
+    margin-bottom: 1rem;
+}
+.irmr3-btn-kaki{
+    background-color: var(--lightkaki);
+    color:white;
+    width: 80% ;
+    border-radius: 1.4rem;
+    font-size: 1.6rem!important;
+    box-shadow: 0px 0px 2px gray;
+}
+.irmr3-btn-kaki:hover{
+    background-color:#ffffff;
+    color:var(--lightkaki);
+    border-color:var(--lightkaki);
+    box-shadow: none;
+}
+.irmr-3-test-ready-btn
+{
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+.irmr3-continue-later{
+    width: 80%;
+    color:var(--black);
+}
+.irmr3-continue-later:hover{
+    color:var(--lightkaki);
+}
+.consignes-div{
+
+}
+.consignes-div span{
+    font-weight: bold;
+}
+.consignes-list-title{
+    text-align: center;
+}
+.consignes-list{
+    display: flex;
+    flex-wrap: wrap;
+}
+.previous-or-next-container{
+    display: flex;
+    justify-content: right;
+}
+/* X-Small devices (portrait phones, less than 576px)
+ No media query for `xs` since this is the default in Bootstrap */
+
+/* Small devices (landscape phones, 576px and up) */
+@media screen and (min-width: 300px) {
+    .irmr3-progress-div{
+        width: 75%;
+    }
+}
+
+@media (min-width: 576px) {
+    .irmr3-progress-bar-content p{
+        font-size: 1.2rem;
+    }
+    .irmr3-progress-div{
+        width: 60%;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .irmr-3-test-ready-btn
+    {
+
+    }
+    .irmr3-btn-kaki{
+        width: 45%;
+    }
+    .irmr3-continue-later{
+        width: 45%;
+    }
+    .irmr3-progress-bar-content p{
+        font-size: 1.3rem;
+    }
+    .irmr-3-test-ready-btn
+    {
+        width: 70%;
+        justify-content: space-around;
+    }
+    .irmr3-start-test-main{
+        margin-top: 2rem!important;
+    }
+
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .irmr3-progress-bar-content p{
+        font-size: 1.4rem;
+    }.irmr3-start-test-main{
+         margin-top: 0!important;
+     }
+    .irmr3-title-start{
+        margin-bottom: 3rem;
+    }
+    .form-start-irmr3-test p{
+        margin-bottom: 2rem;
+    }
+}
+
+/* X-Large dev  ices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .irmr3-title-start{
+        font-size: 2rem;
+    }
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+    .irmr3-progress-div{
+        width: 40%;
+    }
+    .irmr3-progress-bar-content p{
+        width: 25%;
+        font-size: 1.6rem;
+    }
+    .irmr3-title-start{
+        margin-bottom: 4rem;
+        font-size: 2.6rem;
+    }
+    .form-start-irmr3-test p{
+        margin-bottom: 4rem;
+        font-size: 2.2rem;
+    }
+    .irmr3-btn-kaki{
+        font-size: 2.2rem!important;
+    }
+    .irmr3-continue-later{
+        font-size: 2.2rem;
+    }
+}
+
+
+

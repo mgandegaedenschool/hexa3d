@@ -136,6 +136,15 @@ Route::get('/espace_membre', function(){
     return view('espace_membre.espace_membre');
 })->name('espace_membre.espace_membre');
 
+/* test IRMR3*/
+Route::get('/test/test_irmr3_conditions', 'App\Http\Controllers\TestIrmr3Controller@conditions')->name('test.test_irmr3_conditions');
+Route::get('/test/test_irmr3_formulaire', 'App\Http\Controllers\TestIrmr3Controller@formulaire')->name('test.test_irmr3_formulaire');
+
+Route::get('/test/test_irmr3_consignes', function(){
+    return view('test.test_irmr3_consignes');
+});
+
+
 Route::get('/', function (){
     return 'Bienvenue tout le monde';
 });
