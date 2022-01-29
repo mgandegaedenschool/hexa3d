@@ -25,7 +25,9 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all();
-        return view('admin.user_index', compact('users'));
+        $users = DB::table('users')->paginate(10);
+        $items = ['nbItems' => $users->count(), 'pageCourant' => $users->currentPage(), 'nbPages' => $users->lastPage()];
+        return view('admin.user.user_index', compact('users','items'));
     }
 
     /**
@@ -35,7 +37,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('admin.user_create');
+        return view('admin.user.user_create');
     }
 
 
@@ -114,7 +116,7 @@ class UserController extends Controller
     {
         $user = $affected = DB::table('users')
         ->where('id', 1)->first();
-        return view('admin.user_show', compact('user'));
+        return view('admin.user.user_show', compact('user'));
     }
 
     /**
@@ -130,7 +132,7 @@ class UserController extends Controller
         // }
         // $categories = ::all();
         // $user = ['prenom' => 'jean'];
-        return view('admin.user_edit', compact('user'));
+        return view('admin.user.user_edit', compact('user'));
     }
 
     /**
@@ -143,7 +145,7 @@ class UserController extends Controller
     {
         // if (!Gate::allows('update-post', $user)) {
         //     abort(403);
-        // }
+        // }    
         $arrayUpdate = [
             'firstname' => $request->firstname,
             'lastname' =>  $request->lastname,
@@ -160,7 +162,8 @@ class UserController extends Controller
             'emploi_actuel' =>  $request->emploi_actuel,
             'specialite' =>  $request->specialite,
             'etat' =>  $request->etat,
-            'emploi_envisage' =>  $request->emploi_envisage
+            'emploi_envisage' =>  $request->emploi_envisage,
+            'role' =>  $request->role,
         ];
         // $user = DB::table('users')->where('id', $user)->first();
         $user = DB::table('users')->where('id', $id);
@@ -182,6 +185,6 @@ class UserController extends Controller
         // }
         $user = DB::table('users')->where('id', $id);
         $user->delete();
-        return redirect()->route('admin.user_index')->with('success', 'votre post a été supprimé avec succès');
+        return redirect()->route('user.index')->with('success', 'votre post a été supprimé avec succès');
     }
 }

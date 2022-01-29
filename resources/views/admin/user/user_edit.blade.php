@@ -68,7 +68,7 @@
                 <div class="container-fluid py-4">
                     {{-- <form action="{{route('admin.user_update')}}" class="px-md-4 px-lg-4">
                     @csrf --}}
-                    <form method='post' action="{{route('admin.user_update',$user->id)}}" }}>
+                    <form method='post' action="{{route('user.update',$user->id)}}" }}>
                     @csrf
                    @method('put')  
                         {{-- first part of the form --}}
@@ -181,6 +181,15 @@
                                 <input type="text" class="form-control" id="inputSpe" name="specialite" value="{{$user->specialite}}" placeholder="spécialité">
                             </div>
                         </div>
+                           <div class="form-group col-12 col-md-5 col-lg-5">
+                                <label for="inputSexe">Votre role</label>
+                                <select class="form-control" id="inputSexe" name="role">
+                                    <option>--Role--</option>
+                                    <option value='memebre' {{ $user->role == 'membre' ?'selected' : ''}}>membre</option>
+                                    <option  value='pro' {{ $user->role == 'pro' ?'selected' : ''}}>pro</option>
+                                    <option  value='admin' {{ $user->role == 'admin' ?'selected' : ''}}>admin</option>
+                                </select>
+                            </div>
 
                         <div class="d-flex justify-content-end">
                             <input type="submit" class="btn btn-secondary btn-lg mx-2" value="Annuler">

@@ -33,6 +33,7 @@ class CreateUsersTable extends Migration
             $table->string('specialite');
             $table->string('etat')->nullable();
             $table->string('emploi_envisage');
+            $table->string('role')->default('membre');
         });
     }
 

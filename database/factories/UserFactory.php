@@ -60,7 +60,8 @@ class UserFactory extends Factory
             'emploi_actuel' => $this->faker->jobTitle(), 
             'specialite' => $this->faker->name(),
             'etat' => $this->faker->text($maxNbChars = 8),
-            'emploi_envisage' => $this->faker->text($maxNbChars = 8)
+            'emploi_envisage' => $this->faker->text($maxNbChars = 8),
+            'role' => $this->faker->randomElement($array = array ('membre','pro','admin'))
         ];
     }
 

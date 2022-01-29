@@ -93,7 +93,6 @@
                         <th scope="col">id_domaine</th>
                         <th scope="col">libelle_domaine</th>
                         <th scope="col">id_partie</th>
-
                     </tr>
                     </thead>
                     <tbody>
