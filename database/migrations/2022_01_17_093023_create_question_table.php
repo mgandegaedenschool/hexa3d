@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateQuestionsTable extends Migration
+class CreateQuestionTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateQuestionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('questions', function (Blueprint $table) {
+        Schema::create('question', function (Blueprint $table) {
             $table->bigIncrements('id_question');
             $table->unsignedBigInteger('id_item_hexa3d');
             $table->foreign('id_item_hexa3d')
@@ -21,7 +21,7 @@ class CreateQuestionsTable extends Migration
                 ->onDelete('cascade')->onUpdate('cascade');
             $table->unsignedBigInteger('id_test');
             $table->foreign('id_test')
-                ->references('id_test')->on('tests')
+                ->references('id_test')->on('test')
                 ->onDelete('cascade')->onUpdate('cascade');
             $table->unsignedBigInteger('id_partie');
             $table->foreign('id_partie')
@@ -29,7 +29,7 @@ class CreateQuestionsTable extends Migration
                 ->onDelete('cascade')->onUpdate('cascade');
             $table->unsignedBigInteger('id_domaine');
             $table->foreign('id_domaine')
-                ->references('id_domaine')->on('domaines')
+                ->references('id_domaine')->on('domaine')
                 ->onDelete('cascade')->onUpdate('cascade');
             $table->integer('ordre');
             $table->string('type_riarsec');

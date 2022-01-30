@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateReponsesTable extends Migration
+class CreateReponseTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,17 @@ class CreateReponsesTable extends Migration
      */
     public function up()
     {
-        Schema::create('reponses', function (Blueprint $table) {
+        Schema::create('reponse', function (Blueprint $table) {
             $table->bigIncrements('id_reponse');
 
             $table->unsignedBigInteger('id_question');
             $table->foreign('id_question')
-                ->references('id_question')->on('questions')
+                ->references('id_question')->on('question')
                 ->onDelete('cascade')->onUpdate('cascade');
 
             $table->unsignedBigInteger('id_participation');
             $table->foreign('id_participation')
-                ->references('id_participation')->on('participations')
+                ->references('id_participation')->on('participation')
                 ->onDelete('cascade')->onUpdate('cascade');
 
             $table->string('libelle');

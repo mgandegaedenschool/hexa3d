@@ -19,7 +19,7 @@ class CreateScoreRiarsecsTable extends Migration
 
             $table->unsignedBigInteger('id_participation');
             $table->foreign('id_participation')
-                ->references('id_participation')->on('participations')
+                ->references('id_participation')->on('participation')
                 ->onDelete('cascade')->onUpdate('cascade');
 
             $table->unsignedBigInteger('id_partie');

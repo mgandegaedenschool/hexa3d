@@ -24,7 +24,7 @@ class CreateTableEtalonnageDsTable extends Migration
 
             $table->unsignedBigInteger('id_domaine');
             $table->foreign('id_domaine')
-                ->references('id_domaine')->on('domaines')
+                ->references('id_domaine')->on('domaine')
                 ->onDelete('cascade')->onUpdate('cascade');
             $table->string('type_riarsec');
             $table->string('plage');

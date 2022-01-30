@@ -14,17 +14,8 @@ class CreateTestsTable extends Migration
     public function up()
     {
         Schema::create('tests', function (Blueprint $table) {
-            $table->bigIncrements('id_test');
-
-            $table->unsignedBigInteger('id_type');
-            $table->foreign('id_type')->references('id_type')->on('types')
-                ->onDelete('cascade')->onUpdate('cascade');
-
-            // $table->foreign('id_type')
-            //     ->references('id_type')->on('types')
-            //     ->onDelete('cascade')->onUpdate('cascade');
-
-            $table->string('libelle_test');
+            $table->uuid('id')->primary();
+            $table->string('name');
         });
     }
 

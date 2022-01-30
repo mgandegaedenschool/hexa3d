@@ -5,10 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Activity extends Model
+class Participation_hi extends Model
 {
     use HasFactory;
-    protected $casts = [
-        'activity' => 'array'
-    ];
 }

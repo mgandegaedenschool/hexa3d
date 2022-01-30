@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateParticipationsTable extends Migration
+class CreateParticipationTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateParticipationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('participations', function (Blueprint $table) {
+        Schema::create('participation', function (Blueprint $table) {
             $table->bigIncrements('id_participation');
             $table->dateTime('date');
 
             $table->unsignedBigInteger('id_test');
             $table->foreign('id_test')
-                ->references('id_test')->on('tests')
+                ->references('id_test')->on('test')
                 ->onDelete('cascade')->onUpdate('cascade');
 
             $table->unsignedBigInteger('id_user');
