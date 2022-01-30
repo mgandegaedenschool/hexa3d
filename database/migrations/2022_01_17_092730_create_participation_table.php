@@ -19,7 +19,7 @@ class CreateParticipationTable extends Migration
 
             $table->unsignedBigInteger('id_test');
             $table->foreign('id_test')
-                ->references('id_test')->on('test')
+                ->references('id_test')->on('test_his')
                 ->onDelete('cascade')->onUpdate('cascade');
 
             $table->unsignedBigInteger('id_user');
