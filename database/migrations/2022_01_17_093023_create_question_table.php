@@ -29,7 +29,7 @@ class CreateQuestionTable extends Migration
                 ->onDelete('cascade')->onUpdate('cascade');
             $table->unsignedBigInteger('id_domaine');
             $table->foreign('id_domaine')
-                ->references('id_domaine')->on('domaine')
+                ->references('id_domaine')->on('domaines')
                 ->onDelete('cascade')->onUpdate('cascade');
             $table->integer('ordre');
             $table->string('type_riarsec');

@@ -13,6 +13,8 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         \App\Models\User::Factory(30)->create();
+        \App\Models\Partie::Factory(10)->create();
+        \App\Models\Domaine::Factory(10)->create();
         $this->call(ColorSeeder::class);
         $this->call(NumberSeeder::class);
 

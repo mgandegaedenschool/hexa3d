@@ -10,4 +10,8 @@ class Domaine extends Model
     use HasFactory;
     public $timestamps = false;
     protected $guarded = [];
+    public function partie()
+    {
+        return $this->belongsTo(Domaine::class);
+    }
 }

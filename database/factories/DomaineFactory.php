@@ -2,7 +2,8 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-
+use App\Models\Partie;
+use App\Models\Domaine;
 class DomaineFactory extends Factory
 {
     /**
@@ -12,13 +13,11 @@ class DomaineFactory extends Factory
      */
     public function definition()
     {
+        $partie1 = Partie::all();
+        $domaine = new Domaine;
         return [
-// 'libelle_domaine'=>$this->faker->text($maxNbChars = 8),
-// "id_partie"=>$this->faker->numberBetween($min = 1, $max = 20)
-// 'libelle_domaine'=>$this->faker->text($maxNbChars = 8),
 'libelle_domaine'=>$this->faker->randomElement($array = array ('activite','quantite','profession')),
-"id_partie"=>$this->faker->numberBetween($min = 1, $max = 20)
+ "id_partie"=>$partie1[$this->faker->biasedNumberBetween($min = 1, $max = 9)]->id_partie
         ];
-
     }
 }
