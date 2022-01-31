@@ -61,8 +61,11 @@ body{
     background-color: white;
     border-radius: 1.4rem;
     min-height: 150px;
+    box-shadow: 0 0 5px var(--grey);
 }
-
+.irmr3-bareme{
+    font-size: 1.2rem;
+}
 .job{
     color: white;
     background-color: var(--lightkaki);
@@ -83,15 +86,60 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 90px;
-    z-index: 1;
+    z-index: 100;
     align-items: center;
     justify-content: center;
 }
 .job:hover .hidden-definition{
     display: flex;
 }
+.bi-check2, .test-radio-input{
+    width: 3em;
+    height: 3em;
+}
+.test-radio-input{
+    -webkit-appearance: none;
+    border: 2px solid var(--lightgrey);
+    border-radius: 1.4rem;
+    background-color: #FFF;
+    margin: 0;
+    z-index: 1;
+}
+.test-radio-input:checked{
+    z-index: 0;
+    background-color: var(--yellow);
+    border: none;
+    box-shadow: 0 0 5px var(--grey);
+}
+.bi-check2{
+    font-size: 1.2rem;
+    color: white;
+}
+.next-btn-irmr3{
+    transition: color 0.2s ease;
+    color: var(--lightkaki) !important;
+}
+.next-btn-irmr3:hover{
+    color: var(--kaki) !important;
+}
+.next-btn-irmr3 > i{
+    color: var(--lightkaki) !important;
+    opacity: 1;
+}
+.next-btn-irmr3:hover > i{
+    color: var(--kaki) !important;
+}
+.irmr3-explain{
+    background-color: #fff;
+    border-radius: 1.4rem;
+    border: 2px solid var(--grey);
+}
+.irmr3-explain ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 
-
+}
 
 /* X-Small devices (portrait phones, less than 576px)
  No media query for `xs` since this is the default in Bootstrap */
