@@ -9,6 +9,7 @@ use App\Models\partie;
 class Score_riarsec extends Model
 {
     use HasFactory;
+    public $timestamps = false;
     public function Tableau_scores()
     {
         return $this->hasMany(Tableau_score::class);

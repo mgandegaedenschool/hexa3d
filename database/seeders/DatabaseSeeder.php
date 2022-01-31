@@ -23,6 +23,8 @@ class DatabaseSeeder extends Seeder
         \App\Models\Participation_hi::Factory(10)->create();
         \App\Models\Question_hi::Factory(10)->create();
         \App\Models\Reponse_hi::Factory(10)->create();
+        \App\Models\Tableau_score::Factory(10)->create();
+        \App\Models\Score_riarsec::Factory(10)->create();
         
         $this->call(ColorSeeder::class);
         $this->call(NumberSeeder::class);
