@@ -1,10 +1,9 @@
 <?php
-
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateParticipationTable extends Migration
+class CreateParticipationHisTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +12,9 @@ class CreateParticipationTable extends Migration
      */
     public function up()
     {
-        Schema::create('participation', function (Blueprint $table) {
+        Schema::create('participation_his', function (Blueprint $table) {
             $table->bigIncrements('id_participation');
-            $table->dateTime('date');
+            $table->dateTime('date_passage');
 
             $table->unsignedBigInteger('id_test');
             $table->foreign('id_test')
@@ -31,6 +30,15 @@ class CreateParticipationTable extends Migration
             $table->foreign('id_etalonnage_default')
                 ->references('id_etalonnage')->on('etalonnages')
                 ->onDelete('cascade')->onUpdate('cascade');
+
+            $table->unsignedBigInteger('id_etat_test');
+            $table->foreign('id_etat_test')
+                ->references('id_etat_test')->on('etat_tests')
+                ->onDelete('cascade')->onUpdate('cascade');
+
+            $table->string('lien_test');
+            $table->integer('nombre_interruption');
+            $table->time('temps_passage');
         });
     }
 
@@ -41,6 +49,6 @@ class CreateParticipationTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('participations');
+        Schema::dropIfExists('participation_his');
     }
 }

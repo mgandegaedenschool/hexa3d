@@ -1,23 +1,22 @@
 <?php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Question_hi;
-use App\Models\Type;
+use App\Models\Participation_hi;
 
-class Test_hi extends Model
+class Reponse_hi extends Model
 {
     use HasFactory;
     public $timestamps = false;
     protected $guarded = [];
-    public function question_hi()
+    public function question_his()
     {
-        return $this->belongsTo(Question_hi::class);
+        return $this->hasMany(Question_hi::class);
     }
-    public function type()
+    public function participation_hi()
     {
-        return $this->hasMany(Type::class);
+        return $this->hasOne(Participation_hi::class);
     }
 }

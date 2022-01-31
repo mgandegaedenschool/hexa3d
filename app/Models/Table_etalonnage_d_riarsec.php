@@ -4,15 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Test_hi;
-class Type extends Model
+use App\Models\Table_etalonnage_d;
+class Table_etalonnage_d_riarsec extends Model
 {
     use HasFactory;
     public $timestamps = false;
     protected $guarded = [];
-    public function test_hi()
+    public function table_etalonnage_d()
     {
-        return $this->belongsTo(Test_hi::class);
+        return $this->hasOne(Table_etalonnage_d::class);
     }
 }
-

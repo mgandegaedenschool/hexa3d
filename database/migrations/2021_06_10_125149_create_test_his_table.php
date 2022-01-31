@@ -16,7 +16,7 @@ class CreateTestHisTable extends Migration
         Schema::create('test_his', function (Blueprint $table) {
             $table->bigIncrements('id_test');
             $table->unsignedBigInteger('id_type');
-            $table->foreign('id_type')->references('id_type')->on('type')
+            $table->foreign('id_type')->references('id_type')->on('types')
                 ->onDelete('cascade')->onUpdate('cascade');
 
             // $table->foreign('id_type')
