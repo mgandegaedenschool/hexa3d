@@ -27,7 +27,6 @@ class CreateTableEtalonnageDsTable extends Migration
                 ->references('id_domaine')->on('domaines')
                 ->onDelete('cascade')->onUpdate('cascade');
             $table->string('type_riarsec');
-            $table->string('plage');
         });
     }
 

@@ -11,6 +11,8 @@ use App\Models\Table_etalonnage_d_riarsec;
 class Table_etalonnage_d extends Model
 {
     use HasFactory;
+    public $timestamps = false;
+    protected $guarded = [];
     public function etalonnage()
     {
         return $this->hasOne(Etalonnage::class);
