@@ -13,9 +13,7 @@
                 <a href="test_irmr3_consignes?step=2" class="irmr3-btn-kaki btn py-3">Oui, je le suis</a>
                 <a class="irmr3-continue-later py-3" href="">Non, je continuerai plus tard</a>
             </div>
-
         </div>
-
     </div>
 
 @endsection
