@@ -15,7 +15,7 @@
             </div>
             <div class="modal-body">
                 <div class="container-fluid">
-                     <form method="POST" action="{{ route('register') }}">
+                     <form method="POST" action="{{ route('register.store') }}">
                 @csrf 
                         {{-- first part of the form --}}
 

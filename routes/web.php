@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PDFController;
 use App\Http\Controllers\TestController;
-use App\Http\Controllers\UserController;
 use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\ExampleController;
 use App\Http\Controllers\PatientController;
@@ -11,8 +10,10 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ParticipationController;
 use App\Http\Controllers\RegisteredUserController;
 use App\Http\Controllers\Admin\Type\TypeController;
+use App\Http\Controllers\Admin\User\UserController;
 use App\Http\Controllers\Admin\Domaine\DomaineController;
 use App\Http\Controllers\Admin\Question\QuestionController;
+use App\Http\Controllers\Admin\User\UserRegistrationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,29 +26,24 @@ use App\Http\Controllers\Admin\Question\QuestionController;
 |
 */
 
-Route::get('/', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/', function () {
+        return view('dashboard');
+    })->name('dashboard');
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
 Route::middleware(['admin'])->group(function () {
     Route::get('/admin/admin', function () {
         return view('admin.admin');
     })->name('admin.admin');
     Route::resource('/admin/user', UserController::class);
+    Route::resource('/admin/register', UserRegistrationController::class);
     Route::resource('/admin/type', TypeController::class);
     Route::resource('/admin/domaine', DomaineController::class);
     Route::resource('/admin/question', QuestionController::class);
 });
-
-
-Route::get('register/create-step-one', 'App\Http\Controllers\RegisteredUserController@createStepOne')->name('register.create.step.one');
-Route::post('register/create-step-one', 'App\Http\Controllers\RegisteredUserController@postCreateStepOne')->name('register.create.step.one.post');
-Route::get('register/create-step-two', 'App\Http\Controllers\RegisteredUserController@createStepTwo')->name('register.create.step.two');
-Route::post('register/create-step-two', 'App\Http\Controllers\RegisteredUserController@postCreateStepTwo')->name('register.create.step.two.post');
-Route::get('register/create-step-three', 'App\Http\Controllers\RegisteredUserController@createStepThree')->name('register.create.step.three');
-Route::post('register/create-step-three', 'App\Http\Controllers\RegisteredUserController@postCreateStepThree')->name('register.create.step.three.post');
 
 Route::get('/forgot-password', function () {
     return view('auth.forgot-password');
@@ -57,9 +53,12 @@ Route::get('/reset-password', function () {
     return view('auth.reset-password');
 })->name('auth.reset-password');
 
-// Route::get('admin/admin', function () {
-//     return view('admin.admin');
-// })->name('admin.admin');
+Route::get('register/create-step-one', 'App\Http\Controllers\RegisteredUserController@createStepOne')->name('register.create.step.one');
+Route::post('register/create-step-one', 'App\Http\Controllers\RegisteredUserController@postCreateStepOne')->name('register.create.step.one.post');
+Route::get('register/create-step-two', 'App\Http\Controllers\RegisteredUserController@createStepTwo')->name('register.create.step.two');
+Route::post('register/create-step-two', 'App\Http\Controllers\RegisteredUserController@postCreateStepTwo')->name('register.create.step.two.post');
+Route::get('register/create-step-three', 'App\Http\Controllers\RegisteredUserController@createStepThree')->name('register.create.step.three');
+Route::post('register/create-step-three', 'App\Http\Controllers\RegisteredUserController@postCreateStepThree')->name('register.create.step.three.post');
 
 Route::get('/getMember', 'App\Http\Controllers\GetMemberController@index')->name('admin.member');
 Route::get('test/irmr3', 'App\Http\Controllers\TestIrmr3Controller@index')->name('test.irmr3_index');

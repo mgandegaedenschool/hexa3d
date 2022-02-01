@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers\Admin\User;
 
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -13,7 +13,7 @@ use Illuminate\Auth\Events\Registered;
 use App\Providers\RouteServiceProvider;
 use App\Notifications\UserRegisteredNotification;
 
-class RegisteredUserController extends Controller
+class UserRegistrationController extends Controller
 {
 
     /**
@@ -77,9 +77,9 @@ class RegisteredUserController extends Controller
             'role' => $request->role
         ]);
 
-        if (Auth::user() &&  Auth::user()->admin == 1) {
-            return redirect('admin.user');
-        }
-        return redirect(RouteServiceProvider::HOME);
+        // if (Auth::user() &&  Auth::user()->admin == 1) {
+        return redirect('/admin/user');
+        // }
+        // return redirect(RouteServiceProvider::HOME);
     }
 }
