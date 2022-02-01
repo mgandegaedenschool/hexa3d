@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin\Question;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class Reponse extends Controller
+class QuestionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,7 @@ class Reponse extends Controller
      */
     public function index()
     {
-        //
+        dd("okay question");
     }
 
     /**

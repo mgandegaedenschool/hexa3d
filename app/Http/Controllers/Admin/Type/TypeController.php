@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin\Type;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class DomaineController extends Controller
+class TypeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,6 @@ class DomaineController extends Controller
      */
     public function index()
     {
-        //
     }
 
     /**
