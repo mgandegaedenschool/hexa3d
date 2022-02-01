@@ -20,6 +20,11 @@
                 echo "<div class='progress-bar irmr3-progressing-bar' role='progressbar' style='width: 37.5%' aria-valuenow='37.5' aria-valuemin='0' aria-valuemax='100'></div>";
             }elseif(isset($_GET['step']) && $_GET['step'] == 3){
                 echo "<div class='progress-bar irmr3-progressing-bar' role='progressbar' style='width: 62.5%' aria-valuenow='62.5' aria-valuemin='0' aria-valuemax='100'></div>";
+            }elseif(isset($_GET['step']) && $_GET['step'] == 4){
+                echo "<div class='progress-bar irmr3-progressing-bar' role='progressbar' style='width: 87.5%' aria-valuenow='87.5' aria-valuemin='0' aria-valuemax='100'></div>";
+            }
+            elseif(isset($_GET['step']) && $_GET['step'] == 5){
+                echo "<div class='progress-bar irmr3-progressing-bar' role='progressbar' style='width: 100%' aria-valuenow='100' aria-valuemin='0' aria-valuemax='100'></div>";
             }
             ?>
         </div>

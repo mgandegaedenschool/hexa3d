@@ -46,4 +46,7 @@ class TestIrmr3Controller extends Controller
     public function bonus(){
         return view('test.test_irmr3_bonus');
     }
+    public function fin(){
+        return view('test.test_irmr3_fin');
+    }
 }

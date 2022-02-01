@@ -283,7 +283,7 @@
         </div>
         <div class="d-flex justify-content-center justify-content-md-end justify-content-lg-end align-items-center py-4">
             <a href="?step=3&part=8" class="next-btn next-btn-irmr3 d-inline-block mx-4 my-0"><i class='fas fa-chevron-left mr-3'></i> Précédent</a>
-            <a href="{{route('test.test_irmr3_bonus')}}" class="next-btn next-btn-irmr3 d-inline-block mx-4 my-0">Suivant <i class='fas fa-chevron-right ml-3'></i></a>
+            <a href="{{route('test.test_irmr3_bonus')}}?step=4" class="next-btn next-btn-irmr3 d-inline-block mx-4 my-0">Suivant <i class='fas fa-chevron-right ml-3'></i></a>
         </div>
     </section>
 </div>
