@@ -143,15 +143,15 @@ Route::get('/test/test_irmr3_formulaire', 'App\Http\Controllers\TestIrmr3Control
 Route::get('/test/test_irmr3_bonus', 'App\Http\Controllers\TestIrmr3Controller@bonus')->name('test.test_irmr3_bonus');
 Route::get('/test/test_irmr3_fin', 'App\Http\Controllers\TestIrmr3Controller@fin')->name('test.test_irmr3_fin');
 /* form parts */
-Route::get('/test/test_irmr3_formulaire_part1', 'App\Http\Controllers\TestIrmr3Controller@formulaire1')->name('test.test_irmr3_formulaire_part1');
-Route::get('/test/test_irmr3_formulaire_part2', 'App\Http\Controllers\TestIrmr3Controller@formulaire2')->name('test.test_irmr3_formulaire_part2');
-Route::get('/test/test_irmr3_formulaire_part3', 'App\Http\Controllers\TestIrmr3Controller@formulaire3')->name('test.test_irmr3_formulaire_part3');
-Route::get('/test/test_irmr3_formulaire_part4', 'App\Http\Controllers\TestIrmr3Controller@formulaire4')->name('test.test_irmr3_formulaire_part4');
-Route::get('/test/test_irmr3_formulaire_part5', 'App\Http\Controllers\TestIrmr3Controller@formulaire5')->name('test.test_irmr3_formulaire_part5');
-Route::get('/test/test_irmr3_formulaire_part6', 'App\Http\Controllers\TestIrmr3Controller@formulaire6')->name('test.test_irmr3_formulaire_part6');
-Route::get('/test/test_irmr3_formulaire_part7', 'App\Http\Controllers\TestIrmr3Controller@formulaire7')->name('test.test_irmr3_formulaire_part7');
-Route::get('/test/test_irmr3_formulaire_part8', 'App\Http\Controllers\TestIrmr3Controller@formulaire8')->name('test.test_irmr3_formulaire_part8');
-Route::get('/test/test_irmr3_formulaire_part9', 'App\Http\Controllers\TestIrmr3Controller@formulaire9')->name('test.test_irmr3_formulaire_part9');
+Route::post('/test/test_irmr3_formulaire_part1', 'App\Http\Controllers\TestIrmr3Controller@formulaire1')->name('test.test_irmr3_formulaire_part1');
+Route::post('/test/test_irmr3_formulaire_part2', 'App\Http\Controllers\TestIrmr3Controller@formulaire2')->name('test.test_irmr3_formulaire_part2');
+Route::post('/test/test_irmr3_formulaire_part3', 'App\Http\Controllers\TestIrmr3Controller@formulaire3')->name('test.test_irmr3_formulaire_part3');
+Route::post('/test/test_irmr3_formulaire_part4', 'App\Http\Controllers\TestIrmr3Controller@formulaire4')->name('test.test_irmr3_formulaire_part4');
+Route::post('/test/test_irmr3_formulaire_part5', 'App\Http\Controllers\TestIrmr3Controller@formulaire5')->name('test.test_irmr3_formulaire_part5');
+Route::post('/test/test_irmr3_formulaire_part6', 'App\Http\Controllers\TestIrmr3Controller@formulaire6')->name('test.test_irmr3_formulaire_part6');
+Route::post('/test/test_irmr3_formulaire_part7', 'App\Http\Controllers\TestIrmr3Controller@formulaire7')->name('test.test_irmr3_formulaire_part7');
+Route::post('/test/test_irmr3_formulaire_part8', 'App\Http\Controllers\TestIrmr3Controller@formulaire8')->name('test.test_irmr3_formulaire_part8');
+Route::post('/test/test_irmr3_formulaire_part9', 'App\Http\Controllers\TestIrmr3Controller@formulaire9')->name('test.test_irmr3_formulaire_part9');
 
 
 Route::get('/', function (){

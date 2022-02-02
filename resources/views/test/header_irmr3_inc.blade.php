@@ -2,7 +2,7 @@
     <div class="container header-contain">
         <div class="row d-flex align-items-center img-text-nav irmr3-nav">
             <div class="col-6 upper-image-container irmr3-upper-img-contain">
-                <img src="{{asset('img/irmr3-logo-v2_300ppp.png')}}" alt="spirale grise et blanche" class="img-fluid">
+                <img src="{{asset('img/irmr3-logo-v2_72ppp.png')}}" alt="spirale grise et blanche" class="img-fluid">
             </div>
         </div>
     </div>

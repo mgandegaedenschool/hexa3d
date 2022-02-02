@@ -26,7 +26,10 @@
                 <a href="{{route('test.test_irmr3_conditions')}}" class="next-btn next-btn-irmr3 d-inline-block mx-4 my-0"><i class='fas fa-chevron-left mr-3'></i> Précédent</a>
                 <a href="{{route('test.test_irmr3_formulaire')}}?step=3&part=1" class="next-btn next-btn-irmr3 d-inline-block mx-4 my-0">Suivant <i class='fas fa-chevron-right ml-3'></i></a>
             </div>
+
+
         </div>
+
     </div>
 
 @endsection
