@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>RCC</title>
+    <title>Questionnaire d'intêrets professionnels</title>
 
     <link rel="stylesheet" href="/css/lib/bootstrap.min.css">
     <link rel="stylesheet" href="/css/lib/fontawesome.min.css">
@@ -21,7 +21,8 @@
 
 
 </head>
-<body>
+<body class="<?php echo $bgc??''; ?>">
+
     @yield('content')
     <script src="/js/progressBar.js"></script>
     <script src="/js/formEnable.js"></script>

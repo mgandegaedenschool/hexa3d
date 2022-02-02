@@ -1,5 +1,5 @@
 @extends('app')
-
+<?php $bgc = 'grey-background'; ?>
 @section('content')
     @include('test.header_irmr3_inc')
 

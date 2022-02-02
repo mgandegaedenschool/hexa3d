@@ -2,7 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Domaine;
+use App\Models\Etalonnage;
+use App\Models\Etat_test;
+use App\Models\Item_serie_hexa3d_irmr;
+use App\Models\Partie;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TestIrmr3Controller extends Controller
 {
@@ -16,7 +22,24 @@ class TestIrmr3Controller extends Controller
     public function formulaire(){
         return view('test.test_irmr3_formulaire');
     }
-    public function formulaire1(){
+    public function formulaire1(Request $request){
+        $partie = Partie::create([
+            'num_partie' => 1,
+            'libelle_partie' => '1ère partie'
+        ]);
+        $domaine = Domaine::create([
+            'libelle_domaine' => 'Plein air',
+            'id_partie' => $partie->id
+        ]);
+        $etat = Etat_test::create([
+            'libelle_etat_test' => 'en cours'
+        ]);
+        $etalonnage = Etalonnage::create([
+            'libelle_etalonnage' => 'lyceen'
+        ]);
+        $itemSerie = Item_serie_hexa3d_irmr::create([
+            '' => ''
+        ]);
         return view('test.test_irmr3_formulaire_part1');
     }
     public function formulaire2(){

@@ -10,9 +10,9 @@
             </div>
         </div>
     </header>
-    <main>
+    <main class="mt-5 pt-4">
         <div class="container">
-            <h3 class="font-weight-bold text-center">Avant de commencer le test, merci de renseigner les informations suivantes :</h3>
+            <h3 class="font-weight-bold text-center mb-5">Avant de commencer le test, merci de renseigner les informations suivantes :</h3>
             <div class="pages d-flex align-items-center justify-content-center my-4">
                 {{-- change the style when the steps advance --}}
                 <p class='step my-0 mx-3 active-step'>Identité</p>
