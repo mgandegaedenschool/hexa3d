@@ -69,6 +69,10 @@
                                 <label for="InputStudies">Votre niveau d'études</label>
                                 <input type="text" class="form-control" id="InputStudies" placeholder="Votre niveau d'études" name="niv_etude">
                             </div>
+                            <div class="form-group col-12 col-md-5 col-lg-5 py-3">
+                                <label for="etalonnage">Etalonnage</label>
+                                <input type="text" class="form-control" id="etalonnage" placeholder="ex: collegien,lyceen, adulte" name="etalonnage">
+                            </div>
                         </div>
                         <div class="form-row d-flex justify-content-between hidden-field p-3 mb-2">
                             <div class="form-group col-12 col-md-5 col-lg-5">

@@ -23,7 +23,8 @@ class RegisteredUserController extends Controller
      */
     public function create()
     {
-        return view('auth.register');
+        // return view('auth.register');
+        return view('auth.create-step-one');
     }
 
     /**
@@ -54,7 +55,8 @@ class RegisteredUserController extends Controller
             'emploi_actuel' => ['required', 'string', 'max:255'],
             'specialite' => ['required', 'string', 'max:255'],
             'etat' => ['required', 'string', 'max:255', 'nullable'],
-            'emploi_envisage' =>  ['required', 'string', 'max:255']
+            'emploi_envisage' =>  ['required', 'string', 'max:255'],
+            'etalonnage' => ['required', 'string', 'max:255']
         ]);
         $user = User::create([
             'firstname' => $request->firstname,
@@ -74,6 +76,7 @@ class RegisteredUserController extends Controller
             'specialite' => $request->specialite,
             'etat' => $request->etat,
             'emploi_envisage' => $request->emploi_envisage,
+            'etalonnage' => $request->etalonnage,
             'role' => $request->role
         ]);
 

@@ -2,61 +2,43 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Quality;
-use App\Models\Activity;
-use App\Models\ResponseA;
-use App\Models\Profession;
+use App\Models\Partie;
+use App\Models\Domaine;
+use App\Models\Etat_test;
+use App\Models\Etalonnage;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
 
 class TestIrmr3Controller extends Controller
 {
-    public function index()
-    {   
-        // $activities = Activity::all();
-        // $qualities = Quality::all();
-        // $profession = Profession::all();
-        // return view('test.index', compact('activities', 'qualities', 'profession'));
-        return view('test.create-step-one');
-    }
-
-    public function createStepOne(Request $request)
+    //
+    public function conditions()
     {
-        
-        // $activity = $request->session()->get('activity');
-        // // return view('test.create-step-one', compact('activity'));
-        // $activities = Activity::all();
-        // return view('test.create-step-one', compact('activities'));
-        return view('test.create-step-one');
+        return view('test.irmr3.test_irmr3_conditions');
     }
-
-    public function postCreateStepOne(Request $request)
+    public function consignes()
+    {
+        return view('test.irmr3.test_irmr3_consignes');
+    }
+    public function formulaire()
+    {
+        return view('test.irmr3.test_irmr3_formulaire');
+    }
+    public function formulaire1(Request $request)
     {
         dd($request);
-        // // dd($request->input());
-        // $validatedData = $request->validate([
-        //     // 'name' => 'required|unique:products',
-        //     // 'amount' => 'required|numeric',
-        //     // 'description' => 'required',
-        //     'Photographier' => 'required|string',
-        //     'Trouver' => 'required|string',
-        //     'Batir' => 'required|string',
-        //     'Aider' => 'required|string',
-        //     'Planifier' => 'required|string',
-        //     'Persuader' => 'required|string'
-        // ]);
-        // dd(auth()->user()->etalonnage);
-        // ResponseA::create([
-        //     'response' => json_encode('aa'),
-        //     'activity' => json_encode($request->input()),
-        //     'profession' => json_encode(['cc']),
-        //     'quality' => json_encode(['dd']),
-        //     'type' => json_encode(['ee']),
-        //     'testName' => 'tttttt',
-        //     'followedBy' => 'fffff',
-        //     'score' => 12.2
-        // ]);
+        $partie = Partie::create([
+            'num_partie' => 1,
+            'libelle_partie' => '1ère partie'
+        ]);
+
+        $domaine = Domaine::create([
+            "libelle_domaine" => "Plein air",
+            "id_partie" => $partie->id
+        ]);
+        $etat_test = Etat_test::create(["libelle_etat_test" => 'en cours']);
+        $etat_test = Etalonnage::create(["libelle_etalonnage" => Auth()->user()->etalonnage]);
+
+        // Item_serie_hexa3d_irmr::create(['']);
 
         // if (empty($request->session()->get('activity'))) {
         //     $activity = new ResponseA();
@@ -69,41 +51,47 @@ class TestIrmr3Controller extends Controller
         // }
 
         // return redirect()->route('test.create.step.two');
+        return view('test.irmr3.test_irmr3_formulaire_part1');
     }
-
-    // public function createStepTwo(Request $request)
-    // {
-    //     $product = $request->session()->get('product');
-    //     return view('products.create-step-two', compact('product'));
-    // }
-
-    // public function postCreateStepTwo(Request $request)
-    // {
-    //     $validatedData = $request->validate([
-    //         'stock' => 'required',
-    //         'status' => 'required',
-    //     ]);
-
-    //     $product = $request->session()->get('product');
-    //     $product->fill($validatedData);
-    //     $request->session()->put('product', $product);
-
-    //     return redirect()->route('products.create.step.three');
-    // }
-
-    // public function createStepThree(Request $request)
-    // {
-    //     $product = $request->session()->get('product');
-    //     return view('products.create-step-three', compact('product'));
-    // }
-
-    // public function postCreateStepThree(Request $request)
-    // {
-    //     $product = $request->session()->get('product');
-    //     $product->save();
-
-    //     $request->session()->forget('product');
-    //     return redirect()->route('products.index');
-    // }
-
+    public function formulaire2()
+    {
+        die('step2');
+        return view('test.irmr3.test_irmr3_formulaire_part2');
+    }
+    public function formulaire3()
+    {
+        return view('test.irmr3.test_irmr3_formulaire_part3');
+    }
+    public function formulaire4()
+    {
+        return view('test.irmr3.test_irmr3_formulaire_part4');
+    }
+    public function formulaire5()
+    {
+        return view('test.irmr3.test_irmr3_formulaire_part5');
+    }
+    public function formulaire6()
+    {
+        return view('test.irmr3.test_irmr3_formulaire_part6');
+    }
+    public function formulaire7()
+    {
+        return view('test.irmr3.test_irmr3_formulaire_part7');
+    }
+    public function formulaire8()
+    {
+        return view('test.irmr3.test_irmr3_formulaire_part8');
+    }
+    public function formulaire9()
+    {
+        return view('test.irmr3.test_irmr3_formulaire_part9');
+    }
+    public function bonus()
+    {
+        return view('test.irmr3.test_irmr3_bonus');
+    }
+    public function fin()
+    {
+        return view('test.irmr3.test_irmr3_fin');
+    }
 }

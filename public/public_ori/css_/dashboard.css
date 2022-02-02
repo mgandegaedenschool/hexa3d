@@ -1,0 +1,191 @@
+/*********** ADMIN **********/
+
+
+/* Change styles for cancel button and signup button on extra small screens */
+
+
+.dashboard-layout{
+    display:flex;
+    flex-wrap: wrap;
+}
+.top-content{
+    /*height: 7.5vh;*/
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color:#9EA3A8;
+    background-color: #23282D;
+}
+.top-content a{
+    color:#9EA3A8;
+}
+.admin-account:hover a, .options:hover a{
+    color:white;
+}
+.admin-account a, .options a{
+    font-size: 1.2rem;
+}
+aside{
+    width:100%;
+    background-color: #23282D;
+}
+.nav-link{
+    color: #9EA3A8;
+}
+.nav-link:hover{
+    background-color: #ffffff;
+    color:black;
+}
+
+.accueil-bg-img{
+    background: url("../../img/BO_bg.jpg") center no-repeat;
+    background-size: cover;
+}
+.content-container{
+    width: 90%;
+    background-color: #ffffff;
+}
+
+.content-container a:not(.edit-btn){
+    color:var(--purple);
+}
+
+.table-users{
+    background-color:#ffffff;
+}
+
+.show-select select{
+    padding: 5px 10px;
+    background-color: #ffffff;
+    border:1px solid var(--black);
+    border-radius: 0.3rem;
+}
+.search-container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.search-container input{
+    background-color: #ffffff;
+    border:1px solid var(--black);
+    border-radius: 0.3rem;
+}
+.user-tab-icon{
+    padding: 0 4px;
+}
+table tr td:last-of-type{
+    min-width: 105px;
+}
+
+.previous-and-next{
+    display: flex;
+    flex-wrap: wrap;
+    width: 15%;
+    align-items: center;
+}
+
+.page-number{
+    border:1px solid black;
+    padding: 5px 15px;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+}
+.show-entries p{
+    font-size: 1.4rem;
+}
+.show-entries-form{
+    width: 20%;
+    margin:0 ;
+    padding: 0;
+}
+.start-form{
+    border-top: 2px solid var(--purple);
+}
+.form-title{
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+.modal-footer{
+    border-top: 2px solid var(--purple);
+}
+.modal-header{
+    border-bottom: 2px solid var(--purple);
+}
+
+.no-defil{
+    min-width: 105px;
+    border: 1px solid #dee2e6;
+}
+.no-defil > p{
+    padding: .75rem;
+    margin: 0;
+    text-align: center;
+    font-weight: bold;
+    border-bottom:  1px solid #dee2e6;
+}
+.no-defil > div{
+    padding: .75rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.bo-title{
+    color:white;
+    font-size: 1.4rem;
+}
+/* X-Small devices (portrait phones, less than 576px)
+ No media query for `xs` since this is the default in Bootstrap */
+
+/* Small devices (landscape phones, 576px and up) */
+@media screen and (min-width: 300px) {
+    .cancelbtn, .signupbtn {
+        float: left;
+        width: 50%;
+    }
+
+}
+
+@media (min-width: 576px) {
+    .admin-account a, .options a{
+        color:white;
+        font-size: 1.6rem;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    aside{
+        width:10%;
+        background-color: #23282D;
+        min-height: 80vh;
+    }
+    .previous-and-next{
+        width: 50%;
+    }
+
+    .bo-title{
+        color:white;
+        font-size: 3.6rem;
+    }
+
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .accueil-bg-img{
+        background-position-x: -30vh;
+    }
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+
+}

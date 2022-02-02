@@ -1,0 +1,161 @@
+// dashboard psy patient
+
+.dashboard--psy-patient {
+    a{
+        color: $pink_light;
+    }
+    .form-control:disabled{
+        background-color: transparent;
+    }
+    .header {
+        margin-bottom: 35px;
+
+        h1 {
+            color: $text;
+        }
+
+        button {
+            border-radius: 100%;
+            width: 50px;
+            height: 50px;
+            border: none;
+            background-color: $pink_light;
+            color: $white;
+            transition: all ease .2s;
+
+            &:hover {
+                background-color: $pink_dark;
+            }
+            &:focus{
+                outline: none;
+            }
+            img{
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+        input {
+            padding: 10px 20px;
+            font-size: 15px;
+            height: auto;
+        }
+    }
+    .btn-icon {
+        border-radius: 100%;
+        width: 50px;
+        height: 50px;
+        border: none;
+        background-color: $pink_light;
+        color: $white;
+        transition: all ease .2s;
+
+        &:hover {
+            background-color: $pink_dark;
+        }
+    }
+    .btn-icon-inv {
+        border-radius: 100%;
+        width: 50px;
+        height: 50px;
+        border: none;
+        background-color: transparent;
+        color: $pink_light;
+        transition: all ease .2s;
+        outline: none;
+        position: absolute;
+        right: 20px;
+        bottom: 0px;
+        &:hover {
+            background-color: $text;
+            color: $white;
+        }
+        i{
+            margin-top: 5px;
+            font-size: 30px;
+        }
+    }
+    .body {
+        margin-top: 75px;
+
+    }
+    .active{
+        .input{
+            display: flex;
+        }
+        .noinput{
+            display: none;
+        }
+    }
+    .input{
+        display: none;
+    }
+    .foot-body{
+        margin-top: 40px;
+    }
+    .right-body{
+        display: flex;
+        justify-content: flex-end;
+        p{
+            color: $pink_light !important;
+        }
+    }
+    .card-body{
+        .card-input{
+            div{
+                margin-top: 10px;
+                display: flex;
+                justify-content: space-between;
+                // border: 1px rgba(0,0,0,0.16) solid;
+                box-shadow: 0 0 5px rgba(0,0,0,0.16);
+                border-radius: 5px;
+                align-items: center;
+                padding: 0 20px;
+                input {
+                    font-size: 15px;
+                    height: auto;
+                    border: none;
+                    outline: none;
+                    width: 100%;
+                    background: transparent;
+                    color: rgba(0,0,0,0.50);
+                    &:focus{
+                        outline: none;
+                        box-shadow: none;
+                    }
+                }
+                i{
+                    cursor: pointer;
+                    color: $pink_light;
+                }
+                p{
+                    display:  none;
+                    margin: 0;
+                }
+            }
+            .card-copy{
+                i{
+                    display: none;
+                }
+                p{
+                    display: inherit;
+                    i{
+                        display: inherit;
+                    }
+                }
+            }
+        }
+    }
+    .card-foot{
+        .card-text{
+            color: $pink_light;
+            i{
+                color: $pink_light;
+                &:last-child{
+                    color: $text;
+                }
+            }
+        }
+
+    }
+}
