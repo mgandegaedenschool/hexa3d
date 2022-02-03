@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Irmr3FormController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PDFController;
 use App\Http\Controllers\TestController;
@@ -152,6 +153,7 @@ Route::post('/test/test_irmr3_formulaire_part8', 'App\Http\Controllers\TestIrmr3
 Route::post('/test/test_irmr3_formulaire_part9', 'App\Http\Controllers\TestIrmr3Controller@formulaire9')->name('test.test_irmr3_formulaire_part9');
 
 
+Route::resource('/Irmr3Form', Irmr3FormController::class);
 
 Route::get('/', function (){
     return 'Bienvenue tout le monde';
