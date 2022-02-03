@@ -1,5 +1,5 @@
 <div class="container irmr3-test-container">
-    <form action="{{route('test.test_irmr3_formulaire_part2')}}" method="post">
+    <form action="" method="post">
         @csrf
         <div class="form-row irmr3-form-row mb-3">
             <div class="p-0 col-12 col-md-6 col-lg-6">

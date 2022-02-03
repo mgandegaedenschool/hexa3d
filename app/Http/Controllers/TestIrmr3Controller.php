@@ -41,7 +41,7 @@ class TestIrmr3Controller extends Controller
         $etalonnage = Etalonnage::create([
             "libelle_etalonnage" => 'adulte'
         ]);
-        Item_serie_hexa3d_irmr::create(['']);
+
         return view('test.test_irmr3_formulaire_part1');
     }
     public function formulaire2(){

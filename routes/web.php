@@ -7,6 +7,7 @@ use App\Http\Controllers\ExampleController;
 use App\Http\Controllers\PatientController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ParticipationController;
+use App\Http\Controllers\Irmr3FormController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,6 +38,9 @@ Route::get('/reset-password', function(){
 Route::get('admin/admin', function(){
     return view('admin.admin');
 })->name('admin.admin');
+
+Route::get('/irmr3Form', 'App\Http\Controllers\Irmr3FormController@create')->name('irmr3Form');
+Route::post('/irmr3Form', 'App\Http\Controllers\Irmr3FormController@store')->name('irmr3Form');
 
 Route::get('/admin/user_index', 'App\Http\Controllers\UserController@index')->name('admin.user_index');
 Route::get('/admin/user_create', 'App\Http\Controllers\UserController@create')->name('admin.user_create');
