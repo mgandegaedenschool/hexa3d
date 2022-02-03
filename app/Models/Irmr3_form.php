@@ -10,4 +10,7 @@ class Irmr3_form extends Model
     use HasFactory;
     public $timestamp = false;
     protected $guarded = [];
+    protected $cast = [
+        'value' => 'array'
+    ];
 }

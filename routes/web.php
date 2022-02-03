@@ -152,8 +152,8 @@ Route::post('/test/test_irmr3_formulaire_part7', 'App\Http\Controllers\TestIrmr3
 Route::post('/test/test_irmr3_formulaire_part8', 'App\Http\Controllers\TestIrmr3Controller@formulaire8')->name('test.test_irmr3_formulaire_part8');
 Route::post('/test/test_irmr3_formulaire_part9', 'App\Http\Controllers\TestIrmr3Controller@formulaire9')->name('test.test_irmr3_formulaire_part9');
 
-
-Route::resource('/Irmr3Form', Irmr3FormController::class);
+Route::get('/Irmr3Form', 'App\Http\Controllers\Irmr3FormController@create')->name('irmr3Form');
+Route::post('/Irmr3Form', 'App\Http\Controllers\Irmr3FormController@store')->name('irmr3Form');
 
 Route::get('/', function (){
     return 'Bienvenue tout le monde';

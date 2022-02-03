@@ -24,11 +24,22 @@ class Irmr3FormController extends Controller
      */
     public function create()
     {
-        Irmr3_form::create(
-        /* PARTIE 1 */
+        return view('test.irmr3_forms');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        $tab = [
+            /* PARTIE 1 */
             ['name'=> 'exp-agricole', 'value' => [0,1,2], 'metier'=> 'Exploitant agricole', 'definition' => 'définition du métier au survol', 'domaine' => 'Plein air', 'partie' => 1],
             ['name'=> 'inge-batiment', 'value' => [0,1,2], 'metier'=> 'Ingénieur en bâtiment', 'definition' => 'définition du métier au survol', 'domaine' => 'Techniques', 'partie' => 1],
-            ['name'=> 'ass-gestion', 'value' => [0,1,2], 'metier'=> 'Assistant de gestion', 'definition' => 'définition du métier au survol', 'domaine' =>'Calcul', 'partie' => '1'],
+            ['name'=> 'ass-gestion', 'value' => [0,1,2], 'metier'=> 'Assistant de gestion', 'definition' => 'définition du métier au survol', 'domaine' =>'Calcul', 'partie' => 1],
             ['name'=> 'chercheur-sci', 'value' => [0,1,2], 'metier'=> 'Chercheur scientifique', 'definition' => 'définition du métier au survol', 'domaine' => 'Scientifiques', 'partie' => 1],
             ['name'=> 'dir-commercial', 'value' => [0,1,2], 'metier'=> 'Directeur commercial', 'definition' => 'définition du métier au survol', 'domaine' =>'Contacts personnels', 'partie' => 1],
             ['name'=> 'peintre', 'value' => [0,1,2], 'metier'=> 'Artiste peintre', 'definition' => 'définition du métier au survol', 'domaine' =>'Esthétiques', 'partie' => 1],
@@ -158,20 +169,10 @@ class Irmr3FormController extends Controller
             ['name'=>'couturier','value'=>[0,1,2],'metier'=>'Couturier (haute couture)','definition'=>'définition du métier au survol','domaine'=>'Esthétiques','partie'=>9],
             ['name'=>'ass-edition','value'=>[0,1,2],'metier'=>'Assistant d\'édition','definition'=>'définition du métier au survol','domaine'=>'Littéraires','partie'=>9],
             ['name'=>'dj','value'=>[0,1,2],'metier'=>'Disc-jokey','definition'=>'définition du métier au survol','domaine'=>'Musicaux','partie'=>9]
-        );
-
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+        ];
+        foreach($tab as $val){
+            Irmr3_form::create($val);
+        }
     }
 
     /**
