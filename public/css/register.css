@@ -130,9 +130,70 @@ i.fa-chevron-right.active-chevron{
     color: var(--purple);
     background-color: #fff;
 }
-.hidden{
+.hidden-sco{
+    display: none !important;
+}
+.hidden-sal{
+    display: none !important;
+}
+.select-custom{
+    appearance: none !important;
+    background-color: transparent !important;
+    border: none !important;
+    padding: 0 1em 0 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    font-family: inherit !important;
+    font-size: inherit !important;
+    cursor: inherit !important;
+    line-height: inherit !important;
+    outline: none;
+}
+.select-custom::-ms-expand{
     display: none;
 }
+.select-container{
+    display: grid;
+    grid-template-areas: "select";
+    grid-area: select;
+    align-items: center;
+    padding: 1rem 2rem !important;
+    height: auto;
+    border-radius: 1.7rem;
+    border: 2px solid gainsboro;
+    font-size: 1.6rem;
+    width: 100%;
+    cursor: pointer;
+    line-height: 1.1;
+    position: relative;
+    background-color: #fff;
+}
+.select-container::after{
+    content: "";
+    grid-area: select;
+    width: 1em;
+    height: 0.7em;
+    background-color: var(--black);
+    -webkit-clip-path: polygon(85% 0, 100% 0, 50% 100%, 0 0, 15% 0, 50% 75%);
+    clip-path: polygon(85% 0, 100% 0, 50% 100%, 0 0, 15% 0, 50% 75%);
+    justify-self: end;
+    position: absolute;
+}
+.select-custom:focus{
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+.select-custom:focus + .focus {
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+    border: 2px solid var(--purple);
+    border-radius: inherit;
+}
+
 
 /* X-Small devices (portrait phones, less than 576px)
  No media query for `xs` since this is the default in Bootstrap */

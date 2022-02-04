@@ -36,50 +36,40 @@
             <form action="" method="post">
                 <div class="form-row">
                     <div class="form-group col-12 col-md-5 col-lg-5 py-3">
-                        <label for="InputStudies">Votre niveau d'études</label>
-                        <input type="text" class="form-control" id="InputStudies" placeholder="Votre niveau d'études">
+                        <label for="studies" class="mr-3 mb-0">Votre niveau d'études ?</label>
+                        <div class="select-container">
+                            <select class="select-custom mb-3 form-control" id="studies">
+                                <option value="brevet">Brevet</option>
+                                <option value="BAC">BAC</option>
+                            </select>
+                            <span class="focus"></span>
+                        </div>
                     </div>
                 </div>
-                <div class="form-row d-flex justify-content-between hidden-field p-3 mb-2">
+                <div class="form-row d-flex justify-content-between mb-2">
                     <div class="form-group col-12 col-md-5 col-lg-5">
-                        <div class="form-check d-flex align-items-center flex-wrap schol">
-                            <label for="inlineRadio4" class="mr-3 mb-0">Êtes-vous scholarisé(e) ?</label>
-
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input radioSch" type="radio" name="inlineRadioOptions2" id="inlineRadio3" value="yes">
-                                <label class="form-check-label" for="inlineRadio3">Oui</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input radioSch" type="radio" name="inlineRadioOptions2" id="inlineRadio4" value="no" checked>
-                                <label class="form-check-label" for="inlineRadio4">Non</label>
-                            </div>
+                        <label for="scolarized" class="mr-3 mb-0">Êtes-vous scolarisé(e) ?</label>
+                        <div class="select-container">
+                            <select class="select-custom mb-3 form-control" id="scolarized">
+                                <option value="non">Non</option>
+                                <option value="oui">Oui</option>
+                            </select>
+                            <span class="focus"></span>
                         </div>
 
-                        <label for="InputStudies" class="hidden disabled-element-sch">Votre classe</label>
-                        <input type="text" class="form-control disabled-element-sch hidden" id="InputClass" placeholder="Votre classe">
-                        <label for="InputStudies" class="hidden disabled-element-sch">Votre niveau votre établissement</label>
-                        <input type="text" class="form-control disabled-element-sch hidden" id="InputSchool" placeholder="Votre établissement">
-                        <label for="InputStudies" class="hidden disabled-element-sch">Votre section</label>
-                        <input type="text" class="form-control disabled-element-sch hidden" id="InputSection" placeholder="Votre section">
                     </div>
-                    <div class="form-group col-12 col-md-5 col-lg-5">
-                        <div class="form-check d-flex align-items-center flex-wrap salary">
-                            <label for="inputScholarized" class="mb-0 mr-3">Êtes-vous salarié(e) ?</label>
-
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input radioSal" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="yes">
-                                <label class="form-check-label" for="inlineRadio1">Oui</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input radioSal" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="no" checked>
-                                <label class="form-check-label" for="inlineRadio2">Non</label>
-                            </div>
-                        </div>
-
-                        <label for="InputStudies" class="hidden disabled-element-sal">Votre état</label>
-                        <input type="text" class="form-control disabled-element-sal hidden" id="InputStatus" placeholder="Votre état">
+                    <div class="form-group col-12 col-md-5 col-lg-5 hidden-select-container hidden-sco">
+                        <label for="InputStudies" class="disabled-element-sch">Votre classe</label>
+                        <input type="text" class="form-control disabled-element-sch" id="InputClass" placeholder="Votre classe">
                     </div>
-
+                    <div class="form-group col-12 col-md-5 col-lg-5 hidden-select-container hidden-sco">
+                        <label for="InputStudies" class="disabled-element-sch">Votre niveau votre établissement</label>
+                        <input type="text" class="form-control disabled-element-sch" id="InputSchool" placeholder="Votre établissement">
+                    </div>
+                    <div class="form-group col-12 col-md-5 col-lg-5 hidden-select-container hidden-sco">
+                        <label for="InputStudies" class="disabled-element-sch">Votre section</label>
+                        <input type="text" class="form-control disabled-element-sch" id="InputSection" placeholder="Votre section">
+                    </div>
                 </div>
 
                 <div class="d-flex justify-content-center align-items-center">
@@ -90,6 +80,29 @@
             <?php }elseif(isset($_GET['step']) && $_GET['step'] == '3'){?>
             {{-- third step of the form --}}
             <form action="" method="post">
+                <div class="form-row d-flex justify-content-between mb-2">
+                    <div class="form-group col-12 col-md-5 col-lg-5">
+                        <label for="salarized" class="mr-3 mb-0">Êtes-vous scolarisé(e) ?</label>
+                        <div class="select-container">
+                            <select class="select-custom mb-3 form-control" id="salarized">
+                                <option value="non">Non</option>
+                                <option value="oui">Oui</option>
+                            </select>
+                            <span class="focus"></span>
+                        </div>
+
+                    </div>
+                    <div class="form-group col-12 col-md-5 col-lg-5 hidden-sal">
+                        <div class="select-container hidden-select-container hidden-sal">
+                            <select class="select-custom mb-3 form-control">
+                                <option value="">Votre etat</option>
+                                <option value="etat1">etat 1</option>
+                                <option value="etat2">etat 2</option>
+                            </select>
+                            <span class="focus"></span>
+                        </div>
+                    </div>
+                </div>
                 <div class="form-row d-flex justify-content-between">
                     <div class="form-group col-12 col-md-5 col-lg-5">
                         <label for="inputJob">Votre emploi actuel</label>
@@ -97,7 +110,7 @@
                     </div>
                     <div class="form-group col-12 col-md-5 col-lg-5">
                         <label for="inputWantedJob">Votre emploi envisagé</label>
-                        <input type="text" class="form-control" id="inputWantedJob" placeholder="Votre enploi envisagé">
+                        <input type="text" class="form-control" id="inputWantedJob" placeholder="Votre emploi envisagé">
                     </div>
                 </div>
                 <div class="form-row d-flex">

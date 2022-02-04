@@ -1,3 +1,4 @@
+/*
 let radioSal = document.querySelectorAll(".radioSal");
 let radioSch = document.querySelectorAll(".radioSch");
 
@@ -17,7 +18,22 @@ for (let j = 0; j < radioSch.length; j++) {
         displayForm('sch');
     });
 }
+*/
+let hiddenSco = document.querySelectorAll('.hidden-select-container');
+let hiddenSal = document.querySelectorAll('.hidden-select-container');
 
+let selectSal = document.getElementById('salarized');
+let selectSco = document.getElementById('scolarized');
+selectSco.addEventListener('change', function(){
+        for (let i = 0; i < hiddenSco.length; i++){
+            hiddenSco[i].classList.toggle('hidden-sco');
+        }
+});
+selectSal.addEventListener('change', function(){
+    for (let j = 0; j < hiddenSal.length; j++){
+        hiddenSal[j].classList.toggle('hidden-sal');
+    }
+});
 
 let linkEye = document.querySelector(".fa-eye");
 
@@ -29,5 +45,4 @@ linkEye.addEventListener('click', function (){
     linkEye.classList.toggle("fas");
     linkEye.classList.toggle("fa-times");
     linkEye.classList.toggle("fa-eye");
-
 });
