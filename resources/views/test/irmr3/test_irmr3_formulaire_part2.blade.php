@@ -1,5 +1,5 @@
 <div class="container irmr3-test-container">
-    <form action="" method="post">
+    <form action="{{route('test.test_irmr3_formulaire_part',['step'=>3,'part'=>3])}}" method="post">
         <div class="form-row irmr3-form-row mb-3">
             <div class="p-0 col-12 col-md-6 col-lg-6">
                 <p class="job">Ingénieur mécanicien<span class="hidden-definition">définition du métier au survol</span></p>
@@ -12,7 +12,7 @@
             </div>
             <div class="form-check col-4 col-md-2 col-lg-2 position-relative d-flex justify-content-center align-items-center">
                 <input type="radio" class="position-absolute test-radio-input" name="inge-mecanicien" value="1">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-check2 position-absolute" viewBox="0 0 16 16">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-check2 position-absolute" viewBox="0 0 16 16"> 
                     <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
                 </svg>
             </div>

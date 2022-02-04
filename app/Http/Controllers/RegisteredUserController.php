@@ -15,7 +15,7 @@ class RegisteredUserController extends Controller
         $register = $request->session()->get('register');
         return view('auth.create-step-one', compact('register'));
     }
-    public function postCreateStepOne(Request $request)
+    public function postCreateStepOne(Request $request, $step = 2)
     {
 
         $validatedData = $request->validate([
@@ -29,14 +29,14 @@ class RegisteredUserController extends Controller
         ]);
         $request->session()->put('step1', $validatedData);
 
-        return redirect()->route('register.create.step.two');
+        return redirect()->route('register.create.step.two', ['step' => 2]);
     }
     public function createStepTwo(Request $request)
     {
         $register = $request->session()->get('request');
         return view('auth.create-step-two', compact('register'));
     }
-    public function postCreateStepTwo(Request $request)
+    public function postCreateStepTwo(Request $request, $step = 3)
     {
         $validatedData = $request->validate([
             'niv_etude' => ['required', 'string', 'max:255'],
@@ -52,14 +52,14 @@ class RegisteredUserController extends Controller
         $step2 = array_merge($step1, $validatedData);
 
         $request->session()->put('step2', $step2);
-        return redirect()->route('register.create.step.three');
+        return redirect()->route('register.create.step.three', ['step' => 3]);
     }
-    public function createStepThree(Request $request)
+    public function createStepThree(Request $request, $step = 3)
     {
         $step3 = $request->session()->get('step2');
         return view('auth.create-step-three', compact('step3'));
     }
-    public function postCreateStepThree(Request $request)
+    public function postCreateStepThree(Request $request, $step = 3)
     {
         $validatedData = $request->validate([
             'emploi_actuel' => ['required', 'string', 'max:255'],
@@ -92,7 +92,6 @@ class RegisteredUserController extends Controller
             'etat' => $step3['etat'],
             'emploi_envisage' => $step3['emploi_envisage'],
             'etalonnage' => $step3['etalonnage']
-
         ]);
         return redirect(RouteServiceProvider::HOME);
     }

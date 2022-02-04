@@ -1,12 +1,12 @@
 @extends('app')
-
+<?php $bgc = 'grey-background'; ?>
 @section('content')
     @include('test.irmr3.header_irmr3_inc')
 
     <div class="container bonus-container">
         <h3 class="irmr3-title-start font-weight-bold mt-4">Indiquez les trois mériers que vous préféreriez entre tous, que vous les ayez rencontré ou non dans les listes de métiers des écrans précédents :</h3>
 
-        <form action="" method="post" class="py-4">
+        <form action="{{route('test.test_irmr3_fin')}}" method="post" class="py-4">
             <div class="form-row irmr3-bonus-row mb-3">
                 <div class="p-0 col-12 col-md-4 col-lg-4 text-center text-md-right text-lg-right">
                     <p class="job px-4">Métier 1</p>

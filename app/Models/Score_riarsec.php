@@ -6,10 +6,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Tableau_score;
 use App\Models\partie;
+
 class Score_riarsec extends Model
 {
     use HasFactory;
     public $timestamps = false;
+    protected $guarded = [];
     public function Tableau_scores()
     {
         return $this->hasMany(Tableau_score::class);

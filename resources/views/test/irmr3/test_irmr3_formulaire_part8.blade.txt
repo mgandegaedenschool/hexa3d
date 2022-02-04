@@ -1,5 +1,5 @@
 <div class="container irmr3-test-container">
-    <form action="" method="post">
+    <form action="{{route('test.test_irmr3_formulaire_part9" method="post">
         <div class="form-row irmr3-form-row mb-3">
             <div class="p-0 col-12 col-md-6 col-lg-6">
                 <p class="job">Guitariste<span class="hidden-definition">définition du métier au survol</span></p>

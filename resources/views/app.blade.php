@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+</head>
 {{-- 
     <title>RCC</title>
 
@@ -28,7 +29,7 @@
     <script src="/js/app/dashboard/dashboard.js"></script>
     @yield('script')
 </body> --}}
-
+<body class="<?php echo $bgc??''; ?>">
 <title>Questionnaires d'interêts professionnels</title>
 
 <link rel="stylesheet" href="/css/lib/bootstrap.min.css">

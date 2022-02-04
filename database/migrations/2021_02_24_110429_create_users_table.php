@@ -26,10 +26,10 @@ class CreateUsersTable extends Migration
             $table->string('section')->nullable();
             $table->string('sexe');
             $table->integer('age');
-            $table->tinyInteger('scolarise');
+            $table->tinyInteger('scolarise')->nullable();
             $table->string('etalonnage');
             $table->string('etablissement')->nullable();
-            $table->tinyInteger('salarie');
+            $table->tinyInteger('salarie')->nullable();
             $table->string('emploi_actuel');
             $table->string('specialite');
             $table->string('etat')->nullable();

@@ -1,4 +1,3 @@
-
 @extends('app')
 @section('content')
     <header class="upper-container d-flex">
@@ -11,8 +10,9 @@
             </div>
         </div>
     </header>
-    <main>
+    <main class="mt-5 pt-4">
         <div class="container">
+
                 <h3 class="font-weight-bold text-center">Avant de commencer le test, merci de renseigner les informations suivantes :</h3>
                 <div class="pages d-flex align-items-center justify-content-center my-4">
                     {{-- change the style when the steps advance --}}
@@ -31,44 +31,42 @@
                     } ?>'>Professionel</p>
                 </div>
         </div>
-    
         <div class="container">
-            <h3 class="font-weight-bold text-center">Avant de commencer le test, merci de renseigner les informations suivantes :</h3>
-        </div>
-        <div class="container">
-                <form method="POST" action="{{ route('register.create.step.one.post') }}">
+
+        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+                <form method="POST" action="{{ route('register.create.step.one.post','step=2') }}">
                     @csrf 
         
                 <div class="form-row d-flex justify-content-between">
                     <div class="form-group col-12 col-md-5 col-lg-5">
                         <label for="InputId">Votre identifiant </label>
-                        <input type="text" class="form-control" id="InputId" name="username" placeholder="Votre identifiant ">
+                        <x-input type="text" class="form-control" id="InputId" name="username" :value="old('username')" placeholder="Votre identifiant" />
                     </div>
                     <div class="form-group col-12 col-md-5 col-lg-5">
                         <label for="InputId">Votre adresse mail</label>
-                        <input type="text" class="form-control" id="InputId" name="email" placeholder="Votre adresse mail">
+                        <x-input type="text" class="form-control" id="InputId" name="email" :value="old('email')" placeholder="Votre adresse mail" />
                     </div>
                 </div>
                 <div class="form-row d-flex justify-content-between">
                     <div class="form-group col-12 col-md-5 col-lg-5">
                         <label for="InputPassword1">Votre mot de passe</label>
-                        <input type="password" class="form-control" id="InputPassword1" name="password" placeholder="Votre mot de passe">
+                        <x-input type="password" class="form-control" id="InputPassword1" name="password" :value="old('password')" placeholder="Votre mot de passe (plus de 8 caractères)" />
                     </div>
                 
                         <div class="form-group col-12 col-md-5 col-lg-5">
                         <label for="inputName">Votre nom</label>
-                        <input type="text" class="form-control" id="inputName"  name="lastname" placeholder="Votre nom">
+                        <x-input type="text" class="form-control" id="inputName"  name="lastname" :value="old('lastname')" placeholder="Votre nom" />
                     </div>
                 </div>
                 <div class="form-row d-flex justify-content-between">
                     
                     <div class="form-group col-12 col-md-5 col-lg-5">
                         <label for="inputFirstName">Votre prénom</label>
-                        <input type="text" class="form-control" id="inputFirstName" name="firstname" placeholder="Votre prénom">
+                        <x-input type="text" class="form-control" id="inputFirstName" name="firstname" :value="old('firstname')" placeholder="Votre prénom" />
                     </div>
                      <div class="form-group col-12 col-md-5 col-lg-5">
                         <label for="inputAge">Votre âge</label>
-                        <input type="number" class="form-control" id="inputAge" name="age" placeholder="Votre âge">
+                        <x-input type="number" class="form-control" id="inputAge" name="age" :value="old('age')" placeholder="Votre âge" />
                     </div>
                 </div>
 

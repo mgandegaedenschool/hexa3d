@@ -7,6 +7,7 @@ use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\ExampleController;
 use App\Http\Controllers\PatientController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Irmr3FormController;
 use App\Http\Controllers\ParticipationController;
 use App\Http\Controllers\RegisteredUserController;
 use App\Http\Controllers\Admin\Type\TypeController;
@@ -37,9 +38,11 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/test/test_irmr3_conditions', 'App\Http\Controllers\TestIrmr3Controller@conditions')->name('test.test_irmr3_conditions');
     Route::get('/test/test_irmr3_consignes', 'App\Http\Controllers\TestIrmr3Controller@consignes')->name('test.test_irmr3_consignes');
     Route::get('/test/test_irmr3_formulaire', 'App\Http\Controllers\TestIrmr3Controller@formulaire')->name('test.test_irmr3_formulaire');
+    Route::post('/test/test_irmr3_formulaire', 'App\Http\Controllers\TestIrmr3Controller@formulaire')->name('test.test_irmr3_formulaire');
     Route::get('/test/test_irmr3_bonus', 'App\Http\Controllers\TestIrmr3Controller@bonus')->name('test.test_irmr3_bonus');
     Route::get('/test/test_irmr3_fin', 'App\Http\Controllers\TestIrmr3Controller@fin')->name('test.test_irmr3_fin');
     /* form parts */
+    Route::post('/test/test_irmr3_formulaire_part', 'App\Http\Controllers\TestIrmr3Controller@formulaire1')->name('test.test_irmr3_formulaire_part');
     Route::post('/test/test_irmr3_formulaire_part1', 'App\Http\Controllers\TestIrmr3Controller@formulaire1')->name('test.test_irmr3_formulaire_part1');
     Route::post('/test/test_irmr3_formulaire_part2', 'App\Http\Controllers\TestIrmr3Controller@formulaire2')->name('test.test_irmr3_formulaire_part2');
     Route::post('/test/test_irmr3_formulaire_part3', 'App\Http\Controllers\TestIrmr3Controller@formulaire3')->name('test.test_irmr3_formulaire_part3');
@@ -60,6 +63,10 @@ Route::middleware(['admin'])->group(function () {
     Route::resource('/admin/domaine', DomaineController::class);
     Route::resource('/admin/question', QuestionController::class);
 });
+
+Route::get('/irmr3Form', 'App\Http\Controllers\Irmr3FormController@create')->name('irmr3Form');
+Route::post('/irmr3Form', 'App\Http\Controllers\Irmr3FormController@store')->name('irmr3Form');
+// Route::resource('/irmr3Form', Irmr3FormController::class);
 Route::get('/forgot-password', function () {
     return view('auth.forgot-password');
 })->name("forgot-password");
@@ -67,6 +74,7 @@ Route::get('/forgot-password', function () {
 Route::get('/reset-password', function () {
     return view('auth.reset-password');
 })->name('auth.reset-password');
+
 
 
 

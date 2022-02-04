@@ -32,7 +32,7 @@
             </div>
         </div>
         <div class="container">
-                <form method="POST" action="{{ route('register.create.step.two.post') }}">
+                <form method="POST" action="{{ route('register.create.step.two.post','step=2') }}">
                     @csrf 
         
                 <div class="form-row">
@@ -41,7 +41,7 @@
                         <input type="text" class="form-control" id="InputStudies" name="niv_etude" placeholder="Votre niveau d'études">
                     </div>
                     <div class="form-group col-12 col-md-5 col-lg-5 py-3">
-                        <label for="etalonnage">Votre niveau d'études</label>
+                        <label for="etalonnage">Votre étalonnage</label>
                         <input type="text" class="form-control" id="etalonnage" name="etalonnage" placeholder="ex: collégien, lycéen, adulte">
                     </div>
                 </div>
