@@ -19,21 +19,22 @@ for (let j = 0; j < radioSch.length; j++) {
     });
 }
 */
-let hiddenSco = document.querySelectorAll('.hidden-select-container');
-let hiddenSal = document.querySelectorAll('.hidden-select-container');
+let hidden = document.querySelectorAll('.hidden-select-container');
+let select = document.querySelectorAll('.dynamic-select');
 
-let selectSal = document.getElementById('salarized');
-let selectSco = document.getElementById('scolarized');
-selectSco.addEventListener('change', function(){
-        for (let i = 0; i < hiddenSco.length; i++){
-            hiddenSco[i].classList.toggle('hidden-sco');
+for (let k = 0; k < select.length; k++) {
+    select[k].addEventListener('change', function(){
+        for (let i = 0; i < hidden.length; i++){
+            hidden[i].classList.toggle('hidden');
         }
-});
+    });
+}
+/*
 selectSal.addEventListener('change', function(){
     for (let j = 0; j < hiddenSal.length; j++){
         hiddenSal[j].classList.toggle('hidden-sal');
     }
-});
+});*/
 
 let linkEye = document.querySelector(".fa-eye");
 

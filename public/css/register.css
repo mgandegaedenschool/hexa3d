@@ -104,11 +104,21 @@ i.fa-chevron-right{
 i.fa-chevron-right.active-chevron{
     opacity: 1;
 }
+.btn-container{
+    display: grid;
+    grid-template: auto auto/ 1fr;
+}
+.submit-form-register{
+    width: 100%;
+    justify-self: end;
+}
 .next-btn{
     color: var(--black);
+    justify-self: start;
+    margin-right: auto;
 }
 .next-btn .fa-chevron-right{
-    margin-left: 10px;
+    opacity: 1;
 }
 .next-btn:hover{
     color: var(--purple);
@@ -125,15 +135,13 @@ i.fa-chevron-right.active-chevron{
     border: var(--purple) 2px solid;
     color:#ffffff;
     border-radius: 1.2rem;
+    font-size: 1.6rem !important;
 }
 .purple-btn:hover{
     color: var(--purple);
     background-color: #fff;
 }
-.hidden-sco{
-    display: none !important;
-}
-.hidden-sal{
+.hidden{
     display: none !important;
 }
 .select-custom{
@@ -184,7 +192,7 @@ i.fa-chevron-right.active-chevron{
     outline: none;
     box-shadow: none;
 }
-.select-custom:focus + .focus {
+.select-custom:focus + .focus{
     position: absolute;
     top: -1px;
     left: -1px;
@@ -203,16 +211,15 @@ i.fa-chevron-right.active-chevron{
     .step{
         font-size: 1.6rem;
     }
+    .btn-container{
+        grid-template: auto/ 1fr 1fr;
+    }
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
     .step{
         font-size: 1.8rem;
-    }
-    .submit-form{
-        width: 50% !important;
-        margin: 0 auto;
     }
 }
 
@@ -221,9 +228,12 @@ i.fa-chevron-right.active-chevron{
     .step{
         font-size: 1.8rem;
     }
-    .submit-form{
-        width: 50% !important;
-        margin: 0 auto;
+    .submit-form-register{
+        width: 25%;
+        justify-self: end;
+    }
+    .next-btn{
+        margin-right: 0;
     }
 }
 
@@ -232,16 +242,8 @@ i.fa-chevron-right.active-chevron{
     .step{
         font-size: 2rem;
     }
-    .submit-form{
-        width: 50% !important;
-        margin: 0 auto;
-    }
 }
 
 /* XX-Large devices (larger desktops, 1400px and up) */
 @media (min-width: 1400px) {
-    .submit-btn{
-        width: 50% !important;
-        margin: 0 auto;
-    }
 }

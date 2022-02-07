@@ -1,13 +1,8 @@
 @extends('app')
 @section('content')
     <header class="upper-container d-flex">
-        <div class="container header-contain">
-            <div class="row d-flex align-items-center img-text-nav py-3">
-                <div class="col-4 upper-image-container">
-                    <img src="https://via.placeholder.com/640x360" alt="spirale grise et blanche" class="img-fluid">
-                </div>
-                <h6 class="text-uppercase col-8 col-md-2 upper-title my-2">questionnaires d'intérêts professionnels</h6>
-            </div>
+        <div class="container d-flex header-contain">
+            @include('espace_membre.header_img_inc')
         </div>
     </header>
     <main class="mt-5 pt-4">
@@ -50,7 +45,7 @@
                     <div class="form-group col-12 col-md-5 col-lg-5">
                         <label for="scolarized" class="mr-3 mb-0">Êtes-vous scolarisé(e) ?</label>
                         <div class="select-container">
-                            <select class="select-custom mb-3 form-control" id="scolarized">
+                            <select class="select-custom mb-3 form-control dynamic-select" id="scolarized">
                                 <option value="non">Non</option>
                                 <option value="oui">Oui</option>
                             </select>
@@ -58,22 +53,23 @@
                         </div>
 
                     </div>
-                    <div class="form-group col-12 col-md-5 col-lg-5 hidden-select-container hidden-sco">
+                    <div class="form-group col-12 col-md-5 col-lg-5 hidden-select-container hidden">
                         <label for="InputStudies" class="disabled-element-sch">Votre classe</label>
                         <input type="text" class="form-control disabled-element-sch" id="InputClass" placeholder="Votre classe">
                     </div>
-                    <div class="form-group col-12 col-md-5 col-lg-5 hidden-select-container hidden-sco">
+                    <div class="form-group col-12 col-md-5 col-lg-5 hidden-select-container hidden">
                         <label for="InputStudies" class="disabled-element-sch">Votre niveau votre établissement</label>
                         <input type="text" class="form-control disabled-element-sch" id="InputSchool" placeholder="Votre établissement">
                     </div>
-                    <div class="form-group col-12 col-md-5 col-lg-5 hidden-select-container hidden-sco">
+                    <div class="form-group col-12 col-md-5 col-lg-5 hidden-select-container hidden">
                         <label for="InputStudies" class="disabled-element-sch">Votre section</label>
                         <input type="text" class="form-control disabled-element-sch" id="InputSection" placeholder="Votre section">
                     </div>
                 </div>
 
                 <div class="d-flex justify-content-center align-items-center">
-                    <a href="?step=3" class="next-btn d-inline-block mx-auto my-0 pb-4">Suivant <i class='fas fa-chevron-right'></i></a>
+                    <a href="?step=1" class="next-btn m-4"><i class='fas fa-chevron-left'></i> Précédent</a>
+                    <a href="?step=3" class="next-btn m-4">Suivant <i class='fas fa-chevron-right'></i></a>
                 </div>
             </form>
 
@@ -84,7 +80,7 @@
                     <div class="form-group col-12 col-md-5 col-lg-5">
                         <label for="salarized" class="mr-3 mb-0">Êtes-vous scolarisé(e) ?</label>
                         <div class="select-container">
-                            <select class="select-custom mb-3 form-control" id="salarized">
+                            <select class="select-custom mb-3 form-control dynamic-select" id="salarized">
                                 <option value="non">Non</option>
                                 <option value="oui">Oui</option>
                             </select>
@@ -92,8 +88,9 @@
                         </div>
 
                     </div>
-                    <div class="form-group col-12 col-md-5 col-lg-5 hidden-sal">
-                        <div class="select-container hidden-select-container hidden-sal">
+                    <div class="form-group col-12 col-md-5 col-lg-5 hidden-select-container hidden">
+                        <label for="salarized" class="mr-3 mb-0">Votre etat</label>
+                        <div class="select-container">
                             <select class="select-custom mb-3 form-control">
                                 <option value="">Votre etat</option>
                                 <option value="etat1">etat 1</option>
@@ -119,7 +116,10 @@
                         <input type="text" class="form-control" id="inputSpe" placeholder="Votre spécialité">
                     </div>
                 </div>
-                <input type="submit" class="submit-form btn btn-block purple-btn py-2 mt-4" value="Envoyer">
+                <div class="btn-container align-items-center justify-content-start">
+                    <a href="?step=2" class="next-btn ml-auto my-4"><i class='fas fa-chevron-left'></i> Précédent</a>
+                    <input type="submit" class="submit-form-register btn btn-lg purple-btn my-4 py-2 align-self-end" value="Envoyer">
+                </div>
             </form>
 
             <?php }else{ ?>
