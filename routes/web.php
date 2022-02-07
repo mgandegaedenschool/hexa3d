@@ -158,6 +158,9 @@ Route::post('/Irmr3Form', 'App\Http\Controllers\Irmr3FormController@store')->nam
 Route::get('/', function (){
     return 'Bienvenue tout le monde';
 });
+Route::get('/', function (){
+    return 'Bienvenue tout le monde';
+});
 Route::get('/pdf', [PDFController::class, 'showPDF'])->name('pdf.index');
 Route::get('/pdf/create', [PDFController::class, 'createPDF'])->name('pdf.create');
 
