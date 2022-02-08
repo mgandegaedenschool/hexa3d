@@ -12,7 +12,7 @@ html {
     font-size: 62.5%;
 }
 
-body {
+body{
     font-size: 1.6rem;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
@@ -154,7 +154,7 @@ button.next-btn{
     display: none !important;
 }
 .custom-select-auth{
-    background: url("../img/chevron-down.svg") no-repeat right .75rem center/15px 15px;
+    background: url("../img/chevron-down.svg") no-repeat right .75rem center/12px 12px;
 }
 
 /* X-Small devices (portrait phones, less than 576px)

@@ -1,179 +1,174 @@
-.espace-pro-header-contain{
-    display: flex;
-    max-width: 100%;
-    justify-content: center;
-    flex-direction: column;
-    width: 95%;
-    padding: 15px 0;
+.global-container{
+    padding-bottom: 3rem;
+    margin-top: 50px;
 }
-.espace-pro-header{
-    justify-content: center;
+.my-infos, .my-tests{
+    border-radius: 2rem;
+    background-color:#ffffff;
+    padding: 20px;
+    box-shadow: 1px 1px 2px gray;
 }
 
-.espace-pro-svg-icon-profile{
-    width: 80%;
-}
-.espace-pro-profil-pro{
-    width: 100%;
+.information-drop{
     display: flex;
-
+    justify-content: space-between;
     align-items: center;
-    align-self: center;
 }
-.bi-person {
-    display: none;
+.information-drop i{
+    background-color: var(--purple);
+    color: #ffffff;
+    border-radius: 50%;
+    font-size: 1rem;
+    padding: 10px;
+}
+.information-drop-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.height-none{
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+}
+.height-yes{
+    height: auto;
+    opacity: 1;
+    margin-top: 25px;
+}
+
+.disabled-element-eye{
+    transition: height 0s ease-in-out, opacity 0.5s ease-in-out, margin-top 0.5s ease;
+}
+.main-profile-div h2{
     color:var(--purple);
+    font-size: 1.6rem;
 }
 
-.espace-pro-profil-text-n-link{
+.icon-eye-view, .fa-times{
+    cursor: pointer;
+    height: 30px;
+    width:30px;
+    text-align: center;
+}
+.dropped-information{
+    font-size: 1.3rem;
+}
+.user-informations{
     display: flex;
-    flex-wrap: wrap;
-    text-align: end;
-    width: 100%;
+    margin-bottom: 1rem;
     align-items: center;
 }
-.espace-pro-profil-text-n-link p, .espace-pro-profil-text-n-link a{
-    width: 100%;
+.user-informations p{
+    width: 60%;
+    margin-bottom: 0px!important;
 }
-.espace-pro-profil-text-n-link .espace-pro-profil-text {
+.user-informations label{
+    width: 60%;
+    margin-bottom: 0px!important;
+}
+.user-informations span{
+    width: 40%;
     font-weight: bold;
-    font-size: 2.6rem;
+}
+.user-informations input{
+    border: none;
+    width: 40%;
+}
+.user-informations input:focus{
+    box-shadow: none;
+    border-bottom: 2px solid var(--purple);
+}
+.test-current{
+
+    border-bottom: 2px solid ;
+    border-bottom-color: rgba(220, 220, 220, 0.7);
+}
+.test-current h3{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.test-current p{
     margin: 0;
 }
-.espace-pro-profil-link{
-    margin: 0!important;
+.test-status{
+    margin:5px 0 15px 0!important;
+}
+.test-current:nth-last-of-type(1){
+    border:none;
+}
+
+.test-done{
+    color:var(--green);
+}
+.test-done-date{
+    font-size: 1.3rem;
+}
+.test-ongoing{
+    color:var(--orange);
+}
+.test-to-begin{
+    color:var(--gray);
+}
+.test-btn{
     font-size: 1.4rem;
 }
-
-.espace-pro-profil-text-n-link a {
-    color:var(--black);
-
-}
-.espace-pro-profil-link svg{
-    width: 21px;
-    height: 21px;
-}
-.espace-pro-profil-text-n-link a:hover {
-    color:var(--purple);
-}
-.espace-pro-profil-text-n-link a>svg {
+.fa-spinner{
     margin-right: 5px;
 }
 
-
-/**** ESPACE PRO ****/
-
-.espace-pro-container{
-    width: 95%;
-    margin: auto;
-    padding: 15px;
-    margin-top: 2rem;
+.info-block:not(.personal-infos){
+    border-top: 2px solid var(--purple);
+}
+.edit-btn{
+    color: white;
 }
 
-.my-credits{
-    border-radius: 2rem;
-    padding: 25px;
-    box-shadow: 0px 3px 6px gainsboro;
-    display: flex;
-    flex-direction: column;
-}
-.my-beneficiaires{
-    padding: 25px;
-
-
-}
-.my-credits-title{
-    color: var(--purple);
-    width: 100%;
-
-}
-
-.my-credits-balance p{
-    display: flex;
-    flex-direction: column;
-}
-.my-credits-balance span{
-    font-weight: bold;
-}
-
-.credits-buy-link{
-    margin: 0!important;
-}
-
-.credits-buy-link a {
-
-    color:var(--purple);
-}
-.credits-buy-link svg{
-    width: 21px;
-    height: 21px;
-}
-.credits-buy-link a:hover {
-}
-.ecredits-buy-link a>svg {
-    margin-right: 5px;
-}
-
-/* Small devices (landscape phones, 576px and up) */
-@media screen and (min-width: 300px) {
-
-    .bi-person {
-        display: inline-block;
-        width: 65px;
-        height: 65px;
-        font-size: 100%;
-    }
-    .bi-person path{
-        scale:1.1;
-    }
-}
-
+/* media queries */
 @media (min-width: 576px) {
-
-    .espace-pro-header-contain{
+    .dropped-information{
+        font-size: 1.4rem;
+    }
+    .infos-div{
         display: flex;
-        flex-direction: row;
-        width: 85%;
-        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-bottom: 2rem;
     }
-    .espace-pro-profil-pro{
-        width: 75%;
+    .user-informations:not(.user-show-info){
+        width: 50%;
     }
-    .espace-pro-profil-link{
-
-        font-size: 1.6rem;
+    .user-informations p {
+        width: 50%;
     }
-
-
+    .user-informations label{
+        width: 50%;
+    }
+    .user-informations span{
+        width: 50%;
+        padding-left: 1rem;
+    }
+    .user-informations input{
+        width: 50%;
+        padding-left: 1rem;
+    }
 }
 
-/* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
 
-    .espace-pro-profil-pro{
-
-        display: flex;
-    }
-    .espace-pro-profil-text-n-link{
-        margin-right: 20px;
-    }
 }
 
-/* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-    .espace-pro-container{
-        margin-top: 3rem;
+    .info-block:not(.personal-infos){
+        border-top: none;
+        border-left: 2px solid var(--purple);
     }
 }
 
-/* X-Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
 
 }
 
-/* XX-Large devices (larger desktops, 1400px and up) */
 @media (min-width: 1400px) {
-    .espace-pro-container{
-        margin-top: 4rem;
-    }
+
 }

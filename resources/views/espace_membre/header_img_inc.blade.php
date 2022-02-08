@@ -1,4 +1,4 @@
-<div class="row d-flex align-items-center img-text-nav icon-qip-pro">
+
     <svg class="espace-pro-svg-icon-profile" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="307" height="93" viewBox="0 0 307 93">
         <defs>
             <pattern id="pattern" preserveAspectRatio="none" width="100%" height="100%" viewBox="0 0 723 220">
@@ -7,4 +7,3 @@
         </defs>
         <rect id="Capture-02" width="307" height="93" fill="url(#pattern)"/>
     </svg>
-</div>

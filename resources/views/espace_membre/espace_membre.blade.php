@@ -1,13 +1,25 @@
+<?php $bgc = 'grey-background' ?>
 @extends('app')
 
 @section('content')
-    <header class="upper-container d-flex">
-        <div class="container header-contain">
-            <div class="row d-flex align-items-center img-text-nav py-3">
-                <div class="col-4 upper-image-container">
-                    <img src="https://via.placeholder.com/640x360" alt="spirale grise et blanche" class="img-fluid">
+    <header class="upper-container d-flex espace-pro-header">
+        <div class="header-contain espace-pro-header-contain">
+            <div class="row d-flex align-items-center img-text-nav icon-qip-pro">
+                @include('espace_membre.header_img_inc')
+            </div>
+            <div class="espace-pro-profil-pro">
+                <div class="espace-pro-profil-text-n-link">
+                    <p class="espace-pro-profil-text">Adam NOM</p>
+                    <p class="espace-pro-profil-link">
+                        <a href="{{--{{route('logout')}}--}}">Déconnexion</a>
+                    </p>
                 </div>
-                <h6 class="text-uppercase col-8 col-md-2 upper-title my-2">questionnaires d'intérêts professionnels</h6>
+                <div class="espace-pro-profil-icon-div">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person " viewBox="0 0 16 16">
+                        <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+                    </svg>
+                </div>
+
             </div>
         </div>
     </header>
@@ -43,8 +55,9 @@
                         <div class="user-informations"><p>Emploi envisagé :</p><span>Restaurateur</span></div>
                         <div class="user-informations"><p>Spécialité :</p><span>Accueil client</span></div>
                     </div>
-                    <input type="submit" value="Modifier" class="btn purple-btn send-password-link-btn py-2 px-4">
+                    <a href="{{route('espace_membre.espace_membre_edit')}}" class="btn purple-btn send-password-link-btn py-2 px-4">Modifier</a>
                 </div>
+
             </div>
             <div class="container-fluid my-tests">
                 <h2>Mon espace test</h2>
@@ -66,6 +79,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 

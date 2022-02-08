@@ -36,7 +36,7 @@ selectSal.addEventListener('change', function(){
     }
 });*/
 
-let linkEye = document.querySelector(".fa-eye");
+let linkEye = document.querySelector(".icon-eye-view");
 
 linkEye.addEventListener('click', function (){
     let element = document.querySelector(".disabled-element-eye");

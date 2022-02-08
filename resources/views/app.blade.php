@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="/css/register.css">
     <link rel="stylesheet" href="/css/dashboard.css">
     <link rel="stylesheet" href="/css/espace_membre.css">
+    <link rel="stylesheet" href="/css/espace_pro.css">
     <link rel="stylesheet" href="/css/irmr3.css">
     <link rel="stylesheet" href="/css/style.css">
 
