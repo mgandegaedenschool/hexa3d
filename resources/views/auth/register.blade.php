@@ -69,7 +69,7 @@
 
                 <div class="d-flex justify-content-center align-items-center">
                     <a href="?step=1" class="next-btn m-4"><i class='fas fa-chevron-left'></i> Précédent</a>
-                    <a href="?step=3" class="next-btn m-4">Suivant <i class='fas fa-chevron-right'></i></a>
+                    <button type="submit" class="next-btn d-inline-block m-4">Suivant <i class='fas fa-chevron-right'></i></button>
                 </div>
             </form>
 
@@ -164,7 +164,8 @@
                     </div>
                 </div>
                 <div class="d-flex justify-content-center align-items-center">
-                    <a href="?step=2" class="next-btn d-inline-block mx-auto my-0 pb-4">Suivant <i class='fas fa-chevron-right'></i></a>
+                    {{--<a href="?step=2" class="next-btn d-inline-block mx-auto my-0 pb-4">Suivant <i class='fas fa-chevron-right'></i></a>--}}
+                    <button type="submit" class="next-btn d-inline-block mx-auto my-4">Suivant <i class='fas fa-chevron-right'></i></button>
                 </div>
             </form>
             <?php } ?>

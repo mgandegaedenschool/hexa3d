@@ -76,7 +76,7 @@
                 </div>
             </div>
             <div class="d-flex justify-content-center align-items-center">
-                <button type="submit" class="next-btn d-inline-block mx-auto my-0 pb-4">Suivant <i class='fas fa-chevron-right'></i></button>
+                <button type="submit" class="next-btn d-inline-block mx-auto my-4">Suivant <i class='fas fa-chevron-right'></i></button>
             </div>
         </form>
     </div>

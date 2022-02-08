@@ -72,7 +72,7 @@
 
             <div class="d-flex justify-content-center align-items-center">
                 <a href="{{route('register.create.step.one')}}" class="next-btn m-4"><i class='fas fa-chevron-left'></i> Précédent</a>
-                <button type="submit" class="next-btn d-inline-block mx-auto my-0 pb-4">Suivant <i class='fas fa-chevron-right'></i></button>
+                <button type="submit" class="next-btn d-inline-block m-4">Suivant <i class='fas fa-chevron-right'></i></button>
             </div>
         </form>
 
