@@ -1,24 +1,4 @@
-/*
-let radioSal = document.querySelectorAll(".radioSal");
-let radioSch = document.querySelectorAll(".radioSch");
-
-function displayForm(param) {
-    let elements = document.querySelectorAll(".disabled-element-"+param);
-    for (let i = 0; i < elements.length; i++) {
-        elements[i].classList.toggle("hidden");
-    }
-}
-for (let j = 0; j < radioSal.length; j++) {
-    radioSal[j].addEventListener('change', function (){
-        displayForm('sal');
-    });
-}
-for (let j = 0; j < radioSch.length; j++) {
-    radioSch[j].addEventListener('change', function (){
-        displayForm('sch');
-    });
-}
-*/
+/* display others inputs when select changes */
 let hidden = document.querySelectorAll('.hidden-select-container');
 let select = document.querySelectorAll('.dynamic-select');
 
@@ -29,13 +9,8 @@ for (let k = 0; k < select.length; k++) {
         }
     });
 }
-/*
-selectSal.addEventListener('change', function(){
-    for (let j = 0; j < hiddenSal.length; j++){
-        hiddenSal[j].classList.toggle('hidden-sal');
-    }
-});*/
 
+/* display the users info when the eye is clicked and hide it when the cross is clicked */
 let linkEye = document.querySelector(".icon-eye-view");
 
 linkEye.addEventListener('click', function (){
@@ -47,3 +22,5 @@ linkEye.addEventListener('click', function (){
     linkEye.classList.toggle("fa-times");
     linkEye.classList.toggle("fa-eye");
 });
+
+

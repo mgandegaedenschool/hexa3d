@@ -164,6 +164,12 @@ Route::get('/espace_membre/espace_membre', function(){
 Route::get('/espace_membre/espace_membre_edit', function(){
     return view('espace_membre.espace_membre_edit');
 })->name('espace_membre.espace_membre_edit');
+Route::post('/espace_pro/traitement', function(){
+    return view('espace_pro.traitement');
+})->name('espace_pro.traitement');
+
+Route::get('/espace_pro/espace_pro_index', 'App\Http\Controllers\ProController@index')->name('espace_pro.espace_pro_index');
+Route::post('/espace_pro/espace_pro_index', 'App\Http\Controllers\ProController@index')->name('espace_pro.espace_pro_index');
 
 Route::get('/pdf', [PDFController::class, 'showPDF'])->name('pdf.index');
 Route::get('/pdf/create', [PDFController::class, 'createPDF'])->name('pdf.create');
