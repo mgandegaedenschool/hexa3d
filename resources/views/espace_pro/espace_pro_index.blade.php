@@ -1,19 +1,5 @@
 @extends('app')
-<?php
-if (!empty($_GET)){
-    var_dump($_GET);
-    extract($_GET);
-    if(isset($_GET['actions'])){
-        if($_GET['actions'] == 'import'){
-            $modalType = 'import';
-        }
-    }
-}else{
-    if(!isset($_GET['actions'])){
-        $modalType = 'create';
-    }
-}
-?>
+
 @section('content')
     <header class="upper-container d-flex espace-pro-header">
         <div class="header-contain espace-pro-header-contain">
@@ -62,22 +48,21 @@ if (!empty($_GET)){
                 Mes bénéficiaires
             </h2>
             <div class="my-beneficiaires-content">
-                @include('espace_pro.espace_pro_'.$modalType.'_inc')
+                @include('espace_pro.espace_pro_create_inc')
                 <form action="" class="espace-pro-form-actions-n-filter mt-4 mt-lg-0" method="get">
                     <div class="input-group mb-3">
-                        <select class="custom-select pro-actions-select mb-3" id="actions" name="actions">
+                        <select class="custom-select pro-actions-select espace-pro-select-actions-n-filter mb-3" id="actions" name="actions">
 
-                            <option value="group-actions">Actions groupées</option>
-                            <option value="import"  data-toggle="modal" data-target="#proImportModal">Importer des bénéficiaires</option>
-                            <option value="delete">Supprimer des bénéficiaires</option>
-                            <option value="invite">Invitation par mail</option>
-                            <option value="download-result">Télécharger des résultats</option>
-                            <option value="send-result">Envoyer des résultats</option>
+                            <option value="group-actions" <?php if(isset($_GET['actions']) && $_GET['actions'] == 'group-actions'){ echo "selected"; } ?> >Actions groupées</option>
+                            <option value="import" <?php if(isset($_GET['actions']) && $_GET['actions'] == 'import'){ echo "selected"; } ?> >Importer des bénéficiaires</option>
+                            <option value="delete" <?php if(isset($_GET['actions']) && $_GET['actions'] == 'delete'){ echo "selected"; } ?> >Supprimer des bénéficiaires</option>
+                            <option value="invite" <?php if(isset($_GET['actions']) && $_GET['actions'] == 'invite'){ echo "selected"; } ?> >Invitation par mail</option>
+                            <option value="download-result" <?php if(isset($_GET['actions']) && $_GET['actions'] == 'download-result'){ echo "selected"; } ?> >Télécharger des résultats</option>
+                            <option value="send-result" <?php if(isset($_GET['actions']) && $_GET['actions'] == 'send-result'){ echo "selected"; } ?> >Envoyer des résultats</option>
                         </select>
                     </div>
                     <div class="input-group">
                         <select class="custom-select pro-filters-select espace-pro-select-actions-n-filter" id="filtres" name="filtres">
-                            {{-- laisser le js pour le select filter --}}
                             <option value="filters" <?php if(isset($_POST['filters']) && $_POST['filters'] == 'filters'){ echo "selected"; } ?> >Filtres</option>
                             <option value="last-week" <?php if(isset($_POST['filters']) && $_POST['filters'] == 'last-week'){ echo "selected"; } ?>>La dernière semaine</option>
                             <option value="last-month" <?php if(isset($_POST['filters']) && $_POST['filters'] == 'last-month'){ echo "selected"; } ?>>Le dernier mois</option>
@@ -116,7 +101,7 @@ if (!empty($_GET)){
                 <table class="table table-hover w-auto table-benef table-responsive mb-0 mt-5">
                     <tbody>
                     <tr>
-                        <td><input type="checkbox" class="espace-pro-checkbox"></td>
+                        <td><input type="checkbox" class="espace-pro-checkbox" name="scales"></td>
                         <td>Nom</td>
                         <td>Prénom</td>
                         <td>Mail</td>
