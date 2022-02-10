@@ -12,7 +12,7 @@ html {
     font-size: 62.5%;
 }
 
-body {
+body{
     font-size: 1.6rem;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
@@ -73,7 +73,7 @@ input, select, textarea{
 }
 
 /* form */
-.form-group > input, .form-group > select{
+.form-group input, .form-group select{
     padding: 1rem 2rem !important;
     height: auto;
     border-radius: 1.7rem;
@@ -82,7 +82,7 @@ input, select, textarea{
 }
 
 
-.form-group > input:focus, .form-group > select:focus{
+.form-group input:focus, .form-group select:focus{
     border-color: var(--purple);
     outline: none;
     box-shadow: none;
@@ -104,11 +104,30 @@ i.fa-chevron-right{
 i.fa-chevron-right.active-chevron{
     opacity: 1;
 }
+.btn-container{
+    display: grid;
+    grid-template: auto auto/ 1fr;
+}
+.submit-form-register{
+    width: 100%;
+    justify-self: end;
+}
 .next-btn{
     color: var(--black);
+    justify-self: start;
+    margin-right: auto;
+}
+button.next-btn{
+    appearance: none;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    color: var(--black);
+    justify-self: start;
+    margin-right: auto;
 }
 .next-btn .fa-chevron-right{
-    margin-left: 10px;
+    opacity: 1;
 }
 .next-btn:hover{
     color: var(--purple);
@@ -125,13 +144,17 @@ i.fa-chevron-right.active-chevron{
     border: var(--purple) 2px solid;
     color:#ffffff;
     border-radius: 1.2rem;
+    font-size: 1.6rem !important;
 }
 .purple-btn:hover{
     color: var(--purple);
     background-color: #fff;
 }
 .hidden{
-    display: none;
+    display: none !important;
+}
+.custom-select-auth{
+    background: url("../img/chevron-down.svg") no-repeat right .75rem center/12px 12px;
 }
 
 /* X-Small devices (portrait phones, less than 576px)
@@ -142,16 +165,15 @@ i.fa-chevron-right.active-chevron{
     .step{
         font-size: 1.6rem;
     }
+    .btn-container{
+        grid-template: auto/ 1fr 1fr;
+    }
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
     .step{
         font-size: 1.8rem;
-    }
-    .submit-form{
-        width: 50% !important;
-        margin: 0 auto;
     }
 }
 
@@ -160,9 +182,12 @@ i.fa-chevron-right.active-chevron{
     .step{
         font-size: 1.8rem;
     }
-    .submit-form{
-        width: 50% !important;
-        margin: 0 auto;
+    .submit-form-register{
+        width: 25%;
+        justify-self: end;
+    }
+    .next-btn{
+        margin-right: 0;
     }
 }
 
@@ -171,16 +196,8 @@ i.fa-chevron-right.active-chevron{
     .step{
         font-size: 2rem;
     }
-    .submit-form{
-        width: 50% !important;
-        margin: 0 auto;
-    }
 }
 
 /* XX-Large devices (larger desktops, 1400px and up) */
 @media (min-width: 1400px) {
-    .submit-btn{
-        width: 50% !important;
-        margin: 0 auto;
-    }
 }

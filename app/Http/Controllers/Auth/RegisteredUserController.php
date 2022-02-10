@@ -21,10 +21,15 @@ class RegisteredUserController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function create()
+    public function create(Request $request)
     {
+        if (isset($_GET['id'])) {
+            $request->session()->put('id', $_GET['id']);
+        }
+        $value = $request->session()->get('id');
+        // $sess = session(['id' => 2]);
         // return view('auth.register');
-        return view('auth.create-step-one');
+        return view('auth.create-step-one', compact('value'));
     }
 
     /**
@@ -83,6 +88,7 @@ class RegisteredUserController extends Controller
         if (Auth::user() &&  Auth::user()->admin == 1) {
             return redirect('admin.user');
         }
-        return redirect(RouteServiceProvider::HOME);
+        // return redirect(RouteServiceProvider::HOME);
+        return redirect('/dashboard');
     }
 }

@@ -36,7 +36,7 @@ a.step:active{
     background-color:var(--purple);
     border: var(--purple) 2px solid;
     color:#ffffff;
-    border-radius: 1.2rem;
+    border-radius: 1.8rem;
 }
 
 .purple-btn:hover{
@@ -115,7 +115,7 @@ a.step:active{
         /* padding: 18px 70px; */
         border-radius: 1.7rem;
         font-size: 2rem!important;
-    }
+    }   
     #InputPassword1Login, #InputIdLogin{
         /*font-size: 2.5rem !important;*/
     }

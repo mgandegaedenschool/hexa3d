@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers\Admin\User;
 
+use App\Models\Type;
 use App\Models\User;
+use Carbon\CarbonPeriod;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Illuminate\Validation\Rule;
 use Illuminate\Validation\Rules;
 use Illuminate\Support\Facades\DB;
@@ -22,14 +25,100 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public static $id;
+    public function index(Request $request)
     {
-        $users = User::all();
-        $users = DB::table('users')->paginate(10);
-        $items = ['nbItems' => $users->count(), 'pageCourant' => $users->currentPage(), 'nbPages' => $users->lastPage()];
-        return view('admin.user.user_index', compact('users', 'items'));
-    }
+        if (isset($_GET['scales']) and !empty($_GET['scales'])) {
+            $benef  = $_GET['scales'];
+            if (isset($_GET['options']) and $_GET['options'] == 'delete') {
+                foreach ($benef as $val) {
+                    $this->destroy($val);
+                }
+            }
+            if (isset($_GET['options']) and $_GET['options'] == 'invitation') {
+                $invitation = 'invitation';
+                $request->session()->put('id',  $_GET['scales']);
 
+                return redirect('/pro')->with('invitation', 'Le bénéficiaire a bien été ajouté');
+            }
+        }
+        if (isset($_GET['filtre']) and !empty($_GET['filtre'])) {
+
+            if ($_GET['filtre'] == 'last_weeek') {
+                $date = Carbon::now();
+                $expDate = Carbon::now()->subDays(7);
+            } elseif ($_GET['filtre'] == 'last_month') {
+                $date = Carbon::now();
+                $expDate = Carbon::now()->subDays(30);
+            } elseif ($_GET['filtre'] == 'last_six_months') {
+                $date = Carbon::now();
+                $expDate = Carbon::now()->subDays(183);
+            } elseif ($_GET['filtre'] == 'last_ten_months') {
+                $date = Carbon::now();
+                $expDate = Carbon::now()->subDays(365);
+            }
+            $users = DB::table('users')
+                ->whereBetween('date', [$expDate, $date])
+                ->get();
+
+            return view('admin.user.user_index', ['users' => $users]);
+        } elseif (isset($_GET['rechNom'], $_GET['rechPrenom'], $_GET['rechEmail'], $_GET['rechSexe'], $_GET['rechDate'])) {
+
+            $req[] = array();
+            if ($_GET['rechNom']) {
+                $search_text1 = $_GET['rechNom'];
+                $req1 = ['lastname', 'like', '%' . $search_text1 . '%'];
+                array_push($req, $req1);
+            }
+            if ($_GET['rechPrenom']) {
+                $search_text2 = $_GET['rechPrenom'];
+                $req2 = ['firstname', 'like', '%' . $search_text2 . '%'];
+                array_push($req, $req2);
+            }
+            if ($_GET['rechEmail']) {
+                $search_text3 = $_GET['rechEmail'];
+                $req3 = ['email', 'like', '%' . $search_text3 . '%'];
+                array_push($req, $req3);
+            }
+            if ($_GET['rechSexe']) {
+                $search_text4 = $_GET['rechSexe'];
+                $req4 = ['sexe', 'like', '%' . $search_text4 . '%'];
+                array_push($req, $req4);
+            }
+            if ($_GET['rechDate']) {
+                $search_text5 = $_GET['rechDate'];
+                $req5 = ['date', 'like', '%' . $search_text5 . '%'];
+                array_push($req, $req5);
+            }
+            array_shift($req);
+        }
+        if ((isset($req) and count($req) >= 1)) {
+
+            if ($req[0]) {
+                $users = DB::table('users')->where([$req[0]])->get();
+            }
+            if (isset($req[1])) {
+                $users = DB::table('users')->where([$req[0]])->where([$req[1]])->get();
+            }
+            if (isset($req[2])) {
+                $users = DB::table('users')->where([$req[0]])->where([$req[1]])->where([$req[2]])->get();
+            }
+            if (isset($req[3])) {
+                $users = DB::table('users')->where([$req[0]])->where([$req[1]])->where([$req[2]])->where([$req[3]])->get();
+            }
+            if (isset($req[4])) {
+                $users = DB::table('users')->where([$req[0]])->where([$req[1]])->where([$req[2]])->where([$req[3]])->where([$req[4]])->get();
+            }
+            return view('admin.user.user_index', ['users' => $users]);
+        } else {
+
+            $users = User::all();
+            // dd($users);
+            $users = DB::table('users')->paginate(10);
+            $items = ['nbItems' => $users->count(), 'pageCourant' => $users->currentPage(), 'nbPages' => $users->lastPage()];
+            return view('admin.user.user_index', compact('users', 'items'));
+        }
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -51,59 +140,64 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        // $request->validate([
-        //     'name' => ['required', 'string', 'max:255'],
-        //     'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-        //     'password' => ['required', 'confirmed', Rules\Password::defaults()],
-        // ]);
-        // dd($request);
+        if (!isset($request->email)) {
 
-        $request->validate([
+            $request->validate([
+                'etalonnage' => ['required', Rule::in(['adulte', 'collégien', 'collégienne', 'lycéen', 'lycéenne'])],
+                'test' => ['required', 'string', 'max:255']
+            ]);
 
-            'firstname' => ['required', 'string', 'max:255'],
-            'lastname' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'username' => ['required', 'string', 'max:255'],
-            'postalcode' => ['required', 'integer'],
-            'genre' => ['required', Rule::in(['male', 'femele'])],
-            'age' => ['required', 'integer', 'max:255'],
-            'situation' => ['required', Rule::in(['alternance', 'salarie', 'stagiaire', 'formation', 'ecolier', 'chomeur', 'autre'])],
-            'etalonnage' => ['required', Rule::in(['femme', 'homme', 'collegien', 'collegienne', 'lyceen', 'lyceenne'])],
-            'schoolname' => ['required', 'string', 'max:255', 'nullable'],
-            'currentjob' => ['required', 'string', 'max:255'],
-            'speciality' => ['required', 'string', 'max:255'],
-            'envisagedjob' => ['required', 'string', 'max:255'],
-            'state' => ['required', Rule::in(['attente', 'termine'])],
-            'status' => ['required', 'string', 'max:255']
-        ]);
+            foreach ($request->session()->get('id') as $id) {
+                // DB::table('users')
+                //     ->where('id', $id)
+                //     ->update([
+                //         'etalonnage' => $request->etalonnage,
+                //         'test' => $request->test
+                //     ]);
+                User::findOrFail($id)->update([
+                    'etalonnage' => $request->etalonnage,
+                    'test' => $request->test
+                ]);
 
-        $user = User::create([
-            'firstname' => $request->firstname,
-            'lastname' => $request->lastname,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-            'username' => $request->username,
-            'postalcode' => $request->postalcode,
-            'genre' => $request->genre,
-            'age' => $request->age,
-            'situation' => $request->situation,
-            'etalonnage' => $request->etalonnage,
-            'schoolname' => $request->schoolname,
-            'currentjob' => $request->currentjob,
-            'speciality' => $request->speciality,
-            'envisagedjob' => $request->envisagedjob,
-            'state' => $request->state,
-            'status' => $request->status,
-        ]);
+                $user = DB::table('users')
+                    ->where('id', $id)->first();
+                event(new Registered($user));
+                // $user->notify(new UserRegisteredNotification($user));
+                auth()->user()->notify(new UserRegisteredNotification($user));
+                // Auth::login($user);
+            }
 
-        event(new Registered($user));
-        $util = ['email' => 'jean@jean.fr'];
-        $post = ['title' => 'Mon jolie titre'];
-        $user->notify(new UserRegisteredNotification($util, $post));
-        Auth::login($user);
+            return redirect('/pro')->with('status', 'Le bénéficiaire a bien été ajouté');
+        } else {
+            $request->validate([
+                'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+                'etalonnage' => ['required', Rule::in(['adulte', 'collégien', 'collégienne', 'lycéen', 'lycéenne'])],
+                'test' => ['required', 'string', 'max:255']
+            ]);
 
-        return redirect(RouteServiceProvider::HOME);
+            // $affected = DB::table('users')
+            //     ->where('id', $request->session()->get('id'))
+            //     ->update([
+            //         'email' => $request->email,
+            //         'etalonnage' => $request->etalonnage,
+            //         'test' => $request->test
+            //     ]);
+            $user = User::create([
+                'email' => $request->email,
+                'etalonnage' => $request->etalonnage,
+                'test' => $request->test
+            ]);
+
+            event(new Registered($user));
+            $user->notify(new UserRegisteredNotification($user));
+            Auth::login($user);
+
+            return redirect('/pro')->with('status', 'Le bénéficiaire a bien été ajouté');
+        }
+
+        // $util = ['email' => 'jean@jean.fr'];
+        // $post = ['title' => 'Mon jolie titre'];
+        // return redirect('/pro')->with('status', 'Le bénéficiaire a bien été ajouté');
     }
 
     /**
@@ -112,10 +206,10 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user)
+    public function show($user)
     {
         $user = $affected = DB::table('users')
-            ->where('id', 1)->first();
+            ->where('id', $user)->first();
         return view('admin.user.user_show', compact('user'));
     }
 
@@ -190,6 +284,6 @@ class UserController extends Controller
         // }
         $user = DB::table('users')->where('id', $id);
         $user->delete();
-        return redirect()->route('user.index')->with('success', 'élément supprimé avec succès');
+        return redirect()->route('pro.index')->with('success', 'élément supprimé avec succès');
     }
 }

@@ -41,31 +41,31 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/test/test_irmr3_formulaire', 'App\Http\Controllers\TestIrmr3Controller@formulaire')->name('test.test_irmr3_formulaire');
     Route::get('/test/test_irmr3_bonus', 'App\Http\Controllers\TestIrmr3Controller@bonus')->name('test.test_irmr3_bonus');
     Route::get('/test/test_irmr3_fin', 'App\Http\Controllers\TestIrmr3Controller@fin')->name('test.test_irmr3_fin');
-    /* form parts */
-    Route::post('/test/test_irmr3_formulaire_part', 'App\Http\Controllers\TestIrmr3Controller@formulaire1')->name('test.test_irmr3_formulaire_part');
-    Route::post('/test/test_irmr3_formulaire_part1', 'App\Http\Controllers\TestIrmr3Controller@formulaire1')->name('test.test_irmr3_formulaire_part1');
-    Route::post('/test/test_irmr3_formulaire_part2', 'App\Http\Controllers\TestIrmr3Controller@formulaire2')->name('test.test_irmr3_formulaire_part2');
-    Route::post('/test/test_irmr3_formulaire_part3', 'App\Http\Controllers\TestIrmr3Controller@formulaire3')->name('test.test_irmr3_formulaire_part3');
-    Route::post('/test/test_irmr3_formulaire_part4', 'App\Http\Controllers\TestIrmr3Controller@formulaire4')->name('test.test_irmr3_formulaire_part4');
-    Route::post('/test/test_irmr3_formulaire_part5', 'App\Http\Controllers\TestIrmr3Controller@formulaire5')->name('test.test_irmr3_formulaire_part5');
-    Route::post('/test/test_irmr3_formulaire_part6', 'App\Http\Controllers\TestIrmr3Controller@formulaire6')->name('test.test_irmr3_formulaire_part6');
-    Route::post('/test/test_irmr3_formulaire_part7', 'App\Http\Controllers\TestIrmr3Controller@formulaire7')->name('test.test_irmr3_formulaire_part7');
-    Route::post('/test/test_irmr3_formulaire_part8', 'App\Http\Controllers\TestIrmr3Controller@formulaire8')->name('test.test_irmr3_formulaire_part8');
-    Route::post('/test/test_irmr3_formulaire_part9', 'App\Http\Controllers\TestIrmr3Controller@formulaire9')->name('test.test_irmr3_formulaire_part9');
+    // /* form parts */
+    // Route::post('/test/test_irmr3_formulaire_part', 'App\Http\Controllers\TestIrmr3Controller@formulaire1')->name('test.test_irmr3_formulaire_part');
+    // Route::post('/test/test_irmr3_formulaire_part1', 'App\Http\Controllers\TestIrmr3Controller@formulaire1')->name('test.test_irmr3_formulaire_part1');
+    // Route::post('/test/test_irmr3_formulaire_part2', 'App\Http\Controllers\TestIrmr3Controller@formulaire2')->name('test.test_irmr3_formulaire_part2');
+    // Route::post('/test/test_irmr3_formulaire_part3', 'App\Http\Controllers\TestIrmr3Controller@formulaire3')->name('test.test_irmr3_formulaire_part3');
+    // Route::post('/test/test_irmr3_formulaire_part4', 'App\Http\Controllers\TestIrmr3Controller@formulaire4')->name('test.test_irmr3_formulaire_part4');
+    // Route::post('/test/test_irmr3_formulaire_part5', 'App\Http\Controllers\TestIrmr3Controller@formulaire5')->name('test.test_irmr3_formulaire_part5');
+    // Route::post('/test/test_irmr3_formulaire_part6', 'App\Http\Controllers\TestIrmr3Controller@formulaire6')->name('test.test_irmr3_formulaire_part6');
+    // Route::post('/test/test_irmr3_formulaire_part7', 'App\Http\Controllers\TestIrmr3Controller@formulaire7')->name('test.test_irmr3_formulaire_part7');
+    // Route::post('/test/test_irmr3_formulaire_part8', 'App\Http\Controllers\TestIrmr3Controller@formulaire8')->name('test.test_irmr3_formulaire_part8');
+    // Route::post('/test/test_irmr3_formulaire_part9', 'App\Http\Controllers\TestIrmr3Controller@formulaire9')->name('test.test_irmr3_formulaire_part9');
 });
-Route::middleware(['admin'])->group(function () {
-    Route::get('/admin/admin', function () {
-        return view('admin.admin');
-    })->name('admin.admin');
-    Route::resource('/admin/user', UserController::class);
-    Route::resource('/admin/register', UserRegistrationController::class);
-    Route::resource('/admin/type', TypeController::class);
-    Route::resource('/admin/domaine', DomaineController::class);
-    Route::resource('/admin/question', QuestionController::class);
-});
+// Route::middleware(['admin'])->group(function () {
+//     Route::get('/admin/admin', function () {
+//         return view('admin.admin');
+//     })->name('admin.admin');
+//     Route::resource('/admin/user', UserController::class);
+//     Route::resource('/admin/register', UserRegistrationController::class);
+//     Route::resource('/admin/type', TypeController::class);
+//     Route::resource('/admin/domaine', DomaineController::class);
+//     Route::resource('/admin/question', QuestionController::class);
+// });
 
-Route::get('/irmr3Form', 'App\Http\Controllers\Irmr3FormController@create')->name('irmr3Form');
-Route::post('/irmr3Form', 'App\Http\Controllers\Irmr3FormController@store')->name('irmr3Form');
+// Route::get('/irmr3Form', 'App\Http\Controllers\Irmr3FormController@create')->name('irmr3Form');
+// Route::post('/irmr3Form', 'App\Http\Controllers\Irmr3FormController@store')->name('irmr3Form');
 // Route::resource('/irmr3Form', Irmr3FormController::class);
 Route::get('/forgot-password', function () {
     return view('auth.forgot-password');
@@ -75,18 +75,8 @@ Route::get('/reset-password', function () {
     return view('auth.reset-password');
 })->name('auth.reset-password');
 
-
-
-
-
-
-
-
-
-
-
-
-
+Route::resource('/pro', UserController::class);
+// Route::post('/pro/store', UserController::class)->name('pro.store');
 
 
 Route::get('register/create-step-one', 'App\Http\Controllers\RegisteredUserController@createStepOne')->name('register.create.step.one');
@@ -95,6 +85,8 @@ Route::get('register/create-step-two', 'App\Http\Controllers\RegisteredUserContr
 Route::post('register/create-step-two', 'App\Http\Controllers\RegisteredUserController@postCreateStepTwo')->name('register.create.step.two.post');
 Route::get('register/create-step-three', 'App\Http\Controllers\RegisteredUserController@createStepThree')->name('register.create.step.three');
 Route::post('register/create-step-three', 'App\Http\Controllers\RegisteredUserController@postCreateStepThree')->name('register.create.step.three.post');
+Route::get('register/{id}', 'App\Http\Controllers\RegisteredUserController@createStepOne')->name('register.email');
+
 
 Route::get('/getMember', 'App\Http\Controllers\GetMemberController@index')->name('admin.member');
 Route::get('test/irmr3', 'App\Http\Controllers\TestIrmr3Controller@index')->name('test.irmr3_index');

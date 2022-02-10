@@ -1,84 +1,79 @@
 @extends('app')
-
 @section('content')
-    <header class="upper-container">
+
+    <header class="upper-container d-flex">
         <div class="container header-contain">
-            <div class="row d-flex align-items-center img-text-nav two-img-nav py-3">
-                <div class="col-4 upper-image-container">
-                    <img src="{{asset('img/hexa3d-logo-v2_300ppp.png')}}" alt="logo hexa3d" class="img-fluid">
-                </div>
-                <div class="col-4 upper-image-container">
-                    <img src="{{asset('img/irmr3-logo-v2_300ppp.png')}}" alt="logo irmr3" class="img-fluid">
-                </div>
+            <div class="row d-flex align-items-center img-text-nav py-3">
+                 <div class="col-4 upper-image-container" style="max-width: 140px;">
+                    <img src="{{asset('img/spiral_placeholder.png')}}" alt="spirale grise et blanche" class="img-fluid" style="width: 170px; height: 95px;">
+                </div> 
+                <h6 class="text-uppercase col-8 col-md-2 upper-title my-2">questionnaires d'intérêts professionnels</h6> 
+            </div>
+            <div>
+                <form action="{{route('logout')}}" method='post'>
+                    @csrf
+                    <input type="submit" value="logout" />
+                <form>
             </div>
         </div>
     </header>
-    <main class="dashboard-layout">
 
-        <div class="top-content p-4 align-items-center">
-            <div class="options">
-                <a href="#"><i class="fas fa-plus"></i> New</a>
+    <div class="global-container">
+        <div class="container mx-auto main-profile-div">
+            <div class="container-fluid my-infos mb-5">
+                <div class="information-drop">
+                    <h2>Mes informations</h2>
+                    <div class="information-drop-icon">
+                        <i class="far fa-eye icon-eye-view"></i>
+                    </div>
+                </div>
+                <div class="dropped-information disabled-element-eye height-none">
+                    <div class="personal-infos infos-div">
+                        <div class="user-informations"><p>Identifiant (ou mail) :</p><span>{{$user->email}}</span></div>
+                        <div class="user-informations"><p>Mot de passe :</p><span>*******</span></div>
+                        <div class="user-informations"><p>Nom :</p><span>{{$user->lastname}}</span></div>
+                        <div class="user-informations"><p>Prénom :</p><span>{{$user->firstname}}</span></div>
+                        <div class="user-informations"><p>Age :</p><span>{{$user->age}}</span></div>
+                        <div class="user-informations"><p>Sexe :</p><span>{{$user->sexe}}</span></div>
+                    </div>
+                    <div class="school-infos infos-div">
+                        <div class="user-informations"><p>Niveau d'études :</p><span>{{$user->niv_etude}}</span></div>
+                        <div class="user-informations"><p>Scolarisé(e) :</p><span>{{$user->scolarise}}</span></div>
+                        <div class="user-informations"><p>Classe :</p><span>{{$user->classe}}</span></div>
+                        <div class="user-informations"><p>Etablissement :</p><span>{{$user->etablissement}}</span></div>
+                        <div class="user-informations"><p>Section :</p><span>{{$user->section}}</span></div>
+                    </div>
+                    <div class="job-infos infos-div">
+                        <div class="user-informations"><p>Salarié :</p><span>{{$user->salarie}}</span></div>
+                        <div class="user-informations"><p>Etat :</p><span>{{$user->etat}}</span></div>
+                        <div class="user-informations"><p>Emploi actuel :</p><span>{{$user->emploi_actuel}}</span></div>
+                        <div class="user-informations"><p>Emploi envisagé :</p><span>{{$user->emploi_envisage}}</span></div>
+                        <div class="user-informations"><p>Spécialité :</p><span>{{$user->specialite}}</span></div>
+                    </div>
+                    
+                    {{-- <input type="submit" value="Modifier" class="btn purple-btn send-password-link-btn py-2 px-4"> --}}
+                </div>
             </div>
-            <h1 class="text-center bo-title">Détails du membre</h1>
-            <div class="admin-account">
-                <a href="#">Bonjour, Admin</a>
-            </div>
-        </div>
-
-        <aside class="pb-4">
-            <ul class="nav flex-column">
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('user.index')}}">Accueil</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('user.index')}}">Membres</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('domaine.index')}}">Domaine</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="question_index">Question</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="type_index">Type</a>
-                </li>
-            </ul>
-        </aside>
-
-        <div class="content-container container-fluid">
-            <div class="d-flex align-items-center justify-content-between flex-column">
-                <h2 class="div-users-title my-5 d-inline-block">Informations membre</h2>
-
-                <div class="container-fluid mb-5">
-                    <div class="dropped-information d-flex flex-wrap flex-column flex-lg-row row">
-                        <div class="personal-infos info-block col-12 col-lg-4 py-2">
-                            <div class="user-informations user-show-info"><p>Nom :</p><span>{{$user->firstname}}</span></div>
-                            <div class="user-informations user-show-info"><p>Prénom :</p><span>{{$user->firstname}}</span></div>
-                            <div class="user-informations user-show-info"><p>Age :</p><span>{{$user->age}} ans</span></div>
-                            <div class="user-informations user-show-info"><p>Sexe :</p><span>{{$user->sexe}}</span></div>
-                        </div>
-                        <div class="school-infos info-block col-12 col-lg-4 py-2">
-                            <div class="user-informations user-show-info"><p>Niveau d'études :</p><span>{{$user->niv_etude}}</span></div>
-                            <div class="user-informations user-show-info"><p>Scolarisé(e) :</p><span>{{$user->scolarise}}</span></div>
-                            <div class="user-informations user-show-info"><p>Classe :</p><span>{{$user->classe}}</span></div>
-                            <div class="user-informations user-show-info"><p>Etablissement :</p><span>{{$user->etablissement}}</span></div>
-                            <div class="user-informations user-show-info"><p>Section :</p><span>{{$user->section}}</span></div>
-                        </div>
-                        <div class="job-infos info-block col-12 col-lg-4 py-2">
-                            <div class="user-informations user-show-info"><p>Salarié :</p><span>{{$user->salarie}}</span></div>
-                            <div class="user-informations user-show-info"><p>Etat :</p><span>etat</span></div>
-                            <div class="user-informations user-show-info"><p>Emploi actuel :</p><span>{{$user->emploi_actuel}}</span></div>
-                            <div class="user-informations user-show-info"><p>Emploi envisagé :</p><span>{{$user->emploi_envisage}}</span></div>
-                            <div class="user-informations user-show-info"><p>Spécialité :</p><span>{{$user->specialite}}</span></div>
-                        </div>
-                        {{-- <div class="container-fluid">
-                            <a href="{{route('admin.user_edit')}}" class="btn purple-btn edit-btn send-password-link-btn py-2 px-4 mt-4">Modifier</a>
-                        </div> --}}
+            <div class="container-fluid my-tests">
+                <h2>Mon espace test</h2>
+                <div class="test-space">
+                    <div class="test-current py-5">
+                        <h3>Test 1 : HEXA 3D</h3>
+                        <p class="test-status test-done"><i class="fas fa-check"></i> Terminé</p>
+                        <p class="test-done-date">Date de passage : <span>03-11-2021</span></p>
+                    </div>
+                    <div class="test-current py-5">
+                        <h3>Test 2 : IRMR3</h3>
+                        <p class="test-status test-ongoing"><i class="fas fa-spinner"></i> En cours</p>
+                        <a href="" class="continue-test test-btn btn purple-btn py-2 px-4">Reprendre le test</a>
+                    </div>
+                    <div class="test-current py-5">
+                        <h3>Test 1 : HEXA 3D</h3>
+                        <p class="test-status test-to-begin"><i class="fas fa-spinner"></i> Nouveau</p>
+                        <a href="" class="take-test btn test-btn purple-btn py-2 px-4">Commencer le test</a>
                     </div>
                 </div>
             </div>
-
         </div>
-    </main>
-
+    </div>
 @endsection

@@ -1,7 +1,8 @@
 @extends('app')
-
 @section('content')
-
+@isset($id)
+{{$id}}
+@endisset
     <header class="upper-container">
         <div class="container header-contain">
             <div class="row d-flex align-items-center img-text-nav two-img-nav py-3">
@@ -14,134 +15,179 @@
             </div>
         </div>
     </header>
+    
     <main class="dashboard-layout">
+     
+        <div class="content-container">
+            <div class="d-flex align-items-center justify-content-between flex-column flex-md-row flex-lg-row">
+                <h2 class="div-title my-5 d-inline-block"></h2>
+                    @include('admin.user.user_create_inc')
+                @if(session('status'))
+                    @include('admin.user.popup.popup_ajout_confirm_inc')
+                @endif
+                @if(session('invitation'))
+                    @include('admin.user.popup.popup_send_test_inc')
+                @endif
+                @if(session('success'))
+                    @include('admin.user.popup.popup_delete_inc')
+                @endif
+                    <form action="{{route('pro.index')}}" method="get" class="ml-2">
+                        @csrf
+                    <div class="input-group mb-3">
+                        <select class="custom-select pro-actions-select mb-3" id="inputGroupSelect02" name="options">
+                            <option value="">Actions groupées</option>
+                            <option name="import">Importer des bénéficiaires</option>
+                            <option name='delete' value="delete">Supprimer des bénéficiaires</option>
+                            <option name="invitation" value="invitation">Invitation par mail</option>
+                            <option name="download_result">Télécharger des résultats</option>
+                            <option name="send_msg">Envoyer des résultats</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <select class="custom-select pro-filters-select" id="inputGroupSelect02" name="filtre">
+                            <option value="">Filtres</option>
+                            <option value="last_weeek">La dernière semaine</option>
+                            <option value="last_month">Le dernier mois</option>
+                            <option value="last_six_months">Les 6 derniers mois</option>
+                            <option value="last_ten_months">Les 12 derniers mois</option>
+                        </select>
+                    </div>
 
-        <div class="top-content p-4 align-items-center">
-            <div class="options">
-                <a href="#"><i class="fas fa-plus"></i> New</a>
-            </div>
-            <h1 class="text-center bo-title">Accueil des membres</h1>
-            <div class="admin-account">
-                <a href="#">Bonjour, Admin</a>
+
+
+                    <label for="nom">Nom:</label>
+                    <input type="search" id="nom" name="rechNom" placeholder="Nom" class="">
+                    <label for="prenom">Prenom:</label>
+                    <input type="search" id="prenom" name="rechPrenom" placeholder="Prenom">
+                    <label for="email">Email:</label>
+                    <input type="search" id="email" name="rechEmail" placeholder="Email">
+                    <label for="sexe">Sexe:</label>
+                    <input type="search" id="sexe" name="rechSexe" placeholder="Sexe">
+                    <label for="nom">Date:</label>
+                    <input type="date" id="date" name="rechDate" placeholder="Date">
+                   
+
+                    <div class="d-flex w-100 justify-content-center">
+                        <table class="table table-hover w-auto table-bordered table-users table-responsive mb-0">
+                            <thead>
+                            <tr>
+                                <th scope="col">actions</th>
+                                <th scope="col">Nom</th>
+                                <th scope="col">Prenom</th>
+                                <th scope="col">Mail</th>
+                                <th scope="col">sexe</th>
+                                <th scope="col">Date</th>    
+                            </tr>
+                            </thead>
+    
+
+<!-- Modal -->
+{{-- @if (session('status'))
+<div class="modal fade" id="userModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-xl">
+        <div class="modal-content">       
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <tbody>  
+                       
+                            {{-- <div class="alert alert-success"> --}}
+                                {{-- {{ session('status') }} --}}
+                            {{-- </div> --}}
+                       
+                    {{-- </tbody>
+                </div>
             </div>
         </div>
+    </div>
+</div>
+@endif     --}}
 
-        <aside class="pb-4">
-            <ul class="nav flex-column">
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('admin.admin')}}">Accueil</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('user.index')}}">Membres</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('user.index')}}">Domaine</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="question_index">Question</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="type_index">Type</a>
-                </li>
-            </ul>
-        </aside>
 
-        <div class="content-container container-fluid">
-            <div class="d-flex align-items-center justify-content-between flex-column flex-md-row flex-lg-row">
-                <h2 class="div-title my-5 d-inline-block">Table des membres</h2>
-                @include('admin.user.user_create_inc')
+
+
+                           @foreach($users as $user)
+                            <tr>
+                                <td><input type="checkbox" id="scales" name="scales[]" value="{{$user->id}}"></td>               
+                                <td>{{$user->lastname}}</td>
+                                <td>{{$user->firstname}}</td>
+                                <td>{{$user->email}}</td>
+                                <td>{{$user->sexe}}</td>
+                                <td>{{$user->date}}</td>
+                                <td class="no-defil">
+                                    <a href="{{route('pro.show',$user->id)}}"><i class="far fa-eye user-tab-icon"></i></a>
+                                </td>
+                            </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                    <input type="submit">
+
+                </form>
             </div>
 
-            <div class="d-flex justify-content-between flex-wrap mb-4">
-                <div class="show-select mr-md-4 pt-4">
-                    <!-- si vous avez besoin d'un formulaire pour le nombre de membres à afficher -->
-                     {{-- <form action="{{route('admin.member')}}" method="get" class="ml-2">
-                    @csrf
-                        Affichage <select name="q" id="">
-                            <option value="5"  @if($val == 5) selected @endif> 5</option>
-                            <option value="10" @if($val == 10) selected @endif>10</option>
-                            <option value="20" @if($val == 20) selected @endif>20</option>
-                        </select> entrées
-                        <input type="submit">
-                    </form> --}}
-                </div>
+       
+           
                 <div class="search-container pt-4">
-                    Search :
-                    <!-- si vous avez besoin d'un formulaire pour les recherches -->
-                    <form action="{{route('admin.member')}}" method="get" class="ml-2">
-                    @csrf
-                        <input type="search" name="query">
-                    </form>
+                    {{-- <form action="{{route('pro.index')}}" method="get" class="ml-2">
+                        @csrf --}}
+                            {{-- <input type="search" name="query"> --}}
+                          
+                            {{-- <label for="nom">Nom:</label>
+                            <input type="search" id="nom" name="rechNom" placeholder="Nom" class="">
+                            <label for="prenom">Prenom:</label>
+                            <input type="search" id="prenom" name="rechPrenom" placeholder="Prenom">
+                            <label for="email">Email:</label>
+                            <input type="search" id="email" name="rechEmail" placeholder="Email">
+                            <label for="sexe">Sexe:</label>
+                            <input type="search" id="sexe" name="rechSexe" placeholder="Sexe">
+                            <label for="nom">Date:</label>
+                            <input type="date" id="date" name="rechDate" placeholder="Date">
+                           
+                             
+                   
+
+                            <div class="d-flex w-100 justify-content-center">
+                                <table class="table table-hover w-auto table-bordered table-users table-responsive mb-0">
+                                    
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">actions</th>
+                                        <th scope="col">Nom</th>
+                                        <th scope="col">Prenom</th>
+                                        <th scope="col">Mail</th>
+                                        <th scope="col">sexe</th>
+                                        <th scope="col">Date</th>
+            
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                        
+                                    @foreach($users as $user)
+            
+                                    <tr>
+                                        <td><input type="checkbox" id="scales" name="scales" value="5"></td>               
+                                        <td>{{$user->lastname}}</td>
+                                        <td>{{$user->firstname}}</td>
+                                        <td>{{$user->email}}</td>
+                                        <td>{{$user->sexe}}</td>
+                                        <td>{{$user->date}}</td>
+                                        <td class="no-defil">
+                                            <a href="{{route('pro.show',$user->id)}}"><i class="far fa-eye user-tab-icon"></i></a>
+                                        </td>
+                                    </tr>
+                                    
+                                    @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                            <input type="submit">
+
+                        {{-- </form> --}} 
+                  
                 </div>
                 
             </div>
-            <div class="d-flex w-100 justify-content-center">
-                <table class="table table-hover w-auto table-bordered table-users table-responsive mb-0">
-                    <thead>
-                    <tr>
-                        <th scope="col">actions</th>
-                        <th scope="col">id_user</th>
-                        <th scope="col">first name</th>
-                        <th scope="col">last name</th>
-                        <th scope="col">email</th>
-                        <th scope="col">username</th>
-                        <th scope="col">niv_etude</th>
-                        <th scope="col">classe</th>
-                        <th scope="col">section</th>
-                        <th scope="col">sexe</th>
-                        <th scope="col">age</th>
-                        <th scope="col">scolarisé</th>
-                        <th scope="col">établissement</th>
-                        <th scope="col">salarié</th>
-                        <th scope="col">emploi_actuel</th>
-                        <th scope="col">spécialité</th>
-                        <th scope="col">état</th>
-                        <th scope="col">emploi_envisagé</th>
-                        <th scope="col">role</th>
-
-                    </tr>
-                    </thead>
-                    <tbody>
-                    @foreach($users as $user)
-
-                    <tr>
-                        <td class="no-defil">
-                            <a href="{{route('user.show',$user->id)}}"><i class="far fa-eye user-tab-icon"></i></a>
-                            <a href="{{route('user.edit',$user->id)}}"><i class="fas fa-pen user-tab-icon"></i></a>
-                            {{-- <a href="{{route('admin.user_delete',$user)}}"><i class="far fa-trash-alt user-tab-icon"  
-                            onclick="return(confirm('Voulez-vous vraiment supprimer les données?'))"></i></a> --}}
-                         <form action="{{route('user.destroy',$user->id)}}" method="post" id="destroy-post-form">
-                                @csrf 
-                                @method('DELETE')
-                                <input type="submit" class="far fa-trash-alt user-tab-icon"  
-                            onclick="return(confirm('Voulez-vous vraiment supprimer les données?'))" value="delete">
-                            </form>
-                        </td>
-                        <td>{{$user->id}}</td>
-                        <td>{{$user->firstname}}</td>
-                        <td>{{$user->lastname}}</td>
-                        <td>{{$user->email}}</td>
-                        <td>{{$user->username}}</td>
-                        <td>{{$user->niv_etude}}</td>
-                        <td>{{$user->classe}}</td>
-                        <td>{{$user->section}}</td>
-                        <td>{{$user->sexe}}</td>
-                        <td>{{$user->age}}</td>
-                        <td>{{$user->scolarise}}</td>
-                        <td>{{$user->etablissement}}</td>
-                        <td>{{$user->salarie}}</td>
-                        <td>{{$user->emploi_actuel}}</td>
-                        <td>{{$user->specialite}}</td>
-                        <td>{{$user->etat}}</td>
-                        <td>{{$user->emploi_envisage}}</td>
-                        <td>{{$user->role}}</td>
-                    </tr>
-
-                    @endforeach
-                    </tbody>
-                </table>
-            </div>
-
             @isset($items)
             <div class="d-flex justify-content-between flex-wrap mb-4">
                 <div class="show-entries">
@@ -151,11 +197,9 @@
                 </div>
                 <div class="previous-and-next justify-content-between mt-3">
                    {{ $users->links() }}
-
                 </div>
             </div>
              @endisset
         </div>
     </main>
-
 @endsection

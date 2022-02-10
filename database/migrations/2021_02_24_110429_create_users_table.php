@@ -15,26 +15,28 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('firstname');
-            $table->string('lastname');
+            $table->string('firstname')->nullable();
+            $table->string('lastname')->nullable();
             $table->string('email')->unique();
-            $table->string('password');
+            $table->string('password')->nullable();
             $table->rememberToken();
-            $table->string('username')->unique();
-            $table->string('niv_etude');
+            $table->string('username')->unique()->nullable();
+            $table->string('niv_etude')->nullable();
             $table->string('classe')->nullable();
             $table->string('section')->nullable();
-            $table->string('sexe');
-            $table->integer('age');
+            $table->string('sexe')->nullable();
+            $table->integer('age')->nullable();
             $table->tinyInteger('scolarise')->nullable();
-            $table->string('etalonnage');
+            $table->string('etalonnage')->nullable();
             $table->string('etablissement')->nullable();
             $table->tinyInteger('salarie')->nullable();
-            $table->string('emploi_actuel');
-            $table->string('specialite');
+            $table->string('emploi_actuel')->nullable();
+            $table->string('specialite')->nullable();
+            $table->string('test')->nullable();
             $table->string('etat')->nullable();
-            $table->string('emploi_envisage');
-            $table->string('role')->default('membre');
+            $table->string('emploi_envisage')->nullable();
+            $table->timestamp('date');
+            $table->string('role')->default('membre')->nullable();
         });
     }
 

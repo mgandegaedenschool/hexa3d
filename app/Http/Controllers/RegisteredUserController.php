@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use App\Providers\RouteServiceProvider;
 
@@ -17,7 +18,6 @@ class RegisteredUserController extends Controller
     }
     public function postCreateStepOne(Request $request, $step = 2)
     {
-
         $validatedData = $request->validate([
             'firstname' => ['required', 'string', 'max:255'],
             'lastname' => ['required', 'string', 'max:255'],
@@ -73,26 +73,72 @@ class RegisteredUserController extends Controller
 
         $request->session()->put('step3', $step3);
 
-        $user = User::create([
-            'firstname' => $step3['firstname'],
-            'lastname' => $step3['lastname'],
-            'email' => $step3['email'],
-            'password' => Hash::make($step3['password']),
-            'username' => $step3['username'],
-            'niv_etude' => $step3['niv_etude'],
-            'classe' => $step3['classe'],
-            'section' => $step3['section'],
-            'sexe' => $step3['sexe'],
-            'age' => $step3['age'],
-            'scolarise' => $step3['scolarise'],
-            'etablissement' => $step3['etablissement'],
-            'salarie' => $step3['salarie'],
-            'emploi_actuel' => $step3['emploi_actuel'],
-            'specialite' => $step3['specialite'],
-            'etat' => $step3['etat'],
-            'emploi_envisage' => $step3['emploi_envisage'],
-            'etalonnage' => $step3['etalonnage']
-        ]);
-        return redirect(RouteServiceProvider::HOME);
+        if ($request->session()->get('id')) {
+            $affected = DB::table('users')
+                ->where('id', $request->session()->get('id'))
+                ->update([
+                    'firstname' => $step3['firstname'],
+                    'lastname' => $step3['lastname'],
+                    'email' => $step3['email'],
+                    'password' => Hash::make($step3['password']),
+                    'username' => $step3['username'],
+                    'niv_etude' => $step3['niv_etude'],
+                    'classe' => $step3['classe'],
+                    'section' => $step3['section'],
+                    'sexe' => $step3['sexe'],
+                    'age' => $step3['age'],
+                    'scolarise' => $step3['scolarise'],
+                    'etablissement' => $step3['etablissement'],
+                    'salarie' => $step3['salarie'],
+                    'emploi_actuel' => $step3['emploi_actuel'],
+                    'specialite' => $step3['specialite'],
+                    'etat' => $step3['etat'],
+                    'emploi_envisage' => $step3['emploi_envisage'],
+                    'etalonnage' => $step3['etalonnage']
+                ]);
+            // $user = User::update([
+            //     'firstname' => $step3['firstname'],
+            //     'lastname' => $step3['lastname'],
+            //     'email' => $step3['email'],
+            //     'password' => Hash::make($step3['password']),
+            //     'username' => $step3['username'],
+            //     'niv_etude' => $step3['niv_etude'],
+            //     'classe' => $step3['classe'],
+            //     'section' => $step3['section'],
+            //     'sexe' => $step3['sexe'],
+            //     'age' => $step3['age'],
+            //     'scolarise' => $step3['scolarise'],
+            //     'etablissement' => $step3['etablissement'],
+            //     'salarie' => $step3['salarie'],
+            //     'emploi_actuel' => $step3['emploi_actuel'],
+            //     'specialite' => $step3['specialite'],
+            //     'etat' => $step3['etat'],
+            //     'emploi_envisage' => $step3['emploi_envisage'],
+            //     'etalonnage' => $step3['etalonnage']
+            // ]);
+        } else {
+            $user = User::create([
+                'firstname' => $step3['firstname'],
+                'lastname' => $step3['lastname'],
+                'email' => $step3['email'],
+                'password' => Hash::make($step3['password']),
+                'username' => $step3['username'],
+                'niv_etude' => $step3['niv_etude'],
+                'classe' => $step3['classe'],
+                'section' => $step3['section'],
+                'sexe' => $step3['sexe'],
+                'age' => $step3['age'],
+                'scolarise' => $step3['scolarise'],
+                'etablissement' => $step3['etablissement'],
+                'salarie' => $step3['salarie'],
+                'emploi_actuel' => $step3['emploi_actuel'],
+                'specialite' => $step3['specialite'],
+                'etat' => $step3['etat'],
+                'emploi_envisage' => $step3['emploi_envisage'],
+                'etalonnage' => $step3['etalonnage']
+            ]);
+        }
+        // return redirect(RouteServiceProvider::HOME);
+        return redirect('/dashboard');
     }
 }

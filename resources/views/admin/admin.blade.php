@@ -1,51 +1,64 @@
 @extends('app')
 @section('content')
-    <header class="upper-container">
+    <header class="upper-container d-flex">
         <div class="container header-contain">
-            <div class="row d-flex align-items-center img-text-nav two-img-nav py-3">
-                <div class="col-4 upper-image-container">
-                    <img src="{{asset('img/hexa3d-logo-v2_300ppp.png')}}" alt="logo hexa3d" class="img-fluid">
-                </div>
-                <div class="col-4 upper-image-container">
-                    <img src="{{asset('img/irmr3-logo-v2_300ppp.png')}}" alt="logo irmr3" class="img-fluid">
-                </div>
+            <div class="row d-flex align-items-center img-text-nav py-3">
+                <div class="col-4 upper-image-container" style="max-width: 140px;">
+                    <img src="{{asset('img/spiral_placeholder.png')}}" alt="spirale grise et blanche" class="img-fluid" style="width: 170px; height: 95px;">
+                </div> 
+                <h6 class="text-uppercase col-8 col-md-2 upper-title my-2">questionnaires d'intérêts professionnels</h6>
             </div>
         </div>
     </header>
-    <main class="dashboard-layout">
-        <div class="top-content p-4 align-items-center">
-            <div class="options">
-                <a href="#"><i class="fas fa-plus"></i> New</a>
-            </div>
-            <h1 class="text-center bo-title">Accueil du Back Office</h1>
-            <div class="admin-account">
-                <a href="#">Bonjour, Admin</a>
-            </div>
-        </div>
-        <aside class="pb-4">
-            <ul class="nav flex-column">
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('admin.admin')}}">Accueil</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('user.index')}}">Membres</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('user.index')}}">Domaine</a>
-                </li>
+    <main class="mt-5 pt-4">
+  
+        <div class="container">
 
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('question.index')}}">Question</a>
-                </li>
-               
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('type.index')}}">Type</a>
-                </li>
-            </ul>
-        </aside>
-        <div class="content-container container-fluid d-flex justify-content-center accueil-bg-img">
-
-
+            <div class="container">
+                       
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th>Nom</th>
+                      <th>Prenom</th>
+                      <th>Mail</th>
+                      <th>Sexe</th>
+                      <th>Date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><input type="checkbox" id="horns" name="horns"></td>
+                      <td>John</td>
+                      <td>Doe</td>
+                      <td>john@example.com</td>
+                      <td>masculin</td>
+                      <td>0000000</td>
+                      <td>show</td>
+                    </tr>
+                    <tr>
+                    <td><input type="checkbox" id="horns" name="horns"></td>
+                      <td>Mary</td>
+                      <td>Moe</td>
+                      <td>mary@example.com</td>
+                      <td>feminin</td>
+                      <td>0000000</td>
+                      <td>show</td>
+                    </tr>
+                    <tr>
+                    <td><input type="checkbox" id="horns" name="horns"></td>
+                      <td>July</td>
+                      <td>Dooley</td>
+                      <td>july@example.com</td>
+                      <td>masculin</td>
+                      <td>0000000</td>
+                      <td>show</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
         </div>
     </main>
+
 @endsection

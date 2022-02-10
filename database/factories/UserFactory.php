@@ -47,7 +47,9 @@ class UserFactory extends Factory
             'specialite' => $this->faker->name(),
             'etat' => $this->faker->text($maxNbChars = 8),
             'emploi_envisage' => $this->faker->text($maxNbChars = 8),
-            'role' => $this->faker->randomElement($array = array('membre', 'pro', 'admin'))
+            'role' => $this->faker->randomElement($array = array('membre', 'pro', 'admin')),
+            // 'date' => $this->faker->dateTime()
+            'date' => $this->faker->dateTimeBetween('-1 years', 'now')
         ];
     }
 
