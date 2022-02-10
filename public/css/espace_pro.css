@@ -332,6 +332,45 @@
     border-radius: initial!important;
     color:var(--black) !important;
 }
+
+
+/* user show */
+
+.pro-my-tests h4{
+    color: var(--purple);
+    font-weight: bold;
+}
+.pro-plus-icon, .pro-download-icon{
+    width: 25px;
+    height: 25px;
+    color: var(--white);
+}
+.purple-btn.test-btn:hover .pro-plus-icon{
+    color: var(--purple);
+}
+.purple-btn.valid-btn:hover .pro-download-icon{
+    color: var(--purple);
+}
+.purple-btn.test-btn{
+    font-size: 1.5rem !important;
+}
+.purple-btn.valid-btn{
+    font-size: 1.5rem !important;
+}
+.pro-select-number > span{
+    background-color: #9A9A9A;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+
 /* Small devices (landscape phones, 576px and up) */
 @media screen and (min-width: 300px) {
 

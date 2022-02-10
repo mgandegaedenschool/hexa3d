@@ -14,7 +14,6 @@
                         </span>
                     </button>
                 </div>
-
             </div>
             <div class="modal-body mb-5">
                 <div class="container-fluid">

@@ -16,7 +16,11 @@ class ProController extends Controller
         return view('espace_pro.espace_pro_index');
         //
     }
-
+    public function showuser()
+    {
+    return view('espace_pro.espace_pro_user_show');
+        //
+    }
     /**
      * Show the form for creating a new resource.
      *

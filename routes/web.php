@@ -165,7 +165,7 @@ Route::get('/espace_membre/espace_membre_edit', function(){
     return view('espace_membre.espace_membre_edit');
 })->name('espace_membre.espace_membre_edit');
 
-
+Route::get('/espace_pro/espace_pro_user_show', 'App\Http\Controllers\ProController@showuser')->name('espace_pro.espace_pro_user_show');
 Route::get('/espace_pro/espace_pro_index', 'App\Http\Controllers\ProController@index')->name('espace_pro.espace_pro_index');
 Route::post('/espace_pro/espace_pro_index', 'App\Http\Controllers\ProController@index')->name('espace_pro.espace_pro_index');
 
