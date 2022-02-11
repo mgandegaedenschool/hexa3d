@@ -341,9 +341,8 @@
     font-weight: bold;
 }
 .pro-plus-icon, .pro-download-icon{
-    width: 25px;
-    height: 25px;
-    color: var(--white);
+    width: 20px;
+    height: 20px;
 }
 .purple-btn.test-btn:hover .pro-plus-icon{
     color: var(--purple);
@@ -356,6 +355,7 @@
 }
 .purple-btn.valid-btn{
     font-size: 1.5rem !important;
+    border-radius: 25px;
 }
 .pro-select-number > span{
     background-color: #9A9A9A;
@@ -369,6 +369,46 @@
     border-radius: 50%;
     font-weight: bold;
 }
+
+.input_copy {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 0px 3px var(--grey);
+}
+
+.input_copy .icon {
+    display: block;
+    max-width: 25px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.input_copy .icon img{
+    max-width: 25px;
+}
+.input_copy .txt {
+    color: rgba(112, 112, 112, 0.5);
+    font-size: 1.5rem !important;
+    padding: 10px 25px;
+    width: 80%;
+    display: inline-block;
+    overflow: hidden;
+    appearance: none;
+    border: none;
+    background-color: transparent;
+}
+
+
+/* click animation */
+
+.flashBG {
+    animation-name: flash;
+    animation-timing-function: ease-out;
+    animation-duration: 1s;
+}
+
+
 
 
 /* Small devices (landscape phones, 576px and up) */
@@ -444,5 +484,13 @@
 @media (min-width: 1400px) {
     .espace-pro-container{
         margin-top: 4rem;
+    }
+}
+@keyframes flash {
+    0% {
+        background: #28a745;
+    }
+    100% {
+        background: transparent;
     }
 }

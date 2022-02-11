@@ -64,6 +64,12 @@
 
                 <div class="d-flex justify-content-center justify-content-md-between justify-content-lg-between align-items-start align-items-md-center flex-column flex-md-row flex-lg-row">
                     <h2>Mon espace test</h2>
+
+                    <button type="button" class="purple-btn test-btn py-2 px-4" data-toggle="modal" data-target="#proAjoutTestModal">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-plus-lg pro-plus-icon mr-4" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
+                        </svg> Ajouter un test
+                    </button>
                     @include('espace_pro.espace_pro_test_inc')
                 </div>
                 <div class="test-space">
@@ -133,20 +139,27 @@
                                         </div>
                                         <div class="pro-test-valid w-100">
                                             <label for="inputValid" class="mb-3">Et valider :</label>
-                                            <button type="submit" class="purple-btn valid-btn py-2 px-4">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23.334 21.715" width="17" height="17" class="pro-download-icon">
-                                                    <g id="Group_330" data-name="Group 330" transform="translate(-1265.967 -1300.999)">
-                                                        <path id="Union_1" data-name="Union 1" d="M0,8.244H5.156V0h4.76V8.244h5.156L7.536,17.67Z" transform="translate(1270.098 1300.999)" fill="#fff"/>
-                                                        <path id="Path_47" data-name="Path 47" d="M3270.321,18096v6.127h20.334V18096" transform="translate(-2002.854 -16780.914)" fill="none" stroke="#fff" stroke-width="3"/>
-                                                    </g>
-                                                </svg>
-
+                                            <button type="submit" class="purple-btn valid-btn py-2 px-4 d-flex align-items-center justify-content-between">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download pro-download-icon mr-4" viewBox="0 0 16 16"><path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/><path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/></svg>
                                                 Valider
                                             </button>
                                         </div>
                                     </div>
                                 </div>
                             </form>
+                            <h4 class="mt-4">Lien du test</h4>
+                            <label for="linkInput" class="mb-5">Lien du test à copier et à envoyer au bénéficiaire</label>
+                            <div class="input_copy_wrapper">
+                                <div class="input_copy">
+                                    <input type="text" disabled value="https://calendar.google.com/calendar/u/0/r/week/2021/10/21?tab=mc" class="txt" id="linkInput">
+
+                                    <span class="icon right">
+     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M0 224C0 188.7 28.65 160 64 160H128V288C128 341 170.1 384 224 384H352V448C352 483.3 323.3 512 288 512H64C28.65 512 0 483.3 0 448V224zM224 352C188.7 352 160 323.3 160 288V64C160 28.65 188.7 0 224 0H448C483.3 0 512 28.65 512 64V288C512 323.3 483.3 352 448 352H224z"/></svg>
+    </span>
+                                </div>
+
+                            </div>
+
                         </section>
                     </div>
                     <div class="test-current py-5">

@@ -4,14 +4,8 @@ $modalTitle = "Ajouter un test";
 $confirmationMessage = "Le test a bien été ajouté.";
 ?>
 
-<button type="button" class="purple-btn test-btn py-2 px-4" data-toggle="modal" data-target="#proTestModal">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-plus-lg pro-plus-icon mr-4" viewBox="0 0 16 16">
-        <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
-    </svg> Ajouter un test
-</button>
-
 <!-- Modal -->
-<div class="modal fade" id="proTestModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="proAjoutTestModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable model-pro-dialog">
         <div class="modal-content modal-pro-content">
             <div class="modal-header modal-espace-pro-header">
@@ -31,7 +25,6 @@ $confirmationMessage = "Le test a bien été ajouté.";
             <div class="modal-body">
                 <div class="container-fluid">
                     <form action="" method="post">
-
                         <div class="form-row d-flex justify-content-between flex-direction-column">
                             <div class="form-group col-12 col-md-9 col-lg-9 mb-5">
                                 <label for="inputTest" class="mb-3">Choisissez le test à attribuer au bénéficiaire :</label>
