@@ -50,7 +50,6 @@
 
 .espace-pro-profil-text-n-link a {
     color:var(--black);
-
 }
 .espace-pro-profil-link svg{
     width: 21px;
@@ -68,26 +67,23 @@
 
 .espace-pro-container{
     width: 95%;
-    margin: auto;
     padding: 15px;
-    margin-top: 2rem;
+    margin: 2rem auto auto;
 }
 
 .my-credits{
     border-radius: 2rem;
     padding: 25px;
-    box-shadow: 0px 3px 6px gainsboro;
+    box-shadow: 0 1px 3px gainsboro;
     display: flex;
     flex-direction: column;
 }
 .my-beneficiaires{
     padding: 25px;
-
-
 }
 .espace-pro-purple-btn{
     background-color:var(--purple);
-    border: var(--purple) 2px solid;
+    border: var(--purple) 2px solid!important;
     color:#ffffff;
     border-radius: 1.8rem;
     padding: 10px 20px;
@@ -96,12 +92,10 @@
 .espace-pro-purple-btn:hover{
     color: var(--purple);
     background-color: #fff;
-
 }
 .my-credits-title, .my-beneficiaires-title{
     color: var(--purple);
     width: 100%;
-
 }
 
 .my-credits-balance p{
@@ -117,7 +111,6 @@
 }
 
 .credits-buy-link a {
-
     color:var(--purple);
 }
 .credits-buy-link svg{
@@ -126,32 +119,42 @@
 }
 .credits-buy-link a:hover {
 }
-.ecredits-buy-link a>svg {
+.credits-buy-link a>svg {
     margin-right: 5px;
 }
-
+.pro-actions, .pro-filters{
+    max-width: 220px;
+}
 
 .pro-actions-select, .pro-filters-select{
     background: url("../img/chevron-down.svg") no-repeat right .75rem center/15px 15px;
-    border-radius: 0.7rem;
-    box-shadow: 0px 0px 2px gainsboro;
+    border-radius: 0.7rem!important;
+    box-shadow: 0 0 2px gainsboro;
 }
-
+.pro-filters{
+    margin-bottom: 20px;
+}
 .espace-pro-form-benef-info{
     border-bottom: gainsboro 2px solid;
 }
 .table-benef tr td:last-of-type{
     min-width: 35px;
+    max-width: 35px;
 }
+.benef-table-tbody tr td:first-of-type{
+    max-width: 40px;
+}
+
 .table-benef tr{
     display: flex;
     align-items: center;
 }
 .table-benef td{
-    min-width: 100px;
     font-size: 1.2rem;
+    border: none!important;
 }
 
+/**** Si toutes les informations du modal ne sont pas remplies, la classe s'applique au row, sur le tr ****/
 .benef-empty{
     color: #f72300;
     filter: invert(23%) sepia(74%) saturate(6482%) hue-rotate(6deg) brightness(99%) contrast(102%);
@@ -164,8 +167,10 @@
     height: 20px;
     display: inline-block;
 }
-.espace-pro-form-actions-n-filters{
+.actions-n-filter{
     margin-top: 25px;
+    display: flex;
+    flex-direction: column;
 }
 .search-input-pro{
     display: flex;
@@ -179,7 +184,7 @@
     border: 1px solid #ced4da;
     border-radius: 0.7rem;
     padding: .375rem 1.75rem .375rem .75rem;
-    box-shadow: 0px 0px 2px gainsboro;
+    box-shadow: 0 0 2px gainsboro;
 }
 .search-input-pro>input:focus{
     border: 2px solid var(--purple)!important;
@@ -187,6 +192,10 @@
 }
 .search-input-pro>label{
     font-weight: bold;
+}
+.pro-sex-select{
+    border-radius: 0.7rem!important;
+    box-shadow: 0 0 2px gainsboro;
 }
 
 .espace-pro-checkbox{
@@ -201,7 +210,7 @@
     color: currentColor;
     width: 1.5em;
     height: 1.5em;
-    box-shadow: 0px 0px 2px gainsboro;
+    box-shadow: 0 0 2px gainsboro;
     border: 1px solid gainsboro;
     border-radius: 0.5rem;
     transform: translateY(-0.075em);
@@ -228,6 +237,12 @@
     border-radius: 2rem;
     font-size: 1.2rem;
 }
+.modal-confirm-content{
+    font-size: 1.6rem;
+}
+.modal-confirm-content svg{
+    width: 50px;
+}
 .modal-espace-pro-header{
     border-bottom: none;
 }
@@ -242,50 +257,31 @@
     border:none;
     justify-content: center;
 }
-.modal-confirm-content{
-    font-size: 1.6rem;
+
+.button-delete-modal{
+    width: 50%;
 }
-.modal-confirm-content svg{
-    width: 50px;
-}
+
 /**** DRAG AND DROP MODAL ****/
 
 .drag-area{
-    border: 2px dashed black;
-    border-radius: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
 .drag-area.active{
-    border: 2px solid black;
+
 }
-.drag-area .icon{
-    font-size: 100px;
-    color:black;
-}
+
 .drag-area header{
-    font-size: 30px;
-    font-weight: 500;
-    color: black;
+
 }
 .drag-area span{
-    font-size: 25px;
-    font-weight: 500;
-    color: black;
     margin: 10px 0 15px 0;
 }
 .drag-area button{
-    padding: 10px 25px;
-    font-size: 20px;
-    font-weight: 500;
-    border: none;
-    outline: none;
-    background: #fff;
-    color: #5256ad;
-    border-radius: 5px;
-    cursor: pointer;
+
 }
 .drag-area img{
     height: 100%;
@@ -293,9 +289,8 @@
     object-fit: cover;
     border-radius: 5px;
 }
-/* footer */
-.table-benef td{
-    border: none!important;
+#modalFileSubmit{
+    display: none;
 }
 
 .espace-pro-footer{
@@ -374,23 +369,26 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    box-shadow: 0px 0px 3px var(--grey);
+    border: 1px solid rgba(112, 112, 112, 0.5);
+    border-radius: 2px;
 }
 
 .input_copy .icon {
     display: block;
+    color: #9A9A9A;
     max-width: 25px;
     cursor: pointer;
     margin-right: 10px;
+
 }
 
-.input_copy .icon img{
+.input_copy .icon svg{
     max-width: 25px;
 }
 .input_copy .txt {
-    color: rgba(112, 112, 112, 0.5);
+    color: #9A9A9A;
     font-size: 1.5rem !important;
-    padding: 10px 25px;
+    padding: 10px 20px;
     width: 80%;
     display: inline-block;
     overflow: hidden;
@@ -399,6 +397,18 @@
     background-color: transparent;
 }
 
+.pro-reset-n-delete-btn{
+    appearance: none;
+    border: none;
+    background-color: transparent;
+    border-radius: 25px;
+    box-shadow: 0px 2px 2px 0px var(--grey);
+}
+.test-current-topline{
+    /*width: 95%;
+    height: 2px;
+    background-color: rgba(220, 220, 220, 0.7);*/
+}
 
 /* click animation */
 
@@ -407,8 +417,6 @@
     animation-timing-function: ease-out;
     animation-duration: 1s;
 }
-
-
 
 
 /* Small devices (landscape phones, 576px and up) */
@@ -447,7 +455,43 @@
     .modal-pro-content{
         font-size: 1.6rem;
     }
-
+    .button-delete-modal{
+        width: 25%;
+    }
+    .TestResults-Btn{
+        width: 40%;
+    }
+    .actions-n-filter{
+        flex-direction: row;
+        margin-top: 0;
+    }
+    .new-client-btn-div{
+        justify-content: right;
+    }
+    .pro-filters{
+        margin-left: 40px;
+        margin-bottom: 0;
+    }
+    .espace-pro-selectAll{
+        display: none;
+    }
+    .table-benef-labels{
+        display: flex;
+        flex-direction: row;
+    }
+    .search-input-pro{
+        width: 20%;
+        margin-left: 5px;
+    }
+    .allSelect-checkbox{
+        padding: 0 10px;
+    }
+    .benef-table-tbody{
+        display: block;
+    }
+    .table-benef td{
+        width: 20%;
+    }
 }
 
 /* Medium devices (tablets, 768px and up) */
@@ -460,24 +504,36 @@
     .espace-pro-profil-text-n-link{
         margin-right: 20px;
     }
+    .search-input-pro {
+        margin: 0 0.5em;
+    }
 }
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-    .espace-pro-container{
+    .espace-pro-container {
         margin-top: 3rem;
     }
-    .model-pro-dialog{
+
+    .modal-pro-dialog {
         margin-top: 10rem;
     }
-    .espace-pro-selectAll{
-        display: none;
-    }
 }
-
 /* X-Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
+    .benef-table-tbody tr td:nth-child(2){
+        margin-left: 1.5em;
+    }
+    .search-input-pro {
+        margin: 0 1.5em;
+    }
+    .espace-pro-footer{
+        flex-direction: row;
 
+    }
+    .test-passed-not-passed{
+        margin-top: 0!important;
+    }
 }
 
 /* XX-Large devices (larger desktops, 1400px and up) */

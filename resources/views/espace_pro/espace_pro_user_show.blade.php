@@ -61,9 +61,8 @@
 
             </div>
             <div class="container-fluid pro-my-tests my-tests">
-
-                <div class="d-flex justify-content-center justify-content-md-between justify-content-lg-between align-items-start align-items-md-center flex-column flex-md-row flex-lg-row">
-                    <h2>Mon espace test</h2>
+                <div class="d-flex justify-content-center justify-content-md-between justify-content-lg-between align-items-start align-items-md-center flex-column flex-md-row flex-lg-row mb-4">
+                    <h2 class="mb-4">Mon espace test</h2>
 
                     <button type="button" class="purple-btn test-btn py-2 px-4" data-toggle="modal" data-target="#proAjoutTestModal">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-plus-lg pro-plus-icon mr-4" viewBox="0 0 16 16">
@@ -146,31 +145,72 @@
                                         </div>
                                     </div>
                                 </div>
-                            </form>
-                            <h4 class="mt-4">Lien du test</h4>
-                            <label for="linkInput" class="mb-5">Lien du test à copier et à envoyer au bénéficiaire</label>
-                            <div class="input_copy_wrapper">
-                                <div class="input_copy">
-                                    <input type="text" disabled value="https://calendar.google.com/calendar/u/0/r/week/2021/10/21?tab=mc" class="txt" id="linkInput">
 
-                                    <span class="icon right">
-     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M0 224C0 188.7 28.65 160 64 160H128V288C128 341 170.1 384 224 384H352V448C352 483.3 323.3 512 288 512H64C28.65 512 0 483.3 0 448V224zM224 352C188.7 352 160 323.3 160 288V64C160 28.65 188.7 0 224 0H448C483.3 0 512 28.65 512 64V288C512 323.3 483.3 352 448 352H224z"/></svg>
-    </span>
+                                <h4 class="mt-4">Lien du test</h4>
+                                <label for="linkInput" class="mb-5">Lien du test à copier et à envoyer au bénéficiaire</label>
+                                <div class="input_copy_wrapper">
+                                    <div class="input_copy">
+                                        <input type="text" disabled value="https://calendar.google.com/calendar/u/0/r/week/2021/10/21?tab=mc" class="txt linkInput">
+
+                                        <span class="icon right">
+         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor"><path d="M0 224C0 188.7 28.65 160 64 160H128V288C128 341 170.1 384 224 384H352V448C352 483.3 323.3 512 288 512H64C28.65 512 0 483.3 0 448V224zM224 352C188.7 352 160 323.3 160 288V64C160 28.65 188.7 0 224 0H448C483.3 0 512 28.65 512 64V288C512 323.3 483.3 352 448 352H224z"/></svg>
+        </span>
+                                    </div>
+
                                 </div>
 
-                            </div>
-
+                                <div class="d-flex flex-column flex-md-row flex-lg-row justify-content-center mt-5">
+                                    <button type="submit" class="pro-reset-n-delete-btn d-flex align-items-center py-3 px-4 mx-3 my-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-clockwise mr-4" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"/>
+                                            <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"/>
+                                        </svg> Réinitialiser le test
+                                    </button>
+                                    <button type="submit" class="pro-reset-n-delete-btn d-flex align-items-center py-3 px-4 mx-3 my-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash mr-4" viewBox="0 0 16 16">
+                                            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                                            <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                                        </svg> Supprimer le test
+                                    </button>
+                                </div>
+                            </form>
                         </section>
                     </div>
                     <div class="test-current py-5">
-                        <h3>Test 2 : IRMR3</h3>
-                        <p class="test-status test-ongoing"><i class="fas fa-spinner"></i> En cours</p>
-                        <a href="" class="continue-test test-btn btn purple-btn py-2 px-4">Reprendre le test</a>
-                    </div>
-                    <div class="test-current py-5">
-                        <h3>Test 1 : HEXA 3D</h3>
-                        <p class="test-status test-to-begin"><i class="fas fa-spinner"></i> Nouveau</p>
-                        <a href="" class="take-test btn test-btn purple-btn py-2 px-4">Commencer le test</a>
+                        <section class="pro-info-test d-flex flex-column flex-md-row flex-lg-row justify-content-between">
+                            <h3>Test 2 : IRMR3</h3>
+                            <p class="test-status test-ongoing"><i class="fas fa-spinner"></i> En cours</p>
+                        </section>
+
+                        <section class="pro-result-test">
+                            <form action="" method="post">
+                                <h4 class="mt-4">Lien du test</h4>
+                                <label for="linkInput" class="mb-5">Lien du test à copier et à envoyer au bénéficiaire</label>
+                                <div class="input_copy_wrapper">
+                                    <div class="input_copy">
+                                        <input type="text" disabled value="https://calendar.google.com/calendar/u/0/r/week/2021/10/21?tab=mc" class="txt linkInput">
+
+                                        <span class="icon right">
+         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor"><path d="M0 224C0 188.7 28.65 160 64 160H128V288C128 341 170.1 384 224 384H352V448C352 483.3 323.3 512 288 512H64C28.65 512 0 483.3 0 448V224zM224 352C188.7 352 160 323.3 160 288V64C160 28.65 188.7 0 224 0H448C483.3 0 512 28.65 512 64V288C512 323.3 483.3 352 448 352H224z"/></svg>
+        </span>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-column flex-md-row flex-lg-row justify-content-center mt-5">
+                                    <button type="submit" class="pro-reset-n-delete-btn d-flex align-items-center py-3 px-4 mx-3 my-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-clockwise mr-4" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"/>
+                                            <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"/>
+                                        </svg> Réinitialiser le test
+                                    </button>
+                                    <button type="submit" class="pro-reset-n-delete-btn d-flex align-items-center py-3 px-4 mx-3 my-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash mr-4" viewBox="0 0 16 16">
+                                            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                                            <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                                        </svg> Supprimer le test
+                                    </button>
+                                </div>
+                            </form>
+                        </section>
                     </div>
                 </div>
             </div>

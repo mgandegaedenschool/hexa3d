@@ -23,6 +23,9 @@
     margin-top: 0!important;
 }
 
+.header-contain{
+
+}
 
 /* media queries */
 @media (min-width: 576px) {
@@ -47,6 +50,10 @@
 }
 
 @media (min-width: 1400px) {
+    .header-contain{
+        max-width: 90%;
+    }
+
     .upper-title{
         max-width: 15%;
     }

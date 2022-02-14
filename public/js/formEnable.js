@@ -1,3 +1,5 @@
+
+
 /* display others inputs when select changes */
 let hidden = document.querySelectorAll('.hidden-select-container');
 let select = document.querySelectorAll('.dynamic-select');
@@ -22,5 +24,7 @@ linkEye.addEventListener('click', function (){
     linkEye.classList.toggle("fa-times");
     linkEye.classList.toggle("fa-eye");
 });
+
+
 
 

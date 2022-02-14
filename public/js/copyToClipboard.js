@@ -1,20 +1,23 @@
+let icons = document.querySelectorAll('.input_copy .icon');
 
-let icon = document.querySelector('.input_copy .icon');
-icon.addEventListener('click', copyToClipboard);
-
-function copyToClipboard() {
-    /* Get the text field */
-    let inputContainer = document.querySelector('.input_copy');
-    let copyText = document.getElementById("linkInput");
-    console.log(copyText);
-    /* Select the text field */
-    copyText.select();
-    copyText.setSelectionRange(0, 99999); /* For mobile devices */
-    /* Copy the text inside the text field */
-    navigator.clipboard.writeText(copyText.value);
-    setTimeout(function () {
-        inputContainer.classList.add('flashBG');
+for (let iconI = 0; iconI < icons.length; iconI++){
+    icons[iconI].addEventListener('click', function(){
+        /* Get the text field */
+        let inputContainers = document.querySelectorAll('.input_copy');
+        let inputContainer = inputContainers[iconI];
+        let copyTexts = document.querySelectorAll('.linkInput');
+        let copyText = copyTexts[iconI];
+        /* Select the text field */
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); /* For mobile devices */
+        /* Copy the text inside the text field */
+        navigator.clipboard.writeText(copyText.value);
+        setTimeout(function () {
+            inputContainer.classList.add('flashBG');
+        });
+        inputContainer.classList.remove('flashBG');
     });
-    inputContainer.classList.remove('flashBG');
-
 }
+
+
+

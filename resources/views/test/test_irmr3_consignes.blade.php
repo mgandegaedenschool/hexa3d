@@ -3,13 +3,40 @@
 @section('content')
     @include('test.header_irmr3_inc')
 
+    <?php
+    if(isset($_GET['part']) && isset($_GET['step'])){
+        if(isset($_GET['part']) && $_GET['part'] == 2){
+            ?>
     <div class="container main-div irmr3-start-test-main">
         <div class="icon-container-irmr3 mx-auto">
             <div class="icon-container-size-irmr3">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-gear check-test-end" viewBox="0 0 16 16">
-                    <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"/>
-                    <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z"/>
-                </svg>
+                <img src="../img/settings.svg" class="bi bi-gear check-test-end" alt="">
+            </div>
+        </div>
+        <div class="mb-5 consignes-div">
+            <p class="text-left text-wrap text-consignes-irmr3">Ne considérez <span>ni la question de la rémunération, ni celle de vos possibilités de réussite</span>, classez-les seulement selon votre préférence</p>
+            <p class="text-left text-wrap text-consignes-irmr3">Les noms des métiers présentés ont été écrits au masculin ou au féminin selon l’usage le plus habituel. Bien entendu, <span>tous ces métiers peuvent être exercés également par des hommes et par des femmes.</span></p>
+            <p class="text-left text-wrap text-consignes-irmr3">Travaillez rapidement selon vos premières impressions.</p>
+            <div class="mb-5 form-start-irmr3-test">
+                <span>Êtes-vous prêt(e) à continuer ? </span>
+                <div class="text-center irmr-3-test-ready-btn">
+                    <a href="{{route('test.test_irmr3_formulaire')}}?step=3&part=1" class="irmr3-btn-kaki btn py-3">Oui, je le suis</a>
+                    <button class="irmr3-continue-later py-3" data-toggle="modal" data-target="#conditionsIrmr3Leave">Non, je continuerai plus tard
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <?php
+    }
+    } else{
+    ?>
+    <div class="container main-div irmr3-start-test-main">
+        <div class="icon-container-irmr3 mx-auto">
+            <div class="icon-container-size-irmr3">
+                <img src="../img/settings.svg" class="bi bi-gear check-test-end" alt="">
             </div>
         </div>
         <h1 class="irmr3-title-start">Voici les consignes pour le questionnaire IRMR3.</h1>
@@ -23,13 +50,39 @@
                 <span>- la note 1 aux métiers restants pour indiquer que vous ne les avez ni choisis ni rejetés</span>
             </p>
             <div class="d-flex justify-content-center justify-content-md-end justify-content-lg-end align-items-center py-4">
-                <a href="{{route('test.test_irmr3_conditions')}}" class="next-btn next-btn-irmr3 d-inline-block mx-4 my-0"><i class='fas fa-chevron-left mr-3'></i> Précédent</a>
-                <a href="{{route('test.test_irmr3_formulaire')}}?step=3&part=1" class="next-btn next-btn-irmr3 d-inline-block mx-4 my-0">Suivant <i class='fas fa-chevron-right ml-3'></i></a>
+                <a href="test_irmr3_conditions?part=6" class="next-btn next-btn-irmr3 d-inline-block mx-4 my-0"><i class='fas fa-chevron-left mr-3'></i> Précédent</a>
+                <a href="test_irmr3_consignes?step=2&part=2" class="next-btn next-btn-irmr3 d-inline-block mx-4 my-0">Suivant <i class='fas fa-chevron-right ml-3'></i></a>
             </div>
-
-
         </div>
 
     </div>
+    <?php
+    }
+    ?>
 
+    <!-- Modal -->
+    <div class="modal fade" id="conditionsIrmr3Leave" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-irmr3-dialog">
+            <div class="modal-content modal-irmr3-content">
+                <div class="modal-header modal-espace-irmr3-header py-4">
+                    <div class="container-fluid modal-irmr3-header-contain">
+                        <h5 class="modal-title irmr3-title-start" id="exampleModalLabel">Vous souhaitez suspendre votre test ?</h5>
+                    </div>
+
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="form-start-irmr3-test">
+                            <p>En utilisant le lien reçu par mail, vous pourrez le reprendre à l'endroit où vous l'avez coupé.</p>
+                            <div class="text-center irmr-3-test-ready-btn">
+                                <button type="button" data-dismiss="modal" aria-label="Close" class="close irmr3-btn-kaki irmr3-start-modal-btn py-2">Je continue mon test</button>
+                                <a class="irmr3-continue-later py-3" href="">Je quitte mon test</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection

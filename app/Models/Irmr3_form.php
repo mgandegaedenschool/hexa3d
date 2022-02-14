@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Irmr3_form extends Model
 {
     use HasFactory;
-    public $timestamp = false;
-    protected $guarded = [];
-    protected $cast = [
+    public $timestamps = false;
+    protected $guarded  =[];
+    protected $casts = [
         'value' => 'array'
     ];
 }

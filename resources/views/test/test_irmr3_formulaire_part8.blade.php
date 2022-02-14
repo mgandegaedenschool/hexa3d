@@ -186,7 +186,7 @@
         </div>
         <div class="form-row irmr3-form-row mb-3">
             <div class="p-0 col-12 col-md-6 col-lg-6">
-                <p class="job"><Géologue><span class="hidden-definition">définition du métier au survol</span></p>
+                <p class="job">Géologue<span class="hidden-definition">définition du métier au survol</span></p>
             </div>
             <div class="form-check col-4 col-md-2 col-lg-2 position-relative d-flex justify-content-center align-items-center">
                 <input type="radio" class="position-absolute test-radio-input" name="geologue" value="0">

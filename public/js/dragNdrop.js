@@ -1,8 +1,30 @@
+
+/**** Ouvrir le form d'invitation après l'importation ****/
+
+
+let buttonImportInvite = document.querySelector(".button-import-invite");
+/* let noimportInvite = document.querySelector(".import-noinvit-close"); */
+
+
+
+buttonImportInvite.addEventListener('click', function(){
+    displayForm('import-invit');
+})
+
+/* noimportInvite.addEventListener('click', function(){
+    displayForm('import-invit');
+}) */
+
+/**** DRAG AND DROP ****/
+
+
 //selecting all required elements
 const dropArea = document.querySelector(".drag-area"),
     dragText = dropArea.querySelector("header"),
     button = dropArea.querySelector("button"),
+    span = dropArea.querySelector("span"),
     input = dropArea.querySelector("#modalFileBrowser");
+    submit = dropArea.querySelector("#modalFileSubmit");
 let file; //this is a global variable and we'll use it inside multiple functions
 button.onclick = ()=>{
     event.preventDefault();
@@ -19,31 +41,42 @@ input.addEventListener("change", function(){
 dropArea.addEventListener("dragover", (event)=>{
     event.preventDefault(); //preventing from default behaviour
     dropArea.classList.add("active");
-    dragText.textContent = "Release to Upload File";
+    dragText.textContent = "Relachez";
 });
 //If user leave dragged File from DropArea
 dropArea.addEventListener("dragleave", ()=>{
     event.preventDefault();
     dropArea.classList.remove("active");
-    dragText.textContent = "Drag & Drop to Upload File";
+    dragText.textContent = "Déposez vos fichiers pour les téléverser";
 });
 //If user drop File on DropArea
 dropArea.addEventListener("drop", (event)=>{
     event.preventDefault(); //preventing from default behaviour
     //getting user select file and [0] this means if user select multiple files then we'll select only the first one
     file = event.dataTransfer.files[0];
+
     showFile(); //calling function
 });
 function showFile(){
+    submit.style.display = 'block';
+    dragText.style.display = 'none';
+    button.style.display = 'none';
+    input.style.display = 'none';
+    span.style.display = 'none';
+    dropArea.style.flexDirection = "column-reverse";
     let fileType = file.type; //getting selected file type
     console.log(file.name);
-    let validExtensions = ["text/csv"]; //adding some valid image extensions in array
-    if(validExtensions.includes(fileType)){ //if user selected file is an image file
-        let csvName = '<p>' + file.name + '</p>'; //creating an img tag and passing user selected file source inside src attribute
-        dropArea.innerHTML = csvName; //adding that created img tag inside dropArea container
+    let validExtensions = ["text/csv"]; //adding some valid csv extensions in array
+    if(validExtensions.includes(fileType)){ //if user selected file is a csv file
+        let csvName = '<p>' + file.name + '</p>';
+        dropArea.innerHTML += csvName;
     }else{
         alert("Ce n'est pas un fichier csv.");
         dropArea.classList.remove("active");
-        dragText.textContent = "Drag & Drop to Upload File";
+        dragText.textContent = "Déposez vos fichiers pour les téléverser";
     }
 }
+
+
+/**** INVITATION après importation ****/
+

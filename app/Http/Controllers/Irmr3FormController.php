@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Irmr3_form;
 use Illuminate\Http\Request;
+use App\Models\Irmr3_form;
 
 class Irmr3FormController extends Controller
 {
@@ -14,7 +14,7 @@ class Irmr3FormController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
@@ -36,7 +36,9 @@ class Irmr3FormController extends Controller
     public function store(Request $request)
     {
         $tab = [
+
             /* PARTIE 1 */
+
             ['name'=> 'exp-agricole', 'value' => [0,1,2], 'metier'=> 'Exploitant agricole', 'definition' => 'définition du métier au survol', 'domaine' => 'Plein air', 'partie' => 1],
             ['name'=> 'inge-batiment', 'value' => [0,1,2], 'metier'=> 'Ingénieur en bâtiment', 'definition' => 'définition du métier au survol', 'domaine' => 'Techniques', 'partie' => 1],
             ['name'=> 'ass-gestion', 'value' => [0,1,2], 'metier'=> 'Assistant de gestion', 'definition' => 'définition du métier au survol', 'domaine' =>'Calcul', 'partie' => 1],
@@ -170,8 +172,9 @@ class Irmr3FormController extends Controller
             ['name'=>'ass-edition','value'=>[0,1,2],'metier'=>'Assistant d\'édition','definition'=>'définition du métier au survol','domaine'=>'Littéraires','partie'=>9],
             ['name'=>'dj','value'=>[0,1,2],'metier'=>'Disc-jokey','definition'=>'définition du métier au survol','domaine'=>'Musicaux','partie'=>9]
         ];
-        foreach($tab as $val){
-            Irmr3_form::create($val);
+
+        foreach ($tab as $value){
+            Irmr3_form::create($value);
         }
     }
 

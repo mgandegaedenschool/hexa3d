@@ -60,26 +60,31 @@
 
             </div>
             <div class="container-fluid my-tests">
-                <h2>Mon espace test</h2>
+                <h2 class="mb-4">Mon espace test</h2>
                 <div class="test-space">
                     <div class="test-current py-5">
-                        <h3>Test 1 : HEXA 3D</h3>
-                        <p class="test-status test-done"><i class="fas fa-check"></i> Terminé</p>
-                        <p class="test-done-date">Date de passage : <span>03-11-2021</span></p>
+                        <section class="pro-info-test d-flex flex-column flex-md-row flex-lg-row justify-content-between">
+                            <h3>Test 1 : HEXA 3D</h3>
+                            <p class="test-status test-done"><i class="fas fa-check"></i> Terminé</p>
+                        </section>
+                        <p class="test-done-date">Date de passage : <span class="font-weight-bold">03-11-2021</span></p>
                     </div>
                     <div class="test-current py-5">
-                        <h3>Test 2 : IRMR3</h3>
-                        <p class="test-status test-ongoing"><i class="fas fa-spinner"></i> En cours</p>
+                        <section class="pro-info-test d-flex flex-column flex-md-row flex-lg-row justify-content-between">
+                            <h3>Test 2 : IRMR3</h3>
+                            <p class="test-status test-ongoing"><i class="fas fa-spinner"></i> En cours</p>
+                        </section>
                         <a href="" class="continue-test test-btn btn purple-btn py-2 px-4">Reprendre le test</a>
                     </div>
                     <div class="test-current py-5">
-                        <h3>Test 1 : HEXA 3D</h3>
-                        <p class="test-status test-to-begin"><i class="fas fa-spinner"></i> Nouveau</p>
+                        <section class="pro-info-test d-flex flex-column flex-md-row flex-lg-row justify-content-between">
+                            <h3>Test 2 : IRMR3</h3>
+                            <p class="test-status test-to-begin"><i class="fas fa-spinner"></i> Nouveau</p>
+                        </section>
                         <a href="" class="take-test btn test-btn purple-btn py-2 px-4">Commencer le test</a>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 

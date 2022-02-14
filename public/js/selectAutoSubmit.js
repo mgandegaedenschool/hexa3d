@@ -6,7 +6,7 @@ let selectActionsAndSubmit = document.querySelectorAll('.espace-pro-select-actio
 function submitActionAndFilterForm(){
     // Call submit() method on action form
     formActionAndSubmit.submit();
-    
+
 }
 
 for (let selectI = 0; selectI < selectActionsAndSubmit.length; selectI++){

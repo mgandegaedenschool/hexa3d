@@ -1,4 +1,3 @@
-
 <div class="modal fade" id="proConfirmModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable model-pro-dialog">
         <div class="modal-content modal-pro-content modal-confirm-content">
@@ -14,6 +13,7 @@
                         </span>
                     </button>
                 </div>
+
             </div>
             <div class="modal-body mb-5">
                 <div class="container-fluid">

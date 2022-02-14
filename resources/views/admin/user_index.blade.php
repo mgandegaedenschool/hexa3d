@@ -1,6 +1,7 @@
 @extends('app')
 
 @section('content')
+
     <header class="upper-container">
         <div class="container header-contain">
             <div class="row d-flex align-items-center img-text-nav two-img-nav py-3">
@@ -91,8 +92,8 @@
                     <tr>
                         <th scope="col">actions</th>
                         <th scope="col">id_user</th>
-                        <th scope="col">firstname</th>
-                        <th scope="col">lastname</th>
+                        <th scope="col">first name</th>
+                        <th scope="col">last name</th>
                         <th scope="col">email</th>
                         <th scope="col">username</th>
                         <th scope="col">niv_etude</th>
@@ -107,18 +108,16 @@
                         <th scope="col">spécialité</th>
                         <th scope="col">état</th>
                         <th scope="col">emploi_envisagé</th>
-                        <th scope="col">admin</th>
 
                     </tr>
                     </thead>
                     <tbody>
                     @foreach($users as $user)
 
-
                     <tr>
                         <td class="no-defil">
                             <a href="{{route('admin.user_show',1)}}"><i class="far fa-eye user-tab-icon"></i></a>
-                            <a href="{{route('admin.user_edit', 1)}}"><i class="fas fa-pen user-tab-icon"></i></a>
+                            <a href="{{route('admin.user_edit',1)}}"><i class="fas fa-pen user-tab-icon"></i></a>
                             <a href=""><i class="far fa-trash-alt user-tab-icon"  onclick="return(confirm('Voulez-vous vraiment supprimer les données?'))"></i></a>
                         </td>
                         <td>{{$user->id}}</td>
@@ -131,15 +130,15 @@
                         <td>{{$user->section}}</td>
                         <td>{{$user->sexe}}</td>
                         <td>{{$user->age}}</td>
-                        <td>{{$user->scholarise}}</td>
+                        <td>{{$user->scolarise}}</td>
                         <td>{{$user->etablissement}}</td>
                         <td>{{$user->salarie}}</td>
                         <td>{{$user->emploi_actuel}}</td>
                         <td>{{$user->specialite}}</td>
                         <td>{{$user->etat}}</td>
                         <td>{{$user->emploi_envisage}}</td>
-                        <td>{{$user->admin}}</td>
                     </tr>
+
                     @endforeach
                     </tbody>
                 </table>

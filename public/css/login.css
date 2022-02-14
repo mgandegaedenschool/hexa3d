@@ -16,10 +16,11 @@ a.step:active{
 }
 
 #InputIdLogin, #InputPassword1Login{
-    color: gainsboro;
+
     opacity: 0.7;
     border: 3px solid gainsboro;
     font-size: 2rem!important;
+    color: black;
 }
 
 #InputIdLogin:focus, #InputPassword1Login:focus, #InputMailForgotMail:focus{
@@ -36,7 +37,7 @@ a.step:active{
     background-color:var(--purple);
     border: var(--purple) 2px solid;
     color:#ffffff;
-    border-radius: 1.2rem;
+    border-radius: 1.8rem;
 }
 
 .purple-btn:hover{

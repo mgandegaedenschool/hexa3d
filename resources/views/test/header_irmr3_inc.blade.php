@@ -11,7 +11,15 @@
     <div class="irmr3-progress-div">
         <div class="progress irmr3-header-progress-bar">
             <?php
-            if (isset($_GET['part']) && $_GET['step'] == 3){
+            if (isset($_GET['part']) && !isset($_GET['step'])){
+                $calc = 12.5 + ($_GET['part'] * (25 / 6) - (25/6));
+                echo "<div class='progress-bar irmr3-progressing-bar' role='progressbar' style='width: $calc%' aria-valuenow='$calc' aria-valuemin='0' aria-valuemax='100'></div>";
+            }
+            elseif (isset($_GET['part']) && $_GET['step'] == 2){
+                $calc = 37.5 + ($_GET['part'] * (25 / 2) - (25/2));
+                echo "<div class='progress-bar irmr3-progressing-bar' role='progressbar' style='width: $calc%' aria-valuenow='$calc' aria-valuemin='0' aria-valuemax='100'></div>";
+            }
+            elseif (isset($_GET['part']) && $_GET['step'] == 3){
                 $calc = 62.5 + ($_GET['part'] * (25 / 9) - (25/9));
                 echo "<div class='progress-bar irmr3-progressing-bar' role='progressbar' style='width: $calc%' aria-valuenow='$calc' aria-valuemin='0' aria-valuemax='100'></div>";
             }elseif(!isset($_GET['step'])){

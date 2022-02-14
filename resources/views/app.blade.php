@@ -6,12 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Questionnaire d'intêrets professionnels</title>
+    <title>Questionnaire d'intérêts professionnels</title>
 
     <link rel="stylesheet" href="/css/lib/bootstrap.min.css">
     <link rel="stylesheet" href="/css/lib/fontawesome.min.css">
     <link rel="stylesheet" href="/css/style.min.css">
     <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/header_irmr3.css">
     <link rel="stylesheet" href="/css/login.css">
     <link rel="stylesheet" href="/css/register.css">
     <link rel="stylesheet" href="/css/dashboard.css">
@@ -23,13 +24,11 @@
 
 </head>
 <body class="<?php echo $bgc??''; ?>">
-
     @yield('content')
-    <script src="/js/progressBar.js"></script>
     <script src="/js/formEnable.js"></script>
+    <script src="/js/dragNdrop.js"></script>
     <script src="/js/selectAutoSubmit.js"></script>
     <script src="/js/copyToClipboard.js"></script>
-    <script src="/js/dragNdrop.js"></script>
     <script src="/js/lib/jquery-3.3.1.min.js"></script>
     <script src="/js/lib/popper.min.js"></script>
     <script src="/js/lib/bootstrap.min.js"></script>

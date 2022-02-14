@@ -1,13 +1,14 @@
 <?php
 
-use App\Http\Controllers\Irmr3FormController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PDFController;
 use App\Http\Controllers\TestController;
+use App\Http\Controllers\ProController;
 use App\Http\Controllers\ExampleController;
 use App\Http\Controllers\PatientController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ParticipationController;
+use App\Http\Controllers\Irmr3FormController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,16 +40,29 @@ Route::get('admin/admin', function(){
     return view('admin.admin');
 })->name('admin.admin');
 
-/* User route */
+Route::get('/irmr3Form', 'App\Http\Controllers\Irmr3FormController@create')->name('irmr3Form');
+Route::post('/irmr3Form', 'App\Http\Controllers\Irmr3FormController@store')->name('irmr3Form');
+
 Route::get('/admin/user_index', 'App\Http\Controllers\UserController@index')->name('admin.user_index');
 Route::get('/admin/user_create', 'App\Http\Controllers\UserController@create')->name('admin.user_create');
 Route::post('/admin/user_store', 'App\Http\Controllers\UserController@store')->name('admin.user_store');
 
 Route::get('/admin/user_edit/{id}', 'App\Http\Controllers\UserController@edit')->name('admin.user_edit');
-Route::get('/admin/user_show/{id}', 'App\Http\Controllers\UserController@show')->name('admin.user_show');
 Route::post('/admin/user_update/{id}', 'App\Http\Controllers\UserController@update')->name('admin.user_update');
+
+Route::get('/admin/user_show/{id}', 'App\Http\Controllers\UserController@show')->name('admin.user_show');
 Route::post('/admin/user_delete/{id}', 'App\Http\Controllers\UserController@destroy')->name('admin.user_delete');
 
+/***** DOMAINE ROUTES *****/
+Route::get('/admin/domaine_index', 'App\Http\Controllers\UserController@index')->name('admin.domaine_index');
+Route::get('/admin/domaine_create', 'App\Http\Controllers\UserController@create')->name('admin.domaine_create');
+Route::post('/admin/domaine_store', 'App\Http\Controllers\UserController@store')->name('admin.domaine_store');
+
+Route::get('/admin/domaine_edit/{id}', 'App\Http\Controllers\UserController@edit')->name('admin.domaine_edit');
+Route::post('/admin/domaine_update/{id}', 'App\Http\Controllers\UserController@update')->name('admin.domaine_update');
+
+Route::get('/admin/domaine_show/{id}', 'App\Http\Controllers\UserController@show')->name('admin.domaine_show');
+Route::post('/admin/domaine_delete/{id}', 'App\Http\Controllers\UserController@destroy')->name('admin.domaine_delete');
 
 /* Etalonnage route */
 Route::get('/admin/etalonnage_index', 'App\Http\Controllers\UserController@index')->name('admin.etalonnage_index');
@@ -90,17 +104,6 @@ Route::get('/admin/question_show/{id}', 'App\Http\Controllers\UserController@sho
 Route::post('/admin/question_update/{id}', 'App\Http\Controllers\UserController@update')->name('admin.question_update');
 Route::post('/admin/question_delete/{id}', 'App\Http\Controllers\UserController@destroy')->name('admin.question_delete');
 
-/***** DOMAINE ROUTES *****/
-Route::get('/admin/domaine_index', 'App\Http\Controllers\UserController@index')->name('admin.domaine_index');
-Route::get('/admin/domaine_create', 'App\Http\Controllers\UserController@create')->name('admin.domaine_create');
-Route::post('/admin/domaine_store', 'App\Http\Controllers\UserController@store')->name('admin.domaine_store');
-
-Route::get('/admin/domaine_edit/{id}', 'App\Http\Controllers\UserController@edit')->name('admin.domaine_edit');
-Route::post('/admin/domaine_update/{id}', 'App\Http\Controllers\UserController@update')->name('admin.domaine_update');
-
-Route::get('/admin/domaine_show/{id}', 'App\Http\Controllers\UserController@show')->name('admin.domaine_show');
-Route::post('/admin/domaine_delete/{id}', 'App\Http\Controllers\UserController@destroy')->name('admin.domaine_delete');
-
 /***** REPONSE ROUTES *****/
 Route::get('/admin/reponse_index', 'App\Http\Controllers\UserController@index')->name('admin.reponse_index');
 Route::get('/admin/reponse_create', 'App\Http\Controllers\UserController@create')->name('admin.reponse_create');
@@ -134,6 +137,15 @@ Route::post('/admin/type_update/{id}', 'App\Http\Controllers\UserController@upda
 Route::get('/admin/type_show/{id}', 'App\Http\Controllers\UserController@show')->name('admin.type_show');
 Route::post('/admin/type_delete/{id}', 'App\Http\Controllers\UserController@destroy')->name('admin.type_delete');
 
+Route::get('/espace_membre/espace_membre', function(){
+    return view('espace_membre.espace_membre');
+})->name('espace_membre.espace_membre');
+Route::get('/espace_membre/espace_membre_edit', function(){
+    return view('espace_membre.espace_membre_edit');
+})->name('espace_membre.espace_membre_edit');
+Route::get('/espace_pro/espace_pro_index', 'App\Http\Controllers\ProController@index')->name('espace_pro.espace_pro_index');
+Route::get('/espace_pro/espace_pro_user_show', 'App\Http\Controllers\ProController@showuser')->name('espace_pro.espace_pro_user_show');
+
 
 /* test IRMR3*/
 Route::get('/test/test_irmr3_conditions', 'App\Http\Controllers\TestIrmr3Controller@conditions')->name('test.test_irmr3_conditions');
@@ -152,23 +164,10 @@ Route::post('/test/test_irmr3_formulaire_part7', 'App\Http\Controllers\TestIrmr3
 Route::post('/test/test_irmr3_formulaire_part8', 'App\Http\Controllers\TestIrmr3Controller@formulaire8')->name('test.test_irmr3_formulaire_part8');
 Route::post('/test/test_irmr3_formulaire_part9', 'App\Http\Controllers\TestIrmr3Controller@formulaire9')->name('test.test_irmr3_formulaire_part9');
 
-Route::get('/Irmr3Form', 'App\Http\Controllers\Irmr3FormController@create')->name('irmr3Form');
-Route::post('/Irmr3Form', 'App\Http\Controllers\Irmr3FormController@store')->name('irmr3Form');
 
 Route::get('/', function (){
     return 'Bienvenue tout le monde';
 });
-Route::get('/espace_membre/espace_membre', function(){
-    return view('espace_membre.espace_membre');
-})->name('espace_membre.espace_membre');
-Route::get('/espace_membre/espace_membre_edit', function(){
-    return view('espace_membre.espace_membre_edit');
-})->name('espace_membre.espace_membre_edit');
-
-Route::get('/espace_pro/espace_pro_user_show', 'App\Http\Controllers\ProController@showuser')->name('espace_pro.espace_pro_user_show');
-Route::get('/espace_pro/espace_pro_index', 'App\Http\Controllers\ProController@index')->name('espace_pro.espace_pro_index');
-Route::post('/espace_pro/espace_pro_index', 'App\Http\Controllers\ProController@index')->name('espace_pro.espace_pro_index');
-
 Route::get('/pdf', [PDFController::class, 'showPDF'])->name('pdf.index');
 Route::get('/pdf/create', [PDFController::class, 'createPDF'])->name('pdf.create');
 

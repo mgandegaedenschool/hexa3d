@@ -1,5 +1,5 @@
 <div class="container irmr3-test-container">
-    <form action="{{route('test.test_irmr3_formulaire_part1')}}" method="post">
+    <form action="" method="post">
         @csrf
         <div class="form-row irmr3-form-row mb-3">
             <div class="p-0 col-12 col-md-6 col-lg-6">
@@ -283,7 +283,7 @@
             </div>
             <div class="d-flex justify-content-center justify-content-md-end justify-content-lg-end align-items-center py-4">
                 <a href="{{route('test.test_irmr3_consignes')}}?step=2" class="next-btn next-btn-irmr3 d-inline-block mx-4 my-0"><i class='fas fa-chevron-left mr-3'></i> Précédent</a>
-                {{--<a href="?step=3&part=2" class="next-btn next-btn-irmr3 d-inline-block mx-4 my-0">Suivant <i class='fas fa-chevron-right ml-3'></i></a>--}}
+               {{-- <a href="?step=3&part=2" class="next-btn next-btn-irmr3 d-inline-block mx-4 my-0">Suivant <i class='fas fa-chevron-right ml-3'></i></a>--}}
                 <input type="submit" value="suivant" class="next-btn next-btn-irmr3 d-inline-block mx-4 my-0">
             </div>
         </section>

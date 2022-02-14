@@ -25,6 +25,7 @@ $confirmationMessage = "Le test a bien été ajouté.";
             <div class="modal-body">
                 <div class="container-fluid">
                     <form action="" method="post">
+
                         <div class="form-row d-flex justify-content-between flex-direction-column">
                             <div class="form-group col-12 col-md-9 col-lg-9 mb-5">
                                 <label for="inputTest" class="mb-3">Choisissez le test à attribuer au bénéficiaire :</label>
@@ -57,4 +58,4 @@ $confirmationMessage = "Le test a bien été ajouté.";
 </div>
 
 
-@include('espace_pro.espace_pro_confirm')
+@include('espace_pro.espace_pro_confirm_inc')

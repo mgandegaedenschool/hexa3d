@@ -14,11 +14,11 @@ class ProController extends Controller
     public function index()
     {
         return view('espace_pro.espace_pro_index');
-        //
     }
+
     public function showuser()
     {
-    return view('espace_pro.espace_pro_user_show');
+        return view('espace_pro.espace_pro_user_show');
         //
     }
     /**
