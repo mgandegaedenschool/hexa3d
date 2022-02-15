@@ -137,6 +137,7 @@ Route::post('/admin/type_update/{id}', 'App\Http\Controllers\UserController@upda
 Route::get('/admin/type_show/{id}', 'App\Http\Controllers\UserController@show')->name('admin.type_show');
 Route::post('/admin/type_delete/{id}', 'App\Http\Controllers\UserController@destroy')->name('admin.type_delete');
 
+/* espace membre et pro*/
 Route::get('/espace_membre/espace_membre', function(){
     return view('espace_membre.espace_membre');
 })->name('espace_membre.espace_membre');
@@ -163,6 +164,47 @@ Route::post('/test/test_irmr3_formulaire_part6', 'App\Http\Controllers\TestIrmr3
 Route::post('/test/test_irmr3_formulaire_part7', 'App\Http\Controllers\TestIrmr3Controller@formulaire7')->name('test.test_irmr3_formulaire_part7');
 Route::post('/test/test_irmr3_formulaire_part8', 'App\Http\Controllers\TestIrmr3Controller@formulaire8')->name('test.test_irmr3_formulaire_part8');
 Route::post('/test/test_irmr3_formulaire_part9', 'App\Http\Controllers\TestIrmr3Controller@formulaire9')->name('test.test_irmr3_formulaire_part9');
+
+/* PDF IRMR3 PRO */
+
+
+Route::get('/pdf/pdf-pro-1', function(){
+    return view('pdf.pdf-pro-1');
+})->name('pdf.pdf-pro-1');
+Route::get('/pdf/pdf-pro-2', function(){
+    return view('pdf.pdf-pro-2');
+})->name('pdf.pdf-pro-2');
+Route::get('/pdf/pdf-pro-3', function(){
+    return view('pdf.pdf-pro-3');
+})->name('pdf.pdf-pro-3');
+Route::get('/pdf/pdf-pro-4', function(){
+    return view('pdf.pdf-pro-4');
+})->name('pdf.pdf-pro-4');
+Route::get('/pdf/pdf-pro-5', function(){
+    return view('pdf.pdf-pro-5');
+})->name('pdf.pdf-pro-5');
+
+
+/* PDF IRMR3 BENEF */
+
+Route::get('/pdf/pdf-benef-1', function(){
+    return view('pdf.pdf-benef-1');
+})->name('pdf.pdf-benef-1');
+Route::get('/pdf/pdf-benef-2', function(){
+    return view('pdf.pdf-benef-2');
+})->name('pdf.pdf-benef-2');
+Route::get('/pdf/pdf-benef-3', function(){
+    return view('pdf.pdf-benef-3');
+})->name('pdf.pdf-benef-3');
+Route::get('/pdf/pdf-benef-4', function(){
+    return view('pdf.pdf-benef-4');
+})->name('pdf.pdf-benef-4');
+Route::get('/pdf/pdf-benef-5', function(){
+    return view('pdf.pdf-benef-5');
+})->name('pdf.pdf-benef-5');
+Route::get('/pdf/pdf-benef-6', function(){
+    return view('pdf.pdf-benef-6');
+})->name('pdf.pdf-benef-6');
 
 
 Route::get('/', function (){

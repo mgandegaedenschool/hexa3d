@@ -1,0 +1,37 @@
+body {
+    width: 2480px;
+    height: 3508px;
+    font-family: "Montserrat", sans-serif;
+
+}
+p, h3, h4, h5, h6 {
+    color: #7A7A7A;
+}
+.pdf-content-container{
+    height: 93vh;
+}
+.pdf-last-text{
+    height: 4vh;
+}
+.pdf-big-title{
+    margin-top: 120px;
+    font-size: 60px;
+    color: var(--kaki);
+}
+.pdf-medium-title{
+    font-size: 35px;
+}
+.pdf-title{
+    font-size: 30px;
+}
+.pdf-footer{
+    bottom: 0;
+    background-color: var(--kaki);
+    height: 3vh;
+    width: 100%;
+}
+.pdf-footer p{
+    color: var(--white);
+    margin: 0;
+    font-size: 25px;
+}

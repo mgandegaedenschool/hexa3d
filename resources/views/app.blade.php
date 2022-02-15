@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="/css/dashboard.css">
     <link rel="stylesheet" href="/css/espace_membre.css">
     <link rel="stylesheet" href="/css/espace_pro.css">
+    <link rel="stylesheet" href="/css/irmr3_pdf.css">
     <link rel="stylesheet" href="/css/irmr3.css">
     <link rel="stylesheet" href="/css/style.css">
 
