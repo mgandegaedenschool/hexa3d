@@ -1,0 +1,426 @@
+:root{
+    --yellow: #EFDB00;
+    --kaki: #655F00;
+    --lightkaki: #B3A400;
+    --lightgrey: #E1E1E1;
+    --grey: #7A7A7A;
+}
+
+/* header and progress bar */
+.irmr3-header{
+    box-shadow: none;
+    background-color: #ffffff;
+}
+.irmr3-upper-img-contain{
+    position: relative;
+    top: 15px;
+    background-color: white;
+    max-width: 250px;
+}
+.irmr3-nav{
+    justify-content: center;
+}
+.irmr3-progress-bar-content{
+    display: flex;
+
+    text-align: center;
+}
+.irmr3-progress-bar-content p{
+    width: 25%;
+    font-size: 1rem;
+}
+.irmr3-header-progress-bar{
+    border: 1px solid var(--yellow);
+    background-color:#ffffff ;
+    border-radius: 2rem;
+}
+.irmr3-progressing-bar{
+    background-color: var(--yellow);
+}
+.irmr3-progress-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+.irmr3-progress-div{
+    width: 90%;
+}
+
+/* conditions */
+
+.icon-container-size-irmr3{
+    display: flex;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: var(--yellow);
+    align-items: center;
+}
+.icon-container-irmr3{
+    width: 100%;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+}
+.icon-container-irmr3 .bi-gear{
+    width: 60%;
+}
+.irmr3-start-test-main{
+    margin-top: 0!important;
+}
+.irmr3-title-start{
+    width: 100%;
+    color:var(--lightkaki);
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+}
+.form-start-irmr3-test{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+.form-start-irmr3-test p{
+    width: 100%;
+    margin-bottom: 1rem;
+}
+.irmr3-btn-kaki{
+    background-color: var(--lightkaki);
+    color:white;
+    width: 80% ;
+    border-radius: 1.4rem;
+    font-size: 1.6rem!important;
+    box-shadow: 0px 0px 2px gray;
+}
+.irmr3-btn-kaki:hover{
+    background-color:#ffffff;
+    color:var(--lightkaki);
+    border-color:var(--lightkaki);
+    box-shadow: none;
+}
+.irmr-3-test-ready-btn
+{
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+.irmr3-continue-later{
+    width: 80%;
+    color:var(--black);
+    margin-top: 5px;
+}
+.irmr3-continue-later:hover{
+    color:var(--lightkaki);
+}
+/* consignes */
+
+.consignes-div span{
+    font-weight: bold;
+}
+.consignes-list-title{
+    text-align: center;
+    margin:50px 0 20px 0;
+}
+.consignes-list{
+    display: flex;
+    flex-wrap: wrap;
+}
+.consignes-list span{
+    width: 100%;
+}
+
+.text-consignes-irmr3, .consignes-list{
+    font-size: 1.4rem;
+}
+
+/* step 3 (test) */
+.part-title{
+    color: var(--lightkaki);
+}
+.irmr3-test-container{
+    text-align: center;
+    font-weight: bold;
+}
+.irmr3-form-row{
+    background-color: white;
+    border-radius: 1.4rem;
+    min-height: 150px;
+    box-shadow: 0 2px 4px 2px var(--lightgrey);
+}
+.irmr3-bareme{
+    font-size: 1.2rem;
+}
+.job{
+    color: white;
+    background-color: var(--lightkaki);
+    padding: 11px 0;
+    position: relative;
+    border-radius: 1.4rem;
+    margin: 0;
+
+}
+.hidden-definition{
+    display: none;
+    position: absolute;
+    border-radius: 1.4rem;
+    top: 35px;
+    left: 0;
+    right: 0;
+    margin: 0 15px;
+    background-color: var(--grey);
+    justify-content: center;
+    align-items: center;
+    min-height: 90px;
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+}
+.job:hover .hidden-definition{
+    display: flex;
+}
+.bi-check2, .test-radio-input{
+    width: 3em;
+    height: 3em;
+}
+.test-radio-input{
+    -webkit-appearance: none;
+    border: 2px solid var(--lightgrey);
+    border-radius: 1.5rem;
+    background-color: #F8F8F8;
+    margin: 0;
+    z-index: 1;
+}
+.test-radio-input:checked{
+    z-index: 0;
+    background-color: var(--yellow);
+    border: none;
+    box-shadow: 0 0 4px var(--lightgrey);
+}
+.bi-check2{
+    font-size: 1.2rem;
+    color: white;
+}
+.next-btn-irmr3{
+    transition: color 0.2s ease;
+    color: var(--lightkaki) !important;
+}
+.next-btn-irmr3:hover{
+    color: var(--kaki) !important;
+}
+.next-btn-irmr3 > i{
+    color: var(--lightkaki) !important;
+    opacity: 1;
+}
+.next-btn-irmr3:hover > i{
+    color: var(--kaki) !important;
+}
+.irmr3-explain{
+    background-color: #fff;
+    border-radius: 1.4rem;
+    border: 2px solid gainsboro;
+}
+.irmr3-explain ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.irmr3-test-container .form-row{
+    padding-bottom: 35px;
+}
+
+.irmr3-test-container .form-row .job{
+    text-align: center;
+    padding: 11px 11px;
+}
+.next-previous-container{
+    margin-top: 35px !important;
+    margin-bottom: 10px;
+}
+
+/* bonus */
+
+.irmr3-title-start{
+    width: 100%;
+    color:var(--lightkaki);
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+.bonus-container{
+    font-weight: bold;
+}
+.irmr3-bonus-row{
+    background-color: white;
+    border-radius: 1.4rem;
+    box-shadow: 0 2px 4px 2px var(--lightgrey);
+}
+
+/* fin du test */
+
+
+.bi-check2, .test-radio-input{
+    width: 3em;
+    height: 3em;
+}
+.bi-check2{
+    font-size: 1.2rem;
+    color: white;
+}
+.irmr3-test-end{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+.irmr3-test-end p{
+    width: 100%;
+}
+.irmr3-title-end{
+    margin:0!important;
+}
+.icon-irmr3-end{
+    margin: 25px 0;
+}
+.icon-irmr3-end i{
+    color:var(--black);
+    font-size: 3rem;
+}
+.btn-test-end{
+    width: 100% !important;
+}
+.check-test-end{
+    font-size: 1.6rem;
+    color:var(--black);
+}
+
+
+/* X-Small devices (portrait phones, less than 576px)
+ No media query for `xs` since this is the default in Bootstrap */
+@media screen and (min-width: 300px) {
+    .irmr3-progress-div{
+        width: 75%;
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+    .irmr3-progress-bar-content p{
+        font-size: 1.2rem;
+    }
+    .irmr3-progress-div{
+        width: 60%;
+    }
+    .text-consignes-irmr3, .consignes-list{
+        font-size: 1.5rem;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .irmr3-progress-bar-content p{
+        font-size: 1.3rem;
+    }
+    .irmr3-form-row{
+        min-height: auto;
+    }
+    .irmr3-test-container .form-row{
+        padding-bottom: 0;
+    }
+    .irmr3-test-container .form-row .job{
+        text-align: left;
+    }
+    .irmr3-btn-kaki{
+        width: 45%;
+    }
+    .btn-test-end{
+        width: 50% !important;
+    }
+    .irmr3-continue-later{
+        margin-top: 0;
+        width: 45%;
+    }
+    .irmr3-progress-bar-content p{
+        font-size: 1.3rem;
+    }
+    .irmr-3-test-ready-btn
+    {
+        width: 70%;
+        justify-content: space-around;
+    }
+    .irmr3-start-test-main{
+        margin-top: 2rem!important;
+    }
+    .icon-irmr3-end{
+        margin: 30px 0;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .irmr3-progress-bar-content p{
+        font-size: 1.4rem;
+    }
+    .irmr3-title-start{
+        margin-bottom: 3rem;
+    }
+    .irmr3-start-test-main{
+         margin-top: 0!important;
+     }
+    .form-start-irmr3-test p{
+        margin-bottom: 2rem;
+    }
+    .text-consignes-irmr3, .consignes-list{
+        font-size: 1.6rem;
+    }
+    .irmr3-title-end{
+        margin:30px 0 0 0!important;
+    }
+    .icon-irmr3-end{
+        margin: 60px 0;
+    }
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .irmr3-title-start{
+        font-size: 2rem;
+    }
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+    .irmr3-title-start{
+        margin-bottom: 4rem;
+        font-size: 2.6rem;
+    }
+    .irmr3-progress-div{
+        width: 40%;
+    }
+    .irmr3-progress-bar-content p{
+        width: 25%;
+        font-size: 1.6rem;
+    }
+    .irmr3-title-start{
+        margin-bottom:5rem;
+        font-size: 2.6rem;
+        margin-top: 3rem;
+    }
+    .form-start-irmr3-test p{
+        margin-bottom: 4rem;
+        font-size: 2.2rem;
+    }
+    .irmr3-btn-kaki{
+        font-size: 2.2rem!important;
+    }
+    .irmr3-continue-later{
+        font-size: 2.2rem;
+    }
+    .irmr3-test-end p{
+        font-size: 2rem;
+    }
+}

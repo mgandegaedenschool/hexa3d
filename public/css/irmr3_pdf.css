@@ -1,0 +1,56 @@
+body{
+    width: 2480px;
+    height: 3508px;
+    font-family: "Arial", sans-serif;
+}
+
+.pdf-irmr3-header{
+
+}
+.pdf-irmr3-container{
+    display: flex;
+    flex-direction: row;
+    border-bottom: 2px solid #7A7A7A;
+}
+.pdf-irmr3-headerName{
+    width: 33%;
+    background-color:var(--kaki);
+    border-radius: 2.5rem 2.5rem 0 0;
+    padding: 4rem 5rem;
+    text-align: center;
+}
+.pdf-irmr3-headerName p{
+    color:white!important;
+    margin: 0;
+    font-size: 35px;
+}
+
+.pdf-irmr3-kaki-text{
+    color: var(--kaki);
+    font-size: 30px;
+}
+section p, section li{
+    font-size: 25px;
+}
+.pdf-big-title{
+    font-size: 60px;
+    color: var(--kaki);
+}
+.pdf-medium-title{
+    font-size: 35px;
+}
+.pdf-title{
+    font-size: 30px;
+}
+
+.pdf-footer{
+    position:fixed;
+    bottom: 0;
+    background-color: var(--kaki);
+    height: 5vh;
+    width: 100%;
+}
+.pdf-footer p{
+    color: var(--white);
+    margin: 0;
+}

@@ -1,0 +1,223 @@
+.back-card{
+    margin: 40px 0;
+    a{
+        color: $text;
+        text-decoration: none;
+    }
+}
+
+.header-card{
+    display: flex;
+    justify-content: flex-start;
+    margin: 10px 0 40px 0;
+    h1{
+        color: $text;
+        margin-right: 30px;
+    }
+    h4{
+        margin: auto 0;
+    }
+}
+
+
+
+.card {
+    &--test {
+        padding: 20px 13px;
+        border: none;
+        border-radius: 6px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .10);
+        transition: box-shadow ease .5s;
+        transition: all 400ms linear;
+
+        .card-body {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+            &>.card-body-info {
+                width: 100%;
+            }
+
+            &>.card-body-result {
+                margin-top: 12.5px;
+                padding-top: 25px;
+                border-top: 1px solid rgba(0, 0, 0, 0.20);
+                width: 100%;
+            }
+
+            .card-title {
+                font-size: 24px;
+                font-weight: 700;
+                vertical-align: middle;
+
+                i {
+                    margin-right: 5px;
+                }
+            }
+
+            .card-text {
+                margin-bottom: 10px;
+                font-size: 18px;
+                color: $text;
+                font-weight: 400;
+                display: flex;
+                align-items: center;
+
+                i {
+                    margin-right: 7px;
+
+                    &.fa-times {
+                        border: 1px dashed $text;
+                        border-radius: 100%;
+                        font-size: 16px;
+                        width: 25px;
+                        height: 25px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                }
+            }
+
+            a {
+                text-decoration: none;
+                text-transform: uppercase;
+                font-weight: 500;
+                font-size: 16px;
+                vertical-align: middle;
+                line-height: 20px;
+                margin-bottom: 15px;
+
+                &.link {
+                    color: $pink_light;
+                    border-bottom: 1px solid transparent;
+                    transition: color ease .5s;
+
+                    i {
+                        margin-right: 5px;
+                    }
+
+                    &:hover {
+                        color: $text;
+                    }
+                }
+            }
+        }
+    }
+
+    &--question {
+        padding: 20px 13px;
+        border: none;
+        border-radius: 6px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .10);
+        transition: box-shadow ease .5s;
+        transition: all 400ms linear;
+        margin: 15px 0;
+        .card-body {
+            &>div {
+                i {
+                    border: 1px dashed $text;
+                    border-radius: 100%;
+                    width: 35px;
+                    height: 35px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transition: color .2s linear;
+
+                    &.fa-times {
+                        border-color: red;
+                        color: red;
+                    }
+
+                    &.fa-check {
+                        border-color: green;
+                        color: green;
+                    }
+                }
+            }
+
+            .card-text {
+                margin: 0;
+                font-size: 18px;
+                color: $text;
+                font-weight: 700;
+            }
+
+            button {
+                margin-bottom: 10px;
+                font-size: 12px;
+                line-height: 20px;
+                padding: 10px 35px;
+                border-radius: 28px;
+                text-transform: uppercase;
+                vertical-align: middle;
+                transform: perspective(1px) translateZ(0);
+                position: relative;
+                transition: all linear 400ms;
+                border: none;
+                background-color: $pink_light;
+                text-decoration: none;
+                color: $white;
+
+                &:hover {
+                    color: $white !important;
+                }
+
+                &:hover:before {
+                    transform: scaleX(1);
+                }
+
+                &:before {
+                    content: "";
+                    position: absolute;
+                    z-index: -1;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    transform: scaleX(0);
+                    transform-origin: 51%;
+                    transition-property: transform;
+                    transition-duration: 0.3s;
+                    border-radius: 28px;
+                    border: none;
+                    background-color: $black;
+                }
+
+                &:last-child {
+                    margin: 0;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .card {
+        &--test {
+            padding: 20px 13px;
+
+            .card-body {
+                flex-direction: column;
+
+                &>div:last-child {
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                }
+
+                a {
+                    margin-bottom: 0;
+                    margin-right: 10px;
+                    margin-top: 10px;
+
+                    &:last-child {
+                        margin-right: 0;
+                        margin-top: 10px;
+                    }
+                }
+            }
+        }
+    }
+}

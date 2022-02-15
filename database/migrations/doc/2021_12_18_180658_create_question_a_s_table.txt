@@ -1,0 +1,56 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateQuestionASTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('question_a_s', function (Blueprint $table) {
+            $table->engine = "InnoDB";
+            $table->uuid('id')->primary();
+
+            // $table->string('initial');
+            // $table->string('datas');
+
+            $table->foreignUuid('activity_id')->index();
+            $table->foreign('activity_id')
+                ->references('id')->on('activities')
+                ->onDelete('cascade')->onUpdate('cascade');
+
+            $table->foreignUuid('quality_id')->index();
+            $table->foreign('quality_id')
+                ->references('id')->on('qualities')
+                ->onDelete('cascade')->onUpdate('cascade');
+
+            $table->foreignUuid('profession_id')->index();
+            $table->foreign('profession_id')
+                ->references('id')->on('professions')
+                ->onDelete('cascade')->onUpdate('cascade');
+
+            $table->foreignUuid('bonuses_id')->index();
+            $table->foreign('bonuses_id')
+                ->references('id')->on('bonuses')
+                ->onDelete('cascade')->onUpdate('cascade');
+
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('question_a_s');
+    }
+}
