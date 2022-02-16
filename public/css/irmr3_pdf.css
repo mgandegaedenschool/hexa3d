@@ -1,36 +1,81 @@
 body{
-    width: 2480px;
-    height: 3508px;
+    width: 1920px;
+    height: 2540px;
     font-family: "Arial", sans-serif;
 }
-
-.pdf-irmr3-header{
-
+.pdf-container-medium{
+    padding: 10px 61px;
+    margin: 0 auto;
 }
-.pdf-irmr3-container{
+
+/* HEADER */
+
+.irmr3-pdf-header{
+    height: 197.5px;
     display: flex;
-    flex-direction: row;
     border-bottom: 2px solid #7A7A7A;
 }
+.pdf-irmr3-header-container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+
+}
+.pdf-irmr3-header-img-contain{
+    width: 304px;
+    display: flex;
+    align-items: center;
+    margin-left: 61px;
+}
+.pdf-irmr3-header-img{
+    height: 132px;
+}
+.pdf-irmr3-headername-container{
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    width: calc(100% - 304px);
+}
 .pdf-irmr3-headerName{
-    width: 33%;
+    height: 150px;
+    padding: 55px 40px;
     background-color:var(--kaki);
     border-radius: 2.5rem 2.5rem 0 0;
-    padding: 4rem 5rem;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 39px;
 }
 .pdf-irmr3-headerName p{
     color:white!important;
     margin: 0;
     font-size: 35px;
+    display: flex;
+    align-items: center;
+    height: 43px;
+    width: 100%;
+    justify-content: center;
 }
+
+/* main */
 
 .pdf-irmr3-kaki-text{
     color: var(--kaki);
     font-size: 30px;
+    margin-bottom: 24px;
 }
 section p, section li{
     font-size: 25px;
+}
+.pdf-irmr3-section{
+    margin-bottom: 60px;
+}
+.pdf-irmr3-section:nth-child(1){
+    margin-top: 93.5px;
+}
+.pdf-irmr3-section:nth-child(3){
+    margin-bottom: 75px;
 }
 .pdf-big-title{
     font-size: 60px;
@@ -42,15 +87,26 @@ section p, section li{
 .pdf-title{
     font-size: 30px;
 }
+.pdf-irmr3-section ul{
+    padding: 0 20px;
+}
+ul li::marker {
+    color:var(--lightkaki);
+}
 
+.pdf-irmr3-section li{
+    margin-bottom: 20px;
+}
+
+/* footer */
 .pdf-footer{
-    position:fixed;
     bottom: 0;
     background-color: var(--kaki);
-    height: 5vh;
+    height: 113px;
     width: 100%;
 }
 .pdf-footer p{
     color: var(--white);
     margin: 0;
+    font-size: 25px;
 }

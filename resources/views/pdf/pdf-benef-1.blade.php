@@ -2,7 +2,7 @@
 
 @section('content')
     @include('pdf.pdf-irmr3-header_inc')
-    <div class="irmr-3-pro-results-container">
+    <div class="irmr-3-pro-results-container pdf-container-medium">
         <section class="pdf-irmr3-section">
             <h3 class="pdf-irmr3-kaki-text">Rapport descriptif</h3>
             <p>
@@ -25,6 +25,14 @@
             <p>
                 Cet inventaire permet d’obtenir deux profils complémentaires des intérêts :
             </p>
+            <ul>
+                <li>
+                    le premier, établi grâce à la typologie de John Holland, présente une image de la personne grâce à six types d'intérêts généraux
+                </li>
+                <li>
+                    le deuxième précise le premier profil, en s’appuyant sur douze intérêts professionnels spécifiques
+                </li>
+            </ul>
         </section>
         <section class="pdf-irmr3-section">
             <h3 class="pdf-irmr3-kaki-text">Comment lire et interpréter ce rapport ?</h3>

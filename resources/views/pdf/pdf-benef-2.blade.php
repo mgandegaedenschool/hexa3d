@@ -2,7 +2,7 @@
 
 @section('content')
     @include('pdf.pdf-irmr3-header_inc')
-    <div class="irmr-3-pro-results-container">
+    <div class="irmr-3-results-container">
         <section class="irmr3-statistics">
             <p>Date de passation :<span>JJ/MM/AAAA</span></p>
             <p>Temps de passation :<span>x h x min</span></p>
