@@ -1,3 +1,6 @@
+
+@extends('app')
+@section('content')
 <header class="upper-container d-flex">
     <div class="container d-flex header-contain">
         @include('espace_membre.header_img_inc')
@@ -25,7 +28,7 @@
     </div>
     <div class="container">
         <form method="POST" action="{{ route('register.create.step.two.post') }}">
-            @csrf
+                @csrf
 
             <div class="form-row">
                 <div class="form-group col-12 col-md-5 col-lg-5 py-3">
@@ -43,7 +46,7 @@
                 <div class="form-group col-12 col-md-5 col-lg-5">
                     <label for="scolarized" class="mr-3 mb-0">Êtes-vous scolarisé(e) ?</label>
                     <div class="select-container">
-                        <select class="custom-select custom-select-auth mb-3 form-control dynamic-select" id="scolarized" name="scholarise">
+                        <select class="custom-select custom-select-auth mb-3 form-control dynamic-select" id="scolarized" name="scolarise">
                             <option value="non">Non</option>
                             <option value="oui">Oui</option>
                         </select>
@@ -66,17 +69,11 @@
             </div>
 
             <div class="d-flex justify-content-center align-items-center">
-                <a href="?step=1" class="next-btn m-4"><i class='fas fa-chevron-left'></i> Précédent</a>
-                <a href="?step=3" class="next-btn m-4">Suivant <i class='fas fa-chevron-right'></i></a>
-            </div>
-
-            <div class="d-flex justify-content-center align-items-center">
                 <a href="{{route('register.create.step.one')}}" class="next-btn m-4"><i class='fas fa-chevron-left'></i> Précédent</a>
                 <button type="submit" class="next-btn d-inline-block m-4">Suivant <i class='fas fa-chevron-right'></i></button>
             </div>
         </form>
-
-
     </div>
-
 </main>
+
+@endsection

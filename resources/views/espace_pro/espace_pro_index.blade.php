@@ -3,9 +3,6 @@
 
 @section('content')
 
-
-
-
     <header class="upper-container d-flex espace-pro-header">
         <div class="header-contain espace-pro-header-contain">
             <div class="row d-flex align-items-center img-text-nav icon-qip-pro">
@@ -54,7 +51,7 @@
             </h2>
             <div class="my-beneficiaires-content">
                  @include('espace_pro.espace_pro_create_inc')
-             @if(session('status'))
+             {{-- @if(session('status'))
                     @include('admin.user.popup.popup_ajout_confirm_inc')
                 @endif
             @if(session('invitation'))
@@ -68,8 +65,33 @@
             @endif
             @if(session('importer'))
                 @include("espace_pro.espace_pro_import_confirm_inc")
-            @endif 
+            @endif  --}}
                
+
+        @if (session('status'))
+        {{-- {{dump(session('status'))}} --}}
+            @include('admin.user.popup.popup_ajout_confirm_inc')
+        @elseif (session('invitation'))
+        {{-- {{dump(session('invitation'))}} --}}
+            @include('admin.user.popup.popup_send_test_inc')
+        @elseif (session('success'))
+        {{-- {{dump(session('success'))}} --}}
+            @include('admin.user.popup.popup_delete_inc')
+        @elseif (session('import'))
+        {{-- {{dump(session('import'))}} --}}
+            @include("espace_pro.espace_pro_import_inc")
+        @elseif (session('importer'))
+        {{-- {{dump(session('importer'))}} --}}
+            @include("espace_pro.espace_pro_import_confirm_inc") 
+            {{-- ce n'est pas cette page qui s'affiche --}}
+         @elseif (session('oui'))
+            {{-- {{dump(session('oui'))}} --}}
+                @include("espace_pro.espace_pro_confirm_oui_inc")
+            @elseif (session('delete'))
+            {{-- {{dump(session('oui'))}} --}}
+                @include("admin.user.popup.popup_delete_inc")
+        @else
+        @endif
                      <div class="search-container pt-4"> 
                      {{-- <form action="{{route('pro.index')}}" method="get" class="ml-2"> --}}
                         <form action="{{route('pro.index')}}" method="get" class="espace-pro-form-actions-n-filter mt-5 mt-lg-0">
@@ -96,27 +118,29 @@
                             </select>
                         </div> --}}
 
-                        <div class="input-group mb-3">
+                        {{-- <div class="input-group mb-3"> --}}
                             {{-- <select class="custom-select pro-actions-select mb-3" id="inputGroupSelect02" name="options"> --}}
-                            <select class="custom-select pro-actions-select espace-pro-select-actions-n-filter mb-3" id="options" name="options">
-                                <option value="">Actions groupées</option>
-                                <option name="import" value="import">Importer des bénéficiaires</option>
-                                <option name='delete' value="delete">Supprimer des bénéficiaires</option>
-                                <option name="invitation" value="invitation">Invitation par mail</option>
-                                <option name="download_result">Télécharger des résultats</option>
-                                <option name="send_msg">Envoyer des résultats</option>
-                            </select>
-                        </div>
-                        <div class="input-group">
+                            <div class="input-group mb-3 pro-actions">
+                                <select class="custom-select pro-actions-select espace-pro-select-actions-n-filter mb-3" id="options" name="options">
+                                    <option value="">Actions groupées</option>
+                                    <option name="import" value="import">Importer des bénéficiaires</option>
+                                    <option name='delete' value="delete">Supprimer des bénéficiaires</option>
+                                    <option name="invitation" value="invitation">Invitation par mail</option>
+                                    <option name="download_result">Télécharger des résultats</option>
+                                    <option name="send_msg">Envoyer des résultats</option>
+                                </select>
+                            </div>
+                        {{-- <div class="input-group"> --}}
                             {{-- <select class="custom-select pro-filters-select" id="inputGroupSelect02" name="filtre"> --}}
+                            <div class="input-group mb-3 pro-actions">
                                 <select class="custom-select pro-actions-select espace-pro-select-actions-n-filter mb-3" id="filtre" name="filtre">
-                                <option value="">Filtres</option>
-                                <option value="last_weeek">La dernière semaine</option>
-                                <option value="last_month">Le dernier mois</option>
-                                <option value="last_six_months">Les 6 derniers mois</option>
-                                <option value="last_ten_months">Les 12 derniers mois</option>
-                            </select>
-                        </div>
+                                    <option value="">Filtres</option>
+                                    <option value="last_weeek">La dernière semaine</option>
+                                    <option value="last_month">Le dernier mois</option>
+                                    <option value="last_six_months">Les 6 derniers mois</option>
+                                    <option value="last_ten_months">Les 12 derniers mois</option>
+                                </select>
+                            </div>
                     </div>
                 </div>
                     <div class="table-benef-labels">

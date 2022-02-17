@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Providers\RouteServiceProvider;
+use App\Notifications\UserRegisteredNotification;
 
 class RegisteredUserController extends Controller
 {
@@ -40,12 +42,12 @@ class RegisteredUserController extends Controller
     {
         $validatedData = $request->validate([
             'niv_etude' => ['required', 'string', 'max:255'],
-            'scolarise' => ['required', 'integer', 'max:255'],
+            'scolarise' => ['required', 'string', 'max:255'],
             'classe' => ['string', 'max:255'],
             'section' => ['string', 'max:255'],
             'etablissement' => ['string', 'max:255'],
-            'salarie' => ['required', 'integer', 'max:255'],
-            'etalonnage' => ['required', 'string', 'max:255']
+            // 'salarie' => ['required', 'integer', 'max:255'],
+            // 'etalonnage' => ['required', 'string', 'max:255']
         ]);
 
         $step1 = $request->session()->get('step1');
@@ -62,10 +64,11 @@ class RegisteredUserController extends Controller
     public function postCreateStepThree(Request $request, $step = 3)
     {
         $validatedData = $request->validate([
-            'emploi_actuel' => ['required', 'string', 'max:255'],
-            'specialite' => ['required', 'string', 'max:255'],
+            'salarie' => ['required', 'string', 'max:255'],
             'etat' => ['required', 'string', 'max:255'],
-            'emploi_envisage' => ['required', 'string', 'max:255']
+            'emploi_actuel' => ['required', 'string', 'max:255'],
+            'emploi_envisage' => ['required', 'string', 'max:255'],
+            'specialite' => ['required', 'string', 'max:255']
         ]);
 
         $step2 = $request->session()->get('step2');
@@ -93,8 +96,8 @@ class RegisteredUserController extends Controller
                     'emploi_actuel' => $step3['emploi_actuel'],
                     'specialite' => $step3['specialite'],
                     'etat' => $step3['etat'],
-                    'emploi_envisage' => $step3['emploi_envisage'],
-                    'etalonnage' => $step3['etalonnage']
+                    'emploi_envisage' => $step3['emploi_envisage']
+                    // 'etalonnage' => $step3['etalonnage']
                 ]);
         } else {
             $user = User::create([
@@ -114,10 +117,13 @@ class RegisteredUserController extends Controller
                 'emploi_actuel' => $step3['emploi_actuel'],
                 'specialite' => $step3['specialite'],
                 'etat' => $step3['etat'],
-                'emploi_envisage' => $step3['emploi_envisage'],
-                'etalonnage' => $step3['etalonnage']
+                'emploi_envisage' => $step3['emploi_envisage']
+                // 'etalonnage' => $step3['etalonnage']
             ]);
         }
+
+        $user->notify(new UserRegisteredNotification($user));
+        Auth::login($user);
         // return redirect(RouteServiceProvider::HOME);
         return redirect('/dashboard');
     }

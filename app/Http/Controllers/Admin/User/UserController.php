@@ -30,18 +30,29 @@ class UserController extends Controller
     public function index(Request $request)
     {
         if (isset($_GET['options']) and $_GET['options'] == 'import') {
-            return redirect('/pro')->with('import', 'importation en cours');
+            return redirect('/pro')->with('import', 'import');
         }
         if (isset($_GET['options']) and $_GET['options'] == 'importer') {
-            return redirect('/pro')->with('importer', 'importation en cours');
+            return redirect('/pro')->with('importer', 'importer');
+        }
+        if (isset($_GET['options']) and $_GET['options'] == 'oui') {
+
+            return redirect('/pro')->with('oui', 'oui');
         }
         if (isset($_GET['scales']) and !empty($_GET['scales'])) {
             $benef  = $_GET['scales'];
+
             if (isset($_GET['options']) and $_GET['options'] == 'delete') {
+
+                return redirect('/pro')->with('delete', 'delete');
+            }
+            if (isset($_GET['choix']) and $_GET['choix'] == 'oui') {
+                die('ok');
                 foreach ($benef as $val) {
                     $this->destroy($val);
                 }
             }
+
             if (isset($_GET['options']) and $_GET['options'] == 'invitation') {
                 $invitation = 'invitation';
                 $request->session()->put('id', $_GET['scales']);

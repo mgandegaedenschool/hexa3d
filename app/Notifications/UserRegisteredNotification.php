@@ -42,7 +42,8 @@ class UserRegisteredNotification extends Notification
     {
         return (new MailMessage)
             ->line('The introduction to the notification....')
-            ->action('Notification Action', url("/register?id={$notifiable->id}"))
+            // ->action('Notification Action', url("/register?id={$notifiable->id}"))
+            ->action('Notification Action', url("/dashboard"))
             ->line('Thank you for using our application!');
     }
 

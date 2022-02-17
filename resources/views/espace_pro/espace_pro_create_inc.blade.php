@@ -9,7 +9,6 @@ $confirmationMessage = "Le bénéficiaire a bien été ajouté."
         Nouveau client
     </button>
 </div>
-
 <!-- MODAL D'AJOUT DE BENEFICIAIRES -->
 <div class="modal fade" id="ajoutTest-yesMailModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable modal-pro-dialog">
@@ -76,7 +75,7 @@ $confirmationMessage = "Le bénéficiaire a bien été ajouté."
         <div class="modal-content modal-pro-content modal-confirm-content">
             <div class="modal-header modal-espace-pro-header">
                 <div class="container-fluid modal-pro-header-contain">
-                    <h5 class="modal-title" id="exampleModalLabel"><?php echo $modalTitle ?></h5>
+                    <h5 class="modal-title" id="exampleModalLabel"><?php //echo $modalTitle ?></h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
@@ -113,7 +112,9 @@ $confirmationMessage = "Le bénéficiaire a bien été ajouté."
 </div> --}}
 
 <!-- MODAL SUITE A L'IMPORT POUR AJOUTER OU NON DES TESTS -->
-<div class="modal fade" id="proImportModalTest" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+{{-- @if(session('importer')) --}}
+
+<div class="modal fade" id="proImportModalTest..." tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable modal-pro-dialog">
         <div class="modal-content modal-pro-content modal-confirm-content">
             <div class="modal-header modal-espace-pro-header">
@@ -128,16 +129,14 @@ $confirmationMessage = "Le bénéficiaire a bien été ajouté."
                         </span>
                     </button>
                 </div>
-            </div>
-            
+            </div> 
             <div class="modal-body mb-5">
                 <div class="container-fluid">
                     <form action="" method="post">
-
                         <div class="form-row d-flex justify-content-between flex-direction-column">
                             <div class="form-group col-12">
                                 <div class="import-invites-txt">
-                                    <p>Vous venez d'importer des bénéficiaires.</p>
+                                    <p>Vous venez d'importer des bénéficiaires...........</p>
 
                                     <p>Souhaitez-vous envoyer une invitation pour un test ?</p>
                                 </div>
@@ -188,9 +187,10 @@ $confirmationMessage = "Le bénéficiaire a bien été ajouté."
         </div>
     </div>
 </div>
+{{-- @endif --}}
 
 <!-- MODAL DE SUPPRESSION DE BENEFICIAIRE -->
-<div class="modal fade" id="proDeleteBenefModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+{{-- <div class="modal fade" id="proDeleteBenefModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable modal-pro-dialog">
         <div class="modal-content modal-pro-content modal-confirm-content">
             <div class="modal-header modal-espace-pro-header">
@@ -231,7 +231,7 @@ $confirmationMessage = "Le bénéficiaire a bien été ajouté."
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 
 <!-- MODAL DE TELECHARGEMENT DE RESULTATS -->
 

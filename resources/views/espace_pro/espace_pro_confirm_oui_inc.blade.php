@@ -34,15 +34,8 @@
                                 </div>
                             </div>
                         </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-                        <!-- PARTIE D'ENVOI DES INVITATIONS AU TEST APRES IMPORTATION DE BENEFICIAIRES -->
-                        {{-- <div class="disabled-element-import-invit hidden">
+                    {{-- <div class="disabled-element-import-invit"> --}}
+                    {{-- <div> --}}
                             <h5 class="modal-title mb-3 " id="exampleModalLabel">Ajouter un bénéficiaire</h5>
                             <div class="form-row d-flex justify-content-between flex-direction-column">
                                 <div class="form-group col-12 col-md-9 col-lg-9 mb-5">
@@ -68,10 +61,11 @@
                             <div class="modal-footer mt-4 modal-pro-footer">
                                 <input type="submit" class="btn espace-pro-purple-btn" value="Envoi de l'invitation">
                             </div>
-                        </div>
+                        {{-- </div> --}}
                     </form>
                 </div>
             </div>
         </div>
     </div>
-</div> --}}
+</div>
+   

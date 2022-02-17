@@ -27,7 +27,7 @@ class CreateUsersTable extends Migration
             $table->string('sexe')->nullable();
             $table->integer('age')->nullable();
             $table->tinyInteger('scolarise')->nullable();
-            $table->string('etalonnage')->nullable();
+            // $table->string('etalonnage')->nullable();
             $table->string('etablissement')->nullable();
             $table->tinyInteger('salarie')->nullable();
             $table->string('emploi_actuel')->nullable();

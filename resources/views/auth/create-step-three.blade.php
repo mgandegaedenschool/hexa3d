@@ -1,3 +1,6 @@
+
+@extends('app')
+@section('content')
 <header class="upper-container d-flex">
     <div class="container d-flex header-contain">
         @include('espace_membre.header_img_inc')
@@ -73,5 +76,6 @@
             </div>
         </form>
     </div>
-
 </main>
+
+@endsection

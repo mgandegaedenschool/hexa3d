@@ -46,7 +46,6 @@ $confirmationMessage = "Le test a bien été ajouté.";
                                 </select>
                             </div>
                         </div>
-
                         <div class="modal-footer mt-4 modal-pro-footer">
                             <input type="submit" class="btn espace-pro-purple-btn" value="Envoi de l'invitation">
                         </div>
@@ -57,5 +56,3 @@ $confirmationMessage = "Le test a bien été ajouté.";
     </div>
 </div>
 
-
-@include('espace_pro.espace_pro_confirm_inc')
