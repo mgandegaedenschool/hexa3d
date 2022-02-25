@@ -15,12 +15,12 @@ class Item_serie_hexa3d_irmrFactory extends Factory
     public function definition()
     {
 
-$partie1 = Partie::all();
+        $partie1 = Partie::all();
 
         return [
-            "id_partie"=>$partie1[$this->faker->biasedNumberBetween($min = 0, $max = 9)]->id_partie,
-            'lettre/liste'=>$this->faker->randomElement($array = array ('A1','A2','B1','B2','1','2')),
-            'libelle_item_hexa3d_irmr'=>$this->faker->randomElement($array = array ('Photographier','Trouver','Illustrer','Chercher','Métier 1','Métier 2')),
+            "id_partie" => $partie1[$this->faker->biasedNumberBetween($min = 0, $max = 2)]->id_partie,
+            'lettre/liste' => $this->faker->randomElement($array = array('A1', 'A2', 'B1', 'B2', '1', '2')),
+            'libelle_item_hexa3d_irmr' => $this->faker->randomElement($array = array('Photographier', 'Trouver', 'Illustrer', 'Chercher', 'Métier 1', 'Métier 2')),
         ];
     }
 }

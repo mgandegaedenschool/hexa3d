@@ -14,9 +14,9 @@ class Partie extends Model
     use HasFactory;
     public $timestamps = false;
     protected $guarded = [];
-    public function domaines()
+    public function domaine()
     {
-        return $this->hasMany(Domaine::class);
+        return $this->hasOne(Domaine::class);
     }
     public function question_hi()
     {

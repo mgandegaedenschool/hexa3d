@@ -26,8 +26,8 @@ class CreateReponseHisTable extends Migration
                 ->references('id_participation')->on('participation_his')
                 ->onDelete('cascade')->onUpdate('cascade');
 
-            $table->string('libelle_bonus');
             $table->integer('score');
+            $table->string('libelle_bonus');
         });
     }
 

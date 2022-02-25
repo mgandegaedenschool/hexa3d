@@ -14,7 +14,7 @@ class TypeFactory extends Factory
     public function definition()
     {
         return [
-            "libelle_type" => $this->faker->randomElement($array = array('REALISTE', 'IRMR3'))
+            "libelle_type" => $this->faker->randomElement($array = array('HEXA3D', 'IRMR3'))
         ];
     }
 }

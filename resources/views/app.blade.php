@@ -42,6 +42,7 @@
             $('#proImportModal').modal('show');
             $('#proImportModalTest').modal('show');
             $('#proDeleteBenefModal').modal('show');
+            $('#deleteConfirmModal').modal('show');
         });
     </script>
     @yield('script')

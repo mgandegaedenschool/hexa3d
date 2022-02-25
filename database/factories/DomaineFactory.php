@@ -19,7 +19,7 @@ class DomaineFactory extends Factory
         $domaine = new Domaine;
         return [
             "libelle_domaine" => $this->faker->randomElement($array = array('activite', 'qualite', 'profession')),
-            "id_partie" => $partie1[$this->faker->biasedNumberBetween($min = 1, $max = 9)]->id_partie
+            "id_partie" => $partie1[$this->faker->biasedNumberBetween($min = 0, $max = 2)]->id_partie
         ];
     }
 }

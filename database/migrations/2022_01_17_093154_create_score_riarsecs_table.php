@@ -16,9 +16,9 @@ class CreateScoreRiarsecsTable extends Migration
         Schema::create('score_riarsecs', function (Blueprint $table) {
             $table->bigIncrements('id_score');
 
-            $table->unsignedBigInteger('id_participation');
-            $table->foreign('id_participation')
-                ->references('id_participation')->on('participation_his')
+            $table->unsignedBigInteger('id_tableau_score');
+            $table->foreign('id_tableau_score')
+                ->references('id_tableau_score')->on('tableau_scores')
                 ->onDelete('cascade')->onUpdate('cascade');
 
             $table->unsignedBigInteger('id_partie');
@@ -27,7 +27,7 @@ class CreateScoreRiarsecsTable extends Migration
                 ->onDelete('cascade')->onUpdate('cascade');
 
             $table->string('type_riarsec');
-            $table->integer('sous_total');
+            $table->integer('sous_total/NE');
         });
     }
 

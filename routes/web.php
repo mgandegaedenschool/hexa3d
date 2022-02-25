@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PDFController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\PhotoController;
+use App\Http\Controllers\ImportController;
 use App\Http\Controllers\ExampleController;
 use App\Http\Controllers\PatientController;
 use App\Http\Controllers\DashboardController;
@@ -34,6 +35,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
     /* test IRMR3*/
     Route::get('/test/test_irmr3_conditions', 'App\Http\Controllers\TestIrmr3Controller@conditions')->name('test.test_irmr3_conditions');
     Route::get('/test/test_irmr3_consignes', 'App\Http\Controllers\TestIrmr3Controller@consignes')->name('test.test_irmr3_consignes');
@@ -53,6 +55,13 @@ Route::middleware(['auth'])->group(function () {
     // Route::post('/test/test_irmr3_formulaire_part8', 'App\Http\Controllers\TestIrmr3Controller@formulaire8')->name('test.test_irmr3_formulaire_part8');
     // Route::post('/test/test_irmr3_formulaire_part9', 'App\Http\Controllers\TestIrmr3Controller@formulaire9')->name('test.test_irmr3_formulaire_part9');
 });
+
+/**********************************************************************************************************/
+Route::get('/contact', [\App\Http\Controllers\ContactController::class, 'index'])->name('contacts.index');
+Route::post('/import_parse', [\App\Http\Controllers\ImportController::class, 'parseImport'])->name('import_parse');
+Route::post('/import_process', [\App\Http\Controllers\ImportController::class, 'processImport'])->name('import_process');
+/***********************************************************************************************************/
+
 // Route::middleware(['admin'])->group(function () {
 //     Route::get('/admin/admin', function () {
 //         return view('admin.admin');
@@ -78,7 +87,7 @@ Route::get('/reset-password', function () {
 Route::resource('/pro', UserController::class);
 Route::post('/import', 'App\Http\Controllers\UserController@import');
 // Route::post('/pro/store', UserController::class)->name('pro.store');
-
+Route::post('/pro/importcsv', 'App\Http\Controllers\Admin\User\UserController@importCsv')->name('pro.importcsv');
 
 Route::get('register/create-step-one', 'App\Http\Controllers\RegisteredUserController@createStepOne')->name('register.create.step.one');
 Route::post('register/create-step-one', 'App\Http\Controllers\RegisteredUserController@postCreateStepOne')->name('register.create.step.one.post');
@@ -90,13 +99,13 @@ Route::get('register/{id}', 'App\Http\Controllers\RegisteredUserController@creat
 
 
 Route::get('/getMember', 'App\Http\Controllers\GetMemberController@index')->name('admin.member');
-Route::get('test/irmr3', 'App\Http\Controllers\TestIrmr3Controller@index')->name('test.irmr3_index');
-Route::get('test/create-step-one', 'App\Http\Controllers\TestIrmr3Controller@createStepOne')->name('test.create.step.one');
-Route::post('test/create-step-one', 'App\Http\Controllers\TestIrmr3Controller@postCreateStepOne')->name('test.create.step.one.post');
-Route::get('test/create-step-two', 'App\Http\Controllers\TestIrmr3Controller@createStepTwo')->name('test.create.step.two');
-Route::post('test/create-step-two', 'App\Http\Controllers\TestIrmr3Controller@postCreateStepTwo')->name('test.create.step.two.post');
-Route::get('test/create-step-three', 'App\Http\Controllers\TestIrmr3Controller@createStepThree')->name('test.create.step.three');
-Route::post('test/create-step-three', 'App\Http\Controllers\TestIrmr3Controller@postCreateStepThree')->name('test.create.step.three.post');
+// Route::get('test/irmr3', 'App\Http\Controllers\TestIrmr3Controller@index')->name('test.irmr3_index');
+// Route::get('test/create-step-one', 'App\Http\Controllers\TestIrmr3Controller@createStepOne')->name('test.create.step.one');
+// Route::post('test/create-step-one', 'App\Http\Controllers\TestIrmr3Controller@postCreateStepOne')->name('test.create.step.one.post');
+// Route::get('test/create-step-two', 'App\Http\Controllers\TestIrmr3Controller@createStepTwo')->name('test.create.step.two');
+// Route::post('test/create-step-two', 'App\Http\Controllers\TestIrmr3Controller@postCreateStepTwo')->name('test.create.step.two.post');
+// Route::get('test/create-step-three', 'App\Http\Controllers\TestIrmr3Controller@createStepThree')->name('test.create.step.three');
+// Route::post('test/create-step-three', 'App\Http\Controllers\TestIrmr3Controller@postCreateStepThree')->name('test.create.step.three.post');
 Route::get('/pdf', [PDFController::class, 'showPDF'])->name('pdf.index');
 Route::get('/pdf/create', [PDFController::class, 'createPDF'])->name('pdf.create');
 Route::get('/dashboard/create', [PatientController::class, 'create'])->name('patient.create');

@@ -17,7 +17,14 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Auth\Events\Registered;
 use App\Notifications\TestNotification;
 use App\Providers\RouteServiceProvider;
+use Illuminate\Support\Facades\Session;
 use App\Notifications\UserRegisteredNotification;
+
+use Maatwebsite\Excel\Facades\Excel;
+use App\Http\Requests\CsvImportRequest;
+use Maatwebsite\Excel\HeadingRowImport;
+use App\Imports\ContactsImport;
+
 
 class UserController extends Controller
 {
@@ -29,10 +36,13 @@ class UserController extends Controller
     public static $id;
     public function index(Request $request)
     {
+
         if (isset($_GET['options']) and $_GET['options'] == 'import') {
             return redirect('/pro')->with('import', 'import');
         }
         if (isset($_GET['options']) and $_GET['options'] == 'importer') {
+            die('importer');
+
             return redirect('/pro')->with('importer', 'importer');
         }
         if (isset($_GET['options']) and $_GET['options'] == 'oui') {
@@ -40,26 +50,29 @@ class UserController extends Controller
             return redirect('/pro')->with('oui', 'oui');
         }
         if (isset($_GET['scales']) and !empty($_GET['scales'])) {
-            $benef  = $_GET['scales'];
-
+            if (isset($_GET['scales'])) {
+                $request->session()->put('scales', $_GET['scales']);
+            }
             if (isset($_GET['options']) and $_GET['options'] == 'delete') {
-
                 return redirect('/pro')->with('delete', 'delete');
             }
-            if (isset($_GET['choix']) and $_GET['choix'] == 'oui') {
-                die('ok');
-                foreach ($benef as $val) {
-                    $this->destroy($val);
-                }
-            }
-
-            if (isset($_GET['options']) and $_GET['options'] == 'invitation') {
-                $invitation = 'invitation';
-                $request->session()->put('id', $_GET['scales']);
-
-                return redirect('/pro')->with('invitation', 'Le bénéficiaire a bien été ajouté');
-            }
         }
+        if (isset($_GET['choice_delete']) and $_GET['choice_delete'] == "oui") {
+            foreach ($request->session()->get('scales') as $val) {
+                $this->destroy($val);
+            }
+            // dd($request);
+            Session::forget('oui');
+            return redirect('/pro');
+        }
+
+        if (isset($_GET['options']) and $_GET['options'] == 'invitation') {
+            $invitation = 'invitation';
+            $request->session()->put('id', $_GET['scales']);
+
+            return redirect('/pro')->with('invitation', 'Le bénéficiaire a bien été ajouté');
+        }
+
         if (isset($_GET['filtre']) and !empty($_GET['filtre'])) {
 
             if ($_GET['filtre'] == 'last_weeek') {
@@ -148,16 +161,19 @@ class UserController extends Controller
     }
 
 
-    /**
+    /*
      * Handle an incoming registration request.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  App\Http\Requests\CsvImportRequest  $request
      * @return \Illuminate\Http\RedirectResponse
      *
      * @throws \Illuminate\Validation\ValidationException
      */
     public function store(Request $request)
     {
+
+
+
         if (!isset($request->email)) {
 
             $request->validate([
@@ -303,5 +319,50 @@ class UserController extends Controller
         $user = DB::table('users')->where('id', $id);
         $user->delete();
         return redirect()->route('pro.index')->with('success', 'élément supprimé avec succès');
+    }
+    // public function importCsv(Request $request)
+    public function importCsv(CsvImportRequest $request)
+    {
+
+        if ($request->has('header')) {
+            $headings = (new HeadingRowImport)->toArray($request->file('csv_file'));
+            $data = Excel::toArray(new ContactsImport, $request->file('csv_file'))[0];
+        } else {
+            $data = array_map('str_getcsv', file($request->file('csv_file')->getRealPath()));
+        }
+
+        if (count($data) > 0) {
+            $csv_data = array_slice($data, 0, 2);
+            // dd($data);
+            // $csv_data_file = User::create([
+            //     // 'csv_filename' => $request->file('csv_file')->getClientOriginalName(),
+            //     // 'csv_header' => $request->has('header'),
+            //     'csv_data' => json_encode($data)
+            // ]);
+
+            for ($i = 0; $i < count($data); $i++) {
+                User::create([
+                    'firstname' => $data[$i]['firstname'],
+                    'lastname' => $data[$i]['lastname'],
+                    'email' => $data[$i]['email'],
+                    'password' => Hash::make($data[$i]['password']),
+                    'username' => $data[$i]['username'],
+                    'niv_etude' => $data[$i]['niv_etude'],
+                    'classe' => $data[$i]['classe'],
+                    'section' => $data[$i]['section'],
+                    'sexe' => $data[$i]['sexe'],
+                    'age' => $data[$i]['age'],
+                    'scolarise' => $data[$i]['scolarise'],
+                    'etablissement' => $data[$i]['etablissement'],
+                    'salarie' => $data[$i]['salarie'],
+                    'emploi_actuel' => $data[$i]['emploi_actuel'],
+                    'specialite' => $data[$i]['specialite'],
+                    'etat' => $data[$i]['etat'],
+                    'emploi_envisage' => $data[$i]['emploi_envisage'],
+                ]);
+            }
+
+            return redirect('/pro')->with('importer', 'importer');
+        }
     }
 }

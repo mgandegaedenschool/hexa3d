@@ -15,13 +15,14 @@ class CreateTableEtalonnageDRiarsecsTable extends Migration
     {
         Schema::create('table_etalonnage_d_riarsecs', function (Blueprint $table) {
             $table->bigIncrements('id_table_etalonnage_d_riarsec');
-            $table->string('RIARSEC');
-            $table->string('plage');
 
             $table->unsignedBigInteger('id_table_etalonnage_d');
             $table->foreign('id_table_etalonnage_d')
-            ->references('id_table_etalonnage')->on('table_etalonnage_ds')
+                ->references('id_table_etalonnage')->on('table_etalonnage_ds')
                 ->onDelete('cascade')->onUpdate('cascade');
+
+            $table->string('RIARSEC');
+            $table->string('plage');
         });
     }
 

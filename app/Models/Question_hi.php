@@ -2,25 +2,23 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use App\Models\Metier;
 use App\Models\Partie;
+use App\Models\Reponse;
 use App\Models\Test_hi;
 use App\Models\Item_serie_hexa3d_irmr;
-use App\Models\Reponse;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Question_hi extends Model
 {
     use HasFactory;
     public $timestamps = false;
     protected $guarded = [];
-    public function item_serie_hexa3d_irmr()
+
+    public function test_his()
     {
-        return $this->hasMany(Item_serie_hexa3d_irmr::class);
-    }
-    public function test_hi()
-    {
-        return $this->hasOne(Test_hi::class);
+        return $this->hasMany(Test_hi::class);
     }
     public function parties()
     {
@@ -34,5 +32,8 @@ class Question_hi extends Model
     {
         return $this->belongsTo(Reponse::class);
     }
-
+    public function metiers()
+    {
+        return $this->hasMany(Metier::class);
+    }
 }

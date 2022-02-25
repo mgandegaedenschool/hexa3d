@@ -15,7 +15,10 @@ class CreateTableEtalonnageDsTable extends Migration
     {
         Schema::create('table_etalonnage_ds', function (Blueprint $table) {
             $table->bigIncrements('id_table_etalonnage');
+
             $table->string('libelle_table');
+
+            $table->integer('N');
 
             $table->unsignedBigInteger('id_etalonnage');
             $table->foreign('id_etalonnage')
@@ -26,7 +29,6 @@ class CreateTableEtalonnageDsTable extends Migration
             $table->foreign('id_domaine')
                 ->references('id_domaine')->on('domaines')
                 ->onDelete('cascade')->onUpdate('cascade');
-            $table->string('type_riarsec');
         });
     }
 

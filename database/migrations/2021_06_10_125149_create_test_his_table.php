@@ -15,6 +15,7 @@ class CreateTestHisTable extends Migration
     {
         Schema::create('test_his', function (Blueprint $table) {
             $table->bigIncrements('id_test');
+            $table->string('libelle_test');
             $table->unsignedBigInteger('id_type');
             $table->foreign('id_type')->references('id_type')->on('types')
                 ->onDelete('cascade')->onUpdate('cascade');
@@ -23,7 +24,6 @@ class CreateTestHisTable extends Migration
             //     ->references('id_type')->on('types')
             //     ->onDelete('cascade')->onUpdate('cascade');
 
-            $table->string('libelle_test');
         });
     }
 
@@ -37,4 +37,3 @@ class CreateTestHisTable extends Migration
         Schema::dropIfExists('test_his');
     }
 }
-

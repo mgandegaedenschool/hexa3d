@@ -31,7 +31,7 @@
                                     </div>
     
                                     <div class="imported-invite d-flex justify-content-center mt-5">
-                                        <input type="submit" class="purple-btn espace-pro-purple-btn px-5 py-2 button-delete-modal" name="choix" value="oui">
+                                        <input type="submit" class="purple-btn espace-pro-purple-btn px-5 py-2 button-delete-modal" name="choice_delete" value="oui">
                                         <button type="button" class="close px-5" data-dismiss="modal" aria-label="Close">Non</button>
                                     </div>
                                 </div>

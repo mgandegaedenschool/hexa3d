@@ -6,8 +6,8 @@
     <header class="upper-container d-flex espace-pro-header">
         <div class="header-contain espace-pro-header-contain">
             <div class="row d-flex align-items-center img-text-nav icon-qip-pro">
-                {{-- @include('espace_membre.header_img_inc') --}}
-            </div>
+                @include('espace_membre.header_img_inc')
+            </div> 
             <div class="espace-pro-profil-pro">
                 <div class="espace-pro-profil-text-n-link">
                     <p class="espace-pro-profil-text">Mon espace test</p>
@@ -51,23 +51,7 @@
             </h2>
             <div class="my-beneficiaires-content">
                  @include('espace_pro.espace_pro_create_inc')
-             {{-- @if(session('status'))
-                    @include('admin.user.popup.popup_ajout_confirm_inc')
-                @endif
-            @if(session('invitation'))
-                    @include('admin.user.popup.popup_send_test_inc')
-            @endif
-            @if(session('success'))
-                    @include('admin.user.popup.popup_delete_inc')
-            @endif
-            @if(session('import'))
-                @include("espace_pro.espace_pro_import_inc")
-            @endif
-            @if(session('importer'))
-                @include("espace_pro.espace_pro_import_confirm_inc")
-            @endif  --}}
-               
-
+        
         @if (session('status'))
         {{-- {{dump(session('status'))}} --}}
             @include('admin.user.popup.popup_ajout_confirm_inc')
@@ -76,7 +60,7 @@
             @include('admin.user.popup.popup_send_test_inc')
         @elseif (session('success'))
         {{-- {{dump(session('success'))}} --}}
-            @include('admin.user.popup.popup_delete_inc')
+            @include('admin.user.popup.popup_delete_confirm_inc')
         @elseif (session('import'))
         {{-- {{dump(session('import'))}} --}}
             @include("espace_pro.espace_pro_import_inc")
@@ -145,7 +129,7 @@
                 </div>
                     <div class="table-benef-labels">
                         <div class="d-flex align-items-baseline allSelect-checkbox"> 
-                            <input type="checkbox" id="allSelect" name="scales" value="5" class="espace-pro-checkbox"><label for="allSelect" class="ml-3 espace-pro-selectAll">Tout sélectionner</label>
+                            {{-- <input type="checkbox" id="allSelect" name="scales" value="5" class="espace-pro-checkbox"><label for="allSelect" class="ml-3 espace-pro-selectAll">Tout sélectionner</label> --}}
                         </div>
 
                         <div class="nom-input-pro search-input-pro">
@@ -171,16 +155,13 @@
                     </div>
                     
                     
+                                       
                     
-                    
-                    
-                    
-                    
-                    
+                      
                     
                     <table class="table table-hover w-auto table-benef table-responsive mb-0 mt-5">
                         <tbody class="benef-table-tbody">
-                            <tr>
+                            {{-- <tr>
                                 <td><input type="checkbox" class="espace-pro-checkbox" name="scales"></td>
                                 <td>Nom</td>
                                 <td>Prénom</td>
@@ -188,23 +169,24 @@
                                 <td>Sexe</td>
                                 <td>Date</td>
                                 <td class="espace-pro-eye-icon"><a href="espace_pro_user_show"></a></td>
-                            </tr>
+                            </tr> --}}
+                            <div class="table-benef-labels">
                             @foreach($users as $user)
                             
                             <tr>
-                                <td><input type="checkbox" id="scales" name="scales[]" value="{{$user->id}}"></td>               
+                                <td><input type="checkbox" id="scales" name="scales[]" value="{{$user->id}}" class="espace-pro-checkbox"></td>               
                                 <td>{{$user->lastname}}</td>
                                 <td>{{$user->firstname}}</td>
                                 <td>{{$user->email}}</td>
                                 <td>{{$user->sexe}}</td>
                                 <td>{{$user->date}}</td>
-                                <td class="no-defil">
+                                <td  class="espace-pro-eye-icon">
                                     <a href="{{route('pro.show',$user->id)}}"><i class="far fa-eye user-tab-icon"></i></a>
                                 </td>
                             </tr>
                             
                             @endforeach
-                            
+                            </div>
                         </tbody>
                     </table>
                     <input type="submit" />

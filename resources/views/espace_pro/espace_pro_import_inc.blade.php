@@ -20,7 +20,7 @@
             <div class="modal-body mb-5">
                 <div class="container-fluid">
                     {{-- <form action="" method="post"> --}}
-                    <form action="{{route('pro.index')}}" method="get" class="espace-pro-form-actions-n-filter mt-5 mt-lg-0">
+                    <form action="{{route('pro.importcsv')}}" method="post" enctype="multipart/form-data">
                             @csrf
                        <div class="form-row d-flex justify-content-between flex-direction-column">
                             <div class="form-group col-12">
@@ -28,7 +28,10 @@
                                     <header>Déposez vos fichiers pour les téléverser</header>
                                     <span>ou</span>
                                     <button class="purple-btn espace-pro-purple-btn">Sélectionnez des fichiers</button>
-                                    <input type="file" id="modalFileBrowser" hidden>
+                                    {{-- <input type="file"  hidden name="csv_file"> --}}
+                                    <x-input id="modalFileBrowser" class="block mt-1 w-full" type="file" name="csv_file" hidden/>
+                                    {{-- <input type="checkbox" hidden name="header" checked> --}}
+                                    <x-input id="header" class="ml-1" type="checkbox" name="header" hidden checked/>
                                     <input type="submit" id="modalFileSubmit" class="purple-btn espace-pro-purple-btn" name="options" value="importer">
                                 </div>
                             </div>

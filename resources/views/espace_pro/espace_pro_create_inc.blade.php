@@ -195,7 +195,7 @@ $confirmationMessage = "Le bénéficiaire a bien été ajouté."
         <div class="modal-content modal-pro-content modal-confirm-content">
             <div class="modal-header modal-espace-pro-header">
                 <div class="container-fluid modal-pro-header-contain">
-                    <h5 class="modal-title" id="exampleModalLabel"><?php echo $modalTitle ?></h5>
+                    <h5 class="modal-title" id="exampleModalLabel"><?php //echo $modalTitle ?></h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
