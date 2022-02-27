@@ -73,8 +73,8 @@
                     <label for="inputSexe">Votre sexe</label>
                     <select class="form-control custom-select custom-select-auth" id="inputSexe" name="sexe">
                         <option>--Votre sexe--</option>
-                        <option value="homme">Homme</option>
-                        <option value="femme">Femme</option>
+                        <option value="masculin">Homme</option>
+                        <option value="feminin">Femme</option>
                         <option value="autre">autre</option>
                     </select>
                 </div>

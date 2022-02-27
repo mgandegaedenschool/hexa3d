@@ -29,7 +29,7 @@ class Question_hiFactory extends Factory
         // echo "</pre>";
         return [
             "id_item_hexa3d" => $hi[$this->faker->biasedNumberBetween($min = 0, $max = 9)]->id_item_hexa3d_irmr,
-            "id_test" => $test_hi[$this->faker->biasedNumberBetween($min = 0, $max = 9)]->id_test,
+            "id_test" => $test_hi[$this->faker->biasedNumberBetween($min = 0, $max = 3)]->id_test,
             "id_domaine" => $domaine[$this->faker->biasedNumberBetween($min = 0, $max = 2)]->id_domaine,
             "id_partie" => $partie1[$this->faker->biasedNumberBetween($min = 0, $max = 2)]->id_partie,
             "id_metier" => $metier[$this->faker->biasedNumberBetween($min = 0, $max = 2)]->id_metier,

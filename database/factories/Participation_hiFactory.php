@@ -29,7 +29,7 @@ class Participation_hiFactory extends Factory
 
         return [
             "date_passage" => $this->faker->dateTime(),
-            "id_test" => $test_hi[$this->faker->biasedNumberBetween($min = 0, $max = 9)]->id_test,
+            "id_test" => $test_hi[$this->faker->biasedNumberBetween($min = 0, $max = 3)]->id_test,
             "id_user" => $user[$this->faker->biasedNumberBetween($min = 0, $max = 9)]->id,
             "id_etalonnage_default" => $etalonnage[$this->faker->NumberBetween($min = 0, $max = 8)]->id_etalonnage,
             "id_etat_test" => $etat_test[$this->faker->NumberBetween($min = 0, $max = 2)]->id_etat_test,

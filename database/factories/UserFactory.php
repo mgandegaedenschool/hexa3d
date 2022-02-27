@@ -35,7 +35,9 @@ class UserFactory extends Factory
 
 
             'niv_etude' => $this->faker->text($maxNbChars = 8),
-            // 'etalonnage' => $this->faker->randomElement($array = array('collégien', 'lycéen', 'adulte')),
+            'etalonnage' => $this->faker->randomElement($array = array(
+                "Adultes h/f", "Femmes", "Hommes", "Collégiens h/f", "Collégiens", "Collégiennes", "Lycéens h/f", "Lycéens", "Lycéennes"
+            )),
             'scolarise' => $this->faker->boolean(),
             'classe' => $this->faker->text($maxNbChars = 8),
             'section' => $this->faker->text($maxNbChars = 8),

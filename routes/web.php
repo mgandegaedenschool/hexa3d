@@ -40,7 +40,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/test/test_irmr3_conditions', 'App\Http\Controllers\TestIrmr3Controller@conditions')->name('test.test_irmr3_conditions');
     Route::get('/test/test_irmr3_consignes', 'App\Http\Controllers\TestIrmr3Controller@consignes')->name('test.test_irmr3_consignes');
     Route::get('/test/test_irmr3_formulaire', 'App\Http\Controllers\TestIrmr3Controller@formulaire')->name('test.test_irmr3_formulaire');
-    Route::post('/test/test_irmr3_formulaire', 'App\Http\Controllers\TestIrmr3Controller@formulaire')->name('test.test_irmr3_formulaire');
+    Route::post('/test/test_irmr3_formulaire', 'App\Http\Controllers\TestIrmr3Controller@store')->name('test.test_irmr3_formulaire.store');
     Route::get('/test/test_irmr3_bonus', 'App\Http\Controllers\TestIrmr3Controller@bonus')->name('test.test_irmr3_bonus');
     Route::get('/test/test_irmr3_fin', 'App\Http\Controllers\TestIrmr3Controller@fin')->name('test.test_irmr3_fin');
     // /* form parts */

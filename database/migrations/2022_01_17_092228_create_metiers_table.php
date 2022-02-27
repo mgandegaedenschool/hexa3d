@@ -22,7 +22,6 @@ class CreateMetiersTable extends Migration
             $table->unsignedBigInteger('id_type');
             $table->foreign('id_type')->references('id_type')->on('types')
                 ->onDelete('cascade')->onUpdate('cascade');
-            $table->timestamps();
         });
     }
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Type;
+use App\Models\Metier;
 use App\Models\Partie;
 use App\Models\Domaine;
 use App\Models\Test_hi;
@@ -10,6 +11,7 @@ use App\Models\Etat_test;
 use App\Models\Etalonnage;
 use App\Models\Reponse_hi;
 use App\Models\Question_hi;
+use App\Models\TypeResultat;
 use Illuminate\Http\Request;
 use App\Models\Score_riarsec;
 use App\Models\Tableau_score;
@@ -35,58 +37,47 @@ class TestIrmr3Controller extends Controller
     }
     public function formulaire()
     {
+
         return view('test.irmr3.test_irmr3_formulaire');
     }
-    public function formulaire1(Request $request)
+    public function store(Request $request)
     {
-        // static $step = 2;
-        // static $part = 1;
-        // $data = $request->except('_token');
 
-        // foreach ($data as $key => $value) {
-        //     $tab = explode('|', $value);
-        //     $combine = array_combine(array('note', 'domaine'), $tab);
-        //     print_r($combine) . '<br>';
-        // }
+        $partie = Partie::all();
 
-        $partie = Partie::create([
-            'num_partie' => 1,
-            'libelle_partie' => '1ère partie'
-        ]);
+        $domaine = Domaine::all();
+        $etat_test = Etat_test::all();
 
-        $domaine = Domaine::create([
-            "libelle_domaine" => "Plein air",
-            "id_partie" => $partie->id
-        ]);
-        $etat_test = Etat_test::create(["libelle_etat_test" => 'en cours']);
+        $etalonnage = Etalonnage::all();
+        $type_resultat = TypeResultat::all();
 
-        $etalonnage = Etalonnage::create(["libelle_etalonnage" => Auth()->user()->etalonnage]);
-
-        $item_serie = Item_serie_hexa3d_irmr::create(["id_partie" => $partie->id, "lettre/liste" => '', "libelle_item_hexa3d_irmr" => '']);
-
-        $type = Type::create(["libelle_type" => 'IRMR3']);
-        $test = Test_hi::create(["libelle_test" => "Test1: IRMR3", "id_type" => $type->id]);
+        $item_serie = Item_serie_hexa3d_irmr::all();
+        $type = Type::all();
+        $test = Test_hi::all();
+        $metier = Metier::all();
 
         echo microtime();
         $cpt = connection_aborted();
-        $participation = Participation_hi::create(["date_passage" => date("d/m/y"), "id_test" => $test->id, "id_user" => Auth()->user()->id, "id_etalonnage_default" => $etalonnage->id, "id_etat_test" => $etat_test->id, "lien_test" => ' ', "nombre_interruption" => $cpt, "Temps_passage" => Date("y:m:d h:i:s", (microtime(true) - $this->time_start))]);
+        $participation = Participation_hi::create(["date_passage" => date("d/m/y"), "id_test" => $test[0]->id_test, "id_user" => Auth()->user()->id, "id_etalonnage_default" => $etalonnage[7]->id_etalonnage, "id_etat_test" => $etat_test[0]->id_etat_test, "lien_test" => 'lien_test', "nombre_interruption" => $cpt, "Temps_passage" => Date("y:m:d h:i:s", (microtime(true) - $this->time_start)), "id_type_resultat" => $type_resultat[0]->id_type_resultat]);
 
-        $question = Question_hi::create(["id_item_hexa3d" => $item_serie->id, "id_test" => $test->id, "id_partie" => $partie->id, "id_domaine" => $domaine->id, "ordre" => 1, "type_riarsec" => "IRMR3"]);
+        $question = Question_hi::create(["id_item_hexa3d" => $item_serie[0]->id_item_hexa3d_irmr, "id_test" => $test[0]->id_test, "id_partie" => $partie[0]->id_partie, "lettre/liste" => "A2", "id_domaine" => $domaine[0]->id_domaine, "id_metier" => 1, "ordre" => 1, "type_riarsec" => "IRMR3"]);
 
 
-        Reponse_hi::create(["id_question" => $question->id, "id_participation" => $participation->id, "score" => 2, "libelle_bonus" => "premier bonus"]);
+        $reponse = Reponse_hi::create(["id_question" => $question->id, "id_participation" => $participation->id, "score" => 2, "libelle_bonus" => "premier bonus"]);
 
-        $tableau_score = Tableau_score::create(["libelle_tableau_score" => 'Notes brutes trois domaines', "id_participation" => $participation->id]);
+        // dd($reponse);
+        // $tableau_score = Tableau_score::create(["libelle_tableau_score" => 'Notes brutes trois domaines', "id_participation" => $participation->id]);
 
-        //$score_riarsec = Score_riarsec::create(["id_tableau_score" => $tableau_score->id, "id_partie" => $partie->id, "type_riarsec" => ' ', "sous_total" => ' ']);
-        $score_riarsec = Score_riarsec::create(["id_partie" => $partie->id, "id_participation" => $participation->id, "type_riarsec" => 'R', "sous_total" => 5]);
+        // //$score_riarsec = Score_riarsec::create(["id_tableau_score" => $tableau_score->id, "id_partie" => $partie->id, "type_riarsec" => ' ', "sous_total" => ' ']);
+        // $score_riarsec = Score_riarsec::create(["id_partie" => $partie->id, "id_participation" => $participation->id, "type_riarsec" => 'R', "sous_total" => 5]);
 
-        Table_etalonnage_d::create(["libelle_table" => 'ensemble des collégiens filles et garçon (N=353)', "id_etalonnage" => $etalonnage->id, "id_domaine" => $domaine->id, "type_riarsec" => "R"]);
+        // Table_etalonnage_d::create(["libelle_table" => 'ensemble des collégiens filles et garçon (N=353)', "id_etalonnage" => $etalonnage->id, "id_domaine" => $domaine->id, "type_riarsec" => "R"]);
 
-        Table_etalonnage_d_riarsec::create(["id_table_etalonnage_d" => 2, "RIARSEC" => "R", "plage" => "0-2"]);
+        // Table_etalonnage_d_riarsec::create(["id_table_etalonnage_d" => 2, "RIARSEC" => "R", "plage" => "0-2"]);
 
         // return view('test.irmr3.test_irmr3_formulaire', [$step, $part]);
-        return view('test.irmr3.test_irmr3_formulaire_part');
+        return view('test.irmr3.test_irmr3_formulaire_part', []);
+        dd($request);
     }
     // public function formulaire2()
     // {

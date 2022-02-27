@@ -29,7 +29,7 @@
     <div class="container">
         <form method="POST" action="{{ route('register.create.step.two.post') }}">
                 @csrf
-
+              
             <div class="form-row">
                 <div class="form-group col-12 col-md-5 col-lg-5 py-3">
                     <label for="studies" class="mr-3 mb-0">Votre niveau d'études ?</label>
@@ -38,6 +38,24 @@
                             <option value="brevet">Brevet</option>
                             <option value="bac">BAC</option>
                         </select>
+                        <span class="focus"></span>
+                    </div>
+                </div>
+                <div class="form-group col-12 col-md-5 col-lg-5 py-3">
+                    <label for="studies" class="mr-3 mb-0">Votre étalonnage</label>
+                    <div class="select-container">
+                        <select class="custom-select custom-select-auth mb-3 form-control" id="etalonnage" name="etalonnage">
+                            <option value="Adultes h/f">Adultes h/f</option>
+                            <option value="Femmes">Femmes</option>
+                            <option value="Hommes">Hommes</option>
+                            <option value="Collégiens h/f">Collégiens h/f</option>
+                            <option value="Collégiens">Collégiens</option>
+                            <option value="Collégiennes ">Collégiennes </option>
+                            <option value="Lycéens h/f">Lycéens h/f</option>
+                            <option value="Lycéens ">Lycéens </option>
+                            <option value="Lycéennes ">Lycéennes </option>
+                        </select>
+
                         <span class="focus"></span>
                     </div>
                 </div>
@@ -52,7 +70,6 @@
                         </select>
                         <span class="focus"></span>
                     </div>
-
                 </div>
                 <div class="form-group col-12 col-md-5 col-lg-5 hidden-select-container hidden">
                     <label for="InputClasse" class="disabled-element-sch">Votre classe</label>

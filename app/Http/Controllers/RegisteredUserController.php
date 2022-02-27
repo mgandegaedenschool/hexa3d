@@ -46,8 +46,7 @@ class RegisteredUserController extends Controller
             'classe' => ['string', 'max:255'],
             'section' => ['string', 'max:255'],
             'etablissement' => ['string', 'max:255'],
-            // 'salarie' => ['required', 'integer', 'max:255'],
-            // 'etalonnage' => ['required', 'string', 'max:255']
+            'etalonnage' => ['required', 'string', 'max:255']
         ]);
 
         $step1 = $request->session()->get('step1');
@@ -96,8 +95,8 @@ class RegisteredUserController extends Controller
                     'emploi_actuel' => $step3['emploi_actuel'],
                     'specialite' => $step3['specialite'],
                     'etat' => $step3['etat'],
-                    'emploi_envisage' => $step3['emploi_envisage']
-                    // 'etalonnage' => $step3['etalonnage']
+                    'emploi_envisage' => $step3['emploi_envisage'],
+                    'etalonnage' => $step3['etalonnage']
                 ]);
         } else {
             $user = User::create([
@@ -117,8 +116,8 @@ class RegisteredUserController extends Controller
                 'emploi_actuel' => $step3['emploi_actuel'],
                 'specialite' => $step3['specialite'],
                 'etat' => $step3['etat'],
-                'emploi_envisage' => $step3['emploi_envisage']
-                // 'etalonnage' => $step3['etalonnage']
+                'emploi_envisage' => $step3['emploi_envisage'],
+                'etalonnage' => $step3['etalonnage']
             ]);
         }
 

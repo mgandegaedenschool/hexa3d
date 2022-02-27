@@ -4,7 +4,7 @@ $modalTitle = "Suppression";
 $confirmationMessage = "Le bénéficiaire a bien été ajouté."
 
 ?>
-<div class="new-client-btn-div d-flex">
+ <div class="new-client-btn-div d-flex">
     <button type="button" class="purple-btn espace-pro-purple-btn" data-toggle="modal" data-target="#ajoutTest-yesMailModal">
         Nouveau client
     </button>
@@ -30,44 +30,47 @@ $confirmationMessage = "Le bénéficiaire a bien été ajouté."
             </div>
             <div class="modal-body">
                 <div class="container-fluid">
-                    <form action="" method="post">
+                <form method="POST" action="{{ route('pro.store') }}"> 
+                            @csrf 
+                      
 
-                        <div class="form-row d-flex justify-content-between flex-direction-column">
-                            <div class="form-group col-12 col-md-9 col-lg-9 mb-5">
-                                <label for="inputTest" class="mb-3">Choisissez le test à attribuer au bénéficiaire :</label>
-                                <select class="custom-select custom-select-auth form-control" id="inputTest">
+                         <div class="form-row d-flex justify-content-between">
+                            <div class="form-group col-12 col-md-5 col-lg-5">
+                                <label for="inputTest">Choisissez le test à attribuer au bénéficiaire :</label>
+                                <select class="form-control" id="inputTest" name='test'>
                                     <option>Choisir le test</option>
-                                    <option value=""></option>
-                                    <option value=""></option>
-                                    <option value=""></option>
+                                    <option value="irmr3d">IRMR3D</option>
+                                    <option value="hexa3d">HEXA3D</option>
                                 </select>
                             </div>
-                            <div class="form-group col-12 col-md-9 col-lg-9 mb-5">
-                                <label for="inputEta" class="mb-3">Choisissez l'étalonnage à appliquer au test :</label>
-                                <select class="custom-select custom-select-auth form-control" id="inputEta">
+                            <div class="form-group col-12 col-md-5 col-lg-5">
+                                <label for="inputEta">Votre etalonnage</label>
+                                <select class="form-control" id="inputEta" name="etalonnage">
                                     <option>Choisir l'étalonnage</option>
-                                    <option value=""></option>
-                                    <option value=""></option>
-                                    <option value=""></option>
+                                    <option value="collégien">Collégien </option>
+                                    <option value="collégienne">Collégienne</option>
+                                    <option value="lycéen">Lycéen</option>
+                                    <option value="lycéenne">Lycéenne</option>
+                                    <option value="adulte">Adulte</option>
                                 </select>
                             </div>
                         </div>
                         <div class="form-row d-flex justify-content-between">
-                            <div class="form-group col-12 col-md-9 col-lg-9 mb-3">
-                                <label for="inputMail" class="mb-3">Entrer l'adresse mail du bénéficiaire :</label>
-                                <input type="text" class="form-control" id="inputMail" placeholder="Adresse mail">
+                            <div class="form-group col-12 col-md-5 col-lg-5">
+                                <label for="inputMail">Entrer l'adresse mail du bénéficiaire :</label>
+                                <input type="text" class="form-control" id="inputMail" placeholder="Adresse mail" name='email' >
                             </div>
                         </div>
-
-                        <div class="modal-footer mt-4 modal-pro-footer">
-                            <input type="submit" class="btn espace-pro-purple-btn" value="Envoi de l'invitation">
+                        <div class="modal-footer mt-4">
+                            <input type="submit" class="btn btn-primary" value="Envoi de l'invitation">
                         </div>
-                    </form>
+                    </form>    
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 
 <!-- MODAL D'IMPORTATION DE BENEFICIAIRES -->
 {{-- <div class="modal fade" id="proImportModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

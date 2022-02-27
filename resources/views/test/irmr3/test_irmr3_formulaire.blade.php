@@ -24,23 +24,23 @@
     </div>
 
     <?php if (isset($_GET['part']) && $_GET['part'] == 1){ ?>
-    @include('test.test_irmr3_formulaire_part')
+    @include('test.irmr3.test_irmr3_formulaire_part')
     <?php }elseif (isset($_GET['part']) && $_GET['part'] == 2){ ?>
-    @include('test.test_irmr3_formulaire_part')
+    @include('test.irmr3.test_irmr3_formulaire_part')
     <?php }elseif (isset($_GET['part']) && $_GET['part'] == 3){ ?>
-    @include('test.test_irmr3_formulaire_part')
+    @include('test.irmr3.test_irmr3_formulaire_part')
     <?php }elseif (isset($_GET['part']) && $_GET['part'] == 4){ ?>
-    @include('test.test_irmr3_formulaire_part')
+    @include('test.irmr3.test_irmr3_formulaire_part')
     <?php }elseif (isset($_GET['part']) && $_GET['part'] == 5){ ?>
-    @include('test.test_irmr3_formulaire_part')
+    @include('test.irmr3.test_irmr3_formulaire_part')
     <?php }elseif (isset($_GET['part']) && $_GET['part'] == 6){ ?>
-    @include('test.test_irmr3_formulaire_part')
+    @include('test.irmr3.test_irmr3_formulaire_part')
     <?php }elseif (isset($_GET['part']) && $_GET['part'] == 7){ ?>
-    @include('test.test_irmr3_formulaire_part')
+    @include('test.irmr3.test_irmr3_formulaire_part')
     <?php }elseif (isset($_GET['part']) && $_GET['part'] == 8){ ?>
-    @include('test.test_irmr3_formulaire_part')
+    @include('test.irmr3.test_irmr3_formulaire_part')
     <?php }elseif (isset($_GET['part']) && $_GET['part'] == 9){ ?>
-    @include('test.test_irmr3_formulaire_part')
+    @include('test.irmr3.test_irmr3_formulaire_part')
     <?php } ?>
 
 

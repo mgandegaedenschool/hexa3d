@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\Partie;
 use App\Models\Score_riarsec;
 use App\Models\Participation_hi;
+
 class Tableau_scoreFactory extends Factory
 {
     /**
@@ -15,11 +16,11 @@ class Tableau_scoreFactory extends Factory
      */
     public function definition()
     {
- 
-$participation = Participation_hi::all();
+
+        $participation = Participation_hi::all();
         return [
-            "libelle_tableau_score"=>$this->faker->randomElement($array = array ('Notes brutes trois domaines','Notes étalonnées trois domaines','Profils de vos intérêts')),
-           "id_participation"=>$participation[$this->faker->NumberBetween($min = 0, $max = 9)]->id_participation
+            "libelle_tableau_score" => $this->faker->randomElement($array = array('Notes brutes trois domaines', 'Notes étalonnées trois domaines', 'Profils de vos intérêts')),
+            "id_participation" => $participation[$this->faker->NumberBetween($min = 0, $max = 5)]->id_participation
         ];
     }
 }
