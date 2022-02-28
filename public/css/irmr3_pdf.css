@@ -3,9 +3,61 @@ body{
     height: 2540px;
     font-family: "Arial", sans-serif;
 }
+
+.text-kaki{
+    color: var(--kaki);
+}
 .pdf-container-medium{
     padding: 10px 61px;
     margin: 0 auto;
+}
+
+/* line and rounded section */
+.pdf-line-container{
+    position: relative;
+}
+.pdf-rounded-section{
+    background-color: #7A7A7A;
+    border-radius: 30px 30px 0 0;
+    width: 454px;
+    margin-left: 28px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    margin-top: -70px;
+}
+.pdf-rounded-section-types{
+    background-color: #7A7A7A;
+    border-radius: 30px 30px 0 0;
+    width: 454px;
+    margin-left: 28px;
+    height: 70px;
+    display: flex;
+    padding-left: 30px;
+    align-items: center;
+}
+.pdf-rounded-section h3, .pdf-rounded-section-types h3{
+    color: var(--white);
+    margin: 0;
+}
+.pdf-line-container > hr{
+    width: 100%;
+    height: 2px;
+    background-color: #7A7A7A;
+    margin: 0;
+}
+
+.pdf-rounded-interests{
+    display: flex;
+    align-items: center;
+}
+
+.pdf-title-interests{
+    margin: 0 0 0 56px;
+    color:#7A7A7A;
+
 }
 
 /* HEADER */
@@ -97,6 +149,193 @@ ul li::marker {
 .pdf-irmr3-section li{
     margin-bottom: 20px;
 }
+
+
+
+/* page 1 */
+.pdf-logo-container{
+    max-width: 40%;
+}
+.pdf-content-container{
+    height: 93vh;
+}
+.pdf-last-text{
+    height: 4vh;
+}
+.pdf-big-title{
+    margin-top: 120px;
+    font-size: 60px;
+    color: var(--kaki);
+}
+.pdf-medium-title{
+    font-size: 35px;
+}
+.pdf-title{
+    font-size: 30px;
+}
+
+/* page 2 */
+
+.pdf-infos{
+    display: grid;
+    grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+    padding: 105px 61px;
+}
+
+.text-info-grey{
+    color: #7A7A7A;
+    margin-left: 58px;
+}
+.text-kaki-info{
+    min-width: 40%;
+    display: inline-block;
+}
+
+/* page 4,5,6 BENEF */
+
+.pdf-composition-container{
+    padding: 100px 61px 70px 61px;
+
+}
+.pdf-composition-container p:first-of-type{
+    font-size: 30px;
+    margin: 0;
+}
+.pdf-composition-container p:nth-of-type(2){
+    color:#7A7A7A!important;
+    font-size: 25px;
+}
+.pdf-container-medium-section{
+    padding: 61px 61px 0 61px;
+    margin: 0 auto;
+}
+.title-type{
+    font-weight: bold;
+}
+.pdf-container-medium-section p{
+    margin: 0;
+    line-height: 1.3;
+    color:#7A7A7A!important;
+}
+.pdf-chart-n-text{
+    display: flex;
+}
+
+.pdf-chart-desc{
+    margin-left: 130px;
+}
+
+.pdf-chart-desc-bold{
+    font-weight: bold;
+    margin-top: 30px!important;
+}
+.pdf-interests-domains{
+     margin-top: 60px;
+    margin-bottom: 65px;
+}
+.pdf-interests-domain-title{
+    margin: 0;
+    font-weight: bold;
+}
+.pdf-interests-text-rate{
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+}
+.pdf-interests-text{
+    width: 1225px;
+}
+.pdf-interests-rate{
+    text-align: center;
+    width: 500px;
+    margin-left: 80px;
+}
+
+/* page 4, 5 PRO */
+
+.presentation-reponse-main{
+    margin-top: 90px;
+}
+.metier-interest-container{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+.metier-interest-div{
+    width: 30%;
+    display: flex;
+
+    align-items: center;
+}
+.metier-interest-div p{
+    font-weight: bold;
+}
+    /* colored blocks */
+.interest-metier-block{
+    border-radius: 1.4rem;
+    width: 50px;
+    height: 50px;
+    box-shadow: 0 0 4px gainsboro;
+    margin-right: 15px;
+}
+.fav-metier-blue{
+    background-color:#0E49B2 ;
+}
+.indiff-metier-gray{
+    background-color: #7A7A7A;
+}
+.uninsterested-metier-red{
+    background-color: #D80B0B;
+}
+.series-container{
+    display: flex;
+    justify-content: space-between;
+
+}
+.serie-classement{
+    width: 730px;
+}
+
+.column-header-p{
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px!important;
+}
+.column-header-p span{
+    margin-left: 20px;
+}
+.serie-header-block{
+    display: flex;
+    align-items: center;
+    box-shadow: -1px 1px 3px 1px gainsboro;
+    border-radius: 2rem;
+}
+.serie-header-block h3{
+    background-color: var(--lightkaki);
+    width: 460px;
+    border-radius: 2rem;
+    margin-bottom: 0;
+    padding: 10px 30px;
+    font-size: 25px;
+    font-weight: bold;
+    color:var(--white);
+    margin-right: 60px;
+}
+
+.serie-header-block p{
+    font-size: 25px;
+    font-weight: bold;
+    color:var(--black) !important;
+}
+.metiers-classement-container{
+    padding: 0 60px 0 30px;
+}
+
+
+
+
+
+
 
 /* footer */
 .pdf-footer{
