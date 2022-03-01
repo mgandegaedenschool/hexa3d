@@ -35,7 +35,7 @@
                     <p class="column-header-p">Vert :<span>Métiers classés 2</span></p>
                     <div class="serie-classement serie-g">
                         <div class="serie-header-block">
-                            <h3>Série A</h3><p>Classement</p>
+                            <h3>Série G</h3><p>Classement</p>
                         </div>
                         <div class="metiers-classement-container">
                             <div class="metier-classement">
@@ -56,7 +56,7 @@
                     </div>
                     <div class="serie-classement serie-i">
                         <div class="serie-header-block">
-                            <h3>Série A</h3><p>Classement</p>
+                            <h3>Série I</h3><p>Classement</p>
                         </div>
                         <div class="metiers-classement-container">
                             <div class="metier-classement">
@@ -93,7 +93,7 @@
                     <p class="column-header-p">Orange :<span>Métiers classés 0</span></p>
                     <div class="serie-classement serie-h">
                         <div class="serie-header-block">
-                            <h3>Série A</h3><p>Classement</p>
+                            <h3>Série H</h3><p>Classement</p>
                         </div>
                         <div class="metiers-classement-container">
                             <div class="metier-classement">

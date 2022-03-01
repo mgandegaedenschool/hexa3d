@@ -39,9 +39,9 @@
                         </div>
                         <div class="metiers-classement-container">
                             <div class="metier-classement">
-                                <p class="serie-metier">Exploitant agricole<span>2</span></p>
-                                <p class="serie-metier">Exploitant agricole<span>2</span></p>
-                                <p class="serie-metier">Exploitant agricole<span>2</span></p>
+                                <p class="serie-metier fav-metier-blue-txt">Exploitant agricole<span>2</span></p>
+                                <p class="serie-metier indiff-metier-gray-txt">Exploitant agricole<span>2</span></p>
+                                <p class="serie-metier uninsterested-metier-red-txt ">Exploitant agricole<span>2</span></p>
                                 <p class="serie-metier">Exploitant agricole<span>2</span></p>
                                 <p class="serie-metier">Exploitant agricole<span>2</span></p>
                                 <p class="serie-metier">Exploitant agricole<span>2</span></p>
@@ -56,7 +56,7 @@
                     </div>
                     <div class="serie-classement serie-c">
                         <div class="serie-header-block">
-                            <h3>Série A</h3><p>Classement</p>
+                            <h3>Série C</h3><p>Classement</p>
                         </div>
                         <div class="metiers-classement-container">
                             <div class="metier-classement">
@@ -77,7 +77,7 @@
                     </div>
                     <div class="serie-classement serie-e">
                         <div class="serie-header-block">
-                            <h3>Série A</h3><p>Classement</p>
+                            <h3>Série E</h3><p>Classement</p>
                         </div>
                         <div class="metiers-classement-container">
                             <div class="metier-classement">
@@ -101,7 +101,7 @@
                     <p class="column-header-p">Orange :<span>Métiers classés 0</span></p>
                     <div class="serie-classement serie-b">
                         <div class="serie-header-block">
-                            <h3>Série A</h3><p>Classement</p>
+                            <h3>Série B</h3><p>Classement</p>
                         </div>
                         <div class="metiers-classement-container">
                             <div class="metier-classement">
@@ -122,7 +122,7 @@
                     </div>
                     <div class="serie-classement serie-d">
                         <div class="serie-header-block">
-                            <h3>Série A</h3><p>Classement</p>
+                            <h3>Série D</h3><p>Classement</p>
                         </div>
                         <div class="metiers-classement-container">
                             <div class="metier-classement">
@@ -143,7 +143,7 @@
                     </div>
                     <div class="serie-classement serie-f">
                         <div class="serie-header-block">
-                            <h3>Série A</h3><p>Classement</p>
+                            <h3>Série F</h3><p>Classement</p>
                         </div>
                         <div class="metiers-classement-container">
                             <div class="metier-classement">
