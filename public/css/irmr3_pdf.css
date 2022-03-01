@@ -11,7 +11,7 @@ p, h3, h4, h5, h6{
     color: var(--kaki);
 }
 .pdf-container-medium{
-    padding: 10px 61px;
+    padding: 105px 61px;
     margin: 0 auto;
 }
 /* line and rounded section */
@@ -21,7 +21,6 @@ p, h3, h4, h5, h6{
 .pdf-rounded-section{
     background-color: #7A7A7A;
     border-radius: 30px 30px 0 0;
-    width: 454px;
     margin-left: 28px;
     height: 70px;
     display: flex;
@@ -29,6 +28,12 @@ p, h3, h4, h5, h6{
     align-items: center;
     position: absolute;
     margin-top: -70px;
+}
+.pdf-interets-generaux .pdf-rounded-section{
+    width: 454px;
+}
+.pdf-interets-pro-specifique .pdf-rounded-section{
+    width: 595px;
 }
 .pdf-rounded-section h3{
     color: var(--white);
@@ -68,7 +73,6 @@ p, h3, h4, h5, h6{
 .pdf-infos{
     display: grid;
     grid-template: repeat(2, 1fr) / repeat(2, 1fr);
-    padding: 105px 61px;
 }
 
 .text-info-grey{
@@ -79,9 +83,62 @@ p, h3, h4, h5, h6{
     min-width: 40%;
     display: inline-block;
 }
+.poles-interets-generaux{
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+}
 .canvas-container{
-    width: 866px !important;
-    height: 551px !important;
+    width: 866px;
+    height: 551px;
+}
+.pdf-pro-result-pole{
+    display: flex;
+    flex-direction: column;
+    width: 707px;
+}
+.pdf-pro-result-pole p{
+    color: #414141;
+}
+.result-poles-line{
+    display: flex;
+    background-color: white;
+    border-radius: 20px;
+    height: 53px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    align-items: center;
+    margin-bottom: 6px;
+}
+.pole{
+    width: 269px;
+    text-align: right;
+    background-color: var(--lightkaki);
+    border-radius: 20px;
+    margin: 0;
+    height: 53px;
+    padding-right: 34px;
+    color: var(--white) !important;
+    font-weight: 600;
+}
+.note-brute, .note-etalonnee{
+    width: 219px;
+    text-align: center;
+    margin: 0;
+}
+.result-header{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.result-status{
+    display: flex;
+}
+.result-empty-space{
+    width: 269px;
+}
+.profil-type{
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-align: center;
+    margin-top: 14px;
 }
 
 /* header */

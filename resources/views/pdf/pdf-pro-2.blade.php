@@ -17,15 +17,75 @@
                 <hr>
             </div>
 
-        </div>
+            <div class="pdf-container-medium d-flex poles-interets-generaux justify-content-between">
+                <section class="canvas-container">
+                    <canvas class="chart-view" id="pdf-pro-chart-1" width="551" height="551"></canvas>
+                </section>
+                <section class="pdf-pro-result-pole">
+                    <div class="result-header">
+                        <span class="result-empty-space"></span>
+                        <p class="note-brute">Note brute</p>
+                        <p class="note-etalonnee">Note étalonnée</p>
+                    </div>
+                    <div class="result-poles-line">
+                        <p class="pole">Réaliste</p>
+                        <p class="note-brute">11</p>
+                        <p class="note-etalonnee">4</p>
+                    </div>
+                    <div class="result-poles-line">
+                        <p class="pole">Investigateur</p>
+                        <p class="note-brute">8</p>
+                        <p class="note-etalonnee">3</p>
+                    </div>
+                    <div class="result-poles-line">
+                        <p class="pole">Artistique</p>
+                        <p class="note-brute">9</p>
+                        <p class="note-etalonnee">3</p>
+                    </div>
+                    <div class="result-poles-line">
+                        <p class="pole">Social</p>
+                        <p class="note-brute">2</p>
+                        <p class="note-etalonnee">2</p>
+                    </div>
+                    <div class="result-poles-line">
+                        <p class="pole">Entreprenant</p>
+                        <p class="note-brute">2</p>
+                        <p class="note-etalonnee">2</p>
+                    </div>
+                    <div class="result-poles-line">
+                        <p class="pole">Conventionnel</p>
+                        <p class="note-brute">2</p>
+                        <p class="note-etalonnee">2</p>
+                    </div>
+                    <div class="result-status">
+                        <span class="result-empty-space"></span>
+                        <div>
+                            <p class="note-brute">Profil</p>
+                            <p class="note-brute">intra-individuel</p>
+                            <p class="profil-type">RAI</p>
+                        </div>
+                        <div>
+                            <p class="note-etalonnee">Profil</p>
+                            <p class="note-etalonnee">intra-individuel</p>
+                            <p class="profil-type">RAI</p>
+                        </div>
 
-        <div class="canvas-container">
-            <canvas class="chart-view" id="myChart" width="551" height="551"></canvas>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="pdf-interets-pro-specifique">
+            <div class="pdf-line-container">
+                <div class="pdf-rounded-section">
+                    <h3 class="pdf-title">Intérêts professionnels spécifique</h3>
+                </div>
+                <hr>
+            </div>
         </div>
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.js"></script>
     <script>
-        let ctx = document.getElementById('myChart').getContext('2d');
+        let ctx = document.getElementById('pdf-pro-chart-1').getContext('2d');
         Chart.defaults.font.size = 25;
         const labels = ['Réaliste', 'Investigateur', 'Artistique', 'Social', 'Entreprenant', 'Conventionnel'];
         const data = {
@@ -56,13 +116,16 @@
                         min: 0,
                         max: 5,
                         ticks: {
+                            beginAtZero: true,
                             stepSize: 1,
-                            display: false
+                            color: '#000000',
+                            display: false,
                         },
                         pointLabels: {
                             display: true,
                             font: {
-                                size: 25
+                                size: 25,
+                                weight: 'bold'
                             }
                         }
                     }
@@ -74,9 +137,9 @@
                 }
             }
         };
-        const chart = new Chart(ctx, config)
-
-        console.log(chart);
+        const chart1 = new Chart(ctx, config)
+        chart1.width = 551;
+        chart1.height = 551;
     </script>
     @include('pdf.pdf-footer-inc')
 @endsection
