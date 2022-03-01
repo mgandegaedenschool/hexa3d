@@ -14,5 +14,6 @@
     </section>
     <p class="text-center pdf-title pdf-last-text">Les données contenus dans ce rapport sont confidentielles</p>
 </main>
+
 @include('pdf.pdf-footer-inc')
 @endsection

@@ -19,9 +19,64 @@
 
         </div>
 
-
-        <canvas class="chart-view" width="500" height="500"></canvas>
-
+        <div class="canvas-container">
+            <canvas class="chart-view" id="myChart" width="551" height="551"></canvas>
+        </div>
     </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.js"></script>
+    <script>
+        let ctx = document.getElementById('myChart').getContext('2d');
+        Chart.defaults.font.size = 25;
+        const labels = ['Réaliste', 'Investigateur', 'Artistique', 'Social', 'Entreprenant', 'Conventionnel'];
+        const data = {
+            labels: labels,
+            datasets: [
+                {
+                    label: '',
+                    data: [1, 2, 3, 5, 2, 3],
+                    borderColor: 'rgb(101, 95, 0)',
+                    backgroundColor: 'transparent',
+                    pointRadius: 8,
+                    pointHoverRadius: 8,
+                    pointBackgroundColor: 'rgb(101, 95, 0)',
+                    pointBorderColor: 'rgb(101, 95, 0)',
+                    pointHoverBackgroundColor: 'rgb(101, 95, 0)',
+                    pointHoverBorderColor: 'rgb(101, 95, 0)'
+                }
+            ]
+        };
+        const config = {
+            type: 'radar',
+            data: data,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        min: 0,
+                        max: 5,
+                        ticks: {
+                            stepSize: 1,
+                            display: false
+                        },
+                        pointLabels: {
+                            display: true,
+                            font: {
+                                size: 25
+                            }
+                        }
+                    }
+                },
+                plugins:{
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        };
+        const chart = new Chart(ctx, config)
+
+        console.log(chart);
+    </script>
     @include('pdf.pdf-footer-inc')
 @endsection

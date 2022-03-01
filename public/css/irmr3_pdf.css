@@ -79,7 +79,10 @@ p, h3, h4, h5, h6{
     min-width: 40%;
     display: inline-block;
 }
-
+.canvas-container{
+    width: 866px !important;
+    height: 551px !important;
+}
 
 /* header */
 
@@ -127,6 +130,7 @@ p, h3, h4, h5, h6{
     align-items: center;
     height: 43px;
 }
+
 
 /* footer */
 .pdf-footer{
