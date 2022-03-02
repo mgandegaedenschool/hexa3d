@@ -17,11 +17,10 @@
                     </div>
                     <h3 class="pdf-title-interests pdf-title">Intérêts assez marqués</h3>
                 </div>
-
                 <hr>
             </div>
-
         </div>
+
         <section class="pdf-container-medium-section">
             <!-- la div qui contient la charte et le texte descriptif -->
             <div class="pdf-chart-n-text">
@@ -37,6 +36,7 @@
                     </p>
                 </div>
             </div>
+
             <!-- div qui regroupe différents domaines avec leur description et l'intérêt -->
             <div class="pdf-interests-domains">
 
@@ -57,7 +57,10 @@
                     <p class="pdf-interests-rate">
                         Intérêts très marqués
                     </p>
+
                 </div>
+                <!-- fin de la div de description du domaine -->
+
                 <div class="pdf-interests-text-rate">
                     <div class="pdf-interests-text">
                         <p class="pdf-interests-domain-title">
@@ -71,6 +74,7 @@
                         Intérêts très marqués
                     </p>
                 </div>
+
                 <div class="pdf-interests-text-rate">
                     <div class="pdf-interests-text">
                         <p class="pdf-interests-domain-title">
@@ -84,8 +88,10 @@
                         Intérêts assez marqués
                     </p>
                 </div>
+
             </div>
         </section>
+
         <div class="pdf-interets-generaux">
             <div class="pdf-line-container">
                 <div class="pdf-rounded-interests">
@@ -94,11 +100,10 @@
                     </div>
                     <h3 class="pdf-title-interests pdf-title title-type">Intérêts moyens</h3>
                 </div>
-
                 <hr>
             </div>
-
         </div>
+
         <section class="pdf-container-medium-section">
             <div class="pdf-chart-n-text">
                 <canvas class="chart-view" width="440" height="280"></canvas>
@@ -111,6 +116,7 @@
                     </p>
                 </div>
             </div>
+
             <div class="pdf-interests-domains">
                 <div class="pdf-interests-text-rate">
                     <div class="pdf-interests-text">
@@ -139,8 +145,8 @@
                     </p>
                 </div>
             </div>
-        </section>
 
+        </section>
     </main>
     @include('pdf.pdf-footer_inc')
 @endsection

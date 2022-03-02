@@ -16,11 +16,10 @@
                     </div>
                     <h3 class="pdf-title-interests pdf-title title-type">Intérêts peu marqués</h3>
                 </div>
-
                 <hr>
             </div>
-
         </div>
+
         <section class="pdf-container-medium-section">
             <!-- la div qui contient la charte et le texte descriptif -->
             <div class="pdf-chart-n-text">
@@ -39,7 +38,7 @@
                 </div>
             </div>
             <!-- div qui regroupe différents domaines avec leur description et l'intérêt -->
-            <div class="pdf-interests-domains">
+            <div class="pdf-interests-domains type-domain-mb140">
 
                 <!-- une div avec la description d'un domaine et l'intérêt pour ce domaine-->
                 <div class="pdf-interests-text-rate">

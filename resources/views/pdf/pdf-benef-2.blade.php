@@ -3,6 +3,7 @@
 @section('content')
     @include('pdf.pdf-irmr3-header_inc')
     <div class="irmr-3-pro-results-container pdf-container-medium">
+
         <section class="pdf-irmr3-section">
             <h3 class="pdf-irmr3-kaki-text">Rapport descriptif</h3>
             <p>
@@ -34,12 +35,14 @@
                 </li>
             </ul>
         </section>
+
         <section class="pdf-irmr3-section">
             <h3 class="pdf-irmr3-kaki-text">Comment lire et interpréter ce rapport ?</h3>
             <p>
                 Les résultats que vous trouverez dans ce rapport sont le reflet de vos choix au moment de la passation de l’Inventaire IRMR3. Comme toute démarche procédant d’une auto-évaluation, la fidélité de votre profil dépend de votre sincérité au cours de la passation. Pour autant, les résultats d’un test ou questionnaire (quels qu’ils soient) ne sont pas une vérité en soi. Ils doivent être confrontés à d’autres approches et nécessitent d’être nuancés. Le profil calculé est un support de réflexion qui doit vous inviter à prolonger vos questionnements avec un praticien de l’orientation. Les résultats vous sont restitués sous deux formes :
             </p>
         </section>
+
         <section class="pdf-irmr3-section">
             <h3 class="pdf-irmr3-kaki-text">Les pôles d'intérêts généraux</h3>
             <p>
@@ -55,6 +58,7 @@
                 </li>
             </ul>
         </section>
+
         <section class="pdf-irmr3-section">
             <h3 class="pdf-irmr3-kaki-text">Comment lire et interpréter ce rapport ?</h3>
             <p>
@@ -72,6 +76,7 @@
                 Vous détenez désormais les clés de lecture de votre profil, nous vous invitons à prendre le temps d’y réfléchir et d’y revenir régulièrement. Toutes les informations ne prennent pas du sens immédiatement, le processus de compréhension de soi se construisant dans la durée.
             </p>
         </section>
+
     </div>
 
 
