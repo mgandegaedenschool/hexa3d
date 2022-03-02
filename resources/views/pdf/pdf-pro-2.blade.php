@@ -81,11 +81,51 @@
                 </div>
                 <hr>
             </div>
+            <div class="pdf-container-medium interets-specifiques">
+                <div class="interets-pro-result-header">
+                    <p class="result-head-1">Secteurs</p>
+                    <p class="result-head-2">Notes <span class="d-block">brutes</span></p>
+                    <p class="result-head-3">10% <span class="d-block">Très peu marqués</span></p>
+                    <p class="result-head-4">20% <span class="d-block">Peu marqués</span></p>
+                    <p class="result-head-5">40% <span class="d-block">Moyen</span></p>
+                    <p class="result-head-6">20% <span class="d-block">Assez marqués</span></p>
+                    <p class="result-head-7">10% <span class="d-block">Très marqués</span></p>
+                </div>
+                <div class="interets-pro-result">
+                    <div class="interets-result-category d-flex">
+                        <div class="category-name">
+                            <p class="m-0">R Plein Air</p>
+                        </div>
+                        <div class="interets-pro-result-input">
+                            <label for="r1" class="result-range-label">2</label>
+                            <input type="range" name="r1" id="r1" class="result-range-input" min="0" max="100" value="20" disabled>
+                        </div>
+                    </div>
+                    <div class="interets-result-category">
+
+                    </div>
+                    <div class="interets-result-category">
+
+                    </div>
+                    <div class="interets-result-category">
+
+                    </div>
+                    <div class="interets-result-category">
+
+                    </div>
+                    <div class="interets-result-category">
+
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.js"></script>
     <script>
-        let ctx = document.getElementById('pdf-pro-chart-1').getContext('2d');
+        let canva = document.getElementById('pdf-pro-chart-1');
+        canva.width = 551;
+        canva.height = 551;
+        let ctx = canva.getContext('2d');
         Chart.defaults.font.size = 25;
         const labels = ['Réaliste', 'Investigateur', 'Artistique', 'Social', 'Entreprenant', 'Conventionnel'];
         const data = {
@@ -138,8 +178,7 @@
             }
         };
         const chart1 = new Chart(ctx, config)
-        chart1.width = 551;
-        chart1.height = 551;
+
     </script>
     @include('pdf.pdf-footer-inc')
 @endsection

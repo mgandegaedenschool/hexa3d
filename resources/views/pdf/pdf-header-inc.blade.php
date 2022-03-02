@@ -5,7 +5,7 @@
         </div>
         <div class="pdf-irmr3-headername-container">
             <div class="pdf-irmr3-headerName">
-                <p>RAPPORT PRENOM NOM</p>
+                <h1>RAPPORT PRENOM NOM</h1>
             </div>
         </div>
 
