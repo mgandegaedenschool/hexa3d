@@ -276,19 +276,25 @@ ul li::marker {
     padding: 50px 60px 0 60px;
 }
 .pdf-profils-indicators{
-    margin-bottom: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 85px;
 }
 .pdf-profils-indicators .text-kaki-info{
     font-weight: bold;
     font-size: 30px;
     margin-bottom: 30px;
+    width: 100%;
 }
 
 .profil-indicator-desc{
     color:#7A7A7A;
     margin-bottom: 50px;
 }
-
+.profil-indicator-bar{
+    width: 1590px;
+}
 .indicator-bar-legend{
     display: flex;
 }
@@ -297,7 +303,78 @@ ul li::marker {
     text-align: center;
     margin-bottom: 10px;
 }
+.indicator-bar-content{
+    display: flex;
+    background-color: rgba(179,164,0,56%);
+    padding: 10px 0;
+    align-items: center;
+    border-radius: 2rem;
+    box-shadow: 0 2px 5px gainsboro;
+}
+.indicator-bar-content p{
+    width: 25%;
+    text-align: center;
+    margin:0;
+    font-weight: bold;
+}
 
+.pdf-valorise-div{
+    display: flex;
+    width: 1590px;
+    justify-content: space-between;
+}
+.single-sector-div{
+    width: 50%;
+    text-align: center;
+}
+.single-sector-div .valorise-title{
+    margin-bottom: 10px;
+}
+.sector-details-div{
+    display: flex;
+    background-color: rgba(179,164,0,56%);
+    padding: 10px 0;
+    align-items: center;
+    border-radius: 2rem;
+    box-shadow: 0 2px 5px gainsboro;
+}
+.sector-details-div p{
+    width: 33%;
+    font-weight: bold;
+    margin: 0;
+}
+.single-interets-div{
+    width: 730px;
+}
+.single-interets-div .valorise-title{
+    text-align: center;
+    margin-bottom: 10px;
+}
+.single-interet-details{
+    display: flex;
+    align-items: center;
+    border-radius: 2rem;
+    box-shadow: 0 2px 5px gainsboro;
+    margin-bottom: 10px;
+}
+.interet-details-number{
+    width: 70px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    color: var(--white);
+    background-color: var(--lightkaki);
+    border-radius: 2rem;
+    height: 53px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.single-interet-details p{
+    margin: 0;
+    margin-left: 20px;
+    font-weight: bold;
+}
 /* page 4, 5 PRO */
 
 .presentation-reponse-main{

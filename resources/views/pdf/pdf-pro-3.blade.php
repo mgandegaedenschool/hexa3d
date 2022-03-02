@@ -10,10 +10,8 @@
                         <h3 class="pdf-title title-type title-type">Intérêts généraux</h3>
                     </div>
                 </div>
-
                 <hr>
             </div>
-
         </div>
 
         <div class="pdf-profils-div">
@@ -47,7 +45,10 @@
                         <p>Niveau d'intensité</p>
                     </div>
                     <div class="indicator-bar-content">
-
+                        <p>R A I</p>
+                        <p>6</p>
+                        <p>43.6%</p>
+                        <p>Moyennement consistant</p>
                     </div>
                 </div>
             </div>
@@ -65,7 +66,10 @@
                         <p>Niveau d'intensité</p>
                     </div>
                     <div class="indicator-bar-content">
-
+                        <p>R A I</p>
+                        <p>6</p>
+                        <p>43.6%</p>
+                        <p>Moyennement consistant</p>
                     </div>
                 </div>
             </div>
@@ -84,9 +88,51 @@
         <section class="pdf-profils-section">
             <div class="pdf-profils-indicators">
                 <p class="text-kaki text-kaki-info">Profil intra-individuel</p>
+                <div class="pdf-valorise-div">
+                    <div class="single-sector-div">
+                        <p class="valorise-title">Secteurs valorisés</p>
+                        <div class="sector-details-div">
+                            <p>1 - Plein air</p>
+                            <p>2 - Pratiques</p>
+                            <p>3 - Esthétiques</p>
+                        </div>
+                    </div>
+                    <div class="single-sector-div">
+                        <p class="valorise-title">Secteurs rejetés</p>
+                        <div class="sector-details-div">
+                            <p>10 - Médicaux</p>
+                            <p>11 - Bureautique</p>
+                            <p>12 - Calcul</p>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="pdf-profils-indicators">
                 <p class="text-kaki text-kaki-info">Profil inter-individuel</p>
+                <div class="pdf-valorise-div">
+                    <div class="single-interets-div">
+                        <p class="valorise-title">Intérêts valorisés (5 - 4)</p>
+                        <div class="interets-details-div">
+                            <div class="single-interet-details">
+                                <div class="interet-details-number">5</div><p>Plein Air, Pratiques</p>
+                            </div>
+                            <div class="single-interet-details">
+                                <div class="interet-details-number">4</div><p>Techniques</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="single-interets-div">
+                        <p class="valorise-title">Intérêts rejetés (1 - 2)</p>
+                        <div class="interets-details-div">
+                            <div class="single-interet-details">
+                                <div class="interet-details-number">1</div><p>Service social, Calcul</p>
+                            </div>
+                            <div class="single-interet-details">
+                                <div class="interet-details-number">2</div><p>Médicaux, Contact personnels, Bureautique</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
